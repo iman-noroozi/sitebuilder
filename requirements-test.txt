@@ -1,0 +1,32 @@
+# 🧪 وابستگی‌های تست برای Site Builder
+
+# تست‌های اصلی
+pytest==7.4.3
+pytest-django==4.7.0
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+
+# تست‌های API
+requests-mock==1.11.0
+responses==0.24.1
+
+# تست‌های عملکرد
+pytest-benchmark==4.0.0
+
+# تست‌های امنیتی
+bandit==1.7.5
+safety==2.3.5
+
+# تست‌های کیفیت کد
+flake8==6.1.0
+black==23.11.0
+isort==5.12.0
+mypy==1.7.1
+
+# تست‌های Django
+factory-boy==3.3.0
+django-test-plus==2.4.0
+
+# تست‌های JavaScript
+pytest-html==4.1.1
+pytest-xdist==3.5.0

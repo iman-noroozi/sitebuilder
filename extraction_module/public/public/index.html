@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استخراج کننده قالب‌های وب سایت</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .option-item:hover {
+            background: #e9ecef;
+        }
+
+        .option-item input[type="checkbox"] {
+            width: auto;
+        }
+
+        .extract-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .extract-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .extract-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .progress-section {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s;
+            width: 0%;
+        }
+
+        .status-text {
+            text-align: center;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .logs {
+            max-height: 200px;
+            overflow-y: auto;
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .log-entry {
+            margin: 5px 0;
+            padding: 2px 0;
+        }
+
+        .log-success { color: #68d391; }
+        .log-error { color: #f56565; }
+        .log-info { color: #63b3ed; }
+        .log-warning { color: #f6e05e; }
+
+        .results-section {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background: #e8f5e8;
+            border-radius: 12px;
+            border: 2px solid #4ade80;
+        }
+
+        .results-section h3 {
+            color: #166534;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .download-btn {
+            background: #10b981;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 10px auto;
+        }
+
+        .download-btn:hover {
+            background: #059669;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <i class="fas fa-download"></i>
+                استخراج کننده قالب‌های وب سایت
+            </h1>
+            <p>استخراج کامل ساختار، محتوا و منابع هر سایتی</p>
+        </div>
+
+        <form id="extractForm" class="form-section">
+            <div class="form-group">
+                <label for="websiteUrl">
+                    <i class="fas fa-globe"></i>
+                    آدرس وب سایت
+                </label>
+                <input 
+                    type="url" 
+                    id="websiteUrl" 
+                    name="websiteUrl" 
+                    placeholder="https://example.com"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="maxDepth">
+                    <i class="fas fa-layer-group"></i>
+                    عمق استخراج (تعداد لایه‌های لینک)
+                </label>
+                <select id="maxDepth" name="maxDepth">
+                    <option value="1">سطح 1 - فقط صفحه اصلی</option>
+                    <option value="2">سطح 2 - تا یک لینک عمق</option>
+                    <option value="3" selected>سطح 3 - تا دو لینک عمق</option>
+                    <option value="4">سطح 4 - تا سه لینک عمق</option>
+                    <option value="5">سطح 5 - تا چهار لینک عمق</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>گزینه‌های استخراج:</label>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <input type="checkbox" id="extractCSS" checked>
+                        <i class="fab fa-css3-alt"></i>
+                        <label for="extractCSS">فایل‌های CSS</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" id="extractJS" checked>
+                        <i class="fab fa-js-square"></i>
+                        <label for="extractJS">فایل‌های JavaScript</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" id="extractImages" checked>
+                        <i class="fas fa-images"></i>
+                        <label for="extractImages">تصاویر</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" id="extractFonts" checked>
+                        <i class="fas fa-font"></i>
+                        <label for="extractFonts">فونت‌ها</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" id="extractVideos" checked>
+                        <i class="fas fa-video"></i>
+                        <label for="extractVideos">ویدیوها</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" id="followLinks" checked>
+                        <i class="fas fa-link"></i>
+                        <label for="followLinks">لینک‌های داخلی</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="extract-btn" id="extractBtn">
+                <i class="fas fa-rocket"></i>
+                شروع استخراج کامل
+            </button>
+        </form>
+
+        <div class="progress-section" id="progressSection">
+            <h3>
+                <i class="fas fa-cog fa-spin"></i>
+                در حال استخراج...
+            </h3>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="status-text" id="statusText">آماده‌سازی...</div>
+            <div class="logs" id="logs"></div>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <h3>
+                <i class="fas fa-check-circle"></i>
+                استخراج با موفقیت تمام شد!
+            </h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalPages">0</div>
+                    <div class="stat-label">صفحات</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="totalAssets">0</div>
+                    <div class="stat-label">فایل‌ها</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="totalSize">0</div>
+                    <div class="stat-label">حجم (MB)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="extractTime">0</div>
+                    <div class="stat-label">زمان (ثانیه)</div>
+                </div>
+            </div>
+            <button class="download-btn" id="downloadBtn">
+                <i class="fas fa-download"></i>
+                دانلود فایل ZIP
+            </button>
+        </div>
+    </div>
+
+    <script src="extractor-ui.js"></script>
+</body>
+</html>

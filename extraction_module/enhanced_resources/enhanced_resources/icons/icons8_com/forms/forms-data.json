@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-07-28T14:24:54.675Z",
+  "forms": [
+    {
+      "action": "https://icons8.com/icons/search-by-image",
+      "method": "post",
+      "html": "<form data-v-81357770=\"\" method=\"POST\" action=\"/icons/search-by-image\" enctype=\"multipart/form-data\"><div data-v-81357770=\"\" class=\"i8-file-input search-autocomplete__img-file-input\"><input id=\"file-input\" class=\"i8-file-input__input\" data-multiple-caption=\"{count} files selected\" accept=\".jpg, .jpeg, .png, .svg, .webp\" type=\"file\" name=\"image\"><div data-v-81357770=\"\"></div><div class=\"i8-file-input__text\"><p class=\"i8-file-input__text i8-file-input__title\">Drag or paste icon here</p><p class=\"i8-file-input__text i8-file-input__requirements\">JPG, PNG, SVG, WEBP</p></div><button type=\"button\" class=\"i8-button i8-button--outline i8-button--large browse-btn\"><!----><!---->Browse...<!----></button></div></form>",
+      "fields": [
+        {
+          "name": "image",
+          "type": "file",
+          "value": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://icons8.com/",
+      "method": "get",
+      "html": "<form class=\"i8-footer-newsletter\" novalidate=\"\" data-v-71288d64=\"\" data-v-e648944a=\"\"><div class=\"i8-text-input i8-text-input--large i8-footer-newsletter__email-input\" data-v-e648944a=\"\" data-v-f23c00e3=\"\"><!----><div class=\"i8-text-input__wrap\" data-v-f23c00e3=\"\"><!--[--><!----><!--]--><input type=\"email\" class=\"i8-text-input__input\" value=\"\" placeholder=\"Enter your email...\" name=\"\" autocomplete=\"off\" required=\"\" data-v-f23c00e3=\"\"><!--[--><!----><!--]--></div><!----></div><button class=\"i8-button i8-button--black i8-button--large i8-footer-newsletter__btn\" data-v-e648944a=\"\"><!----><!----><!--[-->Subscribe<!--]--><!----></button></form>",
+      "fields": [
+        {
+          "name": "",
+          "type": "email",
+          "value": "",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

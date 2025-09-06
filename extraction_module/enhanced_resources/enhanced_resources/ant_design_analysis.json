@@ -1,0 +1,15 @@
+{
+  "siteName": "ant_design",
+  "totalFiles": 405,
+  "cssFiles": 341,
+  "jsFiles": 12,
+  "htmlFiles": 11,
+  "imageFiles": 25,
+  "fontFiles": 8,
+  "hasBootstrap": false,
+  "hasTailwind": false,
+  "hasMaterialUI": false,
+  "frameworks": [
+    "Ant Design"
+  ]
+}

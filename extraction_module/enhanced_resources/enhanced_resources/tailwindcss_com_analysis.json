@@ -1,0 +1,15 @@
+{
+  "siteName": "tailwindcss_com",
+  "totalFiles": 121,
+  "cssFiles": 2,
+  "jsFiles": 56,
+  "htmlFiles": 14,
+  "imageFiles": 29,
+  "fontFiles": 10,
+  "hasBootstrap": false,
+  "hasTailwind": true,
+  "hasMaterialUI": false,
+  "frameworks": [
+    "Tailwind CSS"
+  ]
+}

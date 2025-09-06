@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سایت بیلدر - ویرایشگر آنلاین</title>
+
+    <!-- GrapesJS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/grapesjs/dist/css/grapes.min.css">
+
+    <!-- GrapesJS Preset Webpage Plugin -->
+    <link rel="stylesheet" href="https://unpkg.com/grapesjs-preset-webpage/dist/grapesjs-preset-webpage.min.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <!-- Persian Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            direction: rtl;
+        }
+
+        .editor-container {
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .header-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .header-bar h1 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(17, 153, 142, 0.4);
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(17, 153, 142, 0.6);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(240, 147, 251, 0.4);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(240, 147, 251, 0.6);
+        }
+
+        #gjs {
+            height: calc(100vh - 70px);
+            direction: ltr; /* GrapesJS needs LTR */
+        }
+
+        /* RTL Support for GrapesJS */
+        .gjs-pn-panel.gjs-pn-views-container {
+            right: 0;
+            left: auto;
+        }
+
+        .gjs-blocks-c {
+            text-align: right;
+        }
+
+        /* Persian Components Styles */
+        .persian-component {
+            font-family: 'Vazirmatn', sans-serif;
+            direction: rtl;
+        }
+
+        /* Custom Block Styles */
+        .gjs-block {
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .gjs-block:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Toast Notifications */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            z-index: 10000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-bar {
+                padding: 10px 15px;
+            }
+
+            .header-bar h1 {
+                font-size: 18px;
+            }
+
+            .btn {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="editor-container">
+        <div class="header-bar">
+            <h1>
+                <i class="bi bi-code-slash"></i>
+                سایت بیلدر - ویرایشگر آنلاین
+            </h1>
+            <div class="header-actions">
+                <button class="btn btn-secondary" onclick="loadTemplate()">
+                    <i class="bi bi-folder2-open"></i>
+                    بارگذاری قالب
+                </button>
+                <button class="btn btn-primary" onclick="saveTemplate()">
+                    <i class="bi bi-download"></i>
+                    ذخیره قالب
+                </button>
+                <button class="btn btn-success" onclick="exportSite()">
+                    <i class="bi bi-box-arrow-up"></i>
+                    انتشار سایت
+                </button>
+            </div>
+        </div>
+
+        <div id="gjs"></div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- GrapesJS Scripts -->
+    <script src="https://unpkg.com/grapesjs/dist/grapes.min.js"></script>
+    <script src="https://unpkg.com/grapesjs-preset-webpage/dist/grapesjs-preset-webpage.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script>
+        // Initialize GrapesJS with Persian support
+        const editor = grapesjs.init({
+            container: '#gjs',
+            height: '100%',
+            storageManager: false,
+            panels: {
+                defaults: [{
+                    id: 'basic-actions',
+                    el: '.panel__basic-actions',
+                    buttons: [{
+                        id: 'visibility',
+                        active: true,
+                        className: 'btn-toggle-borders',
+                        label: '<u>B</u>',
+                        command: 'sw-visibility',
+                    }],
+                }],
+            },
+            deviceManager: {
+                devices: [
+                    {
+                        name: 'Desktop',
+                        width: '',
+                    },
+                    {
+                        name: 'Tablet',
+                        width: '768px',
+                        widthMedia: '992px',
+                    },
+                    {
+                        name: 'Mobile',
+                        width: '320px',
+                        widthMedia: '480px',
+                    },
+                ],
+            },
+            plugins: ['gjs-preset-webpage'],
+            pluginsOpts: {
+                'gjs-preset-webpage': {
+                    modalImportTitle: 'بارگذاری قالب',
+                    modalImportLabel: 'فایل قالب را انتخاب کنید',
+                    modalImportContent: '',
+                    textCleanCanvas: 'آیا مطمئن هستید که می‌خواهید همه چیز را پاک کنید؟',
+                }
+            },
+            // Persian Components
+            blockManager: {
+                appendTo: '#blocks',
+                blocks: [
+                    // Persian Header Block
+                    {
+                        id: 'persian-header',
+                        label: 'هدر فارسی',
+                        category: 'فارسی',
+                        content: `
+                            <header class="persian-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 0; text-align: center;">
+                                <nav class="container">
+                                    <div class="logo">
+                                        <h1 style="margin: 0; font-size: 24px; font-weight: 700;">لوگو سایت</h1>
+                                    </div>
+                                    <ul class="nav-menu" style="list-style: none; display: flex; gap: 20px; margin: 15px 0 0 0; padding: 0; justify-content: center;">
+                                        <li><a href="#" style="color: white; text-decoration: none;">صفحه اصلی</a></li>
+                                        <li><a href="#" style="color: white; text-decoration: none;">درباره ما</a></li>
+                                        <li><a href="#" style="color: white; text-decoration: none;">خدمات</a></li>
+                                        <li><a href="#" style="color: white; text-decoration: none;">تماس</a></li>
+                                    </ul>
+                                </nav>
+                            </header>
+                        `,
+                        attributes: { class: 'fa fa-header' }
+                    },
+                    // Persian Hero Block
+                    {
+                        id: 'persian-hero',
+                        label: 'بخش قهرمان فارسی',
+                        category: 'فارسی',
+                        content: `
+                            <section class="hero-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 80px 0; text-align: center;">
+                                <div class="container">
+                                    <h1 style="font-size: 48px; margin-bottom: 20px; font-weight: 700;">عنوان اصلی سایت</h1>
+                                    <p style="font-size: 20px; margin-bottom: 30px; opacity: 0.9;">توضیحات کامل درباره خدمات و محصولات شما</p>
+                                    <button style="background: #27ae60; color: white; border: none; padding: 15px 30px; border-radius: 8px; font-size: 18px; cursor: pointer; transition: all 0.3s;">شروع کنید</button>
+                                </div>
+                            </section>
+                        `,
+                        attributes: { class: 'fa fa-star' }
+                    },
+                    // Persian Services Block
+                    {
+                        id: 'persian-services',
+                        label: 'بخش خدمات فارسی',
+                        category: 'فارسی',
+                        content: `
+                            <section class="services-section" style="padding: 80px 0; background: #f8f9fa;">
+                                <div class="container">
+                                    <h2 style="text-align: center; margin-bottom: 50px; font-size: 36px; color: #333;">خدمات ما</h2>
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                                        <div style="background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                            <i class="bi bi-code-slash" style="font-size: 48px; color: #667eea; margin-bottom: 20px;"></i>
+                                            <h3 style="margin-bottom: 15px; color: #333;">توسعه وب</h3>
+                                            <p style="color: #666; line-height: 1.6;">طراحی و توسعه سایت‌های مدرن و واکنش‌گرا</p>
+                                        </div>
+                                        <div style="background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                            <i class="bi bi-phone" style="font-size: 48px; color: #667eea; margin-bottom: 20px;"></i>
+                                            <h3 style="margin-bottom: 15px; color: #333;">اپلیکیشن موبایل</h3>
+                                            <p style="color: #666; line-height: 1.6;">توسعه اپلیکیشن‌های iOS و Android</p>
+                                        </div>
+                                        <div style="background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                            <i class="bi bi-graph-up" style="font-size: 48px; color: #667eea; margin-bottom: 20px;"></i>
+                                            <h3 style="margin-bottom: 15px; color: #333;">سئو و بازاریابی</h3>
+                                            <p style="color: #666; line-height: 1.6;">بهینه‌سازی سایت و استراتژی‌های دیجیتال</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        `,
+                        attributes: { class: 'fa fa-cogs' }
+                    },
+                    // Persian Contact Block
+                    {
+                        id: 'persian-contact',
+                        label: 'فرم تماس فارسی',
+                        category: 'فارسی',
+                        content: `
+                            <section class="contact-section" style="padding: 80px 0; background: #2c3e50; color: white;">
+                                <div class="container">
+                                    <h2 style="text-align: center; margin-bottom: 50px; font-size: 36px;">تماس با ما</h2>
+                                    <div style="max-width: 600px; margin: 0 auto;">
+                                        <form style="display: grid; gap: 20px;">
+                                            <div>
+                                                <label style="display: block; margin-bottom: 8px; font-weight: 600;">نام و نام خانوادگی</label>
+                                                <input type="text" style="width: 100%; padding: 12px; border: none; border-radius: 8px; font-size: 16px;">
+                                            </div>
+                                            <div>
+                                                <label style="display: block; margin-bottom: 8px; font-weight: 600;">ایمیل</label>
+                                                <input type="email" style="width: 100%; padding: 12px; border: none; border-radius: 8px; font-size: 16px;">
+                                            </div>
+                                            <div>
+                                                <label style="display: block; margin-bottom: 8px; font-weight: 600;">پیام</label>
+                                                <textarea rows="5" style="width: 100%; padding: 12px; border: none; border-radius: 8px; font-size: 16px; resize: vertical;"></textarea>
+                                            </div>
+                                            <button type="submit" style="background: #27ae60; color: white; border: none; padding: 15px 30px; border-radius: 8px; font-size: 18px; cursor: pointer; transition: all 0.3s;">ارسال پیام</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+                        `,
+                        attributes: { class: 'fa fa-envelope' }
+                    },
+                    // Persian Footer Block
+                    {
+                        id: 'persian-footer',
+                        label: 'فوتر فارسی',
+                        category: 'فارسی',
+                        content: `
+                            <footer class="footer-section" style="background: #1a252f; color: white; padding: 40px 0 20px;">
+                                <div class="container">
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
+                                        <div>
+                                            <h3 style="margin-bottom: 15px; color: #667eea;">درباره ما</h3>
+                                            <p style="line-height: 1.6; color: #bdc3c7;">ما متخصصان توسعه وب و دیجیتال مارکتینگ هستیم که با سال‌ها تجربه، بهترین راه‌حل‌ها را ارائه می‌دهیم.</p>
+                                        </div>
+                                        <div>
+                                            <h3 style="margin-bottom: 15px; color: #667eea;">خدمات</h3>
+                                            <ul style="list-style: none; padding: 0; color: #bdc3c7;">
+                                                <li style="margin-bottom: 8px;">طراحی سایت</li>
+                                                <li style="margin-bottom: 8px;">توسعه اپلیکیشن</li>
+                                                <li style="margin-bottom: 8px;">سئو و بهینه‌سازی</li>
+                                                <li style="margin-bottom: 8px;">دیجیتال مارکتینگ</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h3 style="margin-bottom: 15px; color: #667eea;">تماس</h3>
+                                            <p style="color: #bdc3c7; margin-bottom: 8px;">تهران، ایران</p>
+                                            <p style="color: #bdc3c7; margin-bottom: 8px;">info@example.com</p>
+                                            <p style="color: #bdc3c7;">+98 21 1234 5678</p>
+                                        </div>
+                                    </div>
+                                    <div style="border-top: 1px solid #34495e; padding-top: 20px; text-align: center; color: #bdc3c7;">
+                                        <p>&copy; 2024 تمامی حقوق محفوظ است.</p>
+                                    </div>
+                                </div>
+                            </footer>
+                        `,
+                        attributes: { class: 'fa fa-footer' }
+                    }
+                ]
+            }
+        });
+
+        // Custom Functions
+        function showToast(message, type = 'info') {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.getElementById('toast-container').appendChild(toast);
+
+            setTimeout(() => toast.classList.add('show'), 100);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        function loadTemplate() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            input.onchange = (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        try {
+                            const template = JSON.parse(e.target.result);
+                            editor.loadProjectData(template);
+                            showToast('قالب با موفقیت بارگذاری شد!', 'success');
+                        } catch (error) {
+                            showToast('خطا در بارگذاری قالب!', 'error');
+                        }
+                    };
+                    reader.readAsText(file);
+                }
+            };
+            input.click();
+        }
+
+        function saveTemplate() {
+            const projectData = editor.getProjectData();
+            const dataStr = JSON.stringify(projectData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(dataBlob);
+            link.download = 'template.json';
+            link.click();
+
+            showToast('قالب با موفقیت ذخیره شد!', 'success');
+        }
+
+        function exportSite() {
+            const html = editor.getHtml();
+            const css = editor.getCss();
+
+            const fullHtml = `
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سایت من</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Vazirmatn', sans-serif; direction: rtl; }
+        ${css}
+    </style>
+</head>
+<body>
+    ${html}
+</body>
+</html>`;
+
+            const dataBlob = new Blob([fullHtml], {type: 'text/html'});
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(dataBlob);
+            link.download = 'site.html';
+            link.click();
+
+            showToast('سایت با موفقیت صادر شد!', 'success');
+        }
+
+        // Initialize with default content
+        editor.on('load', () => {
+            editor.addComponents(`
+                <div style="padding: 50px; text-align: center; font-family: 'Vazirmatn', sans-serif;">
+                    <h1 style="color: #667eea; margin-bottom: 20px;">خوش آمدید به سایت بیلدر!</h1>
+                    <p style="color: #666; font-size: 18px;">برای شروع، کامپوننت‌های مورد نظر خود را از پنل سمت چپ انتخاب کنید.</p>
+                </div>
+            `);
+        });
+    </script>
+</body>
+</html>

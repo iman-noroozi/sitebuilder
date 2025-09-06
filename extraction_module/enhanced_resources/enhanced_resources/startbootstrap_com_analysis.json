@@ -1,0 +1,15 @@
+{
+  "siteName": "startbootstrap_com",
+  "totalFiles": 3,
+  "cssFiles": 0,
+  "jsFiles": 0,
+  "htmlFiles": 0,
+  "imageFiles": 0,
+  "fontFiles": 0,
+  "hasBootstrap": true,
+  "hasTailwind": false,
+  "hasMaterialUI": false,
+  "frameworks": [
+    "Bootstrap"
+  ]
+}

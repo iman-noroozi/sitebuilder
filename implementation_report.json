@@ -1,0 +1,388 @@
+{
+  "executive_summary": {
+    "project_name": "پیاده‌سازی ابزارهای کسب‌وکار پیسان وب",
+    "total_investment": 239200000.0,
+    "project_duration": "14 هفته",
+    "expected_roi": "300% در 2 سال",
+    "key_benefits": [
+      "افزایش بهره‌وری 40%",
+      "کاهش هزینه‌های عملیاتی 25%",
+      "بهبود تجربه مشتری",
+      "رقابت‌پذیری بیشتر"
+    ]
+  },
+  "detailed_plan": {
+    "project_overview": {
+      "total_tools": 16,
+      "total_duration": "14 هفته",
+      "total_budget": 239200000.0,
+      "team_size": 6,
+      "start_date": "2025-08-04",
+      "estimated_completion": "2025-11-10"
+    },
+    "development_team": [
+      {
+        "name": "توسعه‌دهنده ارشد Backend",
+        "role": "senior_backend_developer",
+        "skills": [
+          "Python",
+          "Django",
+          "FastAPI",
+          "PostgreSQL",
+          "Redis"
+        ],
+        "hourly_rate": 150000,
+        "availability": "full_time"
+      },
+      {
+        "name": "توسعه‌دهنده Frontend",
+        "role": "frontend_developer",
+        "skills": [
+          "React",
+          "Vue.js",
+          "JavaScript",
+          "HTML/CSS",
+          "TypeScript"
+        ],
+        "hourly_rate": 120000,
+        "availability": "full_time"
+      },
+      {
+        "name": "توسعه‌دهنده Full Stack",
+        "role": "full_stack_developer",
+        "skills": [
+          "Python",
+          "JavaScript",
+          "React",
+          "Django",
+          "Docker"
+        ],
+        "hourly_rate": 140000,
+        "availability": "full_time"
+      },
+      {
+        "name": "متخصص DevOps",
+        "role": "devops_engineer",
+        "skills": [
+          "Docker",
+          "Kubernetes",
+          "AWS",
+          "CI/CD",
+          "Linux"
+        ],
+        "hourly_rate": 160000,
+        "availability": "part_time"
+      },
+      {
+        "name": "طراح UI/UX",
+        "role": "ui_ux_designer",
+        "skills": [
+          "Figma",
+          "Adobe XD",
+          "Sketch",
+          "Prototyping",
+          "User Research"
+        ],
+        "hourly_rate": 100000,
+        "availability": "part_time"
+      },
+      {
+        "name": "مدیر پروژه",
+        "role": "project_manager",
+        "skills": [
+          "Agile",
+          "Scrum",
+          "Risk Management",
+          "Team Leadership"
+        ],
+        "hourly_rate": 180000,
+        "availability": "full_time"
+      }
+    ],
+    "implementation_phases": [
+      {
+        "phase_number": 1,
+        "name": "فاز اول - ابزارهای حیاتی",
+        "duration": "4 هفته",
+        "tools": [
+          {
+            "name": "Salesforce CRM",
+            "priority_level": "high_priority",
+            "priority_score": 10.0,
+            "estimated_cost": 12000000.0,
+            "estimated_duration": "6-8 هفته",
+            "recommendations": "نیاز به تیم توسعه حرفه‌ای"
+          },
+          {
+            "name": "HubSpot CRM",
+            "priority_level": "high_priority",
+            "priority_score": 10.0,
+            "estimated_cost": 8000000.0,
+            "estimated_duration": "6-8 هفته",
+            "recommendations": "بررسی دقیق نیازمندی‌ها قبل از پیاده‌سازی"
+          },
+          {
+            "name": "SuiteCRM",
+            "priority_level": "high_priority",
+            "priority_score": 10.0,
+            "estimated_cost": 12000000.0,
+            "estimated_duration": "6-8 هفته",
+            "recommendations": "استفاده از نسخه رایگان برای شروع | نیاز به تیم توسعه حرفه‌ای"
+          }
+        ],
+        "team_members": [
+          "senior_backend_developer",
+          "frontend_developer",
+          "project_manager"
+        ],
+        "deliverables": [
+          "سیستم پرداخت پایه",
+          "CRM ساده",
+          "پایگاه داده مشترک"
+        ],
+        "success_criteria": [
+          "پرداخت آنلاین فعال",
+          "مدیریت مشتریان پایه",
+          "API های اصلی آماده"
+        ],
+        "estimated_cost": 104000000.0,
+        "weeks": 4
+      },
+      {
+        "phase_number": 2,
+        "name": "فاز دوم - تجارت الکترونیک",
+        "duration": "6 هفته",
+        "tools": [
+          {
+            "name": "Odoo Inventory",
+            "priority_level": "high_priority",
+            "priority_score": 10.0,
+            "estimated_cost": 9000000.0,
+            "estimated_duration": "5-7 هفته",
+            "recommendations": "نیاز به تیم توسعه حرفه‌ای"
+          }
+        ],
+        "team_members": [
+          "full_stack_developer",
+          "ui_ux_designer",
+          "devops_engineer"
+        ],
+        "deliverables": [
+          "فروشگاه آنلاین کامل",
+          "سیستم مدیریت موجودی",
+          "داشبورد مدیریتی"
+        ],
+        "success_criteria": [
+          "فروشگاه قابل استفاده",
+          "مدیریت محصولات",
+          "گزارش‌های فروش"
+        ],
+        "estimated_cost": 73800000.0,
+        "weeks": 6
+      },
+      {
+        "phase_number": 3,
+        "name": "فاز سوم - ابزارهای پیشرفته",
+        "duration": "4 هفته",
+        "tools": [
+          {
+            "name": "درگاه پرداخت زرین‌پال",
+            "priority_level": "high_priority",
+            "priority_score": 10.0,
+            "estimated_cost": 7500000.0,
+            "estimated_duration": "4-6 هفته",
+            "recommendations": "نیاز به تیم توسعه حرفه‌ای | سازگار با قوانین ایران"
+          },
+          {
+            "name": "درگاه پرداخت پارسی‌پال",
+            "priority_level": "high_priority",
+            "priority_score": 10.0,
+            "estimated_cost": 7500000.0,
+            "estimated_duration": "4-6 هفته",
+            "recommendations": "نیاز به تیم توسعه حرفه‌ای | سازگار با قوانین ایران"
+          }
+        ],
+        "team_members": [
+          "senior_backend_developer",
+          "full_stack_developer"
+        ],
+        "deliverables": [
+          "سیستم تحلیل پیشرفته",
+          "اتوماسیون بازاریابی",
+          "یکپارچه‌سازی کامل"
+        ],
+        "success_criteria": [
+          "گزارش‌های تحلیلی",
+          "بازاریابی خودکار",
+          "سیستم یکپارچه"
+        ],
+        "estimated_cost": 61400000.0,
+        "weeks": 4
+      }
+    ],
+    "budget_analysis": {
+      "total_budget": 239200000.0,
+      "total_weeks": 14,
+      "total_duration": "14 هفته",
+      "monthly_budget": 68342857.14285715,
+      "budget_breakdown": {
+        "team_costs": 167440000.0,
+        "tools_costs": 47840000.0,
+        "infrastructure": 23920000.0
+      }
+    },
+    "risk_analysis": [
+      {
+        "risk_type": "فنی",
+        "description": "پیچیدگی یکپارچه‌سازی API های مختلف",
+        "probability": "متوسط",
+        "impact": "زیاد",
+        "mitigation_strategy": "استفاده از الگوهای طراحی استاندارد و تست‌های جامع"
+      },
+      {
+        "risk_type": "زمانی",
+        "description": "تأخیر در تحویل به دلیل پیچیدگی پروژه",
+        "probability": "زیاد",
+        "impact": "متوسط",
+        "mitigation_strategy": "استفاده از روش Agile و تقسیم پروژه به بخش‌های کوچک‌تر"
+      },
+      {
+        "risk_type": "بودجه",
+        "description": "افزایش هزینه‌ها به دلیل تغییرات درخواستی",
+        "probability": "متوسط",
+        "impact": "زیاد",
+        "mitigation_strategy": "تعریف دقیق نیازمندی‌ها و کنترل تغییرات"
+      },
+      {
+        "risk_type": "انسانی",
+        "description": "کمبود نیروی متخصص در زمینه‌های خاص",
+        "probability": "زیاد",
+        "impact": "زیاد",
+        "mitigation_strategy": "آموزش تیم و استخدام نیروهای متخصص"
+      },
+      {
+        "risk_type": "قانونی",
+        "description": "تغییرات در قوانین پرداخت و تجارت الکترونیک",
+        "probability": "کم",
+        "impact": "زیاد",
+        "mitigation_strategy": "پیگیری مستمر قوانین و انعطاف‌پذیری در طراحی"
+      }
+    ],
+    "success_metrics": {
+      "technical_metrics": [
+        "زمان پاسخ API کمتر از 200ms",
+        "در دسترس بودن سیستم 99.9%",
+        "امنیت کامل داده‌ها",
+        "سازگاری با مرورگرهای مختلف"
+      ],
+      "business_metrics": [
+        "کاهش 50% زمان پردازش سفارشات",
+        "افزایش 30% رضایت مشتریان",
+        "کاهش 40% خطاهای انسانی",
+        "افزایش 25% فروش آنلاین"
+      ],
+      "user_metrics": [
+        "رابط کاربری ساده و کاربردی",
+        "زمان یادگیری کمتر از 1 ساعت",
+        "رضایت کاربران بالای 85%",
+        "کاهش 60% زمان آموزش کارمندان"
+      ]
+    }
+  },
+  "next_steps": [
+    "تأیید بودجه و منابع",
+    "تشکیل تیم پروژه",
+    "شروع فاز اول",
+    "راه‌اندازی سیستم نظارت"
+  ],
+  "timeline": [
+    {
+      "phase": "فاز اول - ابزارهای حیاتی",
+      "start_date": "2025-08-04",
+      "end_date": "2025-09-01",
+      "duration": "4 هفته",
+      "milestones": [
+        "شروع فاز اول - ابزارهای حیاتی",
+        "توسعه 50% فاز اول - ابزارهای حیاتی",
+        "تست فاز اول - ابزارهای حیاتی",
+        "تحویل فاز اول - ابزارهای حیاتی"
+      ]
+    },
+    {
+      "phase": "فاز دوم - تجارت الکترونیک",
+      "start_date": "2025-09-01",
+      "end_date": "2025-10-13",
+      "duration": "6 هفته",
+      "milestones": [
+        "شروع فاز دوم - تجارت الکترونیک",
+        "توسعه 50% فاز دوم - تجارت الکترونیک",
+        "تست فاز دوم - تجارت الکترونیک",
+        "تحویل فاز دوم - تجارت الکترونیک"
+      ]
+    },
+    {
+      "phase": "فاز سوم - ابزارهای پیشرفته",
+      "start_date": "2025-10-13",
+      "end_date": "2025-11-10",
+      "duration": "4 هفته",
+      "milestones": [
+        "شروع فاز سوم - ابزارهای پیشرفته",
+        "توسعه 50% فاز سوم - ابزارهای پیشرفته",
+        "تست فاز سوم - ابزارهای پیشرفته",
+        "تحویل فاز سوم - ابزارهای پیشرفته"
+      ]
+    }
+  ],
+  "resource_allocation": {
+    "توسعه‌دهنده ارشد Backend": {
+      "role": "senior_backend_developer",
+      "availability": "full_time",
+      "assigned_phases": [
+        "فاز اول - ابزارهای حیاتی",
+        "فاز سوم - ابزارهای پیشرفته"
+      ],
+      "total_hours": 320
+    },
+    "توسعه‌دهنده Frontend": {
+      "role": "frontend_developer",
+      "availability": "full_time",
+      "assigned_phases": [
+        "فاز اول - ابزارهای حیاتی"
+      ],
+      "total_hours": 160
+    },
+    "توسعه‌دهنده Full Stack": {
+      "role": "full_stack_developer",
+      "availability": "full_time",
+      "assigned_phases": [
+        "فاز دوم - تجارت الکترونیک",
+        "فاز سوم - ابزارهای پیشرفته"
+      ],
+      "total_hours": 400
+    },
+    "متخصص DevOps": {
+      "role": "devops_engineer",
+      "availability": "part_time",
+      "assigned_phases": [
+        "فاز دوم - تجارت الکترونیک"
+      ],
+      "total_hours": 120
+    },
+    "طراح UI/UX": {
+      "role": "ui_ux_designer",
+      "availability": "part_time",
+      "assigned_phases": [
+        "فاز دوم - تجارت الکترونیک"
+      ],
+      "total_hours": 120
+    },
+    "مدیر پروژه": {
+      "role": "project_manager",
+      "availability": "full_time",
+      "assigned_phases": [
+        "فاز اول - ابزارهای حیاتی"
+      ],
+      "total_hours": 160
+    }
+  }
+}

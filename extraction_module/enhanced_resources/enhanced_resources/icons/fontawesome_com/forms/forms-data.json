@@ -1,0 +1,268 @@
+{
+  "timestamp": "2025-07-28T14:22:34.827Z",
+  "forms": [
+    {
+      "action": "https://fontawesome.com/",
+      "method": "get",
+      "html": "<form class=\"icons-search form line-length-md padding-y-4xl margin-bottom-sm margin-auto\" style=\"--form-button-margin: 0;\"><div class=\"with-icon-before\" style=\"--input-with-icon-color: var(--fa-navy); --input-border-color: var(--fa-navy); --input-placeholder-color: var(--fa-md-gravy);\"><svg data-prefix=\"fas\" data-icon=\"magnifying-glass\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"svg-inline--fa fa-magnifying-glass\" style=\"line-height: 1;\"><path fill=\"currentColor\" d=\"M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376C296.3 401.1 253.9 416 208 416 93.1 416 0 322.9 0 208S93.1 0 208 0 416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z\" class=\"\"></path></svg> <label for=\"icons-search\" class=\"sr-only\">\n            Search for Icons\n          </label> <input id=\"search\" type=\"text\" name=\"icons-search\" placeholder=\"Search for icons...\" class=\"rounded\"> <button type=\"submit\" class=\"sr-only\">\n            Search for Icons\n          </button></div></form>",
+      "fields": [
+        {
+          "name": "icons-search",
+          "type": "text",
+          "value": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://fontawesome.com/",
+      "method": "get",
+      "html": "<form><div class=\"row align-bottom margin-bottom-md\"><div class=\"column-12 laptop:column-8\"><label for=\"email\" class=\"margin-0 display-inline-block\" style=\"cursor: pointer; font-weight: 700; color: var(--fa-dk-gravy);\">\n          Enter your email to\n          <span class=\"display-none tablet:display-inline\">get started</span> <span class=\"tablet:display-none\">start</span>\n          with a free Kit!\n        </label> <a href=\"#\" class=\"padding-x-3xs\"><svg data-prefix=\"fas\" data-icon=\"circle-question\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"svg-inline--fa fa-circle-question\"><path fill=\"currentColor\" d=\"M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm0-336c-17.7 0-32 14.3-32 32 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-44.2 35.8-80 80-80s80 35.8 80 80c0 47.2-36 67.2-56 74.5l0 3.8c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-8.1c0-20.5 14.8-35.2 30.1-40.2 6.4-2.1 13.2-5.5 18.2-10.3 4.3-4.2 7.7-10 7.7-19.6 0-17.7-14.3-32-32-32zM224 368a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z\" class=\"\"></path></svg></a></div> <!----></div> <!----> <div class=\"row align-top\"><div class=\"column-12 laptop:column-8\"><input id=\"email\" name=\"email\" type=\"email\" placeholder=\"e.g. violet@freshsqueezed.org\" autocapitalize=\"none\" autocorrect=\"off\" required=\"required\" class=\"margin-0\"> <div class=\"margin-top-md margin-bottom-xl laptop:margin-bottom-0\"><input id=\"accept-policies\" name=\"accept-policies\" type=\"checkbox\" required=\"required\" value=\"I agree to the Terms of Service, Data Processing Agreement, and Privacy Policy.\"> <label for=\"accept-policies\" class=\"margin-0\" style=\"--label-display: inline; --label-font-size: var(--font-size-sm); --link-color: var(--fa-navy);\"><span class=\"size-sm\">\n      I agree to the\n      <a href=\"/tos\" class=\"strong\">\n        Terms of Service</a>,\n      <a href=\"/privacy\" class=\"strong\">\n        Privacy Policy</a>\n      and\n      <a href=\"/dpa\" class=\"strong\">\n        Data Processing Agreement</a>.\n    </span></label></div></div> <div class=\"column-12 laptop:column-4\"><button type=\"submit\" class=\" info block\" style=\"--button-margin-bottom: 0; --form-button-margin: 0; --button-hover-background: var(--fa-yellow);\">\n  Start for Free\n  <span class=\"margin-left-2xs\"><svg data-prefix=\"fas\" data-icon=\"globe\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"svg-inline--fa fa-globe fa-lg\"><path fill=\"currentColor\" d=\"M351.9 280l-190.9 0c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zM160.9 232l190.9 0C349 167.5 334.7 108.1 314.4 64.6 303 40.2 290.7 22.8 279.3 12.2 268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4zm-48 0C116.4 146.4 138.5 66.9 170.8 14.7 78.7 47.3 10.9 131.2 1.5 232l111.4 0zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3L1.5 280zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3l-111.4 0zm111.4-48C501.9 131.2 434.1 47.3 342 14.7 374.3 66.9 396.4 146.4 399.9 232l111.4 0z\" class=\"\"></path></svg></span></button> <div class=\"row align-middle margin-top-xl laptop:margin-top-lg\"><!----> <div class=\"column-8 laptop:column-12 text-right tablet:column-12\"><a href=\"/sessions/sign-in?next=%2F\" class=\"display-inline-block\"><span class=\"size-sm\">Already have an account?</span></a></div></div></div></div></form>",
+      "fields": [
+        {
+          "name": "email",
+          "type": "email",
+          "value": "",
+          "required": true
+        },
+        {
+          "name": "accept-policies",
+          "type": "checkbox",
+          "value": "I agree to the Terms of Service, Data Processing Agreement, and Privacy Policy.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "action": "https://fontawesome.com/",
+      "method": "get",
+      "html": "<form id=\"icon-family-style\" action=\"\" class=\"icon-details-styling\" default-styles=\"[object Object]\"><div class=\"margin-bottom-xl\" style=\"display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md);\"><div><div class=\"select-custom field field-icon_family\" style=\"--input-with-icon-color: var(--text-color);\"><label for=\"icon_family\" class=\"margin-bottom-2xs sr-only\">\n    Icon Family\n  </label> <div aria-label=\"Icon Family\" data-balloon-pos=\"up\" class=\"select-custom with-icon-before position-relative\"><svg data-prefix=\"far\" data-icon=\"swatchbook\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"select-custom-icon position-absolute svg-inline--fa fa-swatchbook\"><path fill=\"currentColor\" d=\"M0 400c0 61.9 50.1 112 112 112l328 0c39.8 0 72-32.2 72-72l0-80c0-35.4-25.6-64.9-59.3-70.9L405.8 336 440 336c13.3 0 24 10.7 24 24l0 80c0 13.3-10.7 24-24 24L209.9 464 431 242.9c28.1-28.1 28.1-73.7 0-101.8L370.9 81c-27.2-27.2-70.6-28.1-98.9-2.8l0 67.7 31-31c9.4-9.4 24.6-9.4 33.9 0L397.1 175c9.4 9.4 9.4 24.6 0 33.9L224 382.1 224 72c0-39.8-32.2-72-72-72L72 0C32.2 0 0 32.2 0 72L0 400zm112 64c-35.3 0-64-28.7-64-64l0-96 128 0 0 96c0 35.3-28.7 64-64 64zM48 256l0-80 128 0 0 80-128 0zm0-128l0-56c0-13.3 10.7-24 24-24l80 0c13.3 0 24 10.7 24 24l0 56-128 0zm64 296a24 24 0 1 0 0-48 24 24 0 1 0 0 48z\" class=\"\"></path></svg> <select id=\"icon_family\" required=\"required\" class=\"select-custom-select select-custom-icon_family margin-bottom-0 padding-right-4xl\" style=\"font-weight: var(--font-weight-normal); position: static; --input-box-shadow: none; --input-min-height: auto; width: 100%; padding-left: calc((var(--input-padding-horizontal) - var(--input-border-width)) * 1.6 + var(--input-with-icon-scale) * 1em); --input-border-color: var(--fa-gravy); padding-top: var(--spacing-sm); padding-bottom: var(--spacing-sm);\"><option value=\"classic\">\n          Classic\n        </option><option value=\"duotone\">\n          Duotone\n        </option><option value=\"sharp\">\n          Sharp\n        </option><option value=\"sharp-duotone\">\n          Sharp Duotone\n        </option><option value=\"chisel\">\n          Chisel\n        </option><option value=\"etch\">\n          Etch\n        </option><option value=\"jelly\">\n          Jelly\n        </option><option value=\"notdog\">\n          Notdog\n        </option><option value=\"slab\">\n          Slab\n        </option><option value=\"thumbprint\">\n          Thumbprint\n        </option><option value=\"whiteboard\">\n          Whiteboard\n        </option></select></div> <!----></div></div> <div><span id=\"icon_style_label\" class=\"sr-only\">Select an Icon Style</span> <div id=\"icon_style\" aria-labelledby=\"icon_style_label\" class=\"buttons select-icon-style\" style=\"display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;\"><button aria-label=\"Classic Solid\" data-balloon-pos=\"up\" class=\"select-icon-style-button margin-top-0 compact active\" style=\"--button-hover-color: var(--text-color); --button-hover-background: var(--fa-gravy); --button-border-radius: var(--input-border-radius); --button-border-color: var(--fa-gravy); --button-box-shadow: none; --button-box-shadow-width: 0; --button-padding: var(--spacing-sm) var(--spacing-lg); --button-color: var(--link-color); --button-active-border-color: var(--fa-gravy); --button-active-background: var(--fa-gravy); --button-active-color: var(--text-color);\"><i class=\"fa-solid fa-face-smile fa-xl\"></i></button><button aria-label=\"Classic Regular\" data-balloon-pos=\"up\" class=\"select-icon-style-button margin-top-0 compact\" style=\"--button-hover-color: var(--link-hover-color); --button-hover-background: transparent; --button-border-radius: var(--input-border-radius); --button-border-color: var(--fa-gravy); --button-box-shadow: none; --button-box-shadow-width: 0; --button-padding: var(--spacing-sm) var(--spacing-lg); --button-color: var(--link-color); --button-active-border-color: var(--fa-gravy); --button-active-background: var(--fa-gravy); --button-active-color: var(--text-color);\"><i class=\"fa-regular fa-face-smile fa-xl\"></i></button><button aria-label=\"Classic Light\" data-balloon-pos=\"up\" class=\"select-icon-style-button margin-top-0 compact\" style=\"--button-hover-color: var(--link-hover-color); --button-hover-background: transparent; --button-border-radius: var(--input-border-radius); --button-border-color: var(--fa-gravy); --button-box-shadow: none; --button-box-shadow-width: 0; --button-padding: var(--spacing-sm) var(--spacing-lg); --button-color: var(--link-color); --button-active-border-color: var(--fa-gravy); --button-active-background: var(--fa-gravy); --button-active-color: var(--text-color);\"><i class=\"fa-light fa-face-smile fa-xl\"></i></button><button aria-label=\"Classic Thin\" data-balloon-pos=\"up\" class=\"select-icon-style-button margin-top-0 compact\" style=\"--button-hover-color: var(--link-hover-color); --button-hover-background: transparent; --button-border-radius: var(--input-border-radius); --button-border-color: var(--fa-gravy); --button-box-shadow: none; --button-box-shadow-width: 0; --button-padding: var(--spacing-sm) var(--spacing-lg); --button-color: var(--link-color); --button-active-border-color: var(--fa-gravy); --button-active-background: var(--fa-gravy); --button-active-color: var(--text-color);\"><i class=\"fa-thin fa-face-smile fa-xl\"></i></button></div></div></div></form>",
+      "fields": [
+        {
+          "name": "",
+          "type": "select-one",
+          "value": "classic",
+          "required": true
+        }
+      ]
+    },
+    {
+      "action": "https://fontawesome.com/",
+      "method": "get",
+      "html": "<form id=\"icon-add-styling\" action=\"\" class=\"icon-details-add-styling margin-bottom-2xl laptop:margin-top-2xl laptop:margin-bottom-0\" style=\"--color-input-min-width: var(--icon-details-input-color-min-width);\"><div class=\"icon-details-styling-color\" style=\"--input-padding: var(--spacing-xs); --input-border-color: var(--fa-gravy); --input-box-shadow: none; gap: var(--spacing-3xs);\"><div class=\"size-xs padding-right-md padding-bottom-xs\"><span class=\"text-uppercase padding-right-sm\" style=\"letter-spacing: var(--letter-spacing-3xl); font-weight: var(--font-weight-black);\">Color</span> <a href=\"/docs/web/style/custom%23add-your-own-custom-styling-with-css\" class=\"\" aria-label=\"Use basic CSS style to add color to an icon. Click to learn more\" data-balloon-pos=\"right\" data-balloon-length=\"xlarge\" style=\"--link-color: var(--fa-gravy);\"><svg data-prefix=\"fas\" data-icon=\"circle-info\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"svg-inline--fa fa-circle-info\"><path fill=\"currentColor\" d=\"M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM224 160a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm-8 64l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z\" class=\"\"></path></svg></a></div> <ul class=\"custom-radio-button-set display-flex align-stretch\" style=\"--list-style-type: none; --padding-left: 0; --list-margin-top: 0; flex-grow: 1; gap: var(--spacing-xs);\"><li class=\"position-relative\" style=\"flex-grow: 0; display: flex; text-align: center;\"><input id=\"color-none\" type=\"radio\" name=\"icon-color\" value=\"\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"color-none\" aria-label=\"Remove Coloring\" data-balloon-pos=\"up\" class=\"styling-color-input margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 0; background-color: var(--fa-lt-gravy);\"><svg data-prefix=\"fas\" data-icon=\"ban\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"svg-inline--fa fa-ban\" style=\"vertical-align: middle;\"><path fill=\"currentColor\" d=\"M367.2 412.5L99.5 144.8c-22.4 31.4-35.5 69.8-35.5 111.2 0 106 86 192 192 192 41.5 0 79.9-13.1 111.2-35.5zm45.3-45.3c22.4-31.4 35.5-69.8 35.5-111.2 0-106-86-192-192-192-41.5 0-79.9 13.1-111.2 35.5L412.5 367.2zM0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0z\" class=\"\"></path></svg> <span class=\"sr-only\">Default Color</span></label></li><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"color-yellow\" type=\"radio\" name=\"icon-color\" value=\"#FFD43B\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"color-yellow\" aria-label=\"Color it yellow\" data-balloon-pos=\"up\" class=\"styling-color-input margin-0 padding-4xs\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><span class=\"display-inline-block\" style=\"height: 100%; width: 100%; border-radius: var(--border-radius-sm); vertical-align: middle; background-color: rgb(255, 212, 59);\"></span> <span class=\"sr-only\">yellow</span></label></li><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"color-teal\" type=\"radio\" name=\"icon-color\" value=\"#63E6BE\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"color-teal\" aria-label=\"Color it teal\" data-balloon-pos=\"up\" class=\"styling-color-input margin-0 padding-4xs\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><span class=\"display-inline-block\" style=\"height: 100%; width: 100%; border-radius: var(--border-radius-sm); vertical-align: middle; background-color: rgb(99, 230, 190);\"></span> <span class=\"sr-only\">teal</span></label></li><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"color-blue\" type=\"radio\" name=\"icon-color\" value=\"#74C0FC\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"color-blue\" aria-label=\"Color it blue\" data-balloon-pos=\"up\" class=\"styling-color-input margin-0 padding-4xs\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><span class=\"display-inline-block\" style=\"height: 100%; width: 100%; border-radius: var(--border-radius-sm); vertical-align: middle; background-color: rgb(116, 192, 252);\"></span> <span class=\"sr-only\">blue</span></label></li><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"color-violet\" type=\"radio\" name=\"icon-color\" value=\"#B197FC\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"color-violet\" aria-label=\"Color it violet\" data-balloon-pos=\"up\" class=\"styling-color-input margin-0 padding-4xs\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><span class=\"display-inline-block\" style=\"height: 100%; width: 100%; border-radius: var(--border-radius-sm); vertical-align: middle; background-color: rgb(177, 151, 252);\"></span> <span class=\"sr-only\">violet</span></label></li> <li class=\"position-relative \" style=\"flex-grow: 1; display: flex; text-align: center;\"><label for=\"color-custom\" aria-label=\"Pick your own color\" data-balloon-pos=\"up\" class=\"sr-only\" style=\"border: 0px;\"><input id=\"color-custom\" type=\"radio\" name=\"icon-color\" value=\"color-custom\" class=\"sr-only\">\n            Pick Your Own Color\n          </label> <input id=\"color-custom\" type=\"color\" class=\"margin-bottom-0\" style=\"appearance: none; position: absolute; box-shadow: none; --input-padding: var(--spacing-4xs); height: 100%; min-width: var(--color-input-min-width); opacity: 0;\"> <label for=\"color-custom\" aria-label=\"Pick your own color\" data-balloon-pos=\"up\" class=\"styling-color-input margin-0 padding-4xs\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><span class=\"display-inline-block\" style=\"background: linear-gradient(50deg, var(--fa-red) 0%, var(--fa-yellow) 30%, var(--fa-teal) 60%, var(--fa-blue) 100%); height: 100%; width: 100%; border-radius: var(--border-radius-sm); vertical-align: middle;\"></span> <span class=\"sr-only\">Pick a color</span></label></li></ul></div> <div class=\"icon-details-styling-size\"><div class=\"size-xs padding-right-md padding-bottom-xs\"><span class=\"text-uppercase padding-right-sm\" style=\"letter-spacing: var(--letter-spacing-3xl); font-weight: var(--font-weight-black);\">Size</span><a href=\"/docs/web/style/size\" class=\"\" aria-label=\"With our web toolkit, you can easily size an icon with a CSS class. Click to learn more\" data-balloon-pos=\"right\" data-balloon-length=\"xlarge\" style=\"--link-color: var(--fa-gravy);\"><svg data-prefix=\"fas\" data-icon=\"circle-info\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"svg-inline--fa fa-circle-info\"><path fill=\"currentColor\" d=\"M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM224 160a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm-8 64l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z\" class=\"\"></path></svg></a></div> <ul class=\"custom-radio-button-set display-flex align-stretch\" style=\"--list-style-type: none; --padding-left: 0; --list-margin-top: 0; flex-grow: 1; gap: var(--spacing-xs);\"><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"size-2xs\" type=\"radio\" name=\"icon-size\" value=\"2xs\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"size-2xs\" class=\"margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><span>2xs</span></label></li><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"size-xs\" type=\"radio\" name=\"icon-size\" value=\"xs\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"size-xs\" class=\"margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><span>xs</span></label></li><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"size-sm\" type=\"radio\" name=\"icon-size\" value=\"sm\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"size-sm\" class=\"margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><span>sm</span></label></li><li class=\"position-relative\" style=\"flex-grow: 0; display: flex; text-align: center;\"><input id=\"size-none\" type=\"radio\" name=\"icon-size\" value=\"\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"size-none\" aria-label=\"Remove Sizing\" data-balloon-pos=\"up\" class=\"margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 0; background-color: var(--fa-lt-gravy);\"><svg data-prefix=\"fas\" data-icon=\"ban\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"svg-inline--fa fa-ban\" style=\"vertical-align: middle;\"><path fill=\"currentColor\" d=\"M367.2 412.5L99.5 144.8c-22.4 31.4-35.5 69.8-35.5 111.2 0 106 86 192 192 192 41.5 0 79.9-13.1 111.2-35.5zm45.3-45.3c22.4-31.4 35.5-69.8 35.5-111.2 0-106-86-192-192-192-41.5 0-79.9 13.1-111.2 35.5L412.5 367.2zM0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0z\" class=\"\"></path></svg> <span class=\"sr-only\">Default Size</span></label></li><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"size-lg\" type=\"radio\" name=\"icon-size\" value=\"lg\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"size-lg\" class=\"margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><span>lg</span></label></li><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"size-xl\" type=\"radio\" name=\"icon-size\" value=\"xl\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"size-xl\" class=\"margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><span>xl</span></label></li><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"size-2xl\" type=\"radio\" name=\"icon-size\" value=\"2xl\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"size-2xl\" class=\"margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><span>2xl</span></label></li></ul></div> <div class=\"icon-details-styling-rotate position-relative \"><!----> <div class=\"size-xs padding-right-md padding-bottom-xs\"><span class=\"text-uppercase padding-right-sm\" style=\"letter-spacing: var(--letter-spacing-3xl); font-weight: var(--font-weight-black);\">Rotate</span><a href=\"/docs/web/style/rotate\" class=\"\" aria-label=\"With our web toolkit, you can easily rotate an icon with a CSS class. Click to learn more\" data-balloon-pos=\"right\" data-balloon-length=\"xlarge\" style=\"--link-color: var(--fa-gravy);\"><svg data-prefix=\"fas\" data-icon=\"circle-info\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"svg-inline--fa fa-circle-info\"><path fill=\"currentColor\" d=\"M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM224 160a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm-8 64l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z\" class=\"\"></path></svg></a></div> <ul class=\"custom-radio-button-set display-flex align-stretch \" style=\"--list-style-type: none; --padding-left: 0; --list-margin-top: 0; flex-grow: 1; gap: var(--spacing-xs);\"><li class=\"position-relative\" style=\"flex-grow: 0; display: flex; text-align: center;\"><input id=\"rotate-none\" type=\"radio\" name=\"icon-rotate\" value=\"\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"rotate-none\" aria-label=\"Remove Rotation\" data-balloon-pos=\"up\" class=\"margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 0; background-color: var(--fa-lt-gravy);\"><svg data-prefix=\"fas\" data-icon=\"ban\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"svg-inline--fa fa-ban\" style=\"vertical-align: middle;\"><path fill=\"currentColor\" d=\"M367.2 412.5L99.5 144.8c-22.4 31.4-35.5 69.8-35.5 111.2 0 106 86 192 192 192 41.5 0 79.9-13.1 111.2-35.5zm45.3-45.3c22.4-31.4 35.5-69.8 35.5-111.2 0-106-86-192-192-192-41.5 0-79.9 13.1-111.2 35.5L412.5 367.2zM0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0z\" class=\"\"></path></svg> <span class=\"sr-only\">No Rotation</span></label></li><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"rotate-90\" type=\"radio\" name=\"icon-rotate\" value=\"rotate-90\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"rotate-90\" aria-label=\"Rotate 90deg to the right\" data-balloon-pos=\"up\" class=\"margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><span>90°</span></label></li><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"rotate-180\" type=\"radio\" name=\"icon-rotate\" value=\"rotate-180\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"rotate-180\" aria-label=\"Rotate 180deg to the right\" data-balloon-pos=\"up\" class=\"margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><span>180°</span></label></li><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"rotate-270\" type=\"radio\" name=\"icon-rotate\" value=\"rotate-270\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"rotate-270\" aria-label=\"Rotate 270deg to the right\" data-balloon-pos=\"up\" class=\"margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><span>270°</span></label></li> <li class=\"position-relative \" style=\"padding-right: var(--spacing-4xs); flex-grow: 1; display: flex; text-align: center;\"><input id=\"rotate-custom\" type=\"radio\" name=\"icon-rotate\" value=\"rotate-custom\" class=\"sr-only\"> <label for=\"rotate-custom\" class=\"sr-only margin-0 padding-y-xs padding-x-sm\">\n          Rotate custom\n        </label> <input id=\"rotate-custom\" type=\"number\" size=\"5\" name=\"icon-rotate-custom\" placeholder=\"Custom...\" class=\"margin-0 text-center\" style=\"flex-grow: 1; --input-border-color: var(--fa-lt-gravy); --input-padding: var(--spacing-xs) var(--spacing-sm); --input-box-shadow: none;\"></li></ul></div> <div class=\"icon-details-styling-flip position-relative \"><!----> <div class=\"size-xs padding-right-md padding-bottom-xs\"><span class=\"text-uppercase padding-right-sm\" style=\"letter-spacing: var(--letter-spacing-3xl); font-weight: var(--font-weight-black);\">Flip</span><a href=\"/docs/web/style/rotate\" class=\"\" aria-label=\"With our web toolkit, you can easily flip an icon with a CSS class. Click to learn more\" data-balloon-pos=\"right\" data-balloon-length=\"xlarge\" style=\"--link-color: var(--fa-gravy);\"><svg data-prefix=\"fas\" data-icon=\"circle-info\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"svg-inline--fa fa-circle-info\"><path fill=\"currentColor\" d=\"M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM224 160a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm-8 64l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z\" class=\"\"></path></svg></a></div> <ul class=\"custom-radio-button-set display-flex align-stretch \" style=\"--list-style-type: none; --padding-left: 0; --list-margin-top: 0; flex-grow: 1; gap: var(--spacing-xs);\"><li class=\"position-relative\" style=\"flex-grow: 0; display: flex; text-align: center;\"><input id=\"flip-none\" type=\"radio\" name=\"icon-flip\" value=\"\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"flip-none\" aria-label=\"Remove Flipping\" data-balloon-pos=\"up\" class=\"margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 0; background-color: var(--fa-lt-gravy);\"><svg data-prefix=\"fas\" data-icon=\"ban\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"svg-inline--fa fa-ban\" style=\"vertical-align: middle;\"><path fill=\"currentColor\" d=\"M367.2 412.5L99.5 144.8c-22.4 31.4-35.5 69.8-35.5 111.2 0 106 86 192 192 192 41.5 0 79.9-13.1 111.2-35.5zm45.3-45.3c22.4-31.4 35.5-69.8 35.5-111.2 0-106-86-192-192-192-41.5 0-79.9 13.1-111.2 35.5L412.5 367.2zM0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0z\" class=\"\"></path></svg> <span class=\"sr-only\">No Flip</span></label></li><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"flip-horizontal\" type=\"radio\" name=\"icon-flip\" value=\"flip-horizontal\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"flip-horizontal\" aria-label=\"Flip Horizontal\" data-balloon-pos=\"up\" class=\"margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><svg data-prefix=\"fas\" data-icon=\"reflect-horizontal\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"svg-inline--fa fa-reflect-horizontal fa-lg\"><path fill=\"currentColor\" d=\"M256 32c13.3 0 24 10.7 24 24l0 400c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-400c0-13.3 10.7-24 24-24zM14.8 97.8c9-3.7 19.3-1.7 26.2 5.2L177 239c9.4 9.4 9.4 24.6 0 33.9L41 409c-6.9 6.9-17.2 8.9-26.2 5.2S0 401.7 0 392L0 120c0-9.7 5.8-18.5 14.8-22.2zM471 103c6.9-6.9 17.2-8.9 26.2-5.2S512 110.3 512 120l0 272c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2L335 273c-9.4-9.4-9.4-24.6 0-33.9L471 103z\" class=\"\"></path></svg> <span class=\"sr-only\">Flip Horizontal</span></label></li><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"flip-vertical\" type=\"radio\" name=\"icon-flip\" value=\"flip-vertical\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"flip-vertical\" aria-label=\"Flip Vertical\" data-balloon-pos=\"up\" class=\"margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><svg data-prefix=\"fas\" data-icon=\"reflect-vertical\" role=\"img\" viewBox=\"0 0 448 512\" aria-hidden=\"true\" class=\"svg-inline--fa fa-reflect-vertical fa-lg\"><path fill=\"currentColor\" d=\"M71 41c-6.9-6.9-8.9-17.2-5.2-26.2S78.3 0 88 0L360 0c9.7 0 18.5 5.8 22.2 14.8S383.8 34.1 377 41L241 177c-9.4 9.4-24.6 9.4-33.9 0L71 41zM0 256c0-13.3 10.7-24 24-24l400 0c13.3 0 24 10.7 24 24s-10.7 24-24 24L24 280c-13.3 0-24-10.7-24-24zM65.8 497.2c-3.7-9-1.7-19.3 5.2-26.2L207 335c9.4-9.4 24.6-9.4 33.9 0L377 471c6.9 6.9 8.9 17.2 5.2 26.2S369.7 512 360 512L88 512c-9.7 0-18.5-5.8-22.2-14.8z\" class=\"\"></path></svg> <span class=\"sr-only\">Flip Vertical</span></label></li><li class=\"position-relative\" style=\"flex-grow: 1; display: flex; text-align: center;\"><input id=\"flip-both\" type=\"radio\" name=\"icon-flip\" value=\"flip-both\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"flip-both\" aria-label=\"Flip Both\" data-balloon-pos=\"up\" class=\"margin-0 padding-y-xs padding-x-sm\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><svg data-prefix=\"fac\" data-icon=\"reflect-both\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"svg-inline--fa fa-reflect-both fa-lg\"><path fill=\"currentColor\" d=\"M413.564 19.7541C408.611 7.79657 396.943 1.11901e-05 384 1.11901e-05L128 0C115.057 -5.65747e-07 103.389 7.79655 98.4359 19.7541C93.4829 31.7117 96.2206 45.4755 105.373 54.6274L233.373 182.627C245.869 195.124 266.131 195.124 278.627 182.627L406.627 54.6274C415.779 45.4755 418.517 31.7117 413.564 19.7541ZM19.7541 98.4359C7.79655 103.389 0 115.057 0 128V384C0 396.943 7.79655 408.611 19.7541 413.564C31.7117 418.517 45.4755 415.779 54.6274 406.627L182.627 278.627C195.124 266.131 195.124 245.869 182.627 233.373L54.6274 105.373C45.4755 96.2207 31.7117 93.4829 19.7541 98.4359ZM512 128C512 115.057 504.203 103.389 492.246 98.4359C480.288 93.4829 466.525 96.2207 457.373 105.373L329.373 233.373C316.876 245.869 316.876 266.131 329.373 278.627L457.373 406.627C466.525 415.779 480.288 418.517 492.246 413.564C504.203 408.611 512 396.943 512 384V128ZM413.564 492.246C408.611 504.203 396.943 512 384 512H128C115.057 512 103.389 504.203 98.4358 492.246C93.4828 480.288 96.2206 466.525 105.373 457.373L233.373 329.373C245.869 316.876 266.131 316.876 278.627 329.373L406.627 457.373C415.779 466.525 418.517 480.288 413.564 492.246Z\" class=\"\"></path></svg> <span class=\"sr-only\">Flip Both</span></label></li></ul></div></form>",
+      "fields": [
+        {
+          "name": "icon-color",
+          "type": "radio",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "icon-color",
+          "type": "radio",
+          "value": "#FFD43B",
+          "required": false
+        },
+        {
+          "name": "icon-color",
+          "type": "radio",
+          "value": "#63E6BE",
+          "required": false
+        },
+        {
+          "name": "icon-color",
+          "type": "radio",
+          "value": "#74C0FC",
+          "required": false
+        },
+        {
+          "name": "icon-color",
+          "type": "radio",
+          "value": "#B197FC",
+          "required": false
+        },
+        {
+          "name": "icon-color",
+          "type": "radio",
+          "value": "color-custom",
+          "required": false
+        },
+        {
+          "name": "",
+          "type": "color",
+          "value": "#1e3050",
+          "required": false
+        },
+        {
+          "name": "icon-size",
+          "type": "radio",
+          "value": "2xs",
+          "required": false
+        },
+        {
+          "name": "icon-size",
+          "type": "radio",
+          "value": "xs",
+          "required": false
+        },
+        {
+          "name": "icon-size",
+          "type": "radio",
+          "value": "sm",
+          "required": false
+        },
+        {
+          "name": "icon-size",
+          "type": "radio",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "icon-size",
+          "type": "radio",
+          "value": "lg",
+          "required": false
+        },
+        {
+          "name": "icon-size",
+          "type": "radio",
+          "value": "xl",
+          "required": false
+        },
+        {
+          "name": "icon-size",
+          "type": "radio",
+          "value": "2xl",
+          "required": false
+        },
+        {
+          "name": "icon-rotate",
+          "type": "radio",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "icon-rotate",
+          "type": "radio",
+          "value": "rotate-90",
+          "required": false
+        },
+        {
+          "name": "icon-rotate",
+          "type": "radio",
+          "value": "rotate-180",
+          "required": false
+        },
+        {
+          "name": "icon-rotate",
+          "type": "radio",
+          "value": "rotate-270",
+          "required": false
+        },
+        {
+          "name": "icon-rotate",
+          "type": "radio",
+          "value": "rotate-custom",
+          "required": false
+        },
+        {
+          "name": "icon-rotate-custom",
+          "type": "number",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "icon-flip",
+          "type": "radio",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "icon-flip",
+          "type": "radio",
+          "value": "flip-horizontal",
+          "required": false
+        },
+        {
+          "name": "icon-flip",
+          "type": "radio",
+          "value": "flip-vertical",
+          "required": false
+        },
+        {
+          "name": "icon-flip",
+          "type": "radio",
+          "value": "flip-both",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://fontawesome.com/",
+      "method": "get",
+      "html": "<form id=\"icon-animations\" action=\"\" class=\"icon-details-animations margin-bottom-2xl laptop:margin-top-2xl laptop:margin-bottom-0\" style=\"--color-input-min-width: var(--icon-details-input-color-min-width); display: none;\"><div class=\"styling-animate\"><div class=\"size-xs padding-right-md padding-bottom-md\" style=\"flex-shrink: 0;\"><span class=\"text-uppercase padding-right-sm\" style=\"letter-spacing: var(--letter-spacing-3xl); font-weight: var(--font-weight-black);\">Animate</span> <a href=\"/docs/web/style/animate\" class=\"\" aria-label=\"With our web toolkit, you can easily add animations to an icon with a CSS class. Click to learn more\" data-balloon-pos=\"right\" data-balloon-length=\"xlarge\" style=\"--link-color: var(--fa-gravy);\"><svg data-prefix=\"fas\" data-icon=\"circle-info\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"svg-inline--fa fa-circle-info\"><path fill=\"currentColor\" d=\"M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM224 160a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm-8 64l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z\" class=\"\"></path></svg></a></div> <ul class=\"custom-radio-button-set display-flex align-stretch flex-wrap\" style=\"--list-style-type: none; --padding-left: 0; --list-margin-top: 0; flex-grow: 1; gap: var(--spacing-xs);\"><li class=\"icon-details-animation-button position-relative\" style=\"display: flex; text-align: center; align-items: center;\"><input id=\"animations-none\" type=\"radio\" name=\"icon-animations\" value=\"\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"animations-none\" class=\"margin-0 padding-y-xs padding-x-xl\" style=\"border-radius: var(--border-radius-md); flex-grow: 1; background-color: var(--fa-lt-gravy);\"><svg data-prefix=\"fas\" data-icon=\"ban\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"padding-right-4xs svg-inline--fa fa-ban\"><path fill=\"currentColor\" d=\"M367.2 412.5L99.5 144.8c-22.4 31.4-35.5 69.8-35.5 111.2 0 106 86 192 192 192 41.5 0 79.9-13.1 111.2-35.5zm45.3-45.3c22.4-31.4 35.5-69.8 35.5-111.2 0-106-86-192-192-192-41.5 0-79.9 13.1-111.2 35.5L412.5 367.2zM0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0z\" class=\"\"></path></svg> <span>No Animation</span></label></li><li class=\"icon-details-animation-button position-relative\" style=\"display: flex; text-align: center; align-items: center;\"><input id=\"animations-beat\" type=\"radio\" name=\"icon-animations\" value=\"beat\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"animations-beat\" class=\"margin-0 padding-y-xs padding-x-xl\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><svg data-prefix=\"fas\" data-icon=\"heart\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"padding-right-4xs svg-inline--fa fa-heart fa-lg\"><path fill=\"currentColor\" d=\"M241 87.1l15 20.7 15-20.7C296 52.5 336.2 32 378.9 32 452.4 32 512 91.6 512 165.1l0 2.6c0 112.2-139.9 242.5-212.9 298.2-12.4 9.4-27.6 14.1-43.1 14.1s-30.8-4.6-43.1-14.1C139.9 410.2 0 279.9 0 167.7l0-2.6C0 91.6 59.6 32 133.1 32 175.8 32 216 52.5 241 87.1z\" class=\"\"></path></svg> <span>Beat</span></label></li><li class=\"icon-details-animation-button position-relative\" style=\"display: flex; text-align: center; align-items: center;\"><input id=\"animations-beat-fade\" type=\"radio\" name=\"icon-animations\" value=\"beat-fade\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"animations-beat-fade\" class=\"margin-0 padding-y-xs padding-x-xl\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><svg data-prefix=\"fas\" data-icon=\"heart-half-stroke\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"padding-right-4xs svg-inline--fa fa-heart-half-stroke fa-lg\"><path fill=\"currentColor\" d=\"M241.5 87.1l15 20.7 15-20.7c25-34.6 65.2-55.1 107.9-55.1 73.5 0 133.1 59.6 133.1 133.1l0 2.6c0 112.2-139.9 242.5-212.9 298.2-12.3 9.4-27.5 14.1-43.1 14.1s-30.8-4.7-43.1-14.1l0 0C140.4 410.2 .5 279.9 .5 167.7l0-2.6C.5 91.6 60.1 32 133.6 32 176.3 32 216.5 52.5 241.5 87.1zm15 328.9c2.9 0 4.1-.8 4.2-.9 33.8-25.8 83.1-69 123.3-117.8 42.3-51.4 64.5-97.1 64.5-129.6l0-2.6c0-38.2-30.9-69.1-69.1-69.1-22.2 0-43 10.6-56 28.6-29.8 41.2-52.1 72-66.9 92.4l0 198.9z\" class=\"\"></path></svg> <span>Beat Fade</span></label></li><li class=\"icon-details-animation-button position-relative\" style=\"display: flex; text-align: center; align-items: center;\"><input id=\"animations-bounce\" type=\"radio\" name=\"icon-animations\" value=\"bounce\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"animations-bounce\" class=\"margin-0 padding-y-xs padding-x-xl\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><svg data-prefix=\"fas\" data-icon=\"circle\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"padding-right-4xs svg-inline--fa fa-circle fa-lg\"><path fill=\"currentColor\" d=\"M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0z\" class=\"\"></path></svg> <span>Bounce</span></label></li><li class=\"icon-details-animation-button position-relative\" style=\"display: flex; text-align: center; align-items: center;\"><input id=\"animations-fade\" type=\"radio\" name=\"icon-animations\" value=\"fade\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"animations-fade\" class=\"margin-0 padding-y-xs padding-x-xl\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><svg data-prefix=\"fas\" data-icon=\"sliders-simple\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"padding-right-4xs svg-inline--fa fa-sliders-simple fa-lg\"><path fill=\"currentColor\" d=\"M96 384a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm90.5-64c-13.2-37.3-48.7-64-90.5-64-53 0-96 43-96 96s43 96 96 96c41.8 0 77.4-26.7 90.5-64L480 384c17.7 0 32-14.3 32-32s-14.3-32-32-32l-293.5 0zM448 160a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM325.5 128L32 128c-17.7 0-32 14.3-32 32s14.3 32 32 32l293.5 0c13.2 37.3 48.7 64 90.5 64 53 0 96-43 96-96s-43-96-96-96c-41.8 0-77.4 26.7-90.5 64z\" class=\"\"></path></svg> <span>Fade</span></label></li><li class=\"icon-details-animation-button position-relative\" style=\"display: flex; text-align: center; align-items: center;\"><input id=\"animations-flip\" type=\"radio\" name=\"icon-animations\" value=\"flip\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"animations-flip\" class=\"margin-0 padding-y-xs padding-x-xl\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><svg data-prefix=\"fas\" data-icon=\"reflect-horizontal\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"padding-right-4xs svg-inline--fa fa-reflect-horizontal fa-lg\"><path fill=\"currentColor\" d=\"M256 32c13.3 0 24 10.7 24 24l0 400c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-400c0-13.3 10.7-24 24-24zM14.8 97.8c9-3.7 19.3-1.7 26.2 5.2L177 239c9.4 9.4 9.4 24.6 0 33.9L41 409c-6.9 6.9-17.2 8.9-26.2 5.2S0 401.7 0 392L0 120c0-9.7 5.8-18.5 14.8-22.2zM471 103c6.9-6.9 17.2-8.9 26.2-5.2S512 110.3 512 120l0 272c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2L335 273c-9.4-9.4-9.4-24.6 0-33.9L471 103z\" class=\"\"></path></svg> <span>Flip</span></label></li><li class=\"icon-details-animation-button position-relative\" style=\"display: flex; text-align: center; align-items: center;\"><input id=\"animations-shake\" type=\"radio\" name=\"icon-animations\" value=\"shake\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"animations-shake\" class=\"margin-0 padding-y-xs padding-x-xl\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><svg data-prefix=\"fas\" data-icon=\"bell-ring\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"padding-right-4xs svg-inline--fa fa-bell-ring fa-lg\"><path fill=\"currentColor\" d=\"M112.6 41.4c9.6-9.1 10-24.3 .8-33.9S89-2.5 79.4 6.6C30.5 53.2 0 119.1 0 192 0 205.3 10.7 216 24 216s24-10.7 24-24c0-59.3 24.8-112.7 64.6-150.6zm320-34.8c-9.6-9.1-24.8-8.8-33.9 .8s-8.8 24.8 .8 33.9c39.8 37.9 64.6 91.4 64.6 150.6 0 13.3 10.7 24 24 24s24-10.7 24-24c0-72.9-30.5-138.8-79.4-185.4zM256 0c-17.7 0-32 14.3-32 32l0 3.2C151 50 96 114.6 96 192l0 21.7c0 48.1-16.4 94.8-46.4 132.4l-9.8 12.2c-5 6.3-7.8 14.1-7.8 22.2 0 19.6 15.9 35.5 35.5 35.5l376.9 0c19.6 0 35.5-15.9 35.5-35.5 0-8.1-2.7-15.9-7.8-22.2l-9.8-12.2C432.4 308.5 416 261.8 416 213.7l0-21.7c0-77.4-55-142-128-156.8l0-3.2c0-17.7-14.3-32-32-32zM194 464c7.1 27.6 32.2 48 62 48s54.9-20.4 62-48l-124 0z\" class=\"\"></path></svg> <span>Shake</span></label></li><li class=\"icon-details-animation-button position-relative\" style=\"display: flex; text-align: center; align-items: center;\"><input id=\"animations-spin\" type=\"radio\" name=\"icon-animations\" value=\"spin\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"animations-spin\" class=\"margin-0 padding-y-xs padding-x-xl\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><svg data-prefix=\"fas\" data-icon=\"rotate-right\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"padding-right-4xs svg-inline--fa fa-rotate-right fa-lg\"><path fill=\"currentColor\" d=\"M488 192l-144 0c-9.7 0-18.5-5.8-22.2-14.8s-1.7-19.3 5.2-26.2l46.7-46.7c-75.3-58.6-184.3-53.3-253.5 15.9-75 75-75 196.5 0 271.5s196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c94.3-94.3 243.7-99.6 344.3-16.2L471 7c6.9-6.9 17.2-8.9 26.2-5.2S512 14.3 512 24l0 144c0 13.3-10.7 24-24 24z\" class=\"\"></path></svg> <span>Spin</span></label></li><li class=\"icon-details-animation-button position-relative\" style=\"display: flex; text-align: center; align-items: center;\"><input id=\"animations-spin-reverse\" type=\"radio\" name=\"icon-animations\" value=\"spin-reverse\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"animations-spin-reverse\" class=\"margin-0 padding-y-xs padding-x-xl\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><svg data-prefix=\"fas\" data-icon=\"rotate-left\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"padding-right-4xs svg-inline--fa fa-rotate-left fa-lg\"><path fill=\"currentColor\" d=\"M24 192l144 0c9.7 0 18.5-5.8 22.2-14.8s1.7-19.3-5.2-26.2l-46.7-46.7c75.3-58.6 184.3-53.3 253.5 15.9 75 75 75 196.5 0 271.5s-196.5 75-271.5 0c-10.2-10.2-19-21.3-26.4-33-9.5-14.9-29.3-19.3-44.2-9.8s-19.3 29.3-9.8 44.2C49.7 408.7 61.4 423.5 75 437 175 537 337 537 437 437S537 175 437 75C342.8-19.3 193.3-24.7 92.7 58.8L41 7C34.1 .2 23.8-1.9 14.8 1.8S0 14.3 0 24L0 168c0 13.3 10.7 24 24 24z\" class=\"\"></path></svg> <span>Spin Reverse</span></label></li><li class=\"icon-details-animation-button position-relative\" style=\"display: flex; text-align: center; align-items: center;\"><input id=\"animations-spin-pulse\" type=\"radio\" name=\"icon-animations\" value=\"spin-pulse\" style=\"appearance: none; position: absolute; box-shadow: none;\"> <label for=\"animations-spin-pulse\" class=\"margin-0 padding-y-xs padding-x-xl\" style=\"border-radius: var(--border-radius-md); flex-grow: 1;\"><svg data-prefix=\"fas\" data-icon=\"spinner\" role=\"img\" viewBox=\"0 0 512 512\" aria-hidden=\"true\" class=\"padding-right-4xs svg-inline--fa fa-spinner fa-lg\"><path fill=\"currentColor\" d=\"M208 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm0 416a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM48 208a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm368 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM75 369.1A48 48 0 1 1 142.9 437 48 48 0 1 1 75 369.1zM75 75A48 48 0 1 1 142.9 142.9 48 48 0 1 1 75 75zM437 369.1A48 48 0 1 1 369.1 437 48 48 0 1 1 437 369.1z\" class=\"\"></path></svg> <span>Spin Pulse</span></label></li></ul></div></form>",
+      "fields": [
+        {
+          "name": "icon-animations",
+          "type": "radio",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "icon-animations",
+          "type": "radio",
+          "value": "beat",
+          "required": false
+        },
+        {
+          "name": "icon-animations",
+          "type": "radio",
+          "value": "beat-fade",
+          "required": false
+        },
+        {
+          "name": "icon-animations",
+          "type": "radio",
+          "value": "bounce",
+          "required": false
+        },
+        {
+          "name": "icon-animations",
+          "type": "radio",
+          "value": "fade",
+          "required": false
+        },
+        {
+          "name": "icon-animations",
+          "type": "radio",
+          "value": "flip",
+          "required": false
+        },
+        {
+          "name": "icon-animations",
+          "type": "radio",
+          "value": "shake",
+          "required": false
+        },
+        {
+          "name": "icon-animations",
+          "type": "radio",
+          "value": "spin",
+          "required": false
+        },
+        {
+          "name": "icon-animations",
+          "type": "radio",
+          "value": "spin-reverse",
+          "required": false
+        },
+        {
+          "name": "icon-animations",
+          "type": "radio",
+          "value": "spin-pulse",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

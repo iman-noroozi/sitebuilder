@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سایت‌ساز - پنل مدیریت</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-globe"></i>
+                    <span>سایت‌ساز</span>
+                </div>
+                <nav class="nav">
+                    <a href="#templates" class="nav-item active" data-page="templates">
+                        <i class="fas fa-layer-group"></i>
+                        قالب‌ها
+                    </a>
+                    <a href="#sites" class="nav-item" data-page="sites">
+                        <i class="fas fa-globe"></i>
+                        سایت‌ها
+                    </a>
+                    <a href="#extract" class="nav-item" data-page="extract">
+                        <i class="fas fa-download"></i>
+                        استخراج جدید
+                    </a>
+                </nav>
+                <div class="user-menu">
+                    <i class="fas fa-user"></i>
+                    <span>کاربر</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Templates Page -->
+            <div id="templates-page" class="page active">
+                <div class="page-header">
+                    <h1>قالب‌های استخراج شده</h1>
+                    <button class="btn btn-primary" onclick="showPage('extract')">
+                        <i class="fas fa-plus"></i>
+                        استخراج جدید
+                    </button>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-card">
+                        <i class="fas fa-layer-group"></i>
+                        <div>
+                            <span class="stat-number" id="total-templates">0</span>
+                            <span class="stat-label">کل قالب‌ها</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <span class="stat-number" id="completed-templates">0</span>
+                            <span class="stat-label">تکمیل شده</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <span class="stat-number" id="pending-templates">0</span>
+                            <span class="stat-label">در انتظار</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="templates-grid" id="templates-grid">
+                    <!-- Template cards will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Sites Page -->
+            <div id="sites-page" class="page">
+                <div class="page-header">
+                    <h1>سایت‌های تولیدی</h1>
+                    <button class="btn btn-primary" onclick="createNewSite()">
+                        <i class="fas fa-plus"></i>
+                        سایت جدید
+                    </button>
+                </div>
+                
+                <div class="sites-grid" id="sites-grid">
+                    <!-- Site cards will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Extract Page -->
+            <div id="extract-page" class="page">
+                <div class="page-header">
+                    <h1>استخراج قالب جدید</h1>
+                </div>
+                
+                <div class="extract-form">
+                    <form id="extraction-form">
+                        <div class="form-group">
+                            <label for="url">آدرس سایت</label>
+                            <input type="url" id="url" name="url" required 
+                                   placeholder="https://example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="title">عنوان قالب (اختیاری)</label>
+                            <input type="text" id="title" name="title" 
+                                   placeholder="نام قالب">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="take_screenshot" name="take_screenshot" checked>
+                                    <span class="checkmark"></span>
+                                    گرفتن اسکرین‌شات
+                                </label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="extract_images" name="extract_images" checked>
+                                    <span class="checkmark"></span>
+                                    دانلود تصاویر
+                                </label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="extract_fonts" name="extract_fonts" checked>
+                                    <span class="checkmark"></span>
+                                    دانلود فونت‌ها
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="extract-btn">
+                                <i class="fas fa-download"></i>
+                                شروع استخراج
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <!-- Progress Section -->
+                    <div class="extraction-progress" id="extraction-progress" style="display: none;">
+                        <h3>در حال استخراج...</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <div class="progress-text" id="progress-text">شروع فرآیند...</div>
+                        
+                        <div class="logs" id="extraction-logs">
+                            <!-- Logs will appear here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for Template Preview -->
+    <div class="modal" id="preview-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">پیش‌نمایش قالب</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Preview content -->
+            </div>
+        </div>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+{% extends 'sitebuilder_app/base.html' %}
+{% load static %}
+
+{% block title %}لیست ابزارهای کسب‌وکار - پیسان وب{% endblock %}
+
+{% block extra_css %}
+<style>
+    .tools-list-page {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+    
+    .page-header {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .filters-section {
+        background: white;
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .tool-card {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border-left: 4px solid #667eea;
+    }
+    
+    .tool-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .tool-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+    
+    .tool-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+    }
+    
+    .tool-category {
+        background: #e3f2fd;
+        color: #1976d2;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    
+    .tool-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+    
+    .tool-description {
+        color: #666;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+    
+    .tool-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        color: #888;
+    }
+    
+    .tool-files {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .tool-actions {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+    
+    .btn-view {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .btn-view:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        color: white;
+        text-decoration: none;
+    }
+    
+    .btn-secondary {
+        background: #f8f9fa;
+        color: #666;
+        border: 1px solid #ddd;
+    }
+    
+    .btn-secondary:hover {
+        background: #e9ecef;
+        color: #333;
+    }
+    
+    .pagination-wrapper {
+        background: white;
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .empty-state {
+        background: white;
+        border-radius: 15px;
+        padding: 3rem;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .empty-icon {
+        font-size: 4rem;
+        color: #ddd;
+        margin-bottom: 1rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="tools-list-page">
+    <div class="container">
+        <!-- Header -->
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="mb-3">
+                        <i class="fas fa-tools text-primary me-3"></i>
+                        لیست ابزارهای کسب‌وکار
+                    </h1>
+                    <p class="text-muted mb-0">
+                        مشاهده و مدیریت تمام ابزارهای استخراج شده
+                    </p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="{% url 'business_tools_dashboard' %}" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-left me-2"></i>بازگشت به داشبورد
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-section">
+            <form method="get" class="row g-3">
+                <div class="col-md-4">
+                    <label for="search" class="form-label">جستجو</label>
+                    <input type="text" class="form-control" id="search" name="search" 
+                           value="{{ search }}" placeholder="جستجو در نام یا توضیحات...">
+                </div>
+                <div class="col-md-4">
+                    <label for="category" class="form-label">دسته‌بندی</label>
+                    <select class="form-select" id="category" name="category">
+                        <option value="">همه دسته‌بندی‌ها</option>
+                        {% for category in categories %}
+                        <option value="{{ category }}" {% if category == current_category %}selected{% endif %}>
+                            {{ category }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary me-2">
+                        <i class="fas fa-search me-2"></i>جستجو
+                    </button>
+                    <a href="{% url 'business_tools_list' %}" class="btn btn-outline-secondary">
+                        <i class="fas fa-times me-2"></i>پاک کردن
+                    </a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Tools Grid -->
+        {% if tools %}
+        <div class="tools-grid">
+            {% for tool in tools %}
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        {% if 'ai' in tool.category or 'chatbot' in tool.name %}
+                            <i class="fas fa-robot"></i>
+                        {% elif 'payment' in tool.name or 'financial' in tool.name %}
+                            <i class="fas fa-credit-card"></i>
+                        {% elif 'analytics' in tool.name or 'data' in tool.name %}
+                            <i class="fas fa-chart-bar"></i>
+                        {% else %}
+                            <i class="fas fa-tools"></i>
+                        {% endif %}
+                    </div>
+                    <span class="tool-category">{{ tool.category }}</span>
+                </div>
+                
+                <h5 class="tool-title">{{ tool.name }}</h5>
+                <p class="tool-description">{{ tool.description|default:"توضیحات در دسترس نیست" }}</p>
+                
+                <div class="tool-meta">
+                    <div class="tool-files">
+                        <i class="fas fa-file me-1"></i>
+                        {{ tool.files }} فایل
+                    </div>
+                    <div>
+                        <i class="fas fa-calendar me-1"></i>
+                        {{ tool.created_at|date:"Y/m/d" }}
+                    </div>
+                </div>
+                
+                <div class="tool-actions">
+                    <a href="{% url 'business_tool_detail' tool.path|urlencode %}" class="btn-view">
+                        <i class="fas fa-eye"></i>
+                        مشاهده جزئیات
+                    </a>
+                    <button class="btn-view btn-secondary">
+                        <i class="fas fa-download"></i>
+                        دانلود
+                    </button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        {% if tools.has_other_pages %}
+        <div class="pagination-wrapper">
+            <nav aria-label="صفحه‌بندی ابزارها">
+                <ul class="pagination justify-content-center">
+                    {% if tools.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ tools.previous_page_number }}{% if search %}&search={{ search }}{% endif %}{% if current_category %}&category={{ current_category }}{% endif %}">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+                    
+                    {% for num in tools.paginator.page_range %}
+                    {% if tools.number == num %}
+                    <li class="page-item active">
+                        <span class="page-link">{{ num }}</span>
+                    </li>
+                    {% elif num > tools.number|add:'-3' and num < tools.number|add:'3' %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ num }}{% if search %}&search={{ search }}{% endif %}{% if current_category %}&category={{ current_category }}{% endif %}">{{ num }}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                    
+                    {% if tools.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ tools.next_page_number }}{% if search %}&search={{ search }}{% endif %}{% if current_category %}&category={{ current_category }}{% endif %}">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+        {% endif %}
+        
+        {% else %}
+        <!-- Empty State -->
+        <div class="empty-state">
+            <div class="empty-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <h3 class="mb-3">ابزاری یافت نشد</h3>
+            <p class="text-muted mb-4">
+                {% if search or current_category %}
+                    با فیلترهای انتخاب شده ابزاری یافت نشد. فیلترها را تغییر دهید یا پاک کنید.
+                {% else %}
+                    هنوز ابزاری استخراج نشده است. لطفاً منتظر بمانید یا با تیم پشتیبانی تماس بگیرید.
+                {% endif %}
+            </p>
+            <a href="{% url 'business_tools_list' %}" class="btn btn-primary">
+                <i class="fas fa-refresh me-2"></i>بارگذاری مجدد
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Auto-submit form on category change
+    document.getElementById('category').addEventListener('change', function() {
+        this.form.submit();
+    });
+    
+    // Add loading animation for cards
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.tool-card');
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            }, index * 100);
+        });
+    });
+</script>
+{% endblock %}

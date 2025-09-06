@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}مدیریت قالب‌های استخراج شده - پیسان وب{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+            <div class="position-sticky pt-3">
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>دسته‌بندی‌ها</span>
+                </h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link {% if not current_category %}active{% endif %}" href="{% url 'extracted_templates_management' %}">
+                            همه قالب‌ها ({{ total_templates }})
+                        </a>
+                    </li>
+                    {% for category in categories %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if current_category == category %}active{% endif %}" 
+                           href="{% url 'extracted_templates_management' %}?category={{ category }}">
+                            {{ category }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">مدیریت قالب‌های استخراج شده</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group me-2">
+                        <a href="{% url 'template_analytics' %}" class="btn btn-sm btn-outline-secondary">
+                            <i class="fas fa-chart-bar"></i> آمار
+                        </a>
+                        <a href="{% url 'template_management' %}" class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-database"></i> قالب‌های دیتابیس
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search and filters -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <form method="GET" class="d-flex">
+                        <input type="text" name="search" class="form-control me-2" 
+                               placeholder="جستجو در قالب‌ها..." value="{{ search }}">
+                        <button type="submit" class="btn btn-outline-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="col-md-6 text-end">
+                    <span class="text-muted">تعداد کل: {{ total_templates }} قالب</span>
+                </div>
+            </div>
+
+            <!-- Templates grid -->
+            <div class="row">
+                {% for template in extracted_templates %}
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h6 class="card-title">{{ template.name }}</h6>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    <i class="fas fa-folder"></i> {{ template.category }} / {{ template.subcategory }}
+                                </small>
+                            </p>
+                            <div class="mb-2">
+                                <span class="badge bg-primary">{{ template.file_count }} فایل</span>
+                                <span class="badge bg-secondary">{{ template.size|filesizeformat }}</span>
+                            </div>
+                            <div class="mb-2">
+                                {% if 'index.html' in template.files %}
+                                <span class="badge bg-success">HTML</span>
+                                {% endif %}
+                                {% if 'style.css' in template.files %}
+                                <span class="badge bg-info">CSS</span>
+                                {% endif %}
+                                {% if 'script.js' in template.files %}
+                                <span class="badge bg-warning">JS</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="btn-group w-100" role="group">
+                                <a href="{% url 'extracted_template_detail' template.path|urlencode %}" 
+                                   class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-eye"></i> مشاهده
+                                </a>
+                                <a href="{% url 'import_template_to_database' template.path|urlencode %}" 
+                                   class="btn btn-sm btn-outline-success">
+                                    <i class="fas fa-download"></i> وارد کردن
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col-12">
+                    <div class="alert alert-info text-center">
+                        <i class="fas fa-info-circle"></i>
+                        هیچ قالب استخراج شده‌ای یافت نشد.
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            {% if extracted_templates.has_other_pages %}
+            <nav aria-label="صفحه‌بندی قالب‌ها">
+                <ul class="pagination justify-content-center">
+                    {% if extracted_templates.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ extracted_templates.previous_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}{% if search %}&search={{ search }}{% endif %}">
+                            قبلی
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% for num in extracted_templates.paginator.page_range %}
+                    {% if extracted_templates.number == num %}
+                    <li class="page-item active">
+                        <span class="page-link">{{ num }}</span>
+                    </li>
+                    {% elif num > extracted_templates.number|add:'-3' and num < extracted_templates.number|add:'3' %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ num }}{% if current_category %}&category={{ current_category }}{% endif %}{% if search %}&search={{ search }}{% endif %}">
+                            {{ num }}
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if extracted_templates.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ extracted_templates.next_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}{% if search %}&search={{ search }}{% endif %}">
+                            بعدی
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 48px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+.sidebar .nav-link.active {
+    color: #2470dc;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+</style>
+{% endblock %}

@@ -1,0 +1,18 @@
+{
+    "name": "Template 1",
+    "description": "قالب نمونه برای تست ویرایشگر",
+    "category": "business",
+    "preview": "template1_preview.jpg",
+    "html": "<div class=\"hero-section\" style=\"background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 100px 0; text-align: center;\"><div class=\"container\"><h1 style=\"font-size: 3rem; margin-bottom: 20px;\">خوش آمدید به سایت ما</h1><p style=\"font-size: 1.2rem; margin-bottom: 30px;\">ما بهترین خدمات را ارائه می‌دهیم</p><button class=\"btn btn-primary btn-lg\">شروع کنید</button></div></div>",
+    "css": ".hero-section { min-height: 100vh; display: flex; align-items: center; } .btn-primary { background-color: #007bff; border-color: #007bff; padding: 12px 30px; font-size: 16px; border-radius: 25px; }",
+    "blocks": [
+        {
+            "id": "hero_1",
+            "type": "hero",
+            "name": "بخش اصلی 1",
+            "html": "<div class=\"hero-section\"><h1>عنوان اصلی</h1><p>توضیحات</p><button>دکمه</button></div>",
+            "editable": true,
+            "draggable": true
+        }
+    ]
+}

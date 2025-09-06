@@ -1,0 +1,13 @@
+
+	@media only screen and (min-width: 0px) and (min-height: 0px) {
+		div[id^="bsa-zone_1718802255385-8_123456"] {
+			min-width: 300px;
+			min-height: 50px;
+		}
+	}
+	@media only screen and (min-width: 880px) and (min-height: 0px) {
+		div[id^="bsa-zone_1718802255385-8_123456"] {
+			min-width: 120px;
+			min-height: 60px;
+		}
+	}

@@ -1,0 +1,27 @@
+{
+  "extractor": "DeepWebsiteCloner v1.0",
+  "extractedAt": "2025-07-28T14:26:25.605Z",
+  "baseUrl": "https://fonts.google.com/",
+  "domain": "fonts.google.com",
+  "config": {
+    "extractCSS": true,
+    "extractJS": false,
+    "extractImages": true,
+    "extractFonts": true,
+    "extractVideos": false,
+    "extractDocuments": true,
+    "extractForms": true,
+    "extractMetadata": true,
+    "followInternalLinks": false,
+    "preserveDirectory": true,
+    "generateSitemap": true,
+    "outputDir": "enhanced_resources\\fonts",
+    "maxDepth": 1,
+    "delay": 1000
+  },
+  "statistics": {
+    "totalPages": 1,
+    "totalAssets": 5,
+    "maxDepth": 1
+  }
+}

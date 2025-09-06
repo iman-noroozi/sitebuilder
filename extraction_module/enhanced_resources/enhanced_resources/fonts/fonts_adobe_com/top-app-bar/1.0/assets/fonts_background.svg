@@ -1,0 +1,35 @@
+<svg id="uuid-55a023bc-746a-4495-b0d9-dea5d4e44849" data-name="for production" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 56" preserveAspectRatio="none">
+  <defs>
+    <style>
+      .uuid-7229697b-e66a-449a-91a5-77d271e7c4d6 {
+        fill: url(#uuid-22717423-b22b-4a2d-8f24-c9a38f31675b);
+      }
+
+      .uuid-4b344ea5-94cc-4eb1-b9d2-cf9eec2f8c2f {
+        fill: url(#uuid-0dab46fc-9b0e-4483-a459-f52ad2a35dfd);
+      }
+
+      .uuid-d794e4d7-a08c-49c5-a390-392a22f74433 {
+        fill: #1d0502;
+      }
+
+      .uuid-298e3c3b-5bd2-4f74-8fa1-13fdcc66411b {
+        fill: url(#uuid-5cbda88f-5d7c-4de7-8efc-7d06aa954a61);
+      }
+    </style>
+    <radialGradient id="uuid-0dab46fc-9b0e-4483-a459-f52ad2a35dfd" cx="709.268" cy="-338.562" fx="709.268" fy="-338.562" r="1" gradientTransform="translate(-166264.478 350740.135) rotate(-90) scale(494.235 -493.763)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#930000"/>
+      <stop offset="1" stop-color="#930000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="uuid-22717423-b22b-4a2d-8f24-c9a38f31675b" cx="709.268" cy="-338.563" fx="709.268" fy="-338.563" r="1" gradientTransform="translate(-166795.865 350740.135) rotate(-90) scale(494.235 -494.235)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#903300"/>
+      <stop offset="1" stop-color="#903300" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="uuid-5cbda88f-5d7c-4de7-8efc-7d06aa954a61" r="1" xlink:href="#uuid-0dab46fc-9b0e-4483-a459-f52ad2a35dfd"/>
+  </defs>
+  <rect class="uuid-d794e4d7-a08c-49c5-a390-392a22f74433" x="0" width="1440" height="56"/>
+  <path class="uuid-4b344ea5-94cc-4eb1-b9d2-cf9eec2f8c2f" d="M1358.645,0h-370.474c7.808,18.132,14.562,36.824,20.184,56h370.454c-5.617-19.176-12.365-37.868-20.165-56Z"/>
+  <path class="uuid-7229697b-e66a-449a-91a5-77d271e7c4d6" d="M79.889,0c-7.808,18.132-14.562,36.824-20.184,56h371.365c5.617-19.176,12.365-37.868,20.165-56H79.889Z"/>
+  <path class="uuid-298e3c3b-5bd2-4f74-8fa1-13fdcc66411b" d="M451.235,0c-7.8,18.132-14.548,36.824-20.165,56h577.286c-5.622-19.176-12.377-37.868-20.184-56H451.235Z"/>
+  <path class="uuid-7229697b-e66a-449a-91a5-77d271e7c4d6" d="M451.235,0c-7.8,18.132-14.548,36.824-20.165,56h577.286c-5.622-19.176-12.377-37.868-20.184-56H451.235Z"/>
+</svg>

@@ -1,0 +1,15 @@
+{
+  "siteName": "html5_templates_com",
+  "totalFiles": 60,
+  "cssFiles": 2,
+  "jsFiles": 11,
+  "htmlFiles": 20,
+  "imageFiles": 12,
+  "fontFiles": 0,
+  "hasBootstrap": true,
+  "hasTailwind": false,
+  "hasMaterialUI": false,
+  "frameworks": [
+    "Bootstrap"
+  ]
+}

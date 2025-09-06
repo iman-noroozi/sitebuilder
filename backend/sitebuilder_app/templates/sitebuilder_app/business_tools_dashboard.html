@@ -1,0 +1,301 @@
+{% extends 'sitebuilder_app/base.html' %}
+{% load static %}
+
+{% block title %}داشبورد ابزارهای کسب‌وکار - پیسان وب{% endblock %}
+
+{% block extra_css %}
+<style>
+    .business-tools-dashboard {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+    
+    .dashboard-header {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .stat-card {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #667eea;
+        margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+        color: #666;
+        font-size: 0.9rem;
+    }
+    
+    .action-buttons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .action-btn {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .action-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        color: white;
+        text-decoration: none;
+    }
+    
+    .action-btn.secondary {
+        background: linear-gradient(45deg, #f093fb, #f5576c);
+    }
+    
+    .action-btn.success {
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+    }
+    
+    .tools-categories {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-top: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .category-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+        transition: background-color 0.3s ease;
+    }
+    
+    .category-item:hover {
+        background-color: #f8f9fa;
+    }
+    
+    .category-item:last-child {
+        border-bottom: none;
+    }
+    
+    .category-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .category-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: white;
+    }
+    
+    .category-icon.ai {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+    }
+    
+    .category-icon.business {
+        background: linear-gradient(45deg, #f093fb, #f5576c);
+    }
+    
+    .category-icon.data {
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+    }
+    
+    .category-icon.extracted {
+        background: linear-gradient(45deg, #43e97b, #38f9d7);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="business-tools-dashboard">
+    <div class="container">
+        <!-- Header -->
+        <div class="dashboard-header">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="mb-3">
+                        <i class="fas fa-tools text-primary me-3"></i>
+                        داشبورد ابزارهای کسب‌وکار
+                    </h1>
+                    <p class="text-muted mb-0">
+                        مدیریت و نظارت بر ابزارهای استخراج شده برای کسب‌وکارها
+                    </p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <div class="d-flex gap-2 justify-content-end">
+                        <a href="{% url 'business_tools_list' %}" class="btn btn-outline-primary">
+                            <i class="fas fa-list me-2"></i>لیست ابزارها
+                        </a>
+                        <a href="{% url 'business_tools_analytics' %}" class="btn btn-outline-success">
+                            <i class="fas fa-chart-bar me-2"></i>آمار
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">{{ tools_stats.total_tools }}</div>
+                <div class="stat-label">کل ابزارها</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ tools_stats.by_category|length }}</div>
+                <div class="stat-label">دسته‌بندی‌ها</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ tools_directories|length }}</div>
+                <div class="stat-label">پوشه‌های منبع</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ tools_stats.recent_additions|length }}</div>
+                <div class="stat-label">ابزارهای جدید</div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <a href="{% url 'business_tools_list' %}" class="action-btn">
+                <i class="fas fa-list"></i>
+                مشاهده تمام ابزارها
+            </a>
+            <a href="{% url 'business_tools_analytics' %}" class="action-btn secondary">
+                <i class="fas fa-chart-line"></i>
+                گزارش‌های تحلیلی
+            </a>
+            <a href="{% url 'extracted_templates_management' %}" class="action-btn success">
+                <i class="fas fa-palette"></i>
+                مدیریت قالب‌ها
+            </a>
+            <a href="{% url 'site_builder' %}" class="action-btn">
+                <i class="fas fa-cogs"></i>
+                سایت‌ساز
+            </a>
+        </div>
+
+        <!-- Tools Categories -->
+        <div class="tools-categories">
+            <h3 class="mb-4">
+                <i class="fas fa-folder-open text-primary me-2"></i>
+                دسته‌بندی ابزارها
+            </h3>
+            
+            <div class="category-item">
+                <div class="category-info">
+                    <div class="category-icon ai">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-1">ابزارهای هوش مصنوعی</h5>
+                        <p class="text-muted mb-0">چت‌بات‌ها، تولید تصویر، پردازش صدا</p>
+                    </div>
+                </div>
+                <a href="{% url 'business_tools_list' %}?category=tools" class="btn btn-sm btn-outline-primary">
+                    مشاهده
+                </a>
+            </div>
+            
+            <div class="category-item">
+                <div class="category-info">
+                    <div class="category-icon business">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-1">ابزارهای کسب‌وکار</h5>
+                        <p class="text-muted mb-0">مدیریت، حسابداری، بازاریابی</p>
+                    </div>
+                </div>
+                <a href="{% url 'business_tools_list' %}?category=business_tools" class="btn btn-sm btn-outline-primary">
+                    مشاهده
+                </a>
+            </div>
+            
+            <div class="category-item">
+                <div class="category-info">
+                    <div class="category-icon data">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-1">داده‌های استخراج شده</h5>
+                        <p class="text-muted mb-0">اطلاعات و منابع جمع‌آوری شده</p>
+                    </div>
+                </div>
+                <a href="{% url 'business_tools_list' %}?category=extracted_data" class="btn btn-sm btn-outline-primary">
+                    مشاهده
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Auto-refresh stats every 30 seconds
+    setInterval(function() {
+        location.reload();
+    }, 30000);
+    
+    // Add loading animation
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.stat-card');
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            }, index * 100);
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,547 @@
+{% extends 'sitebuilder_app/base.html' %}
+{% load static %}
+
+{% block title %}آمار و تحلیل ابزارهای کسب‌وکار - پیسان وب{% endblock %}
+
+{% block extra_css %}
+<style>
+    .analytics-page {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+    
+    .page-header {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stats-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .stat-card {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+        border-left: 4px solid #667eea;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .stat-card.success {
+        border-left-color: #28a745;
+    }
+    
+    .stat-card.warning {
+        border-left-color: #ffc107;
+    }
+    
+    .stat-card.info {
+        border-left-color: #17a2b8;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #667eea;
+        margin-bottom: 0.5rem;
+    }
+    
+    .stat-card.success .stat-number {
+        color: #28a745;
+    }
+    
+    .stat-card.warning .stat-number {
+        color: #ffc107;
+    }
+    
+    .stat-card.info .stat-number {
+        color: #17a2b8;
+    }
+    
+    .stat-label {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .stat-change {
+        font-size: 0.8rem;
+        color: #28a745;
+    }
+    
+    .stat-change.negative {
+        color: #dc3545;
+    }
+    
+    .charts-section {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .chart-container {
+        position: relative;
+        height: 300px;
+        margin: 1rem 0;
+    }
+    
+    .category-breakdown {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .category-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+        transition: background-color 0.3s ease;
+    }
+    
+    .category-item:hover {
+        background-color: #f8f9fa;
+    }
+    
+    .category-item:last-child {
+        border-bottom: none;
+    }
+    
+    .category-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .category-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: white;
+    }
+    
+    .category-icon.ai {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+    }
+    
+    .category-icon.business {
+        background: linear-gradient(45deg, #f093fb, #f5576c);
+    }
+    
+    .category-icon.data {
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+    }
+    
+    .category-icon.extracted {
+        background: linear-gradient(45deg, #43e97b, #38f9d7);
+    }
+    
+    .category-stats {
+        text-align: right;
+    }
+    
+    .category-count {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+    }
+    
+    .category-percentage {
+        font-size: 0.8rem;
+        color: #666;
+    }
+    
+    .recent-activity {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .activity-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .activity-item:last-child {
+        border-bottom: none;
+    }
+    
+    .activity-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        color: white;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+    }
+    
+    .activity-content {
+        flex: 1;
+    }
+    
+    .activity-title {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 0.25rem;
+    }
+    
+    .activity-time {
+        font-size: 0.8rem;
+        color: #666;
+    }
+    
+    .export-section {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .export-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .btn-export {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .btn-export:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        color: white;
+        text-decoration: none;
+    }
+    
+    .btn-export.secondary {
+        background: linear-gradient(45deg, #f093fb, #f5576c);
+    }
+    
+    .btn-export.success {
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="analytics-page">
+    <div class="container">
+        <!-- Header -->
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="mb-3">
+                        <i class="fas fa-chart-line text-primary me-3"></i>
+                        آمار و تحلیل ابزارهای کسب‌وکار
+                    </h1>
+                    <p class="text-muted mb-0">
+                        گزارش‌های تحلیلی و آمار کامل ابزارهای استخراج شده
+                    </p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="{% url 'business_tools_dashboard' %}" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-left me-2"></i>بازگشت به داشبورد
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="stats-cards">
+            <div class="stat-card">
+                <div class="stat-number">{{ analytics.total_tools }}</div>
+                <div class="stat-label">کل ابزارها</div>
+                <div class="stat-change">+12% از ماه گذشته</div>
+            </div>
+            <div class="stat-card success">
+                <div class="stat-number">{{ analytics.by_category|length }}</div>
+                <div class="stat-label">دسته‌بندی‌ها</div>
+                <div class="stat-change">+3 دسته جدید</div>
+            </div>
+            <div class="stat-card warning">
+                <div class="stat-number">{{ analytics.by_type|length }}</div>
+                <div class="stat-label">انواع ابزار</div>
+                <div class="stat-change">+2 نوع جدید</div>
+            </div>
+            <div class="stat-card info">
+                <div class="stat-number">{{ analytics.recent_activity|length }}</div>
+                <div class="stat-label">فعالیت‌های اخیر</div>
+                <div class="stat-change">+5 فعالیت جدید</div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-section">
+            <h3 class="mb-4">
+                <i class="fas fa-chart-pie text-primary me-2"></i>
+                توزیع ابزارها بر اساس دسته‌بندی
+            </h3>
+            
+            <div class="chart-container">
+                <canvas id="categoryChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Category Breakdown -->
+        <div class="category-breakdown">
+            <h3 class="mb-4">
+                <i class="fas fa-list text-primary me-2"></i>
+                جزئیات دسته‌بندی‌ها
+            </h3>
+            
+            {% for category, count in analytics.by_category.items %}
+            <div class="category-item">
+                <div class="category-info">
+                    <div class="category-icon 
+                        {% if 'ai' in category %}ai
+                        {% elif 'business' in category %}business
+                        {% elif 'data' in category %}data
+                        {% else %}extracted{% endif %}">
+                        {% if 'ai' in category %}
+                            <i class="fas fa-robot"></i>
+                        {% elif 'business' in category %}
+                            <i class="fas fa-briefcase"></i>
+                        {% elif 'data' in category %}
+                            <i class="fas fa-database"></i>
+                        {% else %}
+                            <i class="fas fa-folder"></i>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <h5 class="mb-1">{{ category|title }}</h5>
+                        <p class="text-muted mb-0">
+                            {% if 'ai' in category %}
+                                ابزارهای هوش مصنوعی و چت‌بات‌ها
+                            {% elif 'business' in category %}
+                                ابزارهای مدیریت کسب‌وکار
+                            {% elif 'data' in category %}
+                                ابزارهای تحلیل داده
+                            {% else %}
+                                داده‌های استخراج شده
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+                <div class="category-stats">
+                    <div class="category-count">{{ count }}</div>
+                    <div class="category-percentage">
+                        {% widthratio count analytics.total_tools 100 %}% از کل
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="recent-activity">
+            <h3 class="mb-4">
+                <i class="fas fa-clock text-primary me-2"></i>
+                فعالیت‌های اخیر
+            </h3>
+            
+            {% if analytics.recent_activity %}
+            {% for activity in analytics.recent_activity %}
+            <div class="activity-item">
+                <div class="activity-icon">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="activity-content">
+                    <div class="activity-title">{{ activity.title }}</div>
+                    <div class="activity-time">{{ activity.time }}</div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="text-center py-4">
+                <i class="fas fa-clock text-muted" style="font-size: 3rem;"></i>
+                <p class="text-muted mt-3">هیچ فعالیت اخیری ثبت نشده است</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Export Section -->
+        <div class="export-section">
+            <h3 class="mb-4">
+                <i class="fas fa-download text-primary me-2"></i>
+                خروجی گزارش‌ها
+            </h3>
+            
+            <div class="export-buttons">
+                <button class="btn-export" onclick="exportReport('pdf')">
+                    <i class="fas fa-file-pdf"></i>
+                    خروجی PDF
+                </button>
+                <button class="btn-export secondary" onclick="exportReport('excel')">
+                    <i class="fas fa-file-excel"></i>
+                    خروجی Excel
+                </button>
+                <button class="btn-export success" onclick="exportReport('json')">
+                    <i class="fas fa-file-code"></i>
+                    خروجی JSON
+                </button>
+                <button class="btn-export" onclick="exportReport('csv')">
+                    <i class="fas fa-file-csv"></i>
+                    خروجی CSV
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Category Chart
+    const ctx = document.getElementById('categoryChart').getContext('2d');
+    const categoryData = {
+        labels: [
+            {% for category, count in analytics.by_category.items %}
+            '{{ category|title }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            data: [
+                {% for category, count in analytics.by_category.items %}
+                {{ count }},
+                {% endfor %}
+            ],
+            backgroundColor: [
+                '#667eea',
+                '#f093fb',
+                '#4facfe',
+                '#43e97b',
+                '#fa709a',
+                '#fee140'
+            ],
+            borderWidth: 2,
+            borderColor: '#fff'
+        }]
+    };
+    
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: categoryData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        usePointStyle: true
+                    }
+                }
+            }
+        }
+    });
+    
+    // Export functionality
+    function exportReport(format) {
+        const reportData = {
+            timestamp: new Date().toISOString(),
+            analytics: {{ analytics|safe }},
+            format: format
+        };
+        
+        let content, filename, mimeType;
+        
+        switch(format) {
+            case 'json':
+                content = JSON.stringify(reportData, null, 2);
+                filename = 'business_tools_analytics.json';
+                mimeType = 'application/json';
+                break;
+            case 'csv':
+                content = convertToCSV(reportData);
+                filename = 'business_tools_analytics.csv';
+                mimeType = 'text/csv';
+                break;
+            default:
+                alert(`خروجی ${format.toUpperCase()} در نسخه‌های آینده اضافه خواهد شد.`);
+                return;
+        }
+        
+        const blob = new Blob([content], { type: mimeType });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+    
+    function convertToCSV(data) {
+        const analytics = data.analytics;
+        let csv = 'Category,Count,Percentage\n';
+        
+        for (const [category, count] of Object.entries(analytics.by_category)) {
+            const percentage = ((count / analytics.total_tools) * 100).toFixed(2);
+            csv += `${category},${count},${percentage}%\n`;
+        }
+        
+        return csv;
+    }
+    
+    // Add loading animation
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.stat-card');
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            }, index * 100);
+        });
+    });
+</script>
+{% endblock %}

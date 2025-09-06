@@ -1,0 +1,13 @@
+{
+  "siteName": "elementor_com",
+  "totalFiles": 339,
+  "cssFiles": 50,
+  "jsFiles": 112,
+  "htmlFiles": 118,
+  "imageFiles": 39,
+  "fontFiles": 0,
+  "hasBootstrap": false,
+  "hasTailwind": false,
+  "hasMaterialUI": false,
+  "frameworks": []
+}

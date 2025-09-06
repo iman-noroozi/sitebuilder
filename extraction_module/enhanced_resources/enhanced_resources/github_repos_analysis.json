@@ -1,0 +1,23 @@
+{
+  "siteName": "github_repos",
+  "totalFiles": 55,
+  "cssFiles": 0,
+  "jsFiles": 0,
+  "htmlFiles": 0,
+  "imageFiles": 0,
+  "fontFiles": 0,
+  "hasBootstrap": true,
+  "hasTailwind": true,
+  "hasMaterialUI": true,
+  "frameworks": [
+    "Bootstrap",
+    "Tailwind CSS",
+    "Material-UI",
+    "Bulma",
+    "Foundation",
+    "Semantic UI",
+    "Ant Design",
+    "Chakra UI",
+    "Mantine"
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "iranian_market": {
+    "source_type": "iranian_market",
+    "total_tools": 6,
+    "saved_tools": [
+      "درگاه پرداخت زرین‌پال",
+      "درگاه پرداخت پارسی‌پال",
+      "سرویس پیامک ملی پیامک",
+      "سرویس پیامک کاوه‌نگار",
+      "پست ایران",
+      "تیپاکس"
+    ],
+    "status": "success"
+  },
+  "international_tools": {
+    "source_type": "international_tools",
+    "total_tools": 6,
+    "saved_tools": [
+      "Salesforce CRM",
+      "HubSpot CRM",
+      "Shopify",
+      "WooCommerce",
+      "Mailchimp",
+      "Google Analytics"
+    ],
+    "status": "success"
+  },
+  "open_source": {
+    "source_type": "open_source_solutions",
+    "total_tools": 6,
+    "saved_tools": [
+      "SuiteCRM",
+      "Odoo CRM",
+      "OpenCart",
+      "PrestaShop",
+      "Odoo Inventory",
+      "ERPNext"
+    ],
+    "status": "success"
+  },
+  "analysis": {
+    "high_priority": [
+      {
+        "id": 1,
+        "name": "درگاه پرداخت زرین‌پال",
+        "category": "payment",
+        "priority_score": 10.0,
+        "implementation_cost": 7500000.0,
+        "development_time": "4-6 هفته",
+        "recommendations": "نیاز به تیم توسعه حرفه‌ای | سازگار با قوانین ایران"
+      },
+      {
+        "id": 2,
+        "name": "درگاه پرداخت پارسی‌پال",
+        "category": "payment",
+        "priority_score": 10.0,
+        "implementation_cost": 7500000.0,
+        "development_time": "4-6 هفته",
+        "recommendations": "نیاز به تیم توسعه حرفه‌ای | سازگار با قوانین ایران"
+      },
+      {
+        "id": 4,
+        "name": "سرویس پیامک کاوه‌نگار",
+        "category": "communication",
+        "priority_score": 9.0,
+        "implementation_cost": 3000000.0,
+        "development_time": "2-4 هفته",
+        "recommendations": "نیاز به تیم توسعه حرفه‌ای | سازگار با قوانین ایران"
+      },
+      {
+        "id": 6,
+        "name": "تیپاکس",
+        "category": "shipping",
+        "priority_score": 8.0,
+        "implementation_cost": 4500000.0,
+        "development_time": "3-5 هفته",
+        "recommendations": "نیاز به تیم توسعه حرفه‌ای | سازگار با قوانین ایران"
+      },
+      {
+        "id": 7,
+        "name": "Salesforce CRM",
+        "category": "crm",
+        "priority_score": 10.0,
+        "implementation_cost": 12000000.0,
+        "development_time": "6-8 هفته",
+        "recommendations": "نیاز به تیم توسعه حرفه‌ای"
+      },
+      {
+        "id": 8,
+        "name": "HubSpot CRM",
+        "category": "crm",
+        "priority_score": 10.0,
+        "implementation_cost": 8000000.0,
+        "development_time": "6-8 هفته",
+        "recommendations": "بررسی دقیق نیازمندی‌ها قبل از پیاده‌سازی"
+      },
+      {
+        "id": 9,
+        "name": "Shopify",
+        "category": "ecommerce",
+        "priority_score": 10.0,
+        "implementation_cost": 10500000.0,
+        "development_time": "6-8 هفته",
+        "recommendations": "نیاز به تیم توسعه حرفه‌ای"
+      },
+      {
+        "id": 10,
+        "name": "WooCommerce",
+        "category": "ecommerce",
+        "priority_score": 10.0,
+        "implementation_cost": 7000000.0,
+        "development_time": "6-8 هفته",
+        "recommendations": "بررسی دقیق نیازمندی‌ها قبل از پیاده‌سازی"
+      },
+      {
+        "id": 11,
+        "name": "Mailchimp",
+        "category": "marketing",
+        "priority_score": 10.0,
+        "implementation_cost": 4000000.0,
+        "development_time": "3-5 هفته",
+        "recommendations": "بررسی دقیق نیازمندی‌ها قبل از پیاده‌سازی"
+      },
+      {
+        "id": 12,
+        "name": "Google Analytics",
+        "category": "analytics",
+        "priority_score": 9.0,
+        "implementation_cost": 2100000.0,
+        "development_time": "4-6 هفته",
+        "recommendations": "استفاده از نسخه رایگان برای شروع"
+      },
+      {
+        "id": 13,
+        "name": "SuiteCRM",
+        "category": "crm",
+        "priority_score": 10.0,
+        "implementation_cost": 12000000.0,
+        "development_time": "6-8 هفته",
+        "recommendations": "استفاده از نسخه رایگان برای شروع | نیاز به تیم توسعه حرفه‌ای"
+      },
+      {
+        "id": 14,
+        "name": "Odoo CRM",
+        "category": "crm",
+        "priority_score": 10.0,
+        "implementation_cost": 12000000.0,
+        "development_time": "6-8 هفته",
+        "recommendations": "نیاز به تیم توسعه حرفه‌ای"
+      },
+      {
+        "id": 15,
+        "name": "OpenCart",
+        "category": "ecommerce",
+        "priority_score": 10.0,
+        "implementation_cost": 7000000.0,
+        "development_time": "6-8 هفته",
+        "recommendations": "استفاده از نسخه رایگان برای شروع"
+      },
+      {
+        "id": 16,
+        "name": "PrestaShop",
+        "category": "ecommerce",
+        "priority_score": 10.0,
+        "implementation_cost": 7000000.0,
+        "development_time": "6-8 هفته",
+        "recommendations": "بررسی دقیق نیازمندی‌ها قبل از پیاده‌سازی"
+      },
+      {
+        "id": 17,
+        "name": "Odoo Inventory",
+        "category": "inventory",
+        "priority_score": 10.0,
+        "implementation_cost": 9000000.0,
+        "development_time": "5-7 هفته",
+        "recommendations": "نیاز به تیم توسعه حرفه‌ای"
+      },
+      {
+        "id": 18,
+        "name": "ERPNext",
+        "category": "inventory",
+        "priority_score": 10.0,
+        "implementation_cost": 9000000.0,
+        "development_time": "5-7 هفته",
+        "recommendations": "استفاده از نسخه رایگان برای شروع | نیاز به تیم توسعه حرفه‌ای"
+      }
+    ],
+    "medium_priority": [
+      {
+        "id": 3,
+        "name": "سرویس پیامک ملی پیامک",
+        "category": "communication",
+        "priority_score": 7.0,
+        "implementation_cost": 1400000.0,
+        "development_time": "2-4 هفته",
+        "recommendations": "سازگار با قوانین ایران"
+      },
+      {
+        "id": 5,
+        "name": "پست ایران",
+        "category": "shipping",
+        "priority_score": 6.0,
+        "implementation_cost": 2100000.0,
+        "development_time": "3-5 هفته",
+        "recommendations": "سازگار با قوانین ایران"
+      }
+    ],
+    "low_priority": [],
+    "implementation_plan": {}
+  },
+  "report": {
+    "extraction_summary": {
+      "total_tools_extracted": 18,
+      "extraction_date": "2025-08-04T02:19:38.247354",
+      "categories_found": 8,
+      "sources_analyzed": 3
+    },
+    "category_breakdown": {
+      "analytics": 1,
+      "communication": 2,
+      "crm": 4,
+      "ecommerce": 4,
+      "inventory": 2,
+      "marketing": 1,
+      "payment": 2,
+      "shipping": 2
+    },
+    "source_breakdown": {
+      "international_tools": 6,
+      "iranian_market": 6,
+      "open_source_solutions": 6
+    },
+    "priority_analysis": {
+      "high_priority": 16,
+      "medium_priority": 2
+    },
+    "cost_analysis": {
+      "total_implementation_cost": 125600000.0,
+      "average_cost_per_tool": 6977777.777777778
+    },
+    "recommendations": [
+      "شروع با ابزارهای با اولویت بالا",
+      "استفاده از راه‌حل‌های متن‌باز برای کاهش هزینه",
+      "یکپارچه‌سازی تدریجی ابزارها",
+      "تست و ارزیابی قبل از پیاده‌سازی کامل"
+    ]
+  }
+}

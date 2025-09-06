@@ -1,0 +1,15 @@
+{
+  "siteName": "mantine_dev",
+  "totalFiles": 116,
+  "cssFiles": 24,
+  "jsFiles": 34,
+  "htmlFiles": 36,
+  "imageFiles": 3,
+  "fontFiles": 0,
+  "hasBootstrap": false,
+  "hasTailwind": false,
+  "hasMaterialUI": false,
+  "frameworks": [
+    "Mantine"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "siteName": "www_figma_com",
+  "totalFiles": 138,
+  "cssFiles": 7,
+  "jsFiles": 77,
+  "htmlFiles": 24,
+  "imageFiles": 9,
+  "fontFiles": 3,
+  "hasBootstrap": false,
+  "hasTailwind": false,
+  "hasMaterialUI": false,
+  "frameworks": []
+}

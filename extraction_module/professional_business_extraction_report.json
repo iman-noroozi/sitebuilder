@@ -1,0 +1,21 @@
+{
+  "extraction_type": "Professional Business Sites",
+  "total_sites": 29,
+  "successful": 21,
+  "failed": 8,
+  "success_rate": "72.4%",
+  "extraction_time": "2025-07-31 20:44:18",
+  "categories": {
+    "business_templates": 3,
+    "accounting_software": 3,
+    "business_management": 2,
+    "ecommerce_platform": 3,
+    "crm_system": 2,
+    "location_services": 3,
+    "restaurant_booking": 3,
+    "beauty_booking": 3,
+    "retail_management": 3,
+    "medical_practice": 3,
+    "online_education": 3
+  }
+}

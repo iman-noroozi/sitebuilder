@@ -1,0 +1,17 @@
+{
+  "baseUrl": "https://fonts.google.com/",
+  "domain": "fonts.google.com",
+  "extractedAt": "2025-07-28T14:26:25.605Z",
+  "totalPages": 1,
+  "totalAssets": 5,
+  "pages": [
+    "https://fonts.google.com/"
+  ],
+  "assets": [
+    "https://ssl.gstatic.com/external_hosted/lottie/lottie_light.js",
+    "https://www.gstatic.com/feedback/js/help/prod/service/lazy.min.js",
+    "https://fonts.gstatic.com/s/googlesansflex/v5/t5s6IQcYNIWbFgDgAAzZ34auoVyXkJCOvp3SFWJbN5hF8Ju1x5tKByN2l9sI40swNJwakXdYAZzz0jbnJ4qFQO5tGjLvDSkV4DyKMo6qQzwliVdHySgxyRg2.woff2",
+    "https://fonts.gstatic.com/s/googlesansflex/v5/t5s6IQcYNIWbFgDgAAzZ34auoVyXkJCOvp3SFWJbN5hF8Ju1x5tKByN2l9sI40swNJwakXdYAZzz0jbnJ4qFQO5tGjLvDSkV4DyKMo6qQzwliVdHySgxxxg2a2c.woff2",
+    "https://www.gstatic.com/images/icons/material/apps/fonts/1x/catalog/v5/favicon.svg"
+  ]
+}

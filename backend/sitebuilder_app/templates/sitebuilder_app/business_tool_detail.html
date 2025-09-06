@@ -1,0 +1,420 @@
+{% extends 'sitebuilder_app/base.html' %}
+{% load static %}
+
+{% block title %}جزئیات {{ tool.name }} - پیسان وب{% endblock %}
+
+{% block extra_css %}
+<style>
+    .tool-detail-page {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+    
+    .tool-header {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .tool-info {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .tool-icon-large {
+        width: 80px;
+        height: 80px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        margin-bottom: 1rem;
+    }
+    
+    .tool-meta-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .meta-item {
+        background: #f8f9fa;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+    }
+    
+    .meta-label {
+        font-size: 0.8rem;
+        color: #666;
+        margin-bottom: 0.5rem;
+    }
+    
+    .meta-value {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #333;
+    }
+    
+    .files-section {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .file-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+        transition: background-color 0.3s ease;
+    }
+    
+    .file-item:hover {
+        background-color: #f8f9fa;
+    }
+    
+    .file-item:last-child {
+        border-bottom: none;
+    }
+    
+    .file-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .file-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: white;
+    }
+    
+    .file-icon.md {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+    }
+    
+    .file-icon.py {
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+    }
+    
+    .file-icon.json {
+        background: linear-gradient(45deg, #f093fb, #f5576c);
+    }
+    
+    .file-icon.txt {
+        background: linear-gradient(45deg, #43e97b, #38f9d7);
+    }
+    
+    .file-icon.other {
+        background: linear-gradient(45deg, #fa709a, #fee140);
+    }
+    
+    .readme-section {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .readme-content {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 1.5rem;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        white-space: pre-wrap;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    
+    .action-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .btn-primary-custom {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .btn-primary-custom:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        color: white;
+        text-decoration: none;
+    }
+    
+    .btn-secondary-custom {
+        background: #f8f9fa;
+        color: #666;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .btn-secondary-custom:hover {
+        background: #e9ecef;
+        color: #333;
+        text-decoration: none;
+    }
+    
+    .breadcrumb-custom {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        padding: 1rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .breadcrumb-custom .breadcrumb-item + .breadcrumb-item::before {
+        content: ">";
+        color: #666;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="tool-detail-page">
+    <div class="container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb-custom">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'business_tools_dashboard' %}">داشبورد ابزارها</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{% url 'business_tools_list' %}">لیست ابزارها</a>
+                </li>
+                <li class="breadcrumb-item active">{{ tool.name }}</li>
+            </ol>
+        </nav>
+
+        <!-- Tool Header -->
+        <div class="tool-header">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="tool-icon-large me-3">
+                            {% if 'ai' in tool.category or 'chatbot' in tool.name %}
+                                <i class="fas fa-robot"></i>
+                            {% elif 'payment' in tool.name or 'financial' in tool.name %}
+                                <i class="fas fa-credit-card"></i>
+                            {% elif 'analytics' in tool.name or 'data' in tool.name %}
+                                <i class="fas fa-chart-bar"></i>
+                            {% else %}
+                                <i class="fas fa-tools"></i>
+                            {% endif %}
+                        </div>
+                        <div>
+                            <h1 class="mb-2">{{ tool.name }}</h1>
+                            <span class="badge bg-primary">{{ tool.category }}</span>
+                        </div>
+                    </div>
+                    <p class="text-muted mb-0">
+                        مسیر: <code>{{ tool.path }}</code>
+                    </p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <div class="action-buttons">
+                        <a href="{% url 'business_tools_list' %}" class="btn-secondary-custom">
+                            <i class="fas fa-arrow-left"></i>
+                            بازگشت
+                        </a>
+                        <button class="btn-primary-custom">
+                            <i class="fas fa-download"></i>
+                            دانلود
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tool Info -->
+        <div class="tool-info">
+            <h3 class="mb-4">
+                <i class="fas fa-info-circle text-primary me-2"></i>
+                اطلاعات ابزار
+            </h3>
+            
+            <div class="tool-meta-grid">
+                <div class="meta-item">
+                    <div class="meta-label">دسته‌بندی</div>
+                    <div class="meta-value">{{ tool.category }}</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">تعداد فایل‌ها</div>
+                    <div class="meta-value">{{ tool.files|length }}</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">تاریخ ایجاد</div>
+                    <div class="meta-value">{{ tool.created_at|date:"Y/m/d" }}</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">وضعیت</div>
+                    <div class="meta-value">
+                        <span class="badge bg-success">فعال</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Files Section -->
+        <div class="files-section">
+            <h3 class="mb-4">
+                <i class="fas fa-folder-open text-primary me-2"></i>
+                فایل‌های موجود
+            </h3>
+            
+            {% if tool.files %}
+            <div class="files-list">
+                {% for file in tool.files %}
+                <div class="file-item">
+                    <div class="file-info">
+                        <div class="file-icon {% if file.extension == '.md' %}md{% elif file.extension == '.py' %}py{% elif file.extension == '.json' %}json{% elif file.extension == '.txt' %}txt{% else %}other{% endif %}">
+                            {% if file.extension == '.md' %}
+                                <i class="fas fa-file-alt"></i>
+                            {% elif file.extension == '.py' %}
+                                <i class="fab fa-python"></i>
+                            {% elif file.extension == '.json' %}
+                                <i class="fas fa-code"></i>
+                            {% elif file.extension == '.txt' %}
+                                <i class="fas fa-file-text"></i>
+                            {% else %}
+                                <i class="fas fa-file"></i>
+                            {% endif %}
+                        </div>
+                        <div>
+                            <h6 class="mb-1">{{ file.name }}</h6>
+                            <small class="text-muted">{{ file.size|filesizeformat }}</small>
+                        </div>
+                    </div>
+                    <div class="file-actions">
+                        <button class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-eye me-1"></i>مشاهده
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary">
+                            <i class="fas fa-download me-1"></i>دانلود
+                        </button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="text-center py-4">
+                <i class="fas fa-folder-open text-muted" style="font-size: 3rem;"></i>
+                <p class="text-muted mt-3">هیچ فایلی در این ابزار یافت نشد</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- README Section -->
+        {% if tool.readme_content %}
+        <div class="readme-section">
+            <h3 class="mb-4">
+                <i class="fas fa-book text-primary me-2"></i>
+                مستندات (README)
+            </h3>
+            
+            <div class="readme-content">
+                {{ tool.readme_content }}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Action Buttons -->
+        <div class="text-center">
+            <div class="action-buttons justify-content-center">
+                <a href="{% url 'business_tools_list' %}" class="btn-secondary-custom">
+                    <i class="fas fa-list"></i>
+                    مشاهده تمام ابزارها
+                </a>
+                <a href="{% url 'business_tools_analytics' %}" class="btn-primary-custom">
+                    <i class="fas fa-chart-bar"></i>
+                    گزارش‌های تحلیلی
+                </a>
+                <button class="btn-primary-custom">
+                    <i class="fas fa-cog"></i>
+                    تنظیمات ابزار
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Add loading animation
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('.tool-info, .files-section, .readme-section');
+        sections.forEach((section, index) => {
+            setTimeout(() => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'all 0.5s ease';
+                
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 100);
+            }, index * 200);
+        });
+    });
+    
+    // File preview functionality
+    document.querySelectorAll('.file-actions .btn-outline-primary').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const fileName = this.closest('.file-item').querySelector('h6').textContent;
+            alert(`مشاهده فایل: ${fileName}\nاین قابلیت در نسخه‌های آینده اضافه خواهد شد.`);
+        });
+    });
+    
+    // Download functionality
+    document.querySelectorAll('.file-actions .btn-outline-secondary').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const fileName = this.closest('.file-item').querySelector('h6').textContent;
+            alert(`دانلود فایل: ${fileName}\nاین قابلیت در نسخه‌های آینده اضافه خواهد شد.`);
+        });
+    });
+</script>
+{% endblock %}

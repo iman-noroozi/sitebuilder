@@ -1,0 +1,25 @@
+{
+  "url": "https://getbootstrap.com/docs/5.3/examples/carousel/",
+  "title": "Carousel Template · Bootstrap v5.3",
+  "extractedAt": "2025-07-27T18:40:43.184Z",
+  "files": {
+    "scripts": 2,
+    "images": 0,
+    "fonts": 0
+  },
+  "config": {
+    "headless": false,
+    "timeout": 45000,
+    "downloadAssets": true,
+    "cleanHTML": true,
+    "extractImages": true,
+    "extractFonts": true,
+    "maxConcurrentDownloads": 5,
+    "screenshot": {
+      "enabled": true,
+      "fullPage": true,
+      "format": "png"
+    },
+    "saveLog": true
+  }
+}

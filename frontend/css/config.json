@@ -1,0 +1,26 @@
+{
+  "frameworks": {
+    "bootstrap": {
+      "path": "css/frameworks/bootstrap.min.css",
+      "version": "5.3",
+      "description": "فریمورک CSS محبوب"
+    },
+    "webflow": {
+      "path": "css/frameworks/webflow/",
+      "description": "استایل‌های Webflow"
+    },
+    "tailwind": {
+      "path": "css/frameworks/tailwind/",
+      "description": "TailwindCSS Framework"
+    }
+  },
+  "components": {
+    "cards": "css/components/cards.css",
+    "buttons": "css/components/buttons.css",
+    "forms": "css/components/forms.css"
+  },
+  "usage": {
+    "development": "همه فریمورک‌ها برای توسعه",
+    "production": "فقط فریمورک‌های ضروری"
+  }
+}

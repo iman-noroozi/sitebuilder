@@ -1,0 +1,122 @@
+{
+  "metadata": {
+    "title": "دسته‌بندی قالب‌های سایت‌ساز",
+    "description": "دسته‌بندی کامل قالب‌ها بر اساس نوع کسب‌وکار",
+    "total_categories": 10,
+    "created_at": "2024",
+    "language": "fa"
+  },
+  "categories": {
+    "portfolio_creative": {
+      "title": "نمونه‌کار و خلاقیت",
+      "description": "قالب‌های مناسب برای طراحان، عکاسان و هنرمندان",
+      "templates": [
+        "dribbble_com",
+        "behance_net",
+        "awwwards_com",
+        "onepagelove_com",
+        "uidesigndaily_com"
+      ],
+      "features": ["گالری تصاویر", "انیمیشن‌های نرم", "طراحی مینیمال"],
+      "suitable_for": ["طراحان گرافیک", "عکاسان", "هنرمندان", "آژانس‌های تبلیغاتی"],
+      "colors": ["dark", "minimal", "creative"]
+    },
+    "business_corporate": {
+      "title": "کسب‌وکار و شرکتی",
+      "description": "قالب‌های حرفه‌ای برای شرکت‌ها و کسب‌وکارها",
+      "templates": [
+        "getbootstrap_com",
+        "tailwindcss_com",
+        "chakra_ui_com"
+      ],
+      "features": ["فرم تماس", "بخش درباره ما", "صفحه خدمات"],
+      "suitable_for": ["شرکت‌های تجاری", "استارتاپ‌ها", "موسسات", "کنسرن‌ها"],
+      "colors": ["blue", "professional", "clean"]
+    },
+    "ecommerce_shop": {
+      "title": "فروشگاه و تجارت الکترونیک",
+      "description": "قالب‌های مناسب برای فروشگاه‌های آنلاین",
+      "templates": [
+        "webflow_com",
+        "elementor_com"
+      ],
+      "features": ["سبد خرید", "صفحه محصول", "فیلتر جستجو"],
+      "suitable_for": ["فروشگاه‌های آنلاین", "برندها", "تولیدکنندگان"],
+      "colors": ["orange", "green", "trust"]
+    },
+    "blog_magazine": {
+      "title": "بلاگ و مجله",
+      "description": "قالب‌های مناسب برای وبلاگ‌ها و مجلات آنلاین",
+      "templates": [
+        "medium_style",
+        "news_template"
+      ],
+      "features": ["سیستم مقالات", "دسته‌بندی", "جستجو"],
+      "suitable_for": ["بلاگرها", "نویسندگان", "مجلات آنلاین"],
+      "colors": ["clean", "readable", "modern"]
+    },
+    "landing_page": {
+      "title": "صفحه فرود",
+      "description": "قالب‌های تک‌صفحه‌ای برای کمپین‌ها",
+      "templates": [
+        "landingfolio_com",
+        "onepagelove_com"
+      ],
+      "features": ["CTA قوی", "فرم ثبت‌نام", "شمارنده"],
+      "suitable_for": ["کمپین‌های تبلیغاتی", "محصولات جدید", "رویدادها"],
+      "colors": ["conversion", "bright", "action"]
+    },
+    "restaurant_food": {
+      "title": "رستوران و غذا",
+      "description": "قالب‌های مخصوص رستوران‌ها و کافه‌ها",
+      "templates": [
+        "restaurant_theme"
+      ],
+      "features": ["منوی غذا", "رزرو آنلاین", "گالری غذا"],
+      "suitable_for": ["رستوران‌ها", "کافه‌ها", "فست‌فودها"],
+      "colors": ["warm", "appetizing", "cozy"]
+    },
+    "health_medical": {
+      "title": "پزشکی و سلامت",
+      "description": "قالب‌های مناسب برای حوزه پزشکی",
+      "templates": [
+        "medical_template"
+      ],
+      "features": ["نوبت‌دهی آنلاین", "معرفی پزشکان", "مقالات پزشکی"],
+      "suitable_for": ["کلینیک‌ها", "بیمارستان‌ها", "دندانپزشکان"],
+      "colors": ["blue", "clean", "trustworthy"]
+    },
+    "education_learning": {
+      "title": "آموزش و یادگیری",
+      "description": "قالب‌های آموزشی و دانشگاهی",
+      "templates": [
+        "education_theme"
+      ],
+      "features": ["دوره‌های آنلاین", "تقویم کلاس‌ها", "پروفایل اساتید"],
+      "suitable_for": ["مدارس", "دانشگاه‌ها", "مراکز آموزشی"],
+      "colors": ["green", "knowledge", "inspiring"]
+    },
+    "technology_saas": {
+      "title": "تکنولوژی و نرم‌افزار",
+      "description": "قالب‌های مناسب برای شرکت‌های فناوری",
+      "templates": [
+        "mui_com",
+        "ant_design",
+        "mantine_dev"
+      ],
+      "features": ["داشبورد کاربری", "API documentation", "پنل مدیریت"],
+      "suitable_for": ["استارتاپ‌های فناوری", "شرکت‌های نرم‌افزاری", "سرویس‌های SaaS"],
+      "colors": ["tech", "modern", "innovative"]
+    },
+    "real_estate": {
+      "title": "املاک و مستغلات",
+      "description": "قالب‌های مخصوص آژانس‌های املاک",
+      "templates": [
+        "real_estate_theme"
+      ],
+      "features": ["جستجوی ملک", "نقشه", "فیلتر قیمت"],
+      "suitable_for": ["آژانس‌های املاک", "سازندگان", "مشاوران املاک"],
+      "colors": ["professional", "luxurious", "trustworthy"]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "siteName": "mui_com",
+  "totalFiles": 168,
+  "cssFiles": 23,
+  "jsFiles": 44,
+  "htmlFiles": 45,
+  "imageFiles": 40,
+  "fontFiles": 2,
+  "hasBootstrap": false,
+  "hasTailwind": false,
+  "hasMaterialUI": true,
+  "frameworks": [
+    "Material-UI"
+  ]
+}

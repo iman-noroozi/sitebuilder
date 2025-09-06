@@ -1,0 +1,15 @@
+{
+  "siteName": "bulma_io",
+  "totalFiles": 122,
+  "cssFiles": 6,
+  "jsFiles": 8,
+  "htmlFiles": 13,
+  "imageFiles": 86,
+  "fontFiles": 0,
+  "hasBootstrap": false,
+  "hasTailwind": false,
+  "hasMaterialUI": false,
+  "frameworks": [
+    "Bulma"
+  ]
+}

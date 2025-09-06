@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-07-28T14:26:58.370Z",
+  "forms": [
+    {
+      "action": "https://www.fontsquirrel.com/fonts/list/find_fonts",
+      "method": "get",
+      "html": "<form action=\"/fonts/list/find_fonts\" method=\"get\" class=\"infield_labels\">\n\t\t\t<div id=\"fontsearch\">\n\t\t\t\t<input type=\"search\" name=\"q[term]\" value=\"\" id=\"font_search\" autocomplete=\"off\" placeholder=\"Search Fonts &amp; Foundries\">\n\t\t\t\t<input type=\"hidden\" name=\"q[search_check]\" value=\"Y\">\n\t\t\t\t<input type=\"submit\" value=\"_\">\n\t\t\t</div>\n\t\t</form>",
+      "fields": [
+        {
+          "name": "q[term]",
+          "type": "search",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "q[search_check]",
+          "type": "hidden",
+          "value": "Y",
+          "required": false
+        },
+        {
+          "name": "",
+          "type": "submit",
+          "value": "_",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

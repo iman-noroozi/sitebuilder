@@ -1,0 +1,16 @@
+{
+  "siteName": "chakra_ui_com",
+  "totalFiles": 404,
+  "cssFiles": 180,
+  "jsFiles": 108,
+  "htmlFiles": 35,
+  "imageFiles": 45,
+  "fontFiles": 6,
+  "hasBootstrap": false,
+  "hasTailwind": false,
+  "hasMaterialUI": true,
+  "frameworks": [
+    "Material-UI",
+    "Chakra UI"
+  ]
+}

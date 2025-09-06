@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Iconify News</title>
+        <link>https://iconify.design/</link>
+        <description>All popular icon sets, one framework</description>
+        <lastBuildDate>Fri, 27 Jun 2025 12:09:10 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>Iconify News</title>
+            <url>https://iconify.design/assets/og/iconify.png</url>
+            <link>https://iconify.design/</link>
+        </image>
+        <copyright>Copyright © 2020-PRESENT Iconify OÜ</copyright>
+        <item>
+            <title><![CDATA[Iconify icon components update]]></title>
+            <link>https://iconify.design/news/2025.html#icon-major-update</link>
+            <guid>https://iconify.design/news/2025.html#icon-major-update</guid>
+            <pubDate>Wed, 30 Apr 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2 id="icon-major-update" tabindex="-1">Iconify icon components update <a class="header-anchor" href="#icon-major-update" aria-label="Permalink to &quot;Iconify icon components update {#icon-major-update}&quot;">&ZeroWidthSpace;</a></h2>
+<p>New major versions of <a href="/docs/icon-components/">all Iconify Icon components</a> have been published.</p>
+<p>Changes (applies to all components):</p>
+<ul>
+<li>Removed several previously deprecated functions.</li>
+</ul>
+<p>Additional changes for Vue component:</p>
+<ul>
+<li>Component was rewritten using Vue's Composition API.</li>
+<li>New <span class="hljs-inline-prop">load</span> event, fired when data for icon is loaded from API.</li>
+</ul>
+<p>Additional changes for Svelte component:</p>
+<ul>
+<li>Component was rewriten using Svelte 5 runes syntax.</li>
+<li>Changed <span class="hljs-inline-prop">onLoad</span> event, to <span class="hljs-inline-prop">onload</span> callback to match new Svelte 5 syntax.</li>
+</ul>
+<p>For more details, see <a href="/docs/articles/migration/icon-v3.html">migration guide</a>, which explains every change and what you need to change in your code.</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Iconify for Svelte update]]></title>
+            <link>https://iconify.design/news/2025.html#svelte-next</link>
+            <guid>https://iconify.design/news/2025.html#svelte-next</guid>
+            <pubDate>Thu, 10 Apr 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2 id="svelte-next" tabindex="-1">Iconify for Svelte update <a class="header-anchor" href="#svelte-next" aria-label="Permalink to &quot;Iconify for Svelte update {#svelte-next}&quot;">&ZeroWidthSpace;</a></h2>
+<p><a href="/docs/icon-components/svelte/">Iconify icon component for Svelte</a> has been rewritten with Svelte 5 runes.</p>
+<p>Previous version used Svelte 4 syntax.</p>
+<p>Version 5 of component can be installed using <span class="hljs-inline-package hljs-linkable">@next</span> tag:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><copy-to-clipboard raw="bnBtIGluc3RhbGwgLS1zYXZlIEBpY29uaWZ5L3N2ZWx0ZUBuZXh0Cg==" lang=""><code class="highlight hljs">npm install --save @iconify/svelte@next</code></copy-to-clipboard></div></div></div><p>While Svelte 5 supports old syntax, it is better to update component to make it future proof.</p>
+<p>Additionally, the following changes are included in this update:</p>
+<ul>
+<li>Previously deprecated functions <span class="hljs-function">disableCache()</span> and <span class="hljs-function">enableCache()</span> have been removed.</li>
+<li>Previously deprecated function <span class="hljs-function">iconExists()</span> has been removed. Use <span class="hljs-function">iconLoaded()</span> instead (functionality is identical... more on that later in upcoming release notes).</li>
+</ul>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Iconify for Vue update]]></title>
+            <link>https://iconify.design/news/2025.html#vue-next</link>
+            <guid>https://iconify.design/news/2025.html#vue-next</guid>
+            <pubDate>Tue, 25 Mar 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2 id="vue-next" tabindex="-1">Iconify for Vue update <a class="header-anchor" href="#vue-next" aria-label="Permalink to &quot;Iconify for Vue update {#vue-next}&quot;">&ZeroWidthSpace;</a></h2>
+<p><a href="/docs/icon-components/vue/">Iconify icon component for Vue</a> has been rewritten with Vue's Composition API.</p>
+<p>Previous version relied on Options API.</p>
+<p>Version 5 of component can be installed using <span class="hljs-inline-package hljs-linkable">@next</span> tag:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><copy-to-clipboard raw="bnBtIGluc3RhbGwgLS1zYXZlIEBpY29uaWZ5L3Z1ZUBuZXh0Cg==" lang=""><code class="highlight hljs">npm install --save @iconify/vue@next</code></copy-to-clipboard></div></div></div><p>If you prefer to use Options API, you can still use version 4 of Iconify icon component.</p>
+<h3 id="why-composition-api" tabindex="-1">Why Composition API? <a class="header-anchor" href="#why-composition-api" aria-label="Permalink to &quot;Why Composition API?&quot;">&ZeroWidthSpace;</a></h3>
+<p>Many Vue developers are moving away from Options API and now there is a new option
+to remove Options API support from Vue bundle: "<span class="hljs-string">__VUE_OPTIONS_API__</span>".</p>
+<p>If there is a component that relies on Options API, it means new option cannot be used.</p>
+<p>For Iconify icon component it does not make any difference which API to use,
+there are no advantages in using either API, so switching to Composition API makes sense.</p>
+<h3 id="additional-changes" tabindex="-1">Additional changes <a class="header-anchor" href="#additional-changes" aria-label="Permalink to &quot;Additional changes&quot;">&ZeroWidthSpace;</a></h3>
+<p>Additionally, new version includes the following breaking changes:</p>
+<ul>
+<li>Functions <span class="hljs-function">enableStorage</span> and <span class="hljs-function">disableStorage</span> have been removed. They were deprecated in previous version.</li>
+<li>Removed wildcard export, which caused a Node warning when building a Nuxt app with Nuxt Icon on Windows.</li>
+</ul>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Iconify API update]]></title>
+            <link>https://iconify.design/news/2025.html#api-311</link>
+            <guid>https://iconify.design/news/2025.html#api-311</guid>
+            <pubDate>Wed, 12 Feb 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2 id="api-311" tabindex="-1">Iconify API update <a class="header-anchor" href="#api-311" aria-label="Permalink to &quot;Iconify API update {#api-311}&quot;">&ZeroWidthSpace;</a></h2>
+<p>Iconify API version 3.1.1 has been released.</p>
+<p>This update includes a critical bug fix. If you are running an API instance, please do update it as soon as possible.</p>
+<p>API is available on:</p>
+<ul>
+<li><a href="https://github.com/iconify/api/" target="_blank" rel="noreferrer">GitHub</a> - you can customise it before deploying.</li>
+<li><a href="https://www.npmjs.com/package/@iconify/api" target="_blank" rel="noreferrer">NPM</a> - can be embedded in an app without running a full server.</li>
+<li><a href="https://hub.docker.com/r/iconify/api" target="_blank" rel="noreferrer">Docker</a> - for quick deployment.</li>
+</ul>
+<p>See <a href="/docs/api/">API documentation</a>.</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Iconify plugin for Tailwind CSS 4]]></title>
+            <link>https://iconify.design/news/2025.html#iconify-tailwind4</link>
+            <guid>https://iconify.design/news/2025.html#iconify-tailwind4</guid>
+            <pubDate>Fri, 07 Feb 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2 id="iconify-tailwind4" tabindex="-1">Iconify plugin for Tailwind CSS 4 <a class="header-anchor" href="#iconify-tailwind4" aria-label="Permalink to &quot;Iconify plugin for Tailwind CSS 4 {#iconify-tailwind4}&quot;">&ZeroWidthSpace;</a></h2>
+<p>Iconify plugin for Tailwind CSS 4 is now available.</p>
+<p>This plugin can be used with new <span class="hljs-inline-prop">@plugin</span> directive in Tailwind CSS 4:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><copy-to-clipboard raw="QHBsdWdpbiAiQGljb25pZnkvdGFpbHdpbmQ0IjsK" lang="css"><code class="highlight hljs"><span class="hljs-keyword">@plugin</span> <span class="hljs-string">&quot;@iconify/tailwind4&quot;</span>;</code></copy-to-clipboard></div></div></div><p>See <a href="/docs/usage/css/tailwind/tailwind4/">plugin documentation</a> for details.</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Iconify components update]]></title>
+            <link>https://iconify.design/news/2025.html#components-storage</link>
+            <guid>https://iconify.design/news/2025.html#components-storage</guid>
+            <pubDate>Sat, 04 Jan 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2 id="components-storage" tabindex="-1">Iconify components update <a class="header-anchor" href="#components-storage" aria-label="Permalink to &quot;Iconify components update {#components-storage}&quot;">&ZeroWidthSpace;</a></h2>
+<p>New minor versions of all <a href="/docs/icon-components/">Iconify icon components</a> have been published.</p>
+<p>This affects only components that load icon data on demand from Iconify API.</p>
+<p>This update removes usage of <span class="hljs-inline-prop">localStorage</span> for caching icons, making all components GDPR compliant.</p>
+<h3 id="why-was-it-removed" tabindex="-1">Why was it removed? <a class="header-anchor" href="#why-was-it-removed" aria-label="Permalink to &quot;Why was it removed?&quot;">&ZeroWidthSpace;</a></h3>
+<p>Caching icons in storage was a very useful strategy in early days of project, when API was not stable
+and there were no offline solutions.</p>
+<p>Today there are other solutions, like <a href="/docs/usage/css/">various CSS solutions</a> and <a href="/docs/usage/svg/unplugin/">Unplugin Icons</a>.</p>
+<p>Iconify Icon components load icons from API should only be used when internet access is guaranteed.
+Those components should not be used for apps that can work offline.
+For offline usage, see links above to alternative solutions.</p>
+<p>Additionally, all Iconify icon components have redundancies to load icons from a backup API in case
+main Iconify API host is unreachable. Therefore, additional layer of caching is no longer needed.</p>
+<h3 id="code-changes" tabindex="-1">Code changes <a class="header-anchor" href="#code-changes" aria-label="Permalink to &quot;Code changes&quot;">&ZeroWidthSpace;</a></h3>
+<p>Code that managed <span class="hljs-inline-prop">localStorage</span> cache was not just disabled, it was removed.</p>
+<p>This reduces package size for components by about 10%.</p>
+<p>Functions <span class="hljs-function">enableStorage</span> and <span class="hljs-function">disableStorage</span> are still available to avoid breaking user's code,
+but they do not do anything.
+They will be removed in new major versions of components.</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[New versions of Iconify icon components, utils and tools]]></title>
+            <link>https://iconify.design/news/2024.html#components-update-dec</link>
+            <guid>https://iconify.design/news/2024.html#components-update-dec</guid>
+            <pubDate>Sat, 07 Dec 2024 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2 id="components-update-dec" tabindex="-1">New versions of Iconify icon components, utils and tools <a class="header-anchor" href="#components-update-dec" aria-label="Permalink to &quot;New versions of Iconify icon components, utils and tools {#components-update-dec}&quot;">&ZeroWidthSpace;</a></h2>
+<p>Published new minor versions of the following packages:</p>
+<ul>
+<li><a href="/docs/libraries/utils/">Iconify Utils</a>.</li>
+<li><a href="/docs/libraries/tools/">Iconify Tools</a>.</li>
+<li><a href="/docs/iconify-icon/">Iconify Icon web component</a> and its wrappers.</li>
+<li>Iconify Icon components for <a href="/docs/icon-components/vue/">Vue</a>, <a href="/docs/icon-components/react/">React</a> and <a href="/docs/icon-components/svelte/">Svelte</a>.</li>
+<li><a href="/docs/usage/css/tailwind/">Iconify plugin for Tailwind CSS</a>.</li>
+</ul>
+<p>There are 2 changes:</p>
+<ul>
+<li>Icon naming requirements</li>
+<li>Custom icon loaders</li>
+</ul>
+<h3 id="naming-convention-changes" tabindex="-1">Naming convention changes <a class="header-anchor" href="#naming-convention-changes" aria-label="Permalink to &quot;Naming convention changes&quot;">&ZeroWidthSpace;</a></h3>
+<p>The biggest change is in naming convention.</p>
+<p>Until now, all components allowed only icon names that contained lower case letters, numbers and dash: <code>[a-z0-9-]</code>.</p>
+<p>Now those restrictions are removed. Any non-empty string is allowed.</p>
+<h3 id="custom-loaders" tabindex="-1">Custom loaders <a class="header-anchor" href="#custom-loaders" aria-label="Permalink to &quot;Custom loaders&quot;">&ZeroWidthSpace;</a></h3>
+<p>Icon components now support custom icon loaders, which you can define using one of these functions:</p>
+<ul>
+<li><span class="hljs-function">setCustomIconLoader()</span>.</li>
+<li><span class="hljs-function">setCustomIconsLoader()</span>.</li>
+</ul>
+<p>What is it for?</p>
+<ul>
+<li>To load icons from custom sources instead of Iconify API.</li>
+<li>To customise icons.</li>
+</ul>
+<p>It is currently used by new Nuxt Icon component to load custom icons in Nuxt apps.</p>
+<p>See <a href="/docs/iconify-icon/custom-loaders.html">Iconify Icon component documentation</a>.</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Iconify plugin for Penpot]]></title>
+            <link>https://iconify.design/news/2024.html#penpot-plugin</link>
+            <guid>https://iconify.design/news/2024.html#penpot-plugin</guid>
+            <pubDate>Fri, 06 Dec 2024 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2 id="penpot-plugin" tabindex="-1">Iconify plugin for Penpot <a class="header-anchor" href="#penpot-plugin" aria-label="Permalink to &quot;Iconify plugin for Penpot {#penpot-plugin}&quot;">&ZeroWidthSpace;</a></h2>
+<p>Iconify plugin for Penpot is now available</p>
+<p>See <a href="/docs/design/penpot/">Iconify plugin for Penpot documentation</a>.</p>
+<p><img src="/assets/images/plugins/penpot-index2-light.png" alt="Iconify for Penpot: main page"></p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[New website for browsing icons]]></title>
+            <link>https://iconify.design/news/2024.html#icon-sets-rebrand</link>
+            <guid>https://iconify.design/news/2024.html#icon-sets-rebrand</guid>
+            <pubDate>Sun, 01 Dec 2024 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2 id="icon-sets-rebrand" tabindex="-1">New website for browsing icons <a class="header-anchor" href="#icon-sets-rebrand" aria-label="Permalink to &quot;New website for browsing icons {#icon-sets-rebrand}&quot;">&ZeroWidthSpace;</a></h2>
+<p>After many months of hard work, <a href="https://icon-sets.iconify.design/" target="_blank" rel="noreferrer">Iconify icon sets website</a> has been fully rebuilt.</p>
+<p>New icon sets website is now live. Powered by Nuxt!</p>
+<p>What is new?</p>
+<ul>
+<li>Cleaner UI, focused on developer experience. No more color overload.</li>
+<li>More samples shown for each icon set.</li>
+<li>Favorite icon sets, custom lists.</li>
+<li>Search function can search only currently visible icon sets: favorite icon sets, icon sets list or filtered icon sets.</li>
+<li>Better code samples for icons.</li>
+</ul>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[New logo]]></title>
+            <link>https://iconify.design/news/2024.html#rebrand</link>
+            <guid>https://iconify.design/news/2024.html#rebrand</guid>
+            <pubDate>Sat, 30 Nov 2024 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2 id="rebrand" tabindex="-1">New logo <a class="header-anchor" href="#rebrand" aria-label="Permalink to &quot;New logo {#rebrand}&quot;">&ZeroWidthSpace;</a></h2>
+<p>Old logo was a temporary solution. It was supposed to be replaced with a proper unique logo long time ago, but due
+to time constraints and lack of imagination (creating unique logos is VERY hard!), it took several years to come
+up with a new logo.</p>
+<p>New logo is finally ready.</p>
+<p>Over the years Iconify project have become a home for open source icons.
+Many developers and designers use Iconify daily in their workflow to find the best open source icons.</p>
+<p>New logo represents a home icon, rendered as separate lines.</p>
+]]></content:encoded>
+        </item>
+    </channel>
+</rss>

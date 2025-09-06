@@ -1,0 +1,1 @@
+import{b as s}from"./entry.e76eb76a.js";const o=s({baseURL:"https://api-icons.icons8.com/billing"});async function n(t){const{data:a}=await o.get(`/products/v2/${t}`);return a}async function i(t){const{data:a}=await o.get("/products/v2/default",{params:t});return a}export{i as a,n as g};

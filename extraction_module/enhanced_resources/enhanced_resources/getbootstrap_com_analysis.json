@@ -1,0 +1,15 @@
+{
+  "siteName": "getbootstrap_com",
+  "totalFiles": 85,
+  "cssFiles": 2,
+  "jsFiles": 9,
+  "htmlFiles": 11,
+  "imageFiles": 51,
+  "fontFiles": 0,
+  "hasBootstrap": true,
+  "hasTailwind": false,
+  "hasMaterialUI": false,
+  "frameworks": [
+    "Bootstrap"
+  ]
+}

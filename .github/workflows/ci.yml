@@ -1,0 +1,134 @@
+name: 🚀 CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # 🧪 تست‌های Python
+  test-python:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9, 3.10, 3.11]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: 🐍 راه‌اندازی Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: 📦 نصب وابستگی‌ها
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r backend/requirements.txt
+        pip install -r requirements-test.txt
+    
+    - name: 🧪 اجرای تست‌ها
+      run: |
+        cd backend
+        python manage.py test
+        cd ..
+        pytest tests/ -v --cov=backend --cov-report=xml
+    
+    - name: 📊 آپلود گزارش پوشش
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: python
+        name: python-coverage
+
+  # 🧪 تست‌های Node.js
+  test-node:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16, 18, 20]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: 🟢 راه‌اندازی Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    - name: 📦 نصب وابستگی‌ها
+      run: npm ci
+    
+    - name: 🧪 اجرای تست‌ها
+      run: npm test
+    
+    - name: 🔍 اجرای ESLint
+      run: npm run lint
+
+  # 🔒 تست‌های امنیتی
+  security:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: 🐍 راه‌اندازی Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: 📦 نصب وابستگی‌ها
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r backend/requirements.txt
+        pip install bandit safety
+    
+    - name: 🔍 تست امنیتی با Bandit
+      run: bandit -r backend/ -f json -o bandit-report.json
+    
+    - name: 🔍 بررسی وابستگی‌های ناامن
+      run: safety check --json --output safety-report.json
+    
+    - name: 📊 آپلود گزارش امنیتی
+      uses: actions/upload-artifact@v3
+      with:
+        name: security-reports
+        path: |
+          bandit-report.json
+          safety-report.json
+
+  # 🏗️ Build و Deploy
+  build:
+    needs: [test-python, test-node, security]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: 🐳 Build Docker Image
+      run: |
+        docker build -t sitebuilder:latest .
+        docker tag sitebuilder:latest sitebuilder:${{ github.sha }}
+    
+    - name: 🚀 Deploy to Production
+      if: github.ref == 'refs/heads/main'
+      run: |
+        echo "🚀 Deploying to production..."
+        # اینجا دستورات deployment واقعی قرار می‌گیرد
+
+  # 📊 گزارش‌گیری
+  report:
+    needs: [test-python, test-node, security]
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+    - name: 📊 ایجاد گزارش
+      run: |
+        echo "## 🧪 نتایج تست‌ها" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ تست‌های Python: ${{ needs.test-python.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ تست‌های Node.js: ${{ needs.test-node.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "- 🔒 تست‌های امنیتی: ${{ needs.security.result }}" >> $GITHUB_STEP_SUMMARY

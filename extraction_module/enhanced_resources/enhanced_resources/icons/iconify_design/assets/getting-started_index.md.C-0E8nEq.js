@@ -1,0 +1,629 @@
+import{l as d,h as u}from"./chunks/theme.i-6uoSSO.js";import{o as s,c as r,j as t,a as c,t as o,k as i,_ as f,W as p,G as a}from"./chunks/framework.CwfKyha4.js";import{_ as z}from"./chunks/LatestNews.D9WTXLvr.js";const S={id:"license-title",tabindex:"-1"};JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":".vitepress/theme/components/GettingStartedLicense.md","filePath":".vitepress/theme/components/GettingStartedLicense.md","lastUpdated":1682426912000}');const w={name:".vitepress/theme/components/GettingStartedLicense.md"},x=Object.assign(w,{setup(l){return(e,n)=>(s(),r("div",null,[t("h2",S,[c(o(i(d).title)+" ",1),n[0]||(n[0]=t("a",{class:"header-anchor",href:"#license-title","aria-label":'Permalink to "{{ license.title }}"'},"​",-1))]),t("p",null,o(i(d).p1),1),t("p",null,o(i(d).p2),1),t("p",null,o(i(d).p3),1)]))}}),M=`<svg
+	width="32"
+	height="32"
+	viewBox="0 0 32 32"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<g fill="currentColor" opacity="0">
+		<path d="M10.5 11C13 11 13 16 10.5 16C8 16 8 11 10.5 11Z">
+			<animate
+				id="heartStart"
+				attributeName="d"
+				values="M10.5 11C13 11 13 16 10.5 16C8 16 8 11 10.5 11Z;M9.51163 10.1325C11.0374 7.28471 17.5506 9.89252 11.4154 17C2.42456 13.8082 6.716 8.40463 9.51163 10.1325Z"
+				begin="2s;heartEnd.begin+2s"
+				dur="0.2s"
+				fill="freeze"
+			/>
+			<animate
+				id="heartEnd"
+				attributeName="d"
+				values="M9.51163 10.1325C11.0374 7.28471 17.5506 9.89252 11.4154 17C2.42456 13.8082 6.716 8.40463 9.51163 10.1325Z;M10.5 11C13 11 13 16 10.5 16C8 16 8 11 10.5 11Z"
+				begin="heartStart.begin+2s"
+				dur="0.4s"
+				fill="freeze"
+			/>
+		</path>
+		<path d="M21.5 11C24 11 24 16 21.5 16C19 16 19 11 21.5 11Z">
+			<animate
+				attributeName="d"
+				values="M21.5 11C24 11 24 16 21.5 16C19 16 19 11 21.5 11Z;M22.4878 10.1325C25.2839 8.40463 29.576 13.8082 20.5837 17C14.4496 9.89252 20.9638 7.28471 22.4878 10.1325Z"
+				begin="heartStart.begin"
+				dur="0.2s"
+				fill="freeze"
+			/>
+			<animate
+				attributeName="d"
+				values="M22.4878 10.1325C25.2839 8.40463 29.576 13.8082 20.5837 17C14.4496 9.89252 20.9638 7.28471 22.4878 10.1325Z;M21.5 11C24 11 24 16 21.5 16C19 16 19 11 21.5 11Z"
+				begin="heartEnd.begin"
+				dur="0.4s"
+				fill="freeze"
+			/>
+		</path>
+		<animate
+			attributeName="opacity"
+			values="0;1"
+			begin="0.6s"
+			dur="0.2s"
+			fill="freeze"
+		/>
+		<animate
+			attributeName="fill"
+			values="currentColor;#E13E31"
+			begin="heartStart.begin"
+			dur="0.2s"
+			fill="freeze"
+		/>
+		<animate
+			attributeName="fill"
+			values="#E13E31;currentColor"
+			begin="heartEnd.begin"
+			dur="0.2s"
+			fill="freeze"
+		/>
+	</g>
+	<path
+		d="M16 26C21.1562 26 25.4909 21.2412 24.9582 20.1898C24.423 19.1334 22.134 22.8308 16 22.8308C9.86596 22.8308 7.5544 19.1334 7.04323 20.1898C6.53206 21.2462 10.8437 26 16 26Z"
+		fill="currentColor"
+		opacity="0"
+	>
+		<animate
+			attributeName="opacity"
+			values="0;1"
+			begin="0.8s"
+			dur="0.2s"
+			fill="freeze"
+		/>
+		<animate
+			attributeName="d"
+			values="M16 26C21.1562 26 25.4909 21.2412 24.9582 20.1898C24.423 19.1334 22.134 22.8308 16 22.8308C9.86596 22.8308 7.5544 19.1334 7.04323 20.1898C6.53206 21.2462 10.8437 26 16 26Z;M16 26C21.1563 26 24.5327 21.2412 24 20.1898C23.4648 19.1334 21 21.9998 16 21.9998C11 21.9998 8.51117 19.1334 8 20.1898C7.48883 21.2462 10.8438 26 16 26Z"
+			begin="heartStart.begin"
+			dur="0.4s"
+			fill="freeze"
+		/>
+		<animate
+			attributeName="d"
+			values="M16 26C21.1563 26 24.5327 21.2412 24 20.1898C23.4648 19.1334 21 21.9998 16 21.9998C11 21.9998 8.51117 19.1334 8 20.1898C7.48883 21.2462 10.8438 26 16 26Z;M16 26C21.1562 26 25.4909 21.2412 24.9582 20.1898C24.423 19.1334 22.134 22.8308 16 22.8308C9.86596 22.8308 7.5544 19.1334 7.04323 20.1898C6.53206 21.2462 10.8437 26 16 26Z"
+			begin="heartEnd.begin+0.4s"
+			dur="0.4s"
+			fill="freeze"
+		/>
+	</path>
+	<path
+		d="M16 31C24.2843 31 31 24.2843 31 16C31 7.71573 24.2843 1 16 1C7.71573 1 1 7.71573 1 16C1 24.2843 7.71573 31 16 31Z"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-dasharray="96"
+		stroke-dashoffset="96"
+	>
+		<animate
+			attributeName="stroke-dashoffset"
+			values="96;0"
+			dur="0.6s"
+			fill="freeze"
+		/>
+	</path>
+</svg>
+`,I={class:"intro-sponsor"},V=["innerHTML"];JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":".vitepress/theme/components/GettingStartedSponsor.md","filePath":".vitepress/theme/components/GettingStartedSponsor.md","lastUpdated":1684331208000}');const $={name:".vitepress/theme/components/GettingStartedSponsor.md"},P=Object.assign($,{setup(l){return(e,n)=>(s(),r("div",null,[n[1]||(n[1]=t("h2",{id:"support-iconify",tabindex:"-1"},[c("Support Iconify "),t("a",{class:"header-anchor",href:"#support-iconify","aria-label":'Permalink to "Support Iconify"'},"​")],-1)),t("section",I,[t("div",{innerHTML:i(M)},null,8,V),n[0]||(n[0]=t("div",null,[t("p",null," Iconify is an open source project, not backed by a large company. "),t("p",null,[c(" If you are using Iconify in your projects, "),t("a",{href:"/sponsors/"},"please consider supporting Iconify development"),c(". ")])],-1))])]))}});JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":".vitepress/theme/components/GettingStartedIntro.md","filePath":".vitepress/theme/components/GettingStartedIntro.md","lastUpdated":1684270050000}');const G={name:".vitepress/theme/components/GettingStartedIntro.md"};function T(l,e,n,m,g,b){return s(),r("div",null,e[0]||(e[0]=[p('<h2 id="where-to-start" tabindex="-1">Where to start? <a class="header-anchor" href="#where-to-start" aria-label="Permalink to &quot;Where to start?&quot;">​</a></h2><ul><li>Want to use icons in your code? <a href="https://icon-sets.iconify.design/" target="_blank" rel="noreferrer">Browse or search available icon sets</a>, select any icon, and you&#39;ll see code samples.</li><li>Want to use icons in your designs? Plugins <a href="/docs/design/figma/">for Figma</a> and <a href="/docs/design/sketch/">Sketch</a> are available. For other platforms you can <a href="https://icon-sets.iconify.design/" target="_blank" rel="noreferrer">browse icons on Iconify website</a> and copy/paste SVG.</li><li>Want to use icon data? <a href="/docs/icons/all.html">See documentation for icon data</a>, <a href="/docs/libraries/">and documentation for various tools</a>.</li></ul><p>For advanced usage, check out <a href="/docs/">Iconify documentation</a>. There are sections for every part of the project.</p>',3)]))}const E=f(G,[["render",T]]);JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":".vitepress/theme/components/GettingStartedIconSets.md","filePath":".vitepress/theme/components/GettingStartedIconSets.md","lastUpdated":1684304802000}');const j={name:".vitepress/theme/components/GettingStartedIconSets.md"};function Z(l,e,n,m,g,b){return s(),r("div",null,e[0]||(e[0]=[p('<section><div class="intro-icons"><div class="intro-icons-icons"><div class="intro-icons-block intro-icons-block--24"><iconify-icon icon="line-md:sun-rising-loop" class="icon--red"></iconify-icon><iconify-icon icon="gg:border-right" class="icon--deep-purple"></iconify-icon><iconify-icon icon="tabler:bat" class="icon--teal"></iconify-icon><iconify-icon icon="ph:address-book-duotone" class="icon--red"></iconify-icon><iconify-icon icon="mdi:image-edit-outline" class="icon--indigo"></iconify-icon></div><div class="intro-icons-block intro-icons-block--32"><iconify-icon icon="fluent-emoji:astonished-face"></iconify-icon><iconify-icon icon="fxemoji:ghost"></iconify-icon><iconify-icon icon="fxemoji:foxheart"></iconify-icon><iconify-icon icon="fxemoji:watch"></iconify-icon></div><div class="intro-icons-block intro-icons-block--24"><iconify-icon icon="mdi-light:camera" class="icon--light-blue"></iconify-icon><iconify-icon icon="pixelarticons:alert" class="icon--red"></iconify-icon><iconify-icon icon="iconoir:airplay" class="icon--green"></iconify-icon><iconify-icon icon="heroicons:document-solid" class="icon--blue"></iconify-icon><iconify-icon icon="heroicons:face-smile" class="icon--purple"></iconify-icon></div></div><div class="intro-icons-content"><p> Material Design, Phosphor, Remix, Carbon, Bootstrap, Tabler, Feather, Fluent, IconPark, Octicons and many other icon sets. Twitter Emoji, Fluent Emoji, EmojiOne, Noto Emoji are also available as icon sets. </p><p> Use them with the same tools, same reusable and customisable icon components: </p></div></div><ul><li><a href="/docs/iconify-icon/">Iconify Icon web component</a> (HTML with or without UI frameworks. Works great with SSR). </li><li><a href="/docs/icon-components/">Iconify framework native components</a> (React, Vue, Svelte, Ember). </li></ul><p> You can also get raw SVG <a href="/docs/libraries/tools/">using various tools</a> and embed them in your pages without any components. </p><p> Iconify is supported by a growing community. In addition to Iconify icon components, there are now more ways to use icons, created by amazing open source developers: </p><ul><li><a href="/docs/usage/svg/unplugin/">Unplugin Icons</a> (supports many UI frameworks). </li><li><a href="/docs/usage/css/unocss/">UnoCSS</a> (icons in CSS). </li><li><a href="/docs/usage/svg/astro/">Astro Icon</a> (Astro). </li><li><a href="https://github.com/edge-js/edge-iconify" target="_blank">Edge Iconify</a> (Edge template engine). </li><li><a href="https://github.com/cawa-93/iconify-prerendered" target="_blank">Iconify Prerendered</a> (Vue). </li><li><a href="https://github.com/Atinux/nuxt-icon" target="_blank">Nuxt Icon</a> (Nuxt). </li></ul></section>',1)]))}const O=f(j,[["render",Z]]),U=`<svg
+	width="48"
+	height="48"
+	viewBox="0 0 48 48"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<mask id="lock-mask">
+		<g fill="none" stroke="#fff" stroke-width="4">
+			<g stroke-linecap="round">
+				<!-- rectangle: 4px -->
+				<rect
+					x="10"
+					y="22"
+					width="28"
+					height="20"
+					rx="2"
+					fill="#fff"
+					stroke-width="0"
+					fill-opacity="0"
+				>
+					<animate
+						attributeName="stroke-width"
+						values="0;4"
+						begin="0"
+						dur="0.2s"
+						fill="freeze"
+					/>
+					<!-- fill only for lock 1 -->
+					<animate
+						id="lock1"
+						attributeName="fill-opacity"
+						values="0;0.3"
+						begin="0;lock1r.begin+0.2s"
+						dur="0.5s"
+						fill="freeze"
+					/>
+					<set
+						attributeName="fill-opacity"
+						to="0"
+						begin="lock2.begin+0.5s"
+					/>
+				</rect>
+				<!-- lock: 4px -->
+				<path
+					d="M16 14C16 9.58172 19.5817 6 24 6C28.4183 6 32 9.58172 32 14V22"
+					stroke-dasharray="36"
+					stroke-dashoffset="36"
+				>
+					<animate
+						attributeName="stroke-dashoffset"
+						values="36;72"
+						begin="0.4s"
+						dur="0.4s"
+						fill="freeze"
+					/>
+				</path>
+				<animate
+					attributeName="opacity"
+					values="1;0"
+					begin="lock2.begin;lock4.begin"
+					dur="0.2s"
+					fill="freeze"
+				/>
+				<animate
+					id="lock3"
+					attributeName="opacity"
+					values="0;1"
+					begin="lock2.begin+3s"
+					dur="0.2s"
+					fill="freeze"
+				/>
+				<!-- reset -->
+				<animate
+					id="lock1r"
+					attributeName="opacity"
+					values="0;1"
+					begin="loop.begin+0.2s"
+					dur="0.2s"
+					fill="freeze"
+				/>
+			</g>
+			<g stroke-width="2">
+				<!-- rectangle: 2px -->
+				<rect
+					x="9"
+					y="21"
+					width="30"
+					height="22"
+					rx="3"
+					fill="#fff"
+					fill-opacity="0"
+					opacity="0"
+				>
+					<set
+						id="lock2"
+						attributeName="opacity"
+						to="1"
+						begin="lock1.begin+3s"
+					/>
+					<set
+						attributeName="opacity"
+						to="0"
+						begin="lock3.begin+0.2s"
+					/>
+					<set
+						id="lock4"
+						attributeName="opacity"
+						to="1"
+						begin="lock3.begin+3s"
+					/>
+					<!-- morph into circle -->
+					<animate
+						id="lock4m"
+						attributeName="rx"
+						values="3;13"
+						begin="lock4.begin+0.2s"
+						dur="0.4s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="x"
+						values="9;11"
+						begin="lock4m.begin"
+						dur="0.4s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="width"
+						values="30;26"
+						begin="lock4m.begin"
+						dur="0.4s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="y"
+						values="21;17"
+						begin="lock4m.begin"
+						dur="0.4s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="height"
+						values="22;26"
+						begin="lock4m.begin"
+						dur="0.4s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="fill-opacity"
+						values="0;0.3"
+						begin="lock4m.begin"
+						dur="0.2s"
+						fill="freeze"
+					/>
+					<!-- morph into wide rect -->
+					<animate
+						id="lock5"
+						attributeName="fill-opacity"
+						values="0.3;0"
+						begin="lock4.begin+3s"
+						dur="0.2s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="rx"
+						values="13;4"
+						begin="lock5.begin"
+						dur="0.4s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="x"
+						values="11;7"
+						begin="lock5.begin"
+						dur="0.4s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="width"
+						values="26;34"
+						begin="lock5.begin"
+						dur="0.4s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="y"
+						values="17;21"
+						begin="lock5.begin"
+						dur="0.4s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="height"
+						values="26;22"
+						begin="lock5.begin"
+						dur="0.4s"
+						fill="freeze"
+					/>
+					<!-- reset -->
+					<animate
+						id="loop"
+						attributeName="rx"
+						values="4;3"
+						begin="lock5.begin+3s"
+						dur="0.2s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="x"
+						values="7;9"
+						begin="loop.begin"
+						dur="0.2s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="width"
+						values="34;30"
+						begin="loop.begin"
+						dur="0.2s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="opacity"
+						values="1;0"
+						begin="loop.begin+0.4s"
+						dur="0.2s"
+						fill="freeze"
+					/>
+				</rect>
+				<!-- lock: 2px -->
+				<path
+					d="M32 22V14C32 9.58172 28.4183 6 24 6C19.5817 6 16 9.58172 16 14V22"
+					opacity="0"
+				>
+					<set
+						attributeName="opacity"
+						to="1"
+						begin="lock2.begin;lock4.begin"
+					/>
+					<set
+						attributeName="opacity"
+						to="0"
+						begin="lock3.begin+0.2s;lock1.begin+0.2s"
+					/>
+					<!-- lock 4 -->
+					<animate
+						attributeName="d"
+						values="M32 22V14C32 9.58172 28.4183 6 24 6C19.5817 6 16 9.58172 16 14V22;M32 20V12C32 7.58172 28.4183 4 24 4C19.5817 4 16 7.58172 16 12V20"
+						begin="lock4.begin+0.2s"
+						dur="0.4s"
+						fill="freeze"
+					/>
+					<!-- lock 5 -->
+					<animate
+						attributeName="d"
+						values="M32 20V12C32 7.58172 28.4183 4 24 4C19.5817 4 16 7.58172 16 12V20;M33 21V15C33 10.0294 28.9706 6 24 6C19.0294 6 15 10.0294 15 15V21"
+						begin="lock5.begin+0.2s"
+						dur="0.4s"
+						fill="freeze"
+					/>
+					<!-- reset -->
+					<animate
+						attributeName="d"
+						values="M33 21V15C33 10.0294 28.9706 6 24 6C19.0294 6 15 10.0294 15 15V21;M32 22V14C32 9.58172 28.4183 6 24 6C19.5817 6 16 9.58172 16 14V22"
+						begin="loop.begin"
+						dur="0.2s"
+						fill="freeze"
+					/>
+				</path>
+				<!-- lock 5 -->
+				<path
+					d="M19 14.7273C19 12.1165 21.2386 10 24 10C26.7614 10 29 12.1165 29 14.7273V21"
+					stroke-dasharray="30"
+					stroke-dashoffset="30"
+				>
+					<animate
+						attributeName="stroke-dashoffset"
+						values="30;60"
+						begin="lock5.begin+0.4s"
+						dur="0.4s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="opacity"
+						values="1;0"
+						begin="loop.begin"
+						dur="0.2s"
+						fill="freeze"
+					/>
+					<!-- reset -->
+					<set attributeName="opacity" to="1" begin="lock5.begin" />
+					<set
+						attributeName="stroke-dashoffset"
+						to="30"
+						begin="lock1r.begin"
+					/>
+				</path>
+			</g>
+			<!-- keyhole: circle -->
+			<g stroke-width="2" fill="#fff">
+				<circle cx="24" cy="32" r="3" fill-opacity="0">
+					<animate
+						attributeName="fill-opacity"
+						values="0;1"
+						begin="lock1.begin;lock3.begin"
+						dur="0.2s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="fill-opacity"
+						values="1;0"
+						begin="lock2.begin"
+						dur="0.2s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="cy"
+						values="32;31"
+						begin="lock3.begin"
+						dur="0.2s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="r"
+						values="3;2"
+						begin="lock3.begin"
+						dur="0.2s"
+						fill="freeze"
+					/>
+					<animate
+						attributeName="opacity"
+						values="1;0"
+						begin="lock4.begin+0.2s"
+						dur="0.2s"
+						fill="freeze"
+					/>
+					<!-- reset (hidden) -->
+					<set attributeName="cy" to="32" begin="loop.begin" />
+					<set attributeName="r" to="3" begin="loop.begin" />
+					<animate
+						attributeName="opacity"
+						values="0;1"
+						begin="lock1.begin"
+						dur="0.2s"
+						fill="freeze"
+					/>
+				</circle>
+			</g>
+			<!-- decoration -->
+			<g stroke-width="2">
+				<path
+					d="M8 31H40M8 37H40"
+					stroke-dasharray="36"
+					stroke-dashoffset="36"
+				>
+					<animate
+						attributeName="stroke-dashoffset"
+						values="36;0"
+						begin="lock5.begin+0.8s"
+						dur="0.4s"
+						fill="freeze"
+					/>
+					<set
+						attributeName="stroke-dashoffset"
+						to="36"
+						begin="lock2.begin"
+					/>
+				</path>
+				<path
+					d="M15 31L11 37"
+					stroke-dasharray="12"
+					stroke-dashoffset="12"
+				>
+					<animate
+						attributeName="stroke-dashoffset"
+						values="12;0"
+						begin="lock5.begin+1s"
+						dur="0.2s"
+						fill="freeze"
+					/>
+					<set
+						attributeName="stroke-dashoffset"
+						to="12"
+						begin="lock2.begin"
+					/>
+				</path>
+				<path
+					d="M23 31L19 37"
+					stroke-dasharray="12"
+					stroke-dashoffset="12"
+				>
+					<animate
+						attributeName="stroke-dashoffset"
+						values="12;0"
+						begin="lock5.begin+1.1s"
+						dur="0.2s"
+						fill="freeze"
+					/>
+					<set
+						attributeName="stroke-dashoffset"
+						to="12"
+						begin="lock2.begin"
+					/>
+				</path>
+				<path
+					d="M31 31L27 37"
+					stroke-dasharray="12"
+					stroke-dashoffset="12"
+				>
+					<animate
+						attributeName="stroke-dashoffset"
+						values="12;0"
+						begin="lock5.begin+1.2s"
+						dur="0.2s"
+						fill="freeze"
+					/>
+					<set
+						attributeName="stroke-dashoffset"
+						to="12"
+						begin="lock2.begin"
+					/>
+				</path>
+				<animate
+					attributeName="opacity"
+					values="1;0"
+					begin="loop.begin"
+					dur="0.2s"
+					fill="freeze"
+				/>
+				<set attributeName="opacity" to="1" begin="lock5.begin" />
+			</g>
+		</g>
+		<!-- keyhole: line -->
+		<rect fill="#fff" x="23" y="33" width="2" height="0" rx="2">
+			<animate
+				attributeName="height"
+				values="0;4"
+				begin="lock3.begin+0.2s"
+				dur="0.2s"
+				fill="freeze"
+			/>
+			<animate
+				attributeName="height"
+				values="4;0"
+				begin="lock4.begin"
+				dur="0.2s"
+				fill="freeze"
+			/>
+		</rect>
+		<!-- line -->
+		<g transform="rotate(45 24 24)">
+			<rect x="-4" y="18" width="0" height="4" fill="#000">
+				<animate
+					attributeName="width"
+					values="0;56"
+					begin="0.4s"
+					dur="0.6s"
+					fill="freeze"
+				/>
+				<animate
+					attributeName="y"
+					values="18;20"
+					begin="lock3.begin+0.4s"
+					dur="0.2s"
+					fill="freeze"
+				/>
+				<animate
+					attributeName="y"
+					values="20;18"
+					begin="lock5.begin+0.4s"
+					dur="0.2s"
+					fill="freeze"
+				/>
+			</rect>
+			<rect x="-4" y="22" width="0" height="4" fill="#fff" rx="2">
+				<animate
+					attributeName="x"
+					values="-4;0;-4"
+					dur="6s"
+					repeatCount="indefinite"
+				/>
+				<animate
+					attributeName="width"
+					values="0;56"
+					begin="0.4s"
+					dur="0.6s"
+					fill="freeze"
+				/>
+				<animate
+					attributeName="y"
+					values="22;24"
+					begin="lock3.begin+0.4s"
+					dur="0.2s"
+					fill="freeze"
+				/>
+				<animate
+					attributeName="y"
+					values="24;22"
+					begin="lock5.begin+0.4s"
+					dur="0.2s"
+					fill="freeze"
+				/>
+				<animate
+					attributeName="height"
+					values="4;2"
+					begin="lock4.begin+0.4s"
+					dur="0.2s"
+					fill="freeze"
+				/>
+				<animate
+					attributeName="height"
+					values="2;4"
+					begin="lock5.begin+0.4s"
+					dur="0.2s"
+					fill="freeze"
+				/>
+			</rect>
+		</g>
+	</mask>
+	<rect width="48" height="48" fill="currentColor" mask="url(#lock-mask)" />
+</svg>
+`,L={class:"vendor-lock-in"},H=["innerHTML"];JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":".vitepress/theme/components/GettingStartedFreedom.md","filePath":".vitepress/theme/components/GettingStartedFreedom.md","lastUpdated":1684304802000}');const A={name:".vitepress/theme/components/GettingStartedFreedom.md"},F=Object.assign(A,{setup(l){return(e,n)=>(s(),r("div",null,[t("section",L,[t("div",{innerHTML:i(U)},null,8,H),n[0]||(n[0]=t("div",null,[t("p",null,[c("Iconify makes it easy to "),t("a",{href:"/docs/articles/vendor-lock-in.html"},"avoid vendor lock-in"),c(".")]),t("p",null," You can use many open source icon sets with a large choice of open source icon components. Thousands of high-quality icons from 100+ icon sets, all validated, cleaned up, optimised and always up to date. ")],-1))])]))}}),B={class:"home hero getting-started"};JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":".vitepress/theme/components/GettingStartedHero.md","filePath":".vitepress/theme/components/GettingStartedHero.md","lastUpdated":1682427431000}');const J={name:".vitepress/theme/components/GettingStartedHero.md"},W=Object.assign(J,{setup(l){return(e,n)=>(s(),r("div",null,[t("section",B,[t("h1",null,o(i(u).title),1),t("p",null,o(i(u).p1),1),t("p",null,o(i(u).p2),1)])]))}}),Q=JSON.parse('{"title":"Getting Started","description":"","frontmatter":{"title":"Getting Started"},"headers":[],"relativePath":"getting-started/index.md","filePath":"getting-started/index.md","lastUpdated":1683202957000}'),D={name:"getting-started/index.md"};function R(l,e,n,m,g,b){const h=W,k=F,v=O,_=E,y=P,N=z,C=x;return s(),r("div",null,[a(h),a(k),a(v),a(_),a(y),a(N),a(C)])}const X=f(D,[["render",R]]);export{Q as __pageData,X as default};

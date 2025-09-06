@@ -1,0 +1,13 @@
+{
+  "siteName": "themeforest_net",
+  "totalFiles": 164,
+  "cssFiles": 5,
+  "jsFiles": 13,
+  "htmlFiles": 10,
+  "imageFiles": 131,
+  "fontFiles": 0,
+  "hasBootstrap": false,
+  "hasTailwind": false,
+  "hasMaterialUI": false,
+  "frameworks": []
+}

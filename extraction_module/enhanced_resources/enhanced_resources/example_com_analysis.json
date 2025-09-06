@@ -1,0 +1,13 @@
+{
+  "siteName": "example_com",
+  "totalFiles": 4,
+  "cssFiles": 1,
+  "jsFiles": 0,
+  "htmlFiles": 1,
+  "imageFiles": 0,
+  "fontFiles": 0,
+  "hasBootstrap": false,
+  "hasTailwind": false,
+  "hasMaterialUI": false,
+  "frameworks": []
+}

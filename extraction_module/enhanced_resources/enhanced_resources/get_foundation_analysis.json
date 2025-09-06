@@ -1,0 +1,16 @@
+{
+  "siteName": "get_foundation",
+  "totalFiles": 53,
+  "cssFiles": 4,
+  "jsFiles": 4,
+  "htmlFiles": 8,
+  "imageFiles": 33,
+  "fontFiles": 0,
+  "hasBootstrap": false,
+  "hasTailwind": false,
+  "hasMaterialUI": false,
+  "frameworks": [
+    "Foundation",
+    "Semantic UI"
+  ]
+}

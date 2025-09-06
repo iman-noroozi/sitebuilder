@@ -1,0 +1,18 @@
+{
+    "name": "Template 2",
+    "description": "قالب مدرن برای کسب و کار",
+    "category": "portfolio",
+    "preview": "template2_preview.jpg",
+    "html": "<section class=\"modern-hero\" style=\"background: #f8f9fa; padding: 80px 0;\"><div class=\"container\"><div class=\"row\"><div class=\"col-md-6\"><h2>نوآوری در کسب و کار</h2><p>راه‌حل‌های خلاقانه برای موفقیت شما</p></div><div class=\"col-md-6\"><img src=\"https://via.placeholder.com/500x300\" class=\"img-fluid\" alt=\"نمونه تصویر\"></div></div></div></section>",
+    "css": ".modern-hero { background-color: #f8f9fa; } .modern-hero h2 { color: #2c3e50; font-weight: 700; } .modern-hero p { color: #7f8c8d; font-size: 1.1rem; }",
+    "blocks": [
+        {
+            "id": "modern_hero_1",
+            "type": "hero",
+            "name": "هیرو مدرن 1",
+            "html": "<section class=\"modern-hero\"><h2>عنوان</h2><p>متن</p><img src=\"placeholder.jpg\" alt=\"تصویر\"></section>",
+            "editable": true,
+            "draggable": true
+        }
+    ]
+}

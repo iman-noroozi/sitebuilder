@@ -1,0 +1,56 @@
+{
+  "extractor": {
+    "headless": false,
+    "timeout": 45000,
+    "downloadAssets": true,
+    "cleanHTML": true,
+    "extractImages": true,
+    "extractFonts": true,
+    "maxConcurrentDownloads": 5,
+    "screenshot": {
+      "enabled": true,
+      "fullPage": true,
+      "format": "png"
+    },
+    "saveLog": true
+  },
+  "output": {
+    "createZip": false,
+    "organizeAssets": true,
+    "includeMetadata": true,
+    "generateReadme": true
+  },
+  "advanced": {
+    "waitTime": 3000,
+    "retryAttempts": 3,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "sites": {
+    "testUrls": [
+      "https://example.com",
+      "https://getbootstrap.com/docs/5.3/examples/carousel/",
+      "https://developer.mozilla.org/en-US/"
+    ]
+  },
+  "ai_models": {
+    "openai": {
+      "api_key": "YOUR_OPENAI_API_KEY_HERE",
+      "model": "gpt-4",
+      "max_tokens": 4000,
+      "temperature": 0.7
+    },
+    "anthropic": {
+      "api_key": "YOUR_ANTHROPIC_API_KEY_HERE",
+      "model": "claude-3-sonnet-20240229",
+      "max_tokens": 4000
+    },
+    "google": {
+      "api_key": "YOUR_GOOGLE_API_KEY_HERE",
+      "gemini_model": "gemini-pro"
+    }
+  }
+}

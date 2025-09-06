@@ -1,0 +1,308 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}آمار قالب‌ها - پیسان وب{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <!-- Header -->
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">آمار و گزارش قالب‌ها</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group me-2">
+                        <a href="{% url 'extracted_templates_management' %}" class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-folder"></i> قالب‌های استخراج شده
+                        </a>
+                        <a href="{% url 'template_management' %}" class="btn btn-sm btn-outline-secondary">
+                            <i class="fas fa-database"></i> قالب‌های دیتابیس
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div class="row mb-4">
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-right-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        کل قالب‌ها
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ total_templates }}</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-right-success shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        قالب‌های فعال
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ active_templates }}</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-check-circle fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-right-info shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                        قالب‌های ویژه
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ featured_templates }}</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-star fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-right-warning shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                        قالب‌های رایگان
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ free_templates }}</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-gift fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="row">
+                <!-- Category Distribution Chart -->
+                <div class="col-xl-8 col-lg-7">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">توزیع قالب‌ها بر اساس دسته‌بندی</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-area">
+                                <canvas id="categoryChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extracted Templates Info -->
+                <div class="col-xl-4 col-lg-5">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">قالب‌های استخراج شده</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <i class="fas fa-folder-open fa-3x text-primary mb-3"></i>
+                                <h4 class="text-gray-800">{{ extracted_count }}</h4>
+                                <p class="text-gray-600">قالب استخراج شده</p>
+                            </div>
+                            <div class="mt-3">
+                                <a href="{% url 'extracted_templates_management' %}" class="btn btn-primary btn-block">
+                                    <i class="fas fa-eye"></i> مشاهده قالب‌های استخراج شده
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Statistics Table -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">آمار تفصیلی دسته‌بندی‌ها</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>دسته‌بندی</th>
+                                            <th>تعداد قالب</th>
+                                            <th>درصد</th>
+                                            <th>وضعیت</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for stat in category_stats %}
+                                        <tr>
+                                            <td>
+                                                <i class="{{ stat.category.icon }}"></i>
+                                                {{ stat.category.name }}
+                                            </td>
+                                            <td>{{ stat.count }}</td>
+                                            <td>
+                                                <div class="progress" style="height: 20px;">
+                                                    <div class="progress-bar" role="progressbar" 
+                                                         style="width: {{ stat.percentage }}%;" 
+                                                         aria-valuenow="{{ stat.percentage }}" 
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        {{ stat.percentage|floatformat:1 }}%
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {% if stat.count > 0 %}
+                                                <span class="badge bg-success">فعال</span>
+                                                {% else %}
+                                                <span class="badge bg-secondary">خالی</span>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.border-right-primary {
+    border-right: 0.25rem solid #4e73df !important;
+}
+
+.border-right-success {
+    border-right: 0.25rem solid #1cc88a !important;
+}
+
+.border-right-info {
+    border-right: 0.25rem solid #36b9cc !important;
+}
+
+.border-right-warning {
+    border-right: 0.25rem solid #f6c23e !important;
+}
+
+.text-gray-300 {
+    color: #dddfeb !important;
+}
+
+.text-gray-800 {
+    color: #5a5c69 !important;
+}
+
+.text-gray-600 {
+    color: #858796 !important;
+}
+
+.chart-area {
+    position: relative;
+    height: 20rem;
+    width: 100%;
+}
+
+.progress {
+    background-color: #eaecf4;
+    border-radius: 0.35rem;
+}
+
+.progress-bar {
+    background-color: #4e73df;
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// Category Distribution Chart
+const ctx = document.getElementById('categoryChart').getContext('2d');
+const categoryChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: [
+            {% for stat in category_stats %}
+            '{{ stat.category.name }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            data: [
+                {% for stat in category_stats %}
+                {{ stat.count }},
+                {% endfor %}
+            ],
+            backgroundColor: [
+                '#4e73df',
+                '#1cc88a',
+                '#36b9cc',
+                '#f6c23e',
+                '#e74a3b',
+                '#858796',
+                '#5a5c69',
+                '#2e59d9',
+                '#17a673',
+                '#2c9faf'
+            ],
+            hoverBackgroundColor: [
+                '#2e59d9',
+                '#17a673',
+                '#2c9faf',
+                '#f4b619',
+                '#e02424',
+                '#6c757d',
+                '#4e4e4e',
+                '#1f3a93',
+                '#0f5f4a',
+                '#1e7e8c'
+            ],
+            hoverBorderColor: "rgba(234, 236, 244, 1)",
+        }],
+    },
+    options: {
+        maintainAspectRatio: false,
+        tooltips: {
+            backgroundColor: "rgb(255,255,255)",
+            bodyFontColor: "#858796",
+            borderColor: '#dddfeb',
+            borderWidth: 1,
+            xPadding: 15,
+            yPadding: 15,
+            displayColors: false,
+            caretPadding: 10,
+        },
+        legend: {
+            display: true,
+            position: 'bottom'
+        },
+        cutoutPercentage: 80,
+    },
+});
+</script>
+{% endblock %}

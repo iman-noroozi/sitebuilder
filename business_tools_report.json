@@ -1,0 +1,323 @@
+{
+  "summary": {
+    "total_tools_required": 9,
+    "total_cost": 26500000,
+    "development_phases": 3,
+    "estimated_duration": "20-26 هفته"
+  },
+  "analysis": {
+    "critical_tools": [
+      {
+        "name": "سیستم پرداخت",
+        "category": "financial",
+        "description": "درگاه‌های پرداخت ایرانی (زرین‌پال، ملی‌پرداخت)",
+        "priority": "critical",
+        "estimated_cost": 5000000,
+        "development_time": "2-3 هفته"
+      },
+      {
+        "name": "سیستم حسابداری",
+        "category": "financial",
+        "description": "مدیریت حساب‌ها، فاکتورها و گزارش‌های مالی",
+        "priority": "critical",
+        "estimated_cost": 3000000,
+        "development_time": "3-4 هفته"
+      },
+      {
+        "name": "سیستم موجودی",
+        "category": "inventory",
+        "description": "کنترل موجودی کالاها و مواد اولیه",
+        "priority": "critical",
+        "estimated_cost": 2000000,
+        "development_time": "2-3 هفته"
+      }
+    ],
+    "important_tools": [
+      {
+        "name": "سیستم CRM",
+        "category": "customer_management",
+        "description": "مدیریت ارتباط با مشتریان و فروش",
+        "priority": "important",
+        "estimated_cost": 4000000,
+        "development_time": "4-5 هفته"
+      },
+      {
+        "name": "چت‌بات پشتیبانی",
+        "category": "customer_service",
+        "description": "پاسخ‌دهی خودکار به سوالات مشتریان",
+        "priority": "important",
+        "estimated_cost": 2500000,
+        "development_time": "3-4 هفته"
+      },
+      {
+        "name": "سیستم ایمیل مارکتینگ",
+        "category": "marketing",
+        "description": "ارسال ایمیل‌های تبلیغاتی و خبرنامه",
+        "priority": "important",
+        "estimated_cost": 1500000,
+        "development_time": "2-3 هفته"
+      }
+    ],
+    "nice_to_have": [
+      {
+        "name": "سیستم رزرو آنلاین",
+        "category": "booking",
+        "description": "رزرو خدمات و محصولات",
+        "priority": "nice_to_have",
+        "estimated_cost": 3000000,
+        "development_time": "3-4 هفته"
+      },
+      {
+        "name": "سیستم امتیازدهی",
+        "category": "loyalty",
+        "description": "برنامه وفاداری مشتریان",
+        "priority": "nice_to_have",
+        "estimated_cost": 2000000,
+        "development_time": "2-3 هفته"
+      },
+      {
+        "name": "داشبورد تحلیلی پیشرفته",
+        "category": "analytics",
+        "description": "گزارش‌های پیشرفته و نمودارهای تعاملی",
+        "priority": "nice_to_have",
+        "estimated_cost": 3500000,
+        "development_time": "4-5 هفته"
+      }
+    ],
+    "development_plan": {
+      "phase_1": {
+        "name": "فاز اول - ابزارهای بحرانی",
+        "tools": [
+          "سیستم پرداخت",
+          "سیستم حسابداری",
+          "سیستم موجودی"
+        ],
+        "duration": "6-8 هفته",
+        "cost": 10000000
+      },
+      "phase_2": {
+        "name": "فاز دوم - ابزارهای مهم",
+        "tools": [
+          "سیستم CRM",
+          "چت‌بات پشتیبانی",
+          "سیستم ایمیل مارکتینگ"
+        ],
+        "duration": "8-10 هفته",
+        "cost": 8000000
+      },
+      "phase_3": {
+        "name": "فاز سوم - ابزارهای مفید",
+        "tools": [
+          "سیستم رزرو آنلاین",
+          "سیستم امتیازدهی",
+          "داشبورد تحلیلی پیشرفته"
+        ],
+        "duration": "6-8 هفته",
+        "cost": 8500000
+      }
+    },
+    "cost_estimate": 26500000
+  },
+  "catalog": {
+    "financial_tools": {
+      "name": "ابزارهای مالی و حسابداری",
+      "tools": [
+        {
+          "name": "سیستم پرداخت",
+          "description": "درگاه‌های پرداخت ایرانی",
+          "features": [
+            "زرین‌پال",
+            "ملی‌پرداخت",
+            "پرداخت آنلاین",
+            "کیف پول"
+          ],
+          "status": "required",
+          "integration": "api"
+        },
+        {
+          "name": "سیستم حسابداری",
+          "description": "مدیریت حساب‌ها و فاکتورها",
+          "features": [
+            "فاکتورسازی",
+            "گزارش‌گیری",
+            "مدیریت حساب‌ها",
+            "پیش‌فاکتور"
+          ],
+          "status": "required",
+          "integration": "database"
+        },
+        {
+          "name": "مدیریت موجودی",
+          "description": "کنترل موجودی کالاها",
+          "features": [
+            "ثبت ورود و خروج",
+            "هشدار موجودی کم",
+            "گزارش‌گیری",
+            "مدیریت انبار"
+          ],
+          "status": "required",
+          "integration": "database"
+        }
+      ]
+    },
+    "customer_management": {
+      "name": "مدیریت مشتریان",
+      "tools": [
+        {
+          "name": "سیستم CRM",
+          "description": "مدیریت ارتباط با مشتریان",
+          "features": [
+            "پروفایل مشتری",
+            "تاریخچه خرید",
+            "پیگیری فروش",
+            "گزارش‌های مشتری"
+          ],
+          "status": "important",
+          "integration": "database"
+        },
+        {
+          "name": "چت‌بات پشتیبانی",
+          "description": "پاسخ‌دهی خودکار",
+          "features": [
+            "پاسخ خودکار",
+            "ارتباط با اپراتور",
+            "تاریخچه چت",
+            "آموزش هوشمند"
+          ],
+          "status": "important",
+          "integration": "ai"
+        },
+        {
+          "name": "سیستم تیکت",
+          "description": "مدیریت درخواست‌های پشتیبانی",
+          "features": [
+            "ایجاد تیکت",
+            "پیگیری وضعیت",
+            "ارسال پاسخ",
+            "گزارش‌گیری"
+          ],
+          "status": "nice_to_have",
+          "integration": "database"
+        }
+      ]
+    },
+    "marketing_tools": {
+      "name": "ابزارهای بازاریابی",
+      "tools": [
+        {
+          "name": "ایمیل مارکتینگ",
+          "description": "ارسال ایمیل‌های تبلیغاتی",
+          "features": [
+            "قالب‌های ایمیل",
+            "لیست مشترکین",
+            "گزارش بازدید",
+            "اتوماسیون"
+          ],
+          "status": "important",
+          "integration": "email_service"
+        },
+        {
+          "name": "سیستم تخفیف",
+          "description": "مدیریت کدهای تخفیف",
+          "features": [
+            "تولید کد تخفیف",
+            "محدودیت زمانی",
+            "گزارش استفاده",
+            "مدیریت پیشنهادات"
+          ],
+          "status": "important",
+          "integration": "database"
+        },
+        {
+          "name": "سیستم امتیازدهی",
+          "description": "برنامه وفاداری مشتریان",
+          "features": [
+            "امتیازدهی خرید",
+            "سطح‌بندی مشتریان",
+            "پاداش‌ها",
+            "گزارش‌گیری"
+          ],
+          "status": "nice_to_have",
+          "integration": "database"
+        }
+      ]
+    },
+    "analytics_tools": {
+      "name": "ابزارهای تحلیل و گزارش",
+      "tools": [
+        {
+          "name": "داشبورد تحلیلی",
+          "description": "نمایش آمار و گزارش‌ها",
+          "features": [
+            "نمودارهای تعاملی",
+            "گزارش‌های دوره‌ای",
+            "هشدارها",
+            "تحلیل روند"
+          ],
+          "status": "important",
+          "integration": "database"
+        },
+        {
+          "name": "تحلیل رفتار کاربران",
+          "description": "پیگیری رفتار بازدیدکنندگان",
+          "features": [
+            "نقشه حرارتی",
+            "پیگیری کلیک",
+            "زمان حضور",
+            "گزارش‌های تفصیلی"
+          ],
+          "status": "nice_to_have",
+          "integration": "analytics"
+        }
+      ]
+    },
+    "operational_tools": {
+      "name": "ابزارهای عملیاتی",
+      "tools": [
+        {
+          "name": "سیستم رزرو",
+          "description": "رزرو خدمات و محصولات",
+          "features": [
+            "تقویم رزرو",
+            "مدیریت زمان",
+            "تایید خودکار",
+            "یادآوری"
+          ],
+          "status": "nice_to_have",
+          "integration": "database"
+        },
+        {
+          "name": "سیستم مدیریت کارمندان",
+          "description": "مدیریت پرسنل و دسترسی‌ها",
+          "features": [
+            "پروفایل کارمند",
+            "مدیریت دسترسی",
+            "گزارش عملکرد",
+            "زمان‌سنجی"
+          ],
+          "status": "nice_to_have",
+          "integration": "database"
+        },
+        {
+          "name": "سیستم مدیریت محتوا",
+          "description": "مدیریت محتوای سایت",
+          "features": [
+            "ویرایشگر محتوا",
+            "مدیریت تصاویر",
+            "سئو",
+            "انتشار خودکار"
+          ],
+          "status": "important",
+          "integration": "cms"
+        }
+      ]
+    }
+  },
+  "recommendations": [
+    "شروع با ابزارهای بحرانی در فاز اول",
+    "استفاده از API‌های موجود برای سرعت بیشتر",
+    "توسعه تدریجی و تست مداوم",
+    "تمرکز بر تجربه کاربری",
+    "مستندسازی کامل کدها"
+  ]
+}

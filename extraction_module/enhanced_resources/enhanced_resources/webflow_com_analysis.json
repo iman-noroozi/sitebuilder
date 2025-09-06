@@ -1,0 +1,13 @@
+{
+  "siteName": "webflow_com",
+  "totalFiles": 479,
+  "cssFiles": 23,
+  "jsFiles": 95,
+  "htmlFiles": 63,
+  "imageFiles": 211,
+  "fontFiles": 0,
+  "hasBootstrap": false,
+  "hasTailwind": false,
+  "hasMaterialUI": false,
+  "frameworks": []
+}
