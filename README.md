@@ -46,6 +46,68 @@
 - 📱 تولید فایل‌های PWA با Service Worker
 - 🔍 SEO خودکار (sitemap, robots.txt, meta tags)
 
+## 🚀 نصب و راه‌اندازی
+
+### روش 1: Docker (پیشنهادی)
+
+```bash
+# کلون کردن پروژه
+git clone https://github.com/iman-noroozi/sitebuilder.git
+cd sitebuilder
+
+# اجرای با Docker Compose
+docker-compose up -d
+
+# دسترسی به سایت
+# Frontend: http://localhost:3000
+# Backend: http://localhost:8000
+```
+
+### روش 2: نصب با pip
+
+```bash
+# نصب از PyPI (به زودی)
+pip install site-builder
+
+# یا نصب از GitHub
+pip install git+https://github.com/iman-noroozi/sitebuilder.git
+```
+
+### روش 3: نصب دستی
+
+```bash
+# نصب وابستگی‌های Python
+pip install -r backend/requirements.txt
+
+# نصب وابستگی‌های Node.js
+npm install
+
+# راه‌اندازی Django
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+```
+
+## 🎯 استفاده از CLI
+
+```bash
+# استخراج قالب از URL
+sitebuilder-cli extract https://example.com ./output
+
+# تحلیل قالب استخراج شده
+sitebuilder-cli analyze ./output
+
+# ساخت سایت نهایی
+sitebuilder-cli build ./output ./final_site
+
+# استخراج با تنظیمات خاص
+sitebuilder-cli extract https://example.com ./output --headless --delay 3
+```
+
+## 🎮 دمو زنده
+
+برای مشاهده دمو زنده، فایل `demo.html` را در مرورگر باز کنید یا از [GitHub Pages](https://iman-noroozi.github.io/sitebuilder/demo.html) استفاده کنید.
+
 ## 📁 ساختار پروژه
 
 ```

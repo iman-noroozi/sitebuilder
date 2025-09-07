@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Site Builder - دمو زنده</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        body {
+            font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .demo-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 20px;
+            overflow: hidden;
+        }
+
+        .demo-header {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .demo-content {
+            padding: 40px;
+        }
+
+        .step-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .step-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.1);
+        }
+
+        .step-card.active {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+
+        .demo-input {
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .demo-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .demo-btn {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .demo-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .result-area {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading {
+            display: none;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="demo-container">
+                    <!-- Header -->
+                    <div class="demo-header">
+                        <h1 class="display-4 fw-bold mb-3">
+                            <i class="fas fa-rocket me-3"></i>
+                            Site Builder - دمو زنده
+                        </h1>
+                        <p class="lead mb-0">
+                            ابزار کامل استخراج و ساخت سایت - نسخه 0.1.0
+                        </p>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="demo-content">
+                        <!-- Step 1: URL Input -->
+                        <div class="step-card active" id="step1">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="step-number">1</div>
+                                <h4 class="mb-0">وارد کردن URL سایت</h4>
+                            </div>
+                            <p class="text-muted mb-3">
+                                آدرس سایت مورد نظر خود را وارد کنید تا قالب آن استخراج شود
+                            </p>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <input type="url" class="form-control demo-input" id="urlInput" 
+                                           placeholder="https://example.com" value="https://getbootstrap.com">
+                                </div>
+                                <div class="col-md-4">
+                                    <button class="btn demo-btn w-100" onclick="extractTemplate()">
+                                        <i class="fas fa-download me-2"></i>
+                                        استخراج قالب
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Analysis -->
+                        <div class="step-card" id="step2">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="step-number">2</div>
+                                <h4 class="mb-0">تحلیل قالب</h4>
+                            </div>
+                            <p class="text-muted mb-3">
+                                قالب استخراج شده تحلیل می‌شود و جزئیات آن نمایش داده می‌شود
+                            </p>
+                            <div class="loading" id="loading2">
+                                <div class="spinner"></div>
+                                <p class="mt-3">در حال تحلیل...</p>
+                            </div>
+                            <div class="result-area" id="analysisResult">
+                                <div>
+                                    <i class="fas fa-chart-bar fa-3x text-muted mb-3"></i>
+                                    <p class="text-muted">نتایج تحلیل اینجا نمایش داده می‌شود</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Build -->
+                        <div class="step-card" id="step3">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="step-number">3</div>
+                                <h4 class="mb-0">ساخت سایت نهایی</h4>
+                            </div>
+                            <p class="text-muted mb-3">
+                                سایت نهایی با تمام فایل‌های مورد نیاز ساخته می‌شود
+                            </p>
+                            <div class="loading" id="loading3">
+                                <div class="spinner"></div>
+                                <p class="mt-3">در حال ساخت...</p>
+                            </div>
+                            <div class="result-area" id="buildResult">
+                                <div>
+                                    <i class="fas fa-cog fa-3x text-muted mb-3"></i>
+                                    <p class="text-muted">سایت نهایی اینجا نمایش داده می‌شود</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Features -->
+                        <div class="mt-5">
+                            <h3 class="text-center mb-4">ویژگی‌های Site Builder</h3>
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-download"></i>
+                                    </div>
+                                    <h5>استخراج کامل</h5>
+                                    <p class="text-muted">استخراج HTML، CSS، JavaScript، تصاویر و فونت‌ها</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-edit"></i>
+                                    </div>
+                                    <h5>ویرایش بصری</h5>
+                                    <p class="text-muted">ویرایشگر drag & drop برای تغییر آسان</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-language"></i>
+                                    </div>
+                                    <h5>پشتیبانی فارسی</h5>
+                                    <p class="text-muted">رابط کاربری کاملاً فارسی و RTL</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <h5>انتشار آسان</h5>
+                                    <p class="text-muted">انتشار فوری با یک کلیک</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CLI Commands -->
+                        <div class="mt-5">
+                            <h3 class="text-center mb-4">دستورات CLI</h3>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-title">استخراج</h6>
+                                            <code>sitebuilder-cli extract https://example.com ./output</code>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-title">تحلیل</h6>
+                                            <code>sitebuilder-cli analyze ./output</code>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-title">ساخت</h6>
+                                            <code>sitebuilder-cli build ./output ./final</code>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function extractTemplate() {
+            const url = document.getElementById('urlInput').value;
+            if (!url) {
+                alert('لطفاً URL را وارد کنید');
+                return;
+            }
+
+            // شبیه‌سازی استخراج
+            showLoading('loading2');
+            activateStep('step2');
+            
+            setTimeout(() => {
+                hideLoading('loading2');
+                showAnalysisResult(url);
+                showLoading('loading3');
+                activateStep('step3');
+                
+                setTimeout(() => {
+                    hideLoading('loading3');
+                    showBuildResult();
+                }, 2000);
+            }, 3000);
+        }
+
+        function showLoading(loadingId) {
+            document.getElementById(loadingId).classList.add('show');
+        }
+
+        function hideLoading(loadingId) {
+            document.getElementById(loadingId).classList.remove('show');
+        }
+
+        function activateStep(stepId) {
+            document.querySelectorAll('.step-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            document.getElementById(stepId).classList.add('active');
+        }
+
+        function showAnalysisResult(url) {
+            const result = document.getElementById('analysisResult');
+            result.innerHTML = `
+                <div class="text-start">
+                    <h5 class="text-success mb-3">
+                        <i class="fas fa-check-circle me-2"></i>
+                        تحلیل کامل شد!
+                    </h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>URL:</strong> ${url}</p>
+                            <p><strong>عنوان:</strong> Bootstrap</p>
+                            <p><strong>تاریخ استخراج:</strong> ${new Date().toLocaleDateString('fa-IR')}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>فایل HTML:</strong> 45.2 KB</p>
+                            <p><strong>فایل CSS:</strong> 12.8 KB</p>
+                            <p><strong>تصاویر:</strong> 8 فایل</p>
+                            <p><strong>فونت‌ها:</strong> 3 فایل</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showBuildResult() {
+            const result = document.getElementById('buildResult');
+            result.innerHTML = `
+                <div>
+                    <h5 class="text-success mb-3">
+                        <i class="fas fa-check-circle me-2"></i>
+                        سایت با موفقیت ساخته شد!
+                    </h5>
+                    <p class="mb-3">فایل‌های نهایی آماده هستند:</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <button class="btn btn-success">
+                            <i class="fas fa-download me-2"></i>
+                            دانلود ZIP
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-eye me-2"></i>
+                            مشاهده آنلاین
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // انیمیشن ورود
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.step-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
