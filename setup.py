@@ -24,7 +24,7 @@ def read_requirements():
 
 setup(
     name="site-builder",
-    version="0.1.0",
+    version="1.0.0",
     author="Peysan Web",
     author_email="info@peysunweb.ir",
     description="ابزار کامل استخراج و ساخت سایت",

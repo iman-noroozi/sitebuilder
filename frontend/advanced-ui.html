@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Builder - Global Edition</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .slide-in {
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            height: 4px;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .language-selector {
+            position: relative;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 0;
+            min-width: 200px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .language-dropdown.show {
+            display: block;
+        }
+
+        .language-option {
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .language-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .loading-spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 16px;
+            z-index: 10000;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            border-left: 4px solid var(--success-color);
+        }
+
+        .notification.error {
+            border-left: 4px solid var(--error-color);
+        }
+
+        .notification.warning {
+            border-left: 4px solid var(--warning-color);
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="glass-effect fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-globe text-white text-xl"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold gradient-text">Site Builder</h1>
+                    <span class="bg-gradient-to-r from-green-400 to-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                        Global Edition
+                    </span>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <div class="language-selector">
+                        <button id="languageBtn" class="flex items-center space-x-2 text-white hover:text-indigo-300 transition-colors">
+                            <i class="fas fa-globe"></i>
+                            <span id="currentLang">English</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div id="languageDropdown" class="language-dropdown">
+                            <div class="language-option" data-lang="en">🇺🇸 English</div>
+                            <div class="language-option" data-lang="fa">🇮🇷 فارسی</div>
+                            <div class="language-option" data-lang="ar">🇸🇦 العربية</div>
+                            <div class="language-option" data-lang="es">🇪🇸 Español</div>
+                            <div class="language-option" data-lang="fr">🇫🇷 Français</div>
+                            <div class="language-option" data-lang="de">🇩🇪 Deutsch</div>
+                            <div class="language-option" data-lang="zh">🇨🇳 中文</div>
+                            <div class="language-option" data-lang="ja">🇯🇵 日本語</div>
+                            <div class="language-option" data-lang="ko">🇰🇷 한국어</div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-lg hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto text-center">
+            <div class="floating-animation mb-8">
+                <div class="w-24 h-24 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto flex items-center justify-center mb-8">
+                    <i class="fas fa-magic text-white text-3xl"></i>
+                </div>
+            </div>
+            
+            <h1 class="text-6xl font-bold mb-6 gradient-text">
+                Build Websites Like a Pro
+            </h1>
+            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                The world's most advanced website builder with AI-powered extraction, 
+                multi-language support, and global deployment capabilities.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <div class="glass-effect p-6 rounded-xl w-full max-w-md">
+                    <input 
+                        type="url" 
+                        id="websiteUrl" 
+                        placeholder="Enter website URL to extract..."
+                        class="w-full bg-transparent text-white placeholder-gray-400 border-none outline-none text-lg"
+                    >
+                </div>
+                <button 
+                    id="extractBtn" 
+                    class="bg-gradient-to-r from-green-500 to-blue-600 text-white px-8 py-4 rounded-xl hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
+                >
+                    <i class="fas fa-download"></i>
+                    <span>Extract & Build</span>
+                </button>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div id="progressContainer" class="hidden mb-8">
+                <div class="glass-effect p-4 rounded-xl max-w-md mx-auto">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-300">Extracting...</span>
+                        <span id="progressPercent" class="text-sm text-indigo-400">0%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div id="progressBar" class="progress-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="stats-grid max-w-4xl mx-auto">
+                <div class="glass-effect p-6 rounded-xl text-center card-hover">
+                    <div class="text-3xl font-bold text-indigo-400 mb-2">50K+</div>
+                    <div class="text-gray-300">Websites Built</div>
+                </div>
+                <div class="glass-effect p-6 rounded-xl text-center card-hover">
+                    <div class="text-3xl font-bold text-purple-400 mb-2">12</div>
+                    <div class="text-gray-300">Languages</div>
+                </div>
+                <div class="glass-effect p-6 rounded-xl text-center card-hover">
+                    <div class="text-3xl font-bold text-green-400 mb-2">99.9%</div>
+                    <div class="text-gray-300">Uptime</div>
+                </div>
+                <div class="glass-effect p-6 rounded-xl text-center card-hover">
+                    <div class="text-3xl font-bold text-yellow-400 mb-2">24/7</div>
+                    <div class="text-gray-300">Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">
+                Powerful Features for Global Success
+            </h2>
+            
+            <div class="feature-grid">
+                <div class="glass-effect p-8 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">AI-Powered Extraction</h3>
+                    <p class="text-gray-300 mb-6">
+                        Advanced machine learning algorithms extract website templates with 99% accuracy, 
+                        preserving design integrity and functionality.
+                    </p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Smart component detection</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Responsive design preservation</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Asset optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-effect p-8 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Multi-Language Support</h3>
+                    <p class="text-gray-300 mb-6">
+                        Build websites in 12+ languages with automatic RTL support, 
+                        cultural adaptations, and localized content management.
+                    </p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>RTL/LTR automatic detection</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Cultural color schemes</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Localized fonts</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-effect p-8 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-rocket text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Global Deployment</h3>
+                    <p class="text-gray-300 mb-6">
+                        Deploy to 50+ cloud providers worldwide with automatic CDN setup, 
+                        SSL certificates, and performance optimization.
+                    </p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Multi-region deployment</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Auto SSL certificates</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Performance monitoring</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-effect p-8 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Enterprise Security</h3>
+                    <p class="text-gray-300 mb-6">
+                        Bank-level security with GDPR compliance, data encryption, 
+                        and advanced threat protection for global businesses.
+                    </p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>GDPR compliant</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>End-to-end encryption</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>DDoS protection</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-effect p-8 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Analytics & SEO</h3>
+                    <p class="text-gray-300 mb-6">
+                        Built-in analytics dashboard with SEO optimization tools, 
+                        performance monitoring, and conversion tracking.
+                    </p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Real-time analytics</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>SEO optimization</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>A/B testing tools</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-effect p-8 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Team Collaboration</h3>
+                    <p class="text-gray-300 mb-6">
+                        Collaborate with team members worldwide with real-time editing, 
+                        version control, and role-based permissions.
+                    </p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Real-time collaboration</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Version control</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Role management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Demo Section -->
+    <section class="py-20 px-6 bg-gradient-to-r from-indigo-900 to-purple-900">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">
+                Try Our API
+            </h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="glass-effect p-8 rounded-xl">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">Extract Website</h3>
+                            <div class="space-y-4">
+                                <input 
+                                    type="url" 
+                                    id="apiUrl" 
+                                    placeholder="https://example.com"
+                                    class="w-full bg-gray-800 text-white placeholder-gray-400 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500"
+                                >
+                                <button 
+                                    id="apiExtractBtn" 
+                                    class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-indigo-600 hover:to-purple-700 transition-all duration-300"
+                                >
+                                    Extract with API
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">Response</h3>
+                            <div id="apiResponse" class="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm h-48 overflow-y-auto">
+                                <div class="text-gray-500">API response will appear here...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-globe text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold gradient-text">Site Builder</span>
+                    </div>
+                    <p class="text-gray-400">
+                        The world's most advanced website builder for global success.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Features</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">AI Extraction</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Multi-Language</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Global Deployment</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Analytics</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Tutorials</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-800 transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Site Builder Global Edition. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer"></div>
+
+    <script>
+        // Global variables
+        let currentLanguage = 'en';
+        const translations = {
+            en: {
+                title: 'Build Websites Like a Pro',
+                subtitle: 'The world\'s most advanced website builder with AI-powered extraction, multi-language support, and global deployment capabilities.',
+                extractBtn: 'Extract & Build',
+                placeholder: 'Enter website URL to extract...',
+                extracting: 'Extracting...',
+                features: 'Powerful Features for Global Success',
+                tryApi: 'Try Our API',
+                extractWebsite: 'Extract Website',
+                response: 'Response'
+            },
+            fa: {
+                title: 'مانند یک حرفه‌ای وب‌سایت بسازید',
+                subtitle: 'پیشرفته‌ترین سازنده وب‌سایت جهان با استخراج هوش مصنوعی، پشتیبانی چندزبانه و قابلیت‌های استقرار جهانی.',
+                extractBtn: 'استخراج و ساخت',
+                placeholder: 'آدرس وب‌سایت برای استخراج وارد کنید...',
+                extracting: 'در حال استخراج...',
+                features: 'ویژگی‌های قدرتمند برای موفقیت جهانی',
+                tryApi: 'API ما را امتحان کنید',
+                extractWebsite: 'استخراج وب‌سایت',
+                response: 'پاسخ'
+            },
+            ar: {
+                title: 'أنشئ مواقع الويب مثل المحترفين',
+                subtitle: 'أكثر منشئ مواقع الويب تقدماً في العالم مع الاستخراج بالذكاء الاصطناعي ودعم متعدد اللغات وإمكانيات النشر العالمية.',
+                extractBtn: 'استخراج وبناء',
+                placeholder: 'أدخل رابط الموقع للاستخراج...',
+                extracting: 'جاري الاستخراج...',
+                features: 'ميزات قوية للنجاح العالمي',
+                tryApi: 'جرب واجهة برمجة التطبيقات',
+                extractWebsite: 'استخراج الموقع',
+                response: 'الاستجابة'
+            }
+        };
+
+        // Language switching
+        document.getElementById('languageBtn').addEventListener('click', function() {
+            const dropdown = document.getElementById('languageDropdown');
+            dropdown.classList.toggle('show');
+        });
+
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.dataset.lang;
+                currentLanguage = lang;
+                document.getElementById('currentLang').textContent = this.textContent;
+                document.getElementById('languageDropdown').classList.remove('show');
+                updateLanguage(lang);
+            });
+        });
+
+        function updateLanguage(lang) {
+            const t = translations[lang] || translations.en;
+            
+            // Update text content
+            document.querySelector('h1').textContent = t.title;
+            document.querySelector('p').textContent = t.subtitle;
+            document.getElementById('extractBtn').innerHTML = `<i class="fas fa-download"></i><span>${t.extractBtn}</span>`;
+            document.getElementById('websiteUrl').placeholder = t.placeholder;
+            document.querySelector('h2').textContent = t.features;
+            
+            // Update direction
+            if (lang === 'fa' || lang === 'ar') {
+                document.documentElement.dir = 'rtl';
+                document.documentElement.lang = lang;
+            } else {
+                document.documentElement.dir = 'ltr';
+                document.documentElement.lang = lang;
+            }
+        }
+
+        // Website extraction
+        document.getElementById('extractBtn').addEventListener('click', async function() {
+            const url = document.getElementById('websiteUrl').value;
+            if (!url) {
+                showNotification('Please enter a valid URL', 'error');
+                return;
+            }
+
+            const progressContainer = document.getElementById('progressContainer');
+            const progressBar = document.getElementById('progressBar');
+            const progressPercent = document.getElementById('progressPercent');
+            
+            progressContainer.classList.remove('hidden');
+            
+            // Simulate progress
+            for (let i = 0; i <= 100; i += 10) {
+                progressBar.style.width = i + '%';
+                progressPercent.textContent = i + '%';
+                await new Promise(resolve => setTimeout(resolve, 200));
+            }
+            
+            // Call API
+            try {
+                const response = await fetch('/api/extract/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ url: url })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showNotification('Website extracted successfully!', 'success');
+                    // Handle successful extraction
+                    console.log('Extraction result:', data.data);
+                } else {
+                    showNotification(data.error || 'Extraction failed', 'error');
+                }
+            } catch (error) {
+                showNotification('Network error occurred', 'error');
+                console.error('Error:', error);
+            }
+            
+            progressContainer.classList.add('hidden');
+        });
+
+        // API demo
+        document.getElementById('apiExtractBtn').addEventListener('click', async function() {
+            const url = document.getElementById('apiUrl').value;
+            const responseDiv = document.getElementById('apiResponse');
+            
+            if (!url) {
+                responseDiv.innerHTML = '<div class="text-red-400">Please enter a valid URL</div>';
+                return;
+            }
+            
+            responseDiv.innerHTML = '<div class="text-yellow-400">Loading...</div>';
+            
+            try {
+                const response = await fetch('/api/extract/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ url: url })
+                });
+                
+                const data = await response.json();
+                responseDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (error) {
+                responseDiv.innerHTML = `<div class="text-red-400">Error: ${error.message}</div>`;
+            }
+        });
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const container = document.getElementById('notificationContainer');
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            
+            const icon = type === 'success' ? 'fas fa-check-circle' : 
+                        type === 'error' ? 'fas fa-exclamation-circle' : 
+                        type === 'warning' ? 'fas fa-exclamation-triangle' : 'fas fa-info-circle';
+            
+            notification.innerHTML = `
+                <div class="flex items-center space-x-3">
+                    <i class="${icon} text-${type === 'success' ? 'green' : type === 'error' ? 'red' : type === 'warning' ? 'yellow' : 'blue'}-400"></i>
+                    <span>${message}</span>
+                    <button onclick="this.parentElement.parentElement.remove()" class="ml-auto text-gray-400 hover:text-white">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            `;
+            
+            container.appendChild(notification);
+            
+            // Show notification
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    if (notification.parentElement) {
+                        notification.remove();
+                    }
+                }, 300);
+            }, 5000);
+        }
+
+        // Close language dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const languageSelector = document.querySelector('.language-selector');
+            if (!languageSelector.contains(event.target)) {
+                document.getElementById('languageDropdown').classList.remove('show');
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add slide-in animation to cards
+            const cards = document.querySelectorAll('.card-hover');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('slide-in');
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>

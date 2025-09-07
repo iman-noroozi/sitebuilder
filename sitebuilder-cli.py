@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-🚀 Site Builder CLI Tool
-ابزار خط فرمان برای استخراج، تحلیل و ساخت سایت
+🚀 Site Builder CLI Tool - Global Edition
+Advanced command-line tool for website extraction, analysis, and building
+ابزار خط فرمان پیشرفته برای استخراج، تحلیل و ساخت سایت
 """
 
 import argparse
@@ -9,12 +10,92 @@ import sys
 import os
 import json
 import subprocess
+import time
+import requests
+import asyncio
+import aiohttp
 from pathlib import Path
+from datetime import datetime
+from typing import Dict, List, Optional, Any
+import logging
+from concurrent.futures import ThreadPoolExecutor
+import yaml
 
 class SiteBuilderCLI:
     def __init__(self):
-        self.version = "0.1.0"
-        self.description = "ابزار کامل استخراج و ساخت سایت"
+        self.version = "1.0.0"
+        self.description = "Advanced Website Builder - Global Edition"
+        self.supported_languages = ['en', 'fa', 'ar', 'es', 'fr', 'de', 'zh', 'ja', 'ko']
+        self.supported_frameworks = ['bootstrap', 'tailwind', 'bulma', 'foundation', 'materialize', 'semantic']
+        self.setup_logging()
+    
+    def setup_logging(self):
+        """Setup advanced logging"""
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler('sitebuilder.log'),
+                logging.StreamHandler()
+            ]
+        )
+        self.logger = logging.getLogger(__name__)
+    
+    def check_robots_txt(self, url: str) -> bool:
+        """Check robots.txt compliance"""
+        try:
+            robots_url = f"{url.rstrip('/')}/robots.txt"
+            response = requests.get(robots_url, timeout=10)
+            if response.status_code == 200:
+                robots_content = response.text.lower()
+                if 'disallow: /' in robots_content:
+                    self.logger.warning(f"robots.txt disallows scraping for {url}")
+                    return False
+            return True
+        except Exception as e:
+            self.logger.warning(f"Could not check robots.txt: {e}")
+            return True
+    
+    def detect_framework(self, html_content: str) -> str:
+        """Detect CSS framework used"""
+        frameworks = {
+            'bootstrap': ['bootstrap', 'btn-', 'container', 'row', 'col-'],
+            'tailwind': ['tailwind', 'tw-', 'bg-', 'text-', 'p-', 'm-'],
+            'bulma': ['bulma', 'button', 'section', 'container', 'columns'],
+            'foundation': ['foundation', 'button', 'row', 'column', 'grid-'],
+            'materialize': ['materialize', 'btn', 'card', 'row', 'col'],
+            'semantic': ['semantic', 'ui', 'button', 'segment', 'grid']
+        }
+        
+        html_lower = html_content.lower()
+        for framework, keywords in frameworks.items():
+            if any(keyword in html_lower for keyword in keywords):
+                return framework
+        return 'custom'
+    
+    def analyze_performance(self, url: str) -> Dict[str, Any]:
+        """Analyze website performance"""
+        try:
+            start_time = time.time()
+            response = requests.get(url, timeout=30)
+            load_time = time.time() - start_time
+            
+            return {
+                'load_time': round(load_time, 2),
+                'status_code': response.status_code,
+                'content_length': len(response.content),
+                'headers': dict(response.headers),
+                'performance_score': self.calculate_performance_score(load_time, len(response.content))
+            }
+        except Exception as e:
+            self.logger.error(f"Performance analysis failed: {e}")
+            return {}
+    
+    def calculate_performance_score(self, load_time: float, content_size: int) -> int:
+        """Calculate performance score (0-100)"""
+        time_score = max(0, 100 - (load_time * 20))  # Penalty for slow loading
+        size_score = max(0, 100 - (content_size / 10000))  # Penalty for large content
+        return int((time_score + size_score) / 2)
     
     def extract(self, url, output_path, options=None):
         """استخراج قالب از URL"""
