@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v4
     
     - name: 🐍 راه‌اندازی Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
     
@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16, 20]
+        node-version: [18, 20]
     
     steps:
     - uses: actions/checkout@v4
@@ -73,7 +73,7 @@ jobs:
     - uses: actions/checkout@v4
     
     - name: 🐍 راه‌اندازی Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.11'
     
@@ -92,7 +92,7 @@ jobs:
       continue-on-error: true
     
     - name: 📊 آپلود گزارش امنیتی
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: security-reports
         path: |
