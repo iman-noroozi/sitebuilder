@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ویژگی‌های ویروسی - Site Builder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #4a5568;
+        }
+
+        .feature-description {
+            color: #718096;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .feature-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #a0aec0;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .leaderboard {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .leaderboard h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4a5568;
+        }
+
+        .leaderboard-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            transition: background 0.3s ease;
+        }
+
+        .leaderboard-item:hover {
+            background: #f7fafc;
+        }
+
+        .leaderboard-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .score {
+            font-weight: bold;
+            color: #4a5568;
+        }
+
+        .challenges {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .challenge-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .challenge-item:hover {
+            border-color: #667eea;
+            background: #f7fafc;
+        }
+
+        .challenge-info h4 {
+            color: #4a5568;
+            margin-bottom: 5px;
+        }
+
+        .challenge-info p {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .challenge-reward {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .achievements {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .achievement-item {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-item.unlocked {
+            border-color: #48bb78;
+            background: #f0fff4;
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .achievement-title {
+            font-weight: bold;
+            color: #4a5568;
+            margin-bottom: 5px;
+        }
+
+        .achievement-desc {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+
+        .social-sharing {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .share-btn.twitter {
+            background: #1da1f2;
+            color: white;
+        }
+
+        .share-btn.facebook {
+            background: #4267b2;
+            color: white;
+        }
+
+        .share-btn.linkedin {
+            background: #0077b5;
+            color: white;
+        }
+
+        .share-btn.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .qr-code {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .qr-code img {
+            max-width: 200px;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .share-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 ویژگی‌های ویروسی</h1>
+            <p>تبدیل کاربران به سفیران برند با ویژگی‌های جذاب و تعاملی</p>
+        </div>
+
+        <div class="features-grid">
+            <!-- Gamification Card -->
+            <div class="feature-card">
+                <div class="feature-icon">🎮</div>
+                <div class="feature-title">سیستم بازی‌سازی</div>
+                <div class="feature-description">
+                    کاربران با انجام فعالیت‌ها امتیاز کسب می‌کنند، سطح می‌روند و نشان‌های مختلف دریافت می‌کنند.
+                </div>
+                <div class="feature-stats">
+                    <div class="stat">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">سطح</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">نشان</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">1,250</div>
+                        <div class="stat-label">امتیاز</div>
+                    </div>
+                </div>
+                <button class="btn" onclick="startGamification()">شروع بازی‌سازی</button>
+            </div>
+
+            <!-- Challenges Card -->
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <div class="feature-title">چالش‌های روزانه</div>
+                <div class="feature-description">
+                    چالش‌های جذاب و متنوع برای کاربران با جوایز و پاداش‌های ویژه.
+                </div>
+                <div class="feature-stats">
+                    <div class="stat">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">چالش فعال</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">تکمیل شده</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">باقی‌مانده</div>
+                    </div>
+                </div>
+                <button class="btn" onclick="viewChallenges()">مشاهده چالش‌ها</button>
+            </div>
+
+            <!-- Leaderboard Card -->
+            <div class="feature-card">
+                <div class="feature-icon">🏅</div>
+                <div class="feature-title">جدول امتیازات</div>
+                <div class="feature-description">
+                    رقابت سالم بین کاربران با جدول‌های امتیازات مختلف و جوایز ماهانه.
+                </div>
+                <div class="feature-stats">
+                    <div class="stat">
+                        <div class="stat-number">#3</div>
+                        <div class="stat-label">رتبه شما</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">1,250</div>
+                        <div class="stat-label">امتیاز</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">+50</div>
+                        <div class="stat-label">این هفته</div>
+                    </div>
+                </div>
+                <button class="btn" onclick="viewLeaderboard()">مشاهده جدول</button>
+            </div>
+
+            <!-- Referral Card -->
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <div class="feature-title">سیستم معرفی</div>
+                <div class="feature-description">
+                    دوستان خود را معرفی کنید و از هر معرفی پاداش دریافت کنید.
+                </div>
+                <div class="feature-stats">
+                    <div class="stat">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">معرفی شده</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">$35</div>
+                        <div class="stat-label">درآمد</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">ABC123</div>
+                        <div class="stat-label">کد شما</div>
+                    </div>
+                </div>
+                <button class="btn" onclick="shareReferral()">اشتراک‌گذاری کد</button>
+            </div>
+
+            <!-- Social Sharing Card -->
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <div class="feature-title">اشتراک‌گذاری اجتماعی</div>
+                <div class="feature-description">
+                    دستاوردها و پروژه‌های خود را در شبکه‌های اجتماعی به اشتراک بگذارید.
+                </div>
+                <div class="feature-stats">
+                    <div class="stat">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">اشتراک‌گذاری</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">320</div>
+                        <div class="stat-label">بازدید</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">45</div>
+                        <div class="stat-label">لایک</div>
+                    </div>
+                </div>
+                <button class="btn" onclick="openSocialSharing()">اشتراک‌گذاری</button>
+            </div>
+
+            <!-- Template Sharing Card -->
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <div class="feature-title">اشتراک‌گذاری قالب</div>
+                <div class="feature-description">
+                    قالب‌های خود را در بازار جهانی به اشتراک بگذارید و درآمد کسب کنید.
+                </div>
+                <div class="feature-stats">
+                    <div class="stat">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">قالب‌های شما</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">125</div>
+                        <div class="stat-label">دانلود</div>
+                    </div>
+                    <div class="stat-number">$45</div>
+                    <div class="stat-label">درآمد</div>
+                </div>
+                <button class="btn" onclick="shareTemplate()">اشتراک‌گذاری قالب</button>
+            </div>
+        </div>
+
+        <!-- Leaderboard Section -->
+        <div class="leaderboard">
+            <h3>🏅 جدول امتیازات هفتگی</h3>
+            <div class="leaderboard-item">
+                <div class="rank">#1</div>
+                <div class="user-info">
+                    <div class="user-avatar">A</div>
+                    <div>
+                        <div>علی احمدی</div>
+                        <div style="font-size: 0.8rem; color: #a0aec0;">سازنده وب‌سایت</div>
+                    </div>
+                </div>
+                <div class="score">2,450 امتیاز</div>
+            </div>
+            <div class="leaderboard-item">
+                <div class="rank">#2</div>
+                <div class="user-info">
+                    <div class="user-avatar">B</div>
+                    <div>
+                        <div>مریم رضایی</div>
+                        <div style="font-size: 0.8rem; color: #a0aec0;">طراح UI/UX</div>
+                    </div>
+                </div>
+                <div class="score">2,100 امتیاز</div>
+            </div>
+            <div class="leaderboard-item">
+                <div class="rank">#3</div>
+                <div class="user-info">
+                    <div class="user-avatar">C</div>
+                    <div>
+                        <div>حسن محمدی</div>
+                        <div style="font-size: 0.8rem; color: #a0aec0;">توسعه‌دهنده</div>
+                    </div>
+                </div>
+                <div class="score">1,250 امتیاز</div>
+            </div>
+        </div>
+
+        <!-- Challenges Section -->
+        <div class="challenges">
+            <h3>🏆 چالش‌های فعال</h3>
+            <div class="challenge-item">
+                <div class="challenge-info">
+                    <h4>چالش وب‌سایت روزانه</h4>
+                    <p>یک وب‌سایت کامل در کمتر از 5 دقیقه بسازید</p>
+                </div>
+                <div class="challenge-reward">نشان سازنده متخصص</div>
+            </div>
+            <div class="challenge-item">
+                <div class="challenge-info">
+                    <h4>استاد محتوای AI</h4>
+                    <p>10 محتوای تولید شده با AI ایجاد کنید</p>
+                </div>
+                <div class="challenge-reward">نشان جادوگر AI</div>
+            </div>
+            <div class="challenge-item">
+                <div class="challenge-info">
+                    <h4>همکار جهانی</h4>
+                    <p>با کاربران از 5 کشور مختلف همکاری کنید</p>
+                </div>
+                <div class="challenge-reward">نشان شهروند جهان</div>
+            </div>
+        </div>
+
+        <!-- Achievements Section -->
+        <div class="achievements">
+            <h3>🏅 دستاوردهای شما</h3>
+            <div class="achievement-grid">
+                <div class="achievement-item unlocked">
+                    <div class="achievement-icon">🌐</div>
+                    <div class="achievement-title">اولین وب‌سایت</div>
+                    <div class="achievement-desc">اولین وب‌سایت خود را ساختید</div>
+                </div>
+                <div class="achievement-item unlocked">
+                    <div class="achievement-icon">🤖</div>
+                    <div class="achievement-title">کاوشگر AI</div>
+                    <div class="achievement-desc">5 محتوای AI تولید کردید</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">🎤</div>
+                    <div class="achievement-title">پیشگام صدا</div>
+                    <div class="achievement-desc">20 دستور صوتی استفاده کردید</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">👥</div>
+                    <div class="achievement-title">شهروند جهانی</div>
+                    <div class="achievement-desc">با 5 کاربر همکاری کردید</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Sharing Section -->
+        <div class="social-sharing">
+            <h3>📱 اشتراک‌گذاری در شبکه‌های اجتماعی</h3>
+            <div class="share-buttons">
+                <a href="#" class="share-btn twitter" onclick="shareOnTwitter()">🐦 توییتر</a>
+                <a href="#" class="share-btn facebook" onclick="shareOnFacebook()">📘 فیسبوک</a>
+                <a href="#" class="share-btn linkedin" onclick="shareOnLinkedIn()">💼 لینکدین</a>
+                <a href="#" class="share-btn instagram" onclick="shareOnInstagram()">📷 اینستاگرام</a>
+            </div>
+            <div class="qr-code">
+                <h4>کد QR برای اشتراک‌گذاری</h4>
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2ZmZiIvPjx0ZXh0IHg9IjEwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk1ZIFNJVEUgQlVJTERFUjwvdGV4dD48L3N2Zz4=" alt="QR Code">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gamification functions
+        function startGamification() {
+            alert('🎮 سیستم بازی‌سازی فعال شد! هر فعالیت شما امتیاز دارد.');
+        }
+
+        function viewChallenges() {
+            alert('🏆 چالش‌های روزانه در حال بارگذاری...');
+        }
+
+        function viewLeaderboard() {
+            alert('🏅 جدول امتیازات در حال بارگذاری...');
+        }
+
+        function shareReferral() {
+            const referralCode = 'ABC123';
+            const shareText = `🚀 بیایید با هم وب‌سایت بسازیم! کد معرفی من: ${referralCode}`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Site Builder - کد معرفی',
+                    text: shareText,
+                    url: 'https://sitebuilder.com'
+                });
+            } else {
+                navigator.clipboard.writeText(shareText);
+                alert('کد معرفی کپی شد: ' + referralCode);
+            }
+        }
+
+        function openSocialSharing() {
+            alert('📱 پنل اشتراک‌گذاری اجتماعی باز شد!');
+        }
+
+        function shareTemplate() {
+            alert('📄 پنل اشتراک‌گذاری قالب باز شد!');
+        }
+
+        // Social sharing functions
+        function shareOnTwitter() {
+            const text = '🚀 با Site Builder وب‌سایت حرفه‌ای ساختم! #WebDesign #AI #Innovation';
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`);
+        }
+
+        function shareOnFacebook() {
+            const url = 'https://sitebuilder.com';
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
+        }
+
+        function shareOnLinkedIn() {
+            const url = 'https://sitebuilder.com';
+            const title = 'Site Builder - سازنده وب‌سایت هوشمند';
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`);
+        }
+
+        function shareOnInstagram() {
+            alert('📷 برای اشتراک‌گذاری در اینستاگرام، تصویر را ذخیره کنید و در استوری خود قرار دهید!');
+        }
+
+        // Real-time updates
+        setInterval(() => {
+            // Update stats dynamically
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                if (stat.textContent.includes(',')) {
+                    const currentValue = parseInt(stat.textContent.replace(',', ''));
+                    const newValue = currentValue + Math.floor(Math.random() * 5);
+                    stat.textContent = newValue.toLocaleString();
+                }
+            });
+        }, 10000); // Update every 10 seconds
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.feature-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Animate achievement unlocks
+            const achievements = document.querySelectorAll('.achievement-item');
+            achievements.forEach((achievement, index) => {
+                setTimeout(() => {
+                    achievement.style.opacity = '0';
+                    achievement.style.transform = 'translateY(20px)';
+                    achievement.style.transition = 'all 0.5s ease';
+                    
+                    setTimeout(() => {
+                        achievement.style.opacity = '1';
+                        achievement.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
