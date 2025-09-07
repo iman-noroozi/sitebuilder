@@ -15,7 +15,7 @@ jobs:
         python-version: [3.9, 3.11]
     
     steps:
-    - uses: actions/checkout@v4
+  
     
     - name: 🐍 راه‌اندازی Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
@@ -47,7 +47,7 @@ jobs:
         node-version: [18, 20]
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
     
     - name: 🟢 راه‌اندازی Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
@@ -70,7 +70,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
     
     - name: 🐍 راه‌اندازی Python
       uses: actions/setup-python@v5
@@ -92,7 +92,7 @@ jobs:
       continue-on-error: true
     
     - name: 📊 آپلود گزارش امنیتی
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: security-reports
         path: |
@@ -107,7 +107,8 @@ jobs:
     if: github.ref == 'refs/heads/main'
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
+    
     
     - name: 🐳 Build Docker Image
       run: |
