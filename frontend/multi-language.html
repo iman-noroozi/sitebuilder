@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Language Support - Site Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .language-card {
+            transition: all 0.3s ease;
+        }
+        .language-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .rtl-text {
+            direction: rtl;
+            text-align: right;
+        }
+        .ltr-text {
+            direction: ltr;
+            text-align: left;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .language-flag {
+            width: 24px;
+            height: 18px;
+            border-radius: 2px;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <i class="fas fa-globe text-3xl"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold">Multi-Language Support</h1>
+                        <p class="text-blue-100">پشتیبانی چندزبانه</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="flex items-center space-x-2 space-x-reverse">
+                        <span class="text-sm">زبان فعلی:</span>
+                        <span id="currentLanguage" class="px-3 py-1 rounded-full text-xs bg-white bg-opacity-20">
+                            فارسی
+                        </span>
+                    </div>
+                    <button id="languageToggle" class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition-all">
+                        <i class="fas fa-language"></i>
+                        <span class="mr-2">تغییر زبان</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Language Statistics -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">زبان‌های پشتیبانی شده</p>
+                        <p id="supportedLanguagesCount" class="text-2xl font-bold text-blue-600">0</p>
+                    </div>
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-globe text-blue-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">ترجمه‌های موجود</p>
+                        <p id="translationsCount" class="text-2xl font-bold text-green-600">0</p>
+                    </div>
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-language text-green-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">زبان‌های RTL</p>
+                        <p id="rtlLanguagesCount" class="text-2xl font-bold text-purple-600">0</p>
+                    </div>
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-align-right text-purple-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">خانواده‌های زبانی</p>
+                        <p id="languageFamiliesCount" class="text-2xl font-bold text-orange-600">0</p>
+                    </div>
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-sitemap text-orange-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Language Selection -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold mb-6 text-gray-800">
+                        <i class="fas fa-list text-blue-500"></i>
+                        انتخاب زبان
+                    </h2>
+                    
+                    <!-- Search Languages -->
+                    <div class="mb-6">
+                        <input type="text" id="languageSearch" placeholder="جستجوی زبان..." 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    
+                    <!-- Language Categories -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-gray-800 mb-3">دسته‌بندی</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="category" value="all" checked class="ml-2">
+                                <span class="text-sm text-gray-700">همه</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="category" value="rtl" class="ml-2">
+                                <span class="text-sm text-gray-700">RTL</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="category" value="ltr" class="ml-2">
+                                <span class="text-sm text-gray-700">LTR</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="category" value="european" class="ml-2">
+                                <span class="text-sm text-gray-700">اروپایی</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="category" value="asian" class="ml-2">
+                                <span class="text-sm text-gray-700">آسیایی</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Language List -->
+                    <div id="languageList" class="space-y-2 max-h-96 overflow-y-auto">
+                        <!-- Languages will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Translation Management -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Current Language Info -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold mb-6 text-gray-800">
+                        <i class="fas fa-info-circle text-green-500"></i>
+                        اطلاعات زبان فعلی
+                    </h2>
+                    
+                    <div id="currentLanguageInfo" class="grid grid-cols-2 gap-4">
+                        <!-- Language info will be loaded dynamically -->
+                    </div>
+                </div>
+                
+                <!-- Translation Editor -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-bold text-gray-800">
+                            <i class="fas fa-edit text-purple-500"></i>
+                            ویرایشگر ترجمه
+                        </h2>
+                        <button onclick="addNewTranslation()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-all">
+                            <i class="fas fa-plus"></i>
+                            <span class="mr-2">ترجمه جدید</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Translation Categories -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">دسته‌بندی</label>
+                        <select id="translationCategory" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="common">عمومی</option>
+                            <option value="navigation">ناوبری</option>
+                            <option value="forms">فرم‌ها</option>
+                            <option value="messages">پیام‌ها</option>
+                            <option value="time">زمان</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Translation List -->
+                    <div id="translationList" class="space-y-3 max-h-64 overflow-y-auto">
+                        <!-- Translations will be loaded dynamically -->
+                    </div>
+                </div>
+                
+                <!-- Language Detection -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold mb-6 text-gray-800">
+                        <i class="fas fa-search text-orange-500"></i>
+                        تشخیص زبان
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">متن برای تشخیص</label>
+                            <textarea id="textToDetect" placeholder="متن خود را اینجا وارد کنید..." 
+                                      class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent h-24"></textarea>
+                        </div>
+                        
+                        <button onclick="detectLanguage()" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg transition-all">
+                            <i class="fas fa-search"></i>
+                            <span class="mr-2">تشخیص زبان</span>
+                        </button>
+                        
+                        <div id="detectionResult" class="hidden">
+                            <!-- Detection result will be shown here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Auto Translation -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold mb-6 text-gray-800">
+                        <i class="fas fa-robot text-blue-500"></i>
+                        ترجمه خودکار
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">متن برای ترجمه</label>
+                            <textarea id="textToTranslate" placeholder="متن خود را اینجا وارد کنید..." 
+                                      class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent h-24"></textarea>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">زبان مقصد</label>
+                                <select id="targetLanguage" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="en">English</option>
+                                    <option value="fa">فارسی</option>
+                                    <option value="ar">العربية</option>
+                                    <option value="fr">Français</option>
+                                    <option value="de">Deutsch</option>
+                                    <option value="es">Español</option>
+                                </select>
+                            </div>
+                            <div class="flex items-end">
+                                <button onclick="autoTranslate()" class="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-all">
+                                    <i class="fas fa-robot"></i>
+                                    <span class="mr-2">ترجمه</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div id="translationResult" class="hidden">
+                            <!-- Translation result will be shown here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add Translation Modal -->
+    <div id="addTranslationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-6 max-w-md w-full mx-4">
+            <h3 class="text-xl font-bold mb-4 text-gray-800">افزودن ترجمه جدید</h3>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">کلید</label>
+                    <input type="text" id="newTranslationKey" placeholder="example.key" 
+                           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">متن</label>
+                    <textarea id="newTranslationText" placeholder="متن ترجمه" 
+                              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">زبان</label>
+                    <select id="newTranslationLanguage" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="fa">فارسی</option>
+                        <option value="en">English</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+            </div>
+            <div class="flex space-x-3 space-x-reverse mt-6">
+                <button onclick="saveNewTranslation()" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg transition-all">
+                    <i class="fas fa-save"></i>
+                    <span class="mr-2">ذخیره</span>
+                </button>
+                <button onclick="closeAddTranslationModal()" class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all">
+                    انصراف
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Site Builder - Multi-Language Support. تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Global variables
+        let currentLanguage = 'fa';
+        let supportedLanguages = [];
+        let translations = {};
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeMultiLanguage();
+            loadLanguages();
+            loadTranslations();
+            setupEventListeners();
+        });
+
+        function initializeMultiLanguage() {
+            // Set initial language
+            setLanguage('fa');
+        }
+
+        function setupEventListeners() {
+            // Language search
+            document.getElementById('languageSearch').addEventListener('input', filterLanguages);
+            
+            // Category filters
+            document.querySelectorAll('input[name="category"]').forEach(radio => {
+                radio.addEventListener('change', filterLanguages);
+            });
+            
+            // Translation category change
+            document.getElementById('translationCategory').addEventListener('change', loadTranslations);
+            
+            // Language toggle
+            document.getElementById('languageToggle').addEventListener('click', toggleLanguage);
+        }
+
+        function loadLanguages() {
+            // Mock language data
+            supportedLanguages = [
+                { code: 'fa', name: 'Persian', native_name: 'فارسی', direction: 'rtl', family: 'indo_european', region: 'IR', script: 'Arabic', is_rtl: true },
+                { code: 'en', name: 'English', native_name: 'English', direction: 'ltr', family: 'indo_european', region: 'US', script: 'Latin', is_rtl: false },
+                { code: 'ar', name: 'Arabic', native_name: 'العربية', direction: 'rtl', family: 'semitic', region: 'SA', script: 'Arabic', is_rtl: true },
+                { code: 'fr', name: 'French', native_name: 'Français', direction: 'ltr', family: 'indo_european', region: 'FR', script: 'Latin', is_rtl: false },
+                { code: 'de', name: 'German', native_name: 'Deutsch', direction: 'ltr', family: 'indo_european', region: 'DE', script: 'Latin', is_rtl: false },
+                { code: 'es', name: 'Spanish', native_name: 'Español', direction: 'ltr', family: 'indo_european', region: 'ES', script: 'Latin', is_rtl: false },
+                { code: 'zh', name: 'Chinese', native_name: '中文', direction: 'ltr', family: 'sino_tibetan', region: 'CN', script: 'Han', is_rtl: false },
+                { code: 'ja', name: 'Japanese', native_name: '日本語', direction: 'ltr', family: 'sino_tibetan', region: 'JP', script: 'Hiragana', is_rtl: false },
+                { code: 'ko', name: 'Korean', native_name: '한국어', direction: 'ltr', family: 'sino_tibetan', region: 'KR', script: 'Hangul', is_rtl: false },
+                { code: 'hi', name: 'Hindi', native_name: 'हिन्दी', direction: 'ltr', family: 'indo_european', region: 'IN', script: 'Devanagari', is_rtl: false },
+                { code: 'ru', name: 'Russian', native_name: 'Русский', direction: 'ltr', family: 'indo_european', region: 'RU', script: 'Cyrillic', is_rtl: false },
+                { code: 'pt', name: 'Portuguese', native_name: 'Português', direction: 'ltr', family: 'indo_european', region: 'PT', script: 'Latin', is_rtl: false },
+                { code: 'it', name: 'Italian', native_name: 'Italiano', direction: 'ltr', family: 'indo_european', region: 'IT', script: 'Latin', is_rtl: false },
+                { code: 'tr', name: 'Turkish', native_name: 'Türkçe', direction: 'ltr', family: 'altaic', region: 'TR', script: 'Latin', is_rtl: false },
+                { code: 'he', name: 'Hebrew', native_name: 'עברית', direction: 'rtl', family: 'semitic', region: 'IL', script: 'Hebrew', is_rtl: true },
+                { code: 'ur', name: 'Urdu', native_name: 'اردو', direction: 'rtl', family: 'indo_european', region: 'PK', script: 'Arabic', is_rtl: true }
+            ];
+            
+            updateLanguageStats();
+            displayLanguages();
+        }
+
+        function updateLanguageStats() {
+            document.getElementById('supportedLanguagesCount').textContent = supportedLanguages.length;
+            document.getElementById('translationsCount').textContent = Object.keys(translations).length;
+            document.getElementById('rtlLanguagesCount').textContent = supportedLanguages.filter(lang => lang.is_rtl).length;
+            
+            const families = new Set(supportedLanguages.map(lang => lang.family));
+            document.getElementById('languageFamiliesCount').textContent = families.size;
+        }
+
+        function displayLanguages() {
+            const container = document.getElementById('languageList');
+            const searchTerm = document.getElementById('languageSearch').value.toLowerCase();
+            const selectedCategory = document.querySelector('input[name="category"]:checked').value;
+            
+            let filteredLanguages = supportedLanguages;
+            
+            // Filter by search term
+            if (searchTerm) {
+                filteredLanguages = filteredLanguages.filter(lang => 
+                    lang.name.toLowerCase().includes(searchTerm) ||
+                    lang.native_name.toLowerCase().includes(searchTerm) ||
+                    lang.code.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            // Filter by category
+            if (selectedCategory !== 'all') {
+                filteredLanguages = filteredLanguages.filter(lang => {
+                    switch (selectedCategory) {
+                        case 'rtl':
+                            return lang.is_rtl;
+                        case 'ltr':
+                            return !lang.is_rtl;
+                        case 'european':
+                            return lang.family === 'indo_european';
+                        case 'asian':
+                            return ['sino_tibetan', 'altaic'].includes(lang.family);
+                        default:
+                            return true;
+                    }
+                });
+            }
+            
+            container.innerHTML = filteredLanguages.map(lang => `
+                <div class="language-card p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 ${lang.code === currentLanguage ? 'bg-blue-50 border-blue-300' : ''}" 
+                     onclick="selectLanguage('${lang.code}')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3 space-x-reverse">
+                            <div class="language-flag" style="background-image: url('https://flagcdn.com/16x12/${lang.region.toLowerCase()}.png')"></div>
+                            <div>
+                                <p class="font-medium text-gray-800">${lang.native_name}</p>
+                                <p class="text-sm text-gray-600">${lang.name}</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs px-2 py-1 rounded-full ${lang.is_rtl ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800'}">
+                                ${lang.is_rtl ? 'RTL' : 'LTR'}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterLanguages() {
+            displayLanguages();
+        }
+
+        function selectLanguage(languageCode) {
+            setLanguage(languageCode);
+            displayLanguages();
+            loadCurrentLanguageInfo();
+        }
+
+        function setLanguage(languageCode) {
+            currentLanguage = languageCode;
+            const language = supportedLanguages.find(lang => lang.code === languageCode);
+            
+            if (language) {
+                document.getElementById('currentLanguage').textContent = language.native_name;
+                
+                // Update document direction
+                document.documentElement.dir = language.is_rtl ? 'rtl' : 'ltr';
+                document.documentElement.lang = languageCode;
+                
+                // Update body class
+                document.body.className = language.is_rtl ? 'bg-gray-50 min-h-screen rtl-text' : 'bg-gray-50 min-h-screen ltr-text';
+            }
+        }
+
+        function toggleLanguage() {
+            const currentIndex = supportedLanguages.findIndex(lang => lang.code === currentLanguage);
+            const nextIndex = (currentIndex + 1) % supportedLanguages.length;
+            selectLanguage(supportedLanguages[nextIndex].code);
+        }
+
+        function loadCurrentLanguageInfo() {
+            const language = supportedLanguages.find(lang => lang.code === currentLanguage);
+            if (!language) return;
+            
+            const container = document.getElementById('currentLanguageInfo');
+            container.innerHTML = `
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 mb-2">نام</h3>
+                    <p class="text-gray-600">${language.native_name} (${language.name})</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 mb-2">جهت متن</h3>
+                    <p class="text-gray-600">${language.is_rtl ? 'راست به چپ (RTL)' : 'چپ به راست (LTR)'}</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 mb-2">خانواده زبانی</h3>
+                    <p class="text-gray-600">${getFamilyName(language.family)}</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 mb-2">نویسش</h3>
+                    <p class="text-gray-600">${language.script}</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 mb-2">منطقه</h3>
+                    <p class="text-gray-600">${language.region}</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 mb-2">کد زبان</h3>
+                    <p class="text-gray-600">${language.code}</p>
+                </div>
+            `;
+        }
+
+        function getFamilyName(family) {
+            const families = {
+                'indo_european': 'هندواروپایی',
+                'semitic': 'سامی',
+                'sino_tibetan': 'چینی-تبتی',
+                'altaic': 'آلتایی',
+                'uralic': 'اورالی',
+                'dravidian': 'دراویدی',
+                'austronesian': 'آسترونزیایی',
+                'austroasiatic': 'آستروآسیایی',
+                'niger_congo': 'نیجر-کنگو'
+            };
+            return families[family] || family;
+        }
+
+        function loadTranslations() {
+            const category = document.getElementById('translationCategory').value;
+            
+            // Mock translation data
+            const mockTranslations = {
+                common: {
+                    save: 'ذخیره',
+                    cancel: 'انصراف',
+                    delete: 'حذف',
+                    edit: 'ویرایش',
+                    add: 'افزودن',
+                    remove: 'حذف',
+                    search: 'جستجو',
+                    filter: 'فیلتر',
+                    sort: 'مرتب‌سازی',
+                    loading: 'در حال بارگذاری...',
+                    error: 'خطا',
+                    success: 'موفقیت',
+                    warning: 'هشدار',
+                    info: 'اطلاعات'
+                },
+                navigation: {
+                    home: 'خانه',
+                    about: 'درباره',
+                    contact: 'تماس',
+                    services: 'خدمات',
+                    products: 'محصولات',
+                    blog: 'وبلاگ',
+                    help: 'کمک',
+                    support: 'پشتیبانی',
+                    settings: 'تنظیمات',
+                    profile: 'پروفایل',
+                    logout: 'خروج',
+                    login: 'ورود',
+                    register: 'ثبت‌نام'
+                },
+                forms: {
+                    name: 'نام',
+                    email: 'ایمیل',
+                    password: 'رمز عبور',
+                    confirm_password: 'تأیید رمز عبور',
+                    phone: 'تلفن',
+                    address: 'آدرس',
+                    city: 'شهر',
+                    country: 'کشور',
+                    message: 'پیام',
+                    subject: 'موضوع',
+                    description: 'توضیحات',
+                    title: 'عنوان',
+                    content: 'محتوا'
+                },
+                messages: {
+                    welcome: 'خوش آمدید',
+                    goodbye: 'خداحافظ',
+                    thank_you: 'متشکرم',
+                    please_wait: 'لطفاً صبر کنید',
+                    operation_successful: 'عملیات موفقیت‌آمیز',
+                    operation_failed: 'عملیات ناموفق',
+                    invalid_input: 'ورودی نامعتبر',
+                    field_required: 'این فیلد الزامی است',
+                    email_invalid: 'آدرس ایمیل نامعتبر',
+                    password_too_short: 'رمز عبور کوتاه است',
+                    passwords_dont_match: 'رمزهای عبور مطابقت ندارند'
+                },
+                time: {
+                    now: 'اکنون',
+                    today: 'امروز',
+                    yesterday: 'دیروز',
+                    tomorrow: 'فردا',
+                    this_week: 'این هفته',
+                    last_week: 'هفته گذشته',
+                    next_week: 'هفته آینده',
+                    this_month: 'این ماه',
+                    last_month: 'ماه گذشته',
+                    next_month: 'ماه آینده',
+                    this_year: 'امسال',
+                    last_year: 'سال گذشته',
+                    next_year: 'سال آینده'
+                }
+            };
+            
+            translations = mockTranslations[category] || {};
+            displayTranslations();
+        }
+
+        function displayTranslations() {
+            const container = document.getElementById('translationList');
+            
+            if (Object.keys(translations).length === 0) {
+                container.innerHTML = `
+                    <div class="text-center text-gray-500 py-8">
+                        <i class="fas fa-language text-2xl mb-2"></i>
+                        <p>هیچ ترجمه‌ای یافت نشد</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = Object.entries(translations).map(([key, value]) => `
+                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <div class="flex-1">
+                        <p class="font-medium text-gray-800">${key}</p>
+                        <p class="text-sm text-gray-600">${value}</p>
+                    </div>
+                    <div class="flex space-x-2 space-x-reverse">
+                        <button onclick="editTranslation('${key}')" class="text-blue-500 hover:text-blue-700 text-sm">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button onclick="deleteTranslation('${key}')" class="text-red-500 hover:text-red-700 text-sm">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addNewTranslation() {
+            document.getElementById('addTranslationModal').classList.remove('hidden');
+        }
+
+        function closeAddTranslationModal() {
+            document.getElementById('addTranslationModal').classList.add('hidden');
+        }
+
+        function saveNewTranslation() {
+            const key = document.getElementById('newTranslationKey').value;
+            const text = document.getElementById('newTranslationText').value;
+            const language = document.getElementById('newTranslationLanguage').value;
+            
+            if (!key || !text) {
+                showError('لطفاً تمام فیلدها را پر کنید');
+                return;
+            }
+            
+            // Add translation
+            translations[key] = text;
+            displayTranslations();
+            showSuccess('ترجمه با موفقیت اضافه شد');
+            closeAddTranslationModal();
+            
+            // Clear form
+            document.getElementById('newTranslationKey').value = '';
+            document.getElementById('newTranslationText').value = '';
+        }
+
+        function editTranslation(key) {
+            const newText = prompt('متن جدید:', translations[key]);
+            if (newText !== null) {
+                translations[key] = newText;
+                displayTranslations();
+                showSuccess('ترجمه به‌روزرسانی شد');
+            }
+        }
+
+        function deleteTranslation(key) {
+            if (confirm(`آیا مطمئن هستید که می‌خواهید ترجمه "${key}" را حذف کنید؟`)) {
+                delete translations[key];
+                displayTranslations();
+                showSuccess('ترجمه حذف شد');
+            }
+        }
+
+        function detectLanguage() {
+            const text = document.getElementById('textToDetect').value.trim();
+            
+            if (!text) {
+                showError('لطفاً متنی برای تشخیص وارد کنید');
+                return;
+            }
+            
+            // Mock language detection
+            const mockResults = [
+                { language: 'fa', confidence: 0.95, name: 'فارسی' },
+                { language: 'en', confidence: 0.03, name: 'English' },
+                { language: 'ar', confidence: 0.02, name: 'العربية' }
+            ];
+            
+            displayDetectionResult(mockResults);
+        }
+
+        function displayDetectionResult(results) {
+            const container = document.getElementById('detectionResult');
+            container.classList.remove('hidden');
+            
+            container.innerHTML = `
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 mb-3">نتایج تشخیص زبان</h3>
+                    <div class="space-y-2">
+                        ${results.map(result => `
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">${result.name}</span>
+                                <div class="flex items-center space-x-2 space-x-reverse">
+                                    <div class="w-20 bg-gray-200 rounded-full h-2">
+                                        <div class="bg-blue-500 h-2 rounded-full" style="width: ${result.confidence * 100}%"></div>
+                                    </div>
+                                    <span class="text-sm text-gray-600">${Math.round(result.confidence * 100)}%</span>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function autoTranslate() {
+            const text = document.getElementById('textToTranslate').value.trim();
+            const targetLang = document.getElementById('targetLanguage').value;
+            
+            if (!text) {
+                showError('لطفاً متنی برای ترجمه وارد کنید');
+                return;
+            }
+            
+            // Mock translation
+            const mockTranslations = {
+                'en': 'Welcome to our website',
+                'fa': 'به وب‌سایت ما خوش آمدید',
+                'ar': 'مرحباً بكم في موقعنا',
+                'fr': 'Bienvenue sur notre site web',
+                'de': 'Willkommen auf unserer Website',
+                'es': 'Bienvenido a nuestro sitio web'
+            };
+            
+            const translatedText = mockTranslations[targetLang] || text;
+            displayTranslationResult(translatedText, targetLang);
+        }
+
+        function displayTranslationResult(translatedText, targetLang) {
+            const container = document.getElementById('translationResult');
+            container.classList.remove('hidden');
+            
+            const language = supportedLanguages.find(lang => lang.code === targetLang);
+            const languageName = language ? language.native_name : targetLang;
+            
+            container.innerHTML = `
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 mb-3">نتیجه ترجمه</h3>
+                    <div class="space-y-2">
+                        <div>
+                            <span class="text-sm text-gray-600">زبان مقصد:</span>
+                            <span class="font-medium text-gray-800">${languageName}</span>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <p class="text-gray-800">${translatedText}</p>
+                        </div>
+                        <button onclick="copyToClipboard('${translatedText}')" class="text-blue-500 hover:text-blue-700 text-sm">
+                            <i class="fas fa-copy"></i> کپی
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showSuccess('متن کپی شد');
+            });
+        }
+
+        function showSuccess(message) {
+            showNotification(message, 'success');
+        }
+
+        function showError(message) {
+            showNotification(message, 'error');
+        }
+
+        function showNotification(message, type) {
+            const colors = {
+                success: 'bg-green-500',
+                error: 'bg-red-500',
+                info: 'bg-blue-500'
+            };
+            
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 ${colors[type]} text-white px-6 py-3 rounded-lg shadow-lg z-50 fade-in`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Initialize on load
+        loadCurrentLanguageInfo();
+    </script>
+</body>
+</html>

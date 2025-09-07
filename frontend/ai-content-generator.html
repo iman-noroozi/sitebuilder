@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Content Generator - Site Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .content-card {
+            transition: all 0.3s ease;
+        }
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .loading-spinner {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <i class="fas fa-robot text-3xl"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold">AI Content Generator</h1>
+                        <p class="text-blue-100">تولید محتوای هوشمند با هوش مصنوعی</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <button id="languageToggle" class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition-all">
+                        <i class="fas fa-language"></i>
+                        <span id="currentLang">فارسی</span>
+                    </button>
+                    <button id="themeToggle" class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition-all">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Content Generation Form -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Input Form -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-6 text-gray-800">
+                    <i class="fas fa-edit text-blue-500"></i>
+                    تنظیمات تولید محتوا
+                </h2>
+                
+                <form id="contentForm" class="space-y-6">
+                    <!-- Business Type -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            نوع کسب‌وکار
+                        </label>
+                        <select id="businessType" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="restaurant">رستوران</option>
+                            <option value="ecommerce">فروشگاه آنلاین</option>
+                            <option value="consulting">مشاوره</option>
+                            <option value="healthcare">بهداشت و درمان</option>
+                            <option value="education">آموزش</option>
+                            <option value="technology">فناوری</option>
+                            <option value="finance">مالی</option>
+                            <option value="real_estate">املاک</option>
+                            <option value="legal">خدمات حقوقی</option>
+                            <option value="marketing">بازاریابی</option>
+                        </select>
+                    </div>
+
+                    <!-- Content Type -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            نوع محتوا
+                        </label>
+                        <select id="contentType" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="homepage">صفحه اصلی</option>
+                            <option value="about">درباره ما</option>
+                            <option value="services">خدمات</option>
+                            <option value="contact">تماس با ما</option>
+                            <option value="blog">وبلاگ</option>
+                        </select>
+                    </div>
+
+                    <!-- Language -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            زبان
+                        </label>
+                        <select id="language" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="fa">فارسی</option>
+                            <option value="en">English</option>
+                            <option value="ar">العربية</option>
+                            <option value="fr">Français</option>
+                            <option value="de">Deutsch</option>
+                            <option value="es">Español</option>
+                        </select>
+                    </div>
+
+                    <!-- Tone -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            لحن محتوا
+                        </label>
+                        <select id="tone" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="professional">حرفه‌ای</option>
+                            <option value="friendly">دوستانه</option>
+                            <option value="casual">غیررسمی</option>
+                            <option value="formal">رسمی</option>
+                        </select>
+                    </div>
+
+                    <!-- Length -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            طول محتوا
+                        </label>
+                        <select id="length" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="short">کوتاه (100-200 کلمه)</option>
+                            <option value="medium">متوسط (200-500 کلمه)</option>
+                            <option value="long">بلند (500+ کلمه)</option>
+                        </select>
+                    </div>
+
+                    <!-- Keywords -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            کلمات کلیدی (اختیاری)
+                        </label>
+                        <input type="text" id="keywords" placeholder="کلمات کلیدی را با کاما جدا کنید" 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+
+                    <!-- Target Audience -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            مخاطب هدف
+                        </label>
+                        <select id="targetAudience" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="general">عمومی</option>
+                            <option value="families">خانواده‌ها</option>
+                            <option value="businesses">کسب‌وکارها</option>
+                            <option value="students">دانشجویان</option>
+                            <option value="professionals">متخصصان</option>
+                        </select>
+                    </div>
+
+                    <!-- Generate Button -->
+                    <button type="submit" id="generateBtn" 
+                            class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-magic mr-2"></i>
+                        تولید محتوا
+                    </button>
+                </form>
+            </div>
+
+            <!-- Generated Content Display -->
+            <div class="space-y-6">
+                <!-- Loading State -->
+                <div id="loadingState" class="hidden bg-white rounded-xl shadow-lg p-6">
+                    <div class="text-center">
+                        <div class="loading-spinner w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full mx-auto mb-4"></div>
+                        <p class="text-gray-600">در حال تولید محتوا...</p>
+                        <p class="text-sm text-gray-500 mt-2">لطفاً صبر کنید</p>
+                    </div>
+                </div>
+
+                <!-- Generated Content -->
+                <div id="generatedContent" class="hidden space-y-6">
+                    <!-- Title -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 content-card">
+                        <h3 class="text-lg font-bold mb-4 text-gray-800">
+                            <i class="fas fa-heading text-green-500"></i>
+                            عنوان
+                        </h3>
+                        <div id="generatedTitle" class="text-xl font-semibold text-gray-800 bg-gray-50 p-4 rounded-lg"></div>
+                        <button onclick="copyToClipboard('generatedTitle')" class="mt-2 text-blue-500 hover:text-blue-700 text-sm">
+                            <i class="fas fa-copy"></i> کپی
+                        </button>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 content-card">
+                        <h3 class="text-lg font-bold mb-4 text-gray-800">
+                            <i class="fas fa-file-alt text-blue-500"></i>
+                            محتوا
+                        </h3>
+                        <div id="generatedContentText" class="text-gray-700 bg-gray-50 p-4 rounded-lg leading-relaxed"></div>
+                        <button onclick="copyToClipboard('generatedContentText')" class="mt-2 text-blue-500 hover:text-blue-700 text-sm">
+                            <i class="fas fa-copy"></i> کپی
+                        </button>
+                    </div>
+
+                    <!-- Meta Description -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 content-card">
+                        <h3 class="text-lg font-bold mb-4 text-gray-800">
+                            <i class="fas fa-search text-purple-500"></i>
+                            توضیحات متا (SEO)
+                        </h3>
+                        <div id="generatedMeta" class="text-gray-700 bg-gray-50 p-4 rounded-lg"></div>
+                        <button onclick="copyToClipboard('generatedMeta')" class="mt-2 text-blue-500 hover:text-blue-700 text-sm">
+                            <i class="fas fa-copy"></i> کپی
+                        </button>
+                    </div>
+
+                    <!-- Analytics -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 content-card">
+                        <h3 class="text-lg font-bold mb-4 text-gray-800">
+                            <i class="fas fa-chart-bar text-orange-500"></i>
+                            تحلیل محتوا
+                        </h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <div id="seoScore" class="text-2xl font-bold text-green-500"></div>
+                                <div class="text-sm text-gray-600">امتیاز SEO</div>
+                            </div>
+                            <div class="text-center">
+                                <div id="readabilityScore" class="text-2xl font-bold text-blue-500"></div>
+                                <div class="text-sm text-gray-600">قابلیت خواندن</div>
+                            </div>
+                            <div class="text-center">
+                                <div id="wordCount" class="text-2xl font-bold text-purple-500"></div>
+                                <div class="text-sm text-gray-600">تعداد کلمات</div>
+                            </div>
+                            <div class="text-center">
+                                <div id="languageDisplay" class="text-2xl font-bold text-orange-500"></div>
+                                <div class="text-sm text-gray-600">زبان</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Keywords -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 content-card">
+                        <h3 class="text-lg font-bold mb-4 text-gray-800">
+                            <i class="fas fa-tags text-red-500"></i>
+                            کلمات کلیدی
+                        </h3>
+                        <div id="generatedKeywords" class="flex flex-wrap gap-2"></div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 content-card">
+                        <h3 class="text-lg font-bold mb-4 text-gray-800">
+                            <i class="fas fa-tools text-gray-500"></i>
+                            عملیات
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="translateContent()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-all">
+                                <i class="fas fa-language"></i> ترجمه
+                            </button>
+                            <button onclick="regenerateContent()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-all">
+                                <i class="fas fa-redo"></i> تولید مجدد
+                            </button>
+                            <button onclick="exportContent()" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition-all">
+                                <i class="fas fa-download"></i> دانلود
+                            </button>
+                            <button onclick="saveToProject()" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition-all">
+                                <i class="fas fa-save"></i> ذخیره در پروژه
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Error State -->
+                <div id="errorState" class="hidden bg-red-50 border border-red-200 rounded-xl p-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-exclamation-triangle text-red-500 text-xl ml-3"></i>
+                        <div>
+                            <h3 class="text-lg font-semibold text-red-800">خطا در تولید محتوا</h3>
+                            <p id="errorMessage" class="text-red-600 mt-1"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Suggestions -->
+        <div id="suggestionsSection" class="mt-12 hidden">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-6 text-gray-800">
+                    <i class="fas fa-lightbulb text-yellow-500"></i>
+                    پیشنهادات محتوا
+                </h2>
+                <div id="suggestionsList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Site Builder - AI Content Generator. تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Global variables
+        let currentLanguage = 'fa';
+        let currentTheme = 'light';
+        let lastGeneratedContent = null;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            loadBusinessTypes();
+            loadLanguages();
+        });
+
+        function initializeApp() {
+            // Form submission
+            document.getElementById('contentForm').addEventListener('submit', handleFormSubmit);
+            
+            // Language toggle
+            document.getElementById('languageToggle').addEventListener('click', toggleLanguage);
+            
+            // Theme toggle
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+            
+            // Load suggestions
+            loadContentSuggestions();
+        }
+
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const formData = {
+                business_type: document.getElementById('businessType').value,
+                content_type: document.getElementById('contentType').value,
+                language: document.getElementById('language').value,
+                tone: document.getElementById('tone').value,
+                length: document.getElementById('length').value,
+                keywords: document.getElementById('keywords').value.split(',').map(k => k.trim()).filter(k => k),
+                target_audience: document.getElementById('targetAudience').value,
+                industry: document.getElementById('businessType').value
+            };
+
+            await generateContent(formData);
+        }
+
+        async function generateContent(formData) {
+            try {
+                // Show loading state
+                showLoadingState();
+                
+                // Make API request
+                const response = await fetch('/api/ai-content/generate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    displayGeneratedContent(result);
+                    lastGeneratedContent = result;
+                } else {
+                    showError(result.error || 'خطا در تولید محتوا');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showError('خطا در ارتباط با سرور');
+            }
+        }
+
+        function showLoadingState() {
+            document.getElementById('loadingState').classList.remove('hidden');
+            document.getElementById('generatedContent').classList.add('hidden');
+            document.getElementById('errorState').classList.add('hidden');
+        }
+
+        function displayGeneratedContent(content) {
+            // Hide loading state
+            document.getElementById('loadingState').classList.add('hidden');
+            
+            // Populate content
+            document.getElementById('generatedTitle').textContent = content.title;
+            document.getElementById('generatedContentText').textContent = content.content;
+            document.getElementById('generatedMeta').textContent = content.meta_description;
+            
+            // Populate analytics
+            document.getElementById('seoScore').textContent = content.seo_score + '/100';
+            document.getElementById('readabilityScore').textContent = content.readability_score + '/100';
+            document.getElementById('wordCount').textContent = content.word_count;
+            document.getElementById('languageDisplay').textContent = getLanguageName(content.language);
+            
+            // Populate keywords
+            const keywordsContainer = document.getElementById('generatedKeywords');
+            keywordsContainer.innerHTML = '';
+            content.keywords.forEach(keyword => {
+                const tag = document.createElement('span');
+                tag.className = 'bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm';
+                tag.textContent = keyword;
+                keywordsContainer.appendChild(tag);
+            });
+            
+            // Show generated content
+            document.getElementById('generatedContent').classList.remove('hidden');
+            document.getElementById('generatedContent').classList.add('fade-in');
+        }
+
+        function showError(message) {
+            document.getElementById('loadingState').classList.add('hidden');
+            document.getElementById('errorMessage').textContent = message;
+            document.getElementById('errorState').classList.remove('hidden');
+        }
+
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                // Show success message
+                const button = element.nextElementSibling;
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> کپی شد!';
+                button.classList.add('text-green-500');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('text-green-500');
+                }, 2000);
+            });
+        }
+
+        async function translateContent() {
+            if (!lastGeneratedContent) return;
+            
+            const targetLanguage = prompt('زبان مقصد را انتخاب کنید:', 'en');
+            if (!targetLanguage) return;
+            
+            try {
+                const response = await fetch('/api/ai-content/translate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        content: lastGeneratedContent,
+                        target_language: targetLanguage
+                    })
+                });
+
+                const result = await response.json();
+                
+                if (result.status === 'success') {
+                    displayGeneratedContent(result);
+                } else {
+                    showError(result.error || 'خطا در ترجمه');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showError('خطا در ترجمه محتوا');
+            }
+        }
+
+        function regenerateContent() {
+            if (document.getElementById('contentForm').checkValidity()) {
+                document.getElementById('contentForm').dispatchEvent(new Event('submit'));
+            }
+        }
+
+        function exportContent() {
+            if (!lastGeneratedContent) return;
+            
+            const content = {
+                title: lastGeneratedContent.title,
+                content: lastGeneratedContent.content,
+                meta_description: lastGeneratedContent.meta_description,
+                keywords: lastGeneratedContent.keywords,
+                seo_score: lastGeneratedContent.seo_score,
+                readability_score: lastGeneratedContent.readability_score,
+                language: lastGeneratedContent.language,
+                word_count: lastGeneratedContent.word_count,
+                created_at: lastGeneratedContent.created_at
+            };
+            
+            const blob = new Blob([JSON.stringify(content, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `ai-content-${Date.now()}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function saveToProject() {
+            if (!lastGeneratedContent) return;
+            
+            // This would integrate with the main site builder
+            alert('این ویژگی در نسخه بعدی اضافه خواهد شد');
+        }
+
+        async function loadContentSuggestions() {
+            try {
+                const businessType = document.getElementById('businessType').value;
+                const language = document.getElementById('language').value;
+                
+                const response = await fetch(`/api/ai-content/suggestions?business_type=${businessType}&language=${language}`);
+                const result = await response.json();
+                
+                if (result.status === 'success') {
+                    displaySuggestions(result.suggestions);
+                }
+            } catch (error) {
+                console.error('Error loading suggestions:', error);
+            }
+        }
+
+        function displaySuggestions(suggestions) {
+            const container = document.getElementById('suggestionsList');
+            container.innerHTML = '';
+            
+            suggestions.forEach(suggestion => {
+                const card = document.createElement('div');
+                card.className = 'bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-blue-300 transition-all cursor-pointer';
+                card.innerHTML = `
+                    <h3 class="font-semibold text-gray-800 mb-2">${suggestion.title}</h3>
+                    <p class="text-sm text-gray-600 mb-3">${suggestion.description}</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-blue-600">${suggestion.estimated_words} کلمه</span>
+                        <button onclick="useSuggestion('${suggestion.type}')" class="text-blue-500 hover:text-blue-700 text-sm">
+                            <i class="fas fa-arrow-left"></i> استفاده
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+            
+            document.getElementById('suggestionsSection').classList.remove('hidden');
+        }
+
+        function useSuggestion(contentType) {
+            document.getElementById('contentType').value = contentType;
+            document.getElementById('contentForm').dispatchEvent(new Event('submit'));
+        }
+
+        async function loadBusinessTypes() {
+            try {
+                const response = await fetch('/api/ai-content/business-types');
+                const result = await response.json();
+                
+                if (result.status === 'success') {
+                    const select = document.getElementById('businessType');
+                    select.innerHTML = '';
+                    
+                    result.business_types.forEach(type => {
+                        const option = document.createElement('option');
+                        option.value = type.id;
+                        option.textContent = currentLanguage === 'fa' ? type.name_fa : type.name;
+                        select.appendChild(option);
+                    });
+                }
+            } catch (error) {
+                console.error('Error loading business types:', error);
+            }
+        }
+
+        async function loadLanguages() {
+            try {
+                const response = await fetch('/api/ai-content/languages');
+                const result = await response.json();
+                
+                if (result.status === 'success') {
+                    const select = document.getElementById('language');
+                    select.innerHTML = '';
+                    
+                    result.languages.forEach(lang => {
+                        const option = document.createElement('option');
+                        option.value = lang.code;
+                        option.textContent = lang.native_name;
+                        select.appendChild(option);
+                    });
+                }
+            } catch (error) {
+                console.error('Error loading languages:', error);
+            }
+        }
+
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'fa' ? 'en' : 'fa';
+            document.getElementById('currentLang').textContent = currentLanguage === 'fa' ? 'فارسی' : 'English';
+            
+            // Update UI language
+            updateUILanguage();
+        }
+
+        function updateUILanguage() {
+            // This would update all UI text based on current language
+            // For now, just update the business types
+            loadBusinessTypes();
+        }
+
+        function toggleTheme() {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            const icon = document.querySelector('#themeToggle i');
+            icon.className = currentTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+            
+            // Apply theme
+            document.body.classList.toggle('dark', currentTheme === 'dark');
+        }
+
+        function getLanguageName(code) {
+            const languages = {
+                'fa': 'فارسی',
+                'en': 'English',
+                'ar': 'العربية',
+                'fr': 'Français',
+                'de': 'Deutsch',
+                'es': 'Español'
+            };
+            return languages[code] || code;
+        }
+
+        // Update suggestions when business type changes
+        document.getElementById('businessType').addEventListener('change', loadContentSuggestions);
+        document.getElementById('language').addEventListener('change', loadContentSuggestions);
+    </script>
+</body>
+</html>

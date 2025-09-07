@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Commands - Site Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .voice-button {
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .voice-button.listening {
+            animation: pulse 1s infinite;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        }
+        .voice-button.speaking {
+            animation: pulse 0.5s infinite;
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .command-card {
+            transition: all 0.3s ease;
+        }
+        .command-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .wave-animation {
+            display: inline-block;
+            animation: wave 1.5s ease-in-out infinite;
+        }
+        .wave-animation:nth-child(2) { animation-delay: 0.1s; }
+        .wave-animation:nth-child(3) { animation-delay: 0.2s; }
+        .wave-animation:nth-child(4) { animation-delay: 0.3s; }
+        .wave-animation:nth-child(5) { animation-delay: 0.4s; }
+        @keyframes wave {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.5); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .command-history-item {
+            border-right: 4px solid #3b82f6;
+            transition: all 0.3s ease;
+        }
+        .command-history-item:hover {
+            border-right-color: #1d4ed8;
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <i class="fas fa-microphone text-3xl"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold">Voice Commands</h1>
+                        <p class="text-blue-100">کنترل صوتی سایت‌ساز</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="flex items-center space-x-2 space-x-reverse">
+                        <span class="text-sm">وضعیت:</span>
+                        <span id="statusIndicator" class="px-3 py-1 rounded-full text-xs bg-red-500">
+                            غیرفعال
+                        </span>
+                    </div>
+                    <button id="settingsBtn" class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition-all">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Voice Control Panel -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold mb-6 text-gray-800">
+                        <i class="fas fa-microphone text-blue-500"></i>
+                        کنترل صوتی
+                    </h2>
+                    
+                    <!-- Voice Button -->
+                    <div class="text-center mb-6">
+                        <button id="voiceButton" class="voice-button w-32 h-32 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white text-4xl shadow-lg hover:shadow-xl">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <p id="voiceStatus" class="mt-4 text-gray-600">برای شروع کلیک کنید</p>
+                    </div>
+                    
+                    <!-- Language Selection -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            زبان
+                        </label>
+                        <select id="languageSelect" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="fa">فارسی</option>
+                            <option value="en">English</option>
+                            <option value="ar">العربية</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Sensitivity -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            حساسیت میکروفون
+                        </label>
+                        <input type="range" id="sensitivitySlider" min="0" max="100" value="50" 
+                               class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between text-xs text-gray-500 mt-1">
+                            <span>کم</span>
+                            <span>زیاد</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Commands -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">دستورات سریع</h3>
+                        <div class="space-y-2">
+                            <button onclick="executeQuickCommand('save')" class="w-full text-right p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-all">
+                                <i class="fas fa-save text-green-500 ml-2"></i>
+                                ذخیره کن
+                            </button>
+                            <button onclick="executeQuickCommand('undo')" class="w-full text-right p-3 bg-yellow-50 hover:bg-yellow-100 rounded-lg transition-all">
+                                <i class="fas fa-undo text-yellow-500 ml-2"></i>
+                                برگرد
+                            </button>
+                            <button onclick="executeQuickCommand('redo')" class="w-full text-right p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-all">
+                                <i class="fas fa-redo text-blue-500 ml-2"></i>
+                                دوباره
+                            </button>
+                            <button onclick="executeQuickCommand('help')" class="w-full text-right p-3 bg-purple-50 hover:bg-purple-100 rounded-lg transition-all">
+                                <i class="fas fa-question-circle text-purple-500 ml-2"></i>
+                                کمک
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Settings -->
+                    <div class="border-t pt-4">
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">تنظیمات</h3>
+                        <div class="space-y-3">
+                            <label class="flex items-center">
+                                <input type="checkbox" id="autoStart" class="ml-2">
+                                <span class="text-sm text-gray-700">شروع خودکار</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" id="soundFeedback" class="ml-2" checked>
+                                <span class="text-sm text-gray-700">بازخورد صوتی</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" id="visualFeedback" class="ml-2" checked>
+                                <span class="text-sm text-gray-700">بازخورد بصری</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Command History & Recognition -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Current Recognition -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold mb-4 text-gray-800">
+                        <i class="fas fa-ear-listen text-green-500"></i>
+                        تشخیص صدا
+                    </h2>
+                    
+                    <div id="recognitionArea" class="min-h-32 bg-gray-50 rounded-lg p-4 border-2 border-dashed border-gray-300">
+                        <div id="recognitionText" class="text-center text-gray-500">
+                            <i class="fas fa-microphone-slash text-2xl mb-2"></i>
+                            <p>در انتظار دستور صوتی...</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Wave Animation (hidden by default) -->
+                    <div id="waveAnimation" class="hidden text-center mt-4">
+                        <div class="inline-flex space-x-1 space-x-reverse">
+                            <div class="wave-animation w-1 h-8 bg-blue-500 rounded"></div>
+                            <div class="wave-animation w-1 h-8 bg-blue-500 rounded"></div>
+                            <div class="wave-animation w-1 h-8 bg-blue-500 rounded"></div>
+                            <div class="wave-animation w-1 h-8 bg-blue-500 rounded"></div>
+                            <div class="wave-animation w-1 h-8 bg-blue-500 rounded"></div>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2">در حال گوش دادن...</p>
+                    </div>
+                </div>
+                
+                <!-- Command History -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold text-gray-800">
+                            <i class="fas fa-history text-orange-500"></i>
+                            تاریخچه دستورات
+                        </h2>
+                        <button onclick="clearHistory()" class="text-red-500 hover:text-red-700 text-sm">
+                            <i class="fas fa-trash"></i> پاک کردن
+                        </button>
+                    </div>
+                    
+                    <div id="commandHistory" class="space-y-3 max-h-64 overflow-y-auto">
+                        <div class="text-center text-gray-500 py-8">
+                            <i class="fas fa-history text-2xl mb-2"></i>
+                            <p>هیچ دستوری اجرا نشده است</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Available Commands -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold mb-4 text-gray-800">
+                        <i class="fas fa-list text-purple-500"></i>
+                        دستورات موجود
+                    </h2>
+                    
+                    <div id="availableCommands" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Commands will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Site Builder - Voice Commands. تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Global variables
+        let isListening = false;
+        let recognition = null;
+        let commandHistory = [];
+        let currentLanguage = 'fa';
+        
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeVoiceRecognition();
+            loadAvailableCommands();
+            setupEventListeners();
+        });
+        
+        function initializeVoiceRecognition() {
+            // Check if browser supports speech recognition
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                recognition = new SpeechRecognition();
+                
+                // Configure recognition
+                recognition.continuous = true;
+                recognition.interimResults = true;
+                recognition.lang = getLanguageCode(currentLanguage);
+                
+                // Event handlers
+                recognition.onstart = function() {
+                    isListening = true;
+                    updateUI();
+                    showWaveAnimation();
+                };
+                
+                recognition.onresult = function(event) {
+                    let finalTranscript = '';
+                    let interimTranscript = '';
+                    
+                    for (let i = event.resultIndex; i < event.results.length; i++) {
+                        const transcript = event.results[i][0].transcript;
+                        if (event.results[i].isFinal) {
+                            finalTranscript += transcript;
+                        } else {
+                            interimTranscript += transcript;
+                        }
+                    }
+                    
+                    updateRecognitionText(finalTranscript || interimTranscript);
+                    
+                    if (finalTranscript) {
+                        processVoiceCommand(finalTranscript);
+                    }
+                };
+                
+                recognition.onerror = function(event) {
+                    console.error('Speech recognition error:', event.error);
+                    showError('خطا در تشخیص صدا: ' + event.error);
+                    stopListening();
+                };
+                
+                recognition.onend = function() {
+                    isListening = false;
+                    updateUI();
+                    hideWaveAnimation();
+                };
+                
+            } else {
+                showError('مرورگر شما از تشخیص صدا پشتیبانی نمی‌کند');
+            }
+        }
+        
+        function setupEventListeners() {
+            // Voice button click
+            document.getElementById('voiceButton').addEventListener('click', toggleListening);
+            
+            // Language change
+            document.getElementById('languageSelect').addEventListener('change', function() {
+                currentLanguage = this.value;
+                if (recognition) {
+                    recognition.lang = getLanguageCode(currentLanguage);
+                }
+                loadAvailableCommands();
+            });
+            
+            // Sensitivity change
+            document.getElementById('sensitivitySlider').addEventListener('input', function() {
+                // Update recognition sensitivity if supported
+                console.log('Sensitivity changed to:', this.value);
+            });
+        }
+        
+        function toggleListening() {
+            if (isListening) {
+                stopListening();
+            } else {
+                startListening();
+            }
+        }
+        
+        function startListening() {
+            if (recognition && !isListening) {
+                try {
+                    recognition.start();
+                } catch (error) {
+                    console.error('Error starting recognition:', error);
+                    showError('خطا در شروع تشخیص صدا');
+                }
+            }
+        }
+        
+        function stopListening() {
+            if (recognition && isListening) {
+                recognition.stop();
+            }
+        }
+        
+        function updateUI() {
+            const button = document.getElementById('voiceButton');
+            const status = document.getElementById('voiceStatus');
+            const indicator = document.getElementById('statusIndicator');
+            
+            if (isListening) {
+                button.classList.add('listening');
+                button.innerHTML = '<i class="fas fa-stop"></i>';
+                status.textContent = 'در حال گوش دادن...';
+                indicator.textContent = 'فعال';
+                indicator.className = 'px-3 py-1 rounded-full text-xs bg-green-500';
+            } else {
+                button.classList.remove('listening');
+                button.innerHTML = '<i class="fas fa-microphone"></i>';
+                status.textContent = 'برای شروع کلیک کنید';
+                indicator.textContent = 'غیرفعال';
+                indicator.className = 'px-3 py-1 rounded-full text-xs bg-red-500';
+            }
+        }
+        
+        function showWaveAnimation() {
+            document.getElementById('waveAnimation').classList.remove('hidden');
+        }
+        
+        function hideWaveAnimation() {
+            document.getElementById('waveAnimation').classList.add('hidden');
+        }
+        
+        function updateRecognitionText(text) {
+            const recognitionText = document.getElementById('recognitionText');
+            if (text.trim()) {
+                recognitionText.innerHTML = `
+                    <div class="text-right">
+                        <p class="text-gray-800 text-lg">${text}</p>
+                        <p class="text-sm text-gray-500 mt-2">در حال پردازش...</p>
+                    </div>
+                `;
+            } else {
+                recognitionText.innerHTML = `
+                    <div class="text-center text-gray-500">
+                        <i class="fas fa-microphone-slash text-2xl mb-2"></i>
+                        <p>در انتظار دستور صوتی...</p>
+                    </div>
+                `;
+            }
+        }
+        
+        function processVoiceCommand(text) {
+            const command = parseCommand(text);
+            if (command) {
+                executeCommand(command);
+                addToHistory(command);
+            } else {
+                showError('دستور تشخیص داده نشد');
+            }
+        }
+        
+        function parseCommand(text) {
+            const commands = getCommandPatterns();
+            const textLower = text.toLowerCase();
+            
+            for (const [type, patterns] of Object.entries(commands)) {
+                for (const pattern of patterns) {
+                    const match = textLower.match(pattern);
+                    if (match) {
+                        return {
+                            type: type,
+                            text: text,
+                            parameters: match[1] || '',
+                            timestamp: new Date(),
+                            confidence: 0.8
+                        };
+                    }
+                }
+            }
+            
+            return null;
+        }
+        
+        function getCommandPatterns() {
+            const patterns = {
+                'add_element': [
+                    /اضافه کن (.+)/,
+                    /یک (.+) اضافه کن/,
+                    /بذار (.+)/,
+                    /درج کن (.+)/
+                ],
+                'remove_element': [
+                    /حذف کن (.+)/,
+                    /پاک کن (.+)/,
+                    /بردار (.+)/,
+                    /حذف (.+)/
+                ],
+                'modify_element': [
+                    /تغییر بده (.+)/,
+                    /ویرایش کن (.+)/,
+                    /عوض کن (.+)/,
+                    /به (.+) تغییر بده/
+                ],
+                'navigate': [
+                    /برو به (.+)/,
+                    /نمایش (.+)/,
+                    /باز کن (.+)/,
+                    /انتقال به (.+)/
+                ],
+                'save': [
+                    /ذخیره کن/,
+                    /سیو کن/,
+                    /نگه دار/,
+                    /حفظ کن/
+                ],
+                'undo': [
+                    /برگرد/,
+                    /لغو کن/,
+                    /undo/,
+                    /برگشت/
+                ],
+                'redo': [
+                    /دوباره/,
+                    /redo/,
+                    /تکرار کن/,
+                    /بازگردان/
+                ],
+                'help': [
+                    /کمک/,
+                    /راهنما/,
+                    /help/,
+                    /دستورات/
+                ]
+            };
+            
+            return patterns;
+        }
+        
+        function executeCommand(command) {
+            console.log('Executing command:', command);
+            
+            // Show visual feedback
+            showCommandFeedback(command);
+            
+            // Execute based on command type
+            switch (command.type) {
+                case 'add_element':
+                    handleAddElement(command);
+                    break;
+                case 'remove_element':
+                    handleRemoveElement(command);
+                    break;
+                case 'modify_element':
+                    handleModifyElement(command);
+                    break;
+                case 'navigate':
+                    handleNavigate(command);
+                    break;
+                case 'save':
+                    handleSave(command);
+                    break;
+                case 'undo':
+                    handleUndo(command);
+                    break;
+                case 'redo':
+                    handleRedo(command);
+                    break;
+                case 'help':
+                    handleHelp(command);
+                    break;
+                default:
+                    showError('دستور پشتیبانی نمی‌شود');
+            }
+        }
+        
+        function handleAddElement(command) {
+            showSuccess(`عنصر "${command.parameters}" اضافه شد`);
+            // Here you would integrate with the site builder
+        }
+        
+        function handleRemoveElement(command) {
+            showSuccess(`عنصر "${command.parameters}" حذف شد`);
+            // Here you would integrate with the site builder
+        }
+        
+        function handleModifyElement(command) {
+            showSuccess(`عنصر "${command.parameters}" تغییر یافت`);
+            // Here you would integrate with the site builder
+        }
+        
+        function handleNavigate(command) {
+            showSuccess(`انتقال به "${command.parameters}"`);
+            // Here you would integrate with the site builder
+        }
+        
+        function handleSave(command) {
+            showSuccess('پروژه ذخیره شد');
+            // Here you would integrate with the site builder
+        }
+        
+        function handleUndo(command) {
+            showSuccess('عملیات برگشت داده شد');
+            // Here you would integrate with the site builder
+        }
+        
+        function handleRedo(command) {
+            showSuccess('عملیات تکرار شد');
+            // Here you would integrate with the site builder
+        }
+        
+        function handleHelp(command) {
+            showInfo('دستورات موجود: اضافه کن، حذف کن، تغییر بده، ذخیره کن، برگرد، دوباره');
+        }
+        
+        function executeQuickCommand(type) {
+            const command = {
+                type: type,
+                text: getQuickCommandText(type),
+                parameters: '',
+                timestamp: new Date(),
+                confidence: 1.0
+            };
+            
+            executeCommand(command);
+            addToHistory(command);
+        }
+        
+        function getQuickCommandText(type) {
+            const texts = {
+                'save': 'ذخیره کن',
+                'undo': 'برگرد',
+                'redo': 'دوباره',
+                'help': 'کمک'
+            };
+            return texts[type] || '';
+        }
+        
+        function showCommandFeedback(command) {
+            const recognitionArea = document.getElementById('recognitionArea');
+            recognitionArea.classList.add('border-green-500', 'bg-green-50');
+            
+            setTimeout(() => {
+                recognitionArea.classList.remove('border-green-500', 'bg-green-50');
+            }, 2000);
+        }
+        
+        function addToHistory(command) {
+            commandHistory.unshift(command);
+            
+            // Keep only last 10 commands
+            if (commandHistory.length > 10) {
+                commandHistory = commandHistory.slice(0, 10);
+            }
+            
+            updateHistoryDisplay();
+        }
+        
+        function updateHistoryDisplay() {
+            const historyContainer = document.getElementById('commandHistory');
+            
+            if (commandHistory.length === 0) {
+                historyContainer.innerHTML = `
+                    <div class="text-center text-gray-500 py-8">
+                        <i class="fas fa-history text-2xl mb-2"></i>
+                        <p>هیچ دستوری اجرا نشده است</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            historyContainer.innerHTML = commandHistory.map(command => `
+                <div class="command-history-item bg-white p-4 rounded-lg border">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-medium text-gray-800">${command.text}</p>
+                            <p class="text-sm text-gray-500">${getCommandTypeName(command.type)}</p>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-xs text-gray-400">${formatTime(command.timestamp)}</p>
+                            <span class="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function getCommandTypeName(type) {
+            const names = {
+                'add_element': 'اضافه کردن',
+                'remove_element': 'حذف',
+                'modify_element': 'تغییر',
+                'navigate': 'ناوبری',
+                'save': 'ذخیره',
+                'undo': 'برگشت',
+                'redo': 'تکرار',
+                'help': 'کمک'
+            };
+            return names[type] || 'نامشخص';
+        }
+        
+        function formatTime(date) {
+            return date.toLocaleTimeString('fa-IR', {
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+        
+        function loadAvailableCommands() {
+            const commands = [
+                {
+                    type: 'add_element',
+                    name: 'اضافه کردن عنصر',
+                    examples: ['اضافه کن هدر', 'یک دکمه اضافه کن', 'بذار تصویر']
+                },
+                {
+                    type: 'remove_element',
+                    name: 'حذف عنصر',
+                    examples: ['حذف کن دکمه', 'پاک کن متن', 'بردار تصویر']
+                },
+                {
+                    type: 'modify_element',
+                    name: 'تغییر عنصر',
+                    examples: ['تغییر بده رنگ', 'ویرایش کن متن', 'عوض کن فونت']
+                },
+                {
+                    type: 'navigate',
+                    name: 'ناوبری',
+                    examples: ['برو به صفحه اصلی', 'نمایش تنظیمات', 'باز کن منو']
+                },
+                {
+                    type: 'save',
+                    name: 'ذخیره',
+                    examples: ['ذخیره کن', 'سیو کن', 'نگه دار']
+                },
+                {
+                    type: 'undo',
+                    name: 'برگشت',
+                    examples: ['برگرد', 'لغو کن', 'undo']
+                },
+                {
+                    type: 'redo',
+                    name: 'تکرار',
+                    examples: ['دوباره', 'redo', 'تکرار کن']
+                },
+                {
+                    type: 'help',
+                    name: 'کمک',
+                    examples: ['کمک', 'راهنما', 'دستورات']
+                }
+            ];
+            
+            const container = document.getElementById('availableCommands');
+            container.innerHTML = commands.map(cmd => `
+                <div class="command-card bg-gray-50 p-4 rounded-lg border">
+                    <h3 class="font-semibold text-gray-800 mb-2">${cmd.name}</h3>
+                    <div class="space-y-1">
+                        ${cmd.examples.map(example => `
+                            <p class="text-sm text-gray-600 bg-white px-2 py-1 rounded">"${example}"</p>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function clearHistory() {
+            commandHistory = [];
+            updateHistoryDisplay();
+        }
+        
+        function getLanguageCode(lang) {
+            const codes = {
+                'fa': 'fa-IR',
+                'en': 'en-US',
+                'ar': 'ar-SA'
+            };
+            return codes[lang] || 'en-US';
+        }
+        
+        function showSuccess(message) {
+            showNotification(message, 'success');
+        }
+        
+        function showError(message) {
+            showNotification(message, 'error');
+        }
+        
+        function showInfo(message) {
+            showNotification(message, 'info');
+        }
+        
+        function showNotification(message, type) {
+            const colors = {
+                success: 'bg-green-500',
+                error: 'bg-red-500',
+                info: 'bg-blue-500'
+            };
+            
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 ${colors[type]} text-white px-6 py-3 rounded-lg shadow-lg z-50 fade-in`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
