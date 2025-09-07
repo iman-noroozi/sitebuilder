@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>داشبورد درآمدزایی - Site Builder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .revenue-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .revenue-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .revenue-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .revenue-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .revenue-amount {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #48bb78;
+            margin-bottom: 5px;
+        }
+
+        .revenue-label {
+            color: #718096;
+            font-size: 1rem;
+        }
+
+        .revenue-change {
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .revenue-change.positive {
+            color: #48bb78;
+        }
+
+        .revenue-change.negative {
+            color: #f56565;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .subscription-plans {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .plan-card {
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .plan-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+        }
+
+        .plan-card.popular {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .plan-card.popular::before {
+            content: 'محبوب';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #48bb78;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .plan-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .plan-price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .plan-period {
+            color: #a0aec0;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .plan-features li {
+            padding: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            color: #48bb78;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .plan-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .plan-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .plan-card.popular .plan-btn {
+            background: white;
+            color: #667eea;
+        }
+
+        .marketplace-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .marketplace-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+
+        .marketplace-items {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .marketplace-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            transition: background 0.3s ease;
+        }
+
+        .marketplace-item:hover {
+            background: #f7fafc;
+        }
+
+        .item-info h4 {
+            color: #4a5568;
+            margin-bottom: 5px;
+        }
+
+        .item-info p {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: #48bb78;
+        }
+
+        .affiliate-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .affiliate-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .affiliate-link {
+            background: #f7fafc;
+            border: 2px dashed #cbd5e0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .affiliate-link input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-family: monospace;
+        }
+
+        .copy-btn {
+            background: #48bb78;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .copy-btn:hover {
+            background: #38a169;
+        }
+
+        .premium-features {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #4a5568;
+        }
+
+        .feature-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .feature-desc {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .unlock-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .unlock-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .unlock-btn.unlocked {
+            background: #48bb78;
+            cursor: default;
+        }
+
+        .revenue-chart {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .chart-container {
+            height: 300px;
+            background: #f7fafc;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .chart-placeholder {
+            color: #a0aec0;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .revenue-overview {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .plans-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .marketplace-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .affiliate-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 داشبورد درآمدزایی</h1>
+            <p>مدیریت درآمد و ویژگی‌های پولی پلتفرم</p>
+        </div>
+
+        <!-- Revenue Overview -->
+        <div class="revenue-overview">
+            <div class="revenue-card">
+                <div class="revenue-icon">💳</div>
+                <div class="revenue-amount">$2,450</div>
+                <div class="revenue-label">درآمد ماهانه</div>
+                <div class="revenue-change positive">+15% نسبت به ماه قبل</div>
+            </div>
+            <div class="revenue-card">
+                <div class="revenue-icon">👥</div>
+                <div class="revenue-amount">1,250</div>
+                <div class="revenue-label">مشترکین فعال</div>
+                <div class="revenue-change positive">+8% نسبت به ماه قبل</div>
+            </div>
+            <div class="revenue-card">
+                <div class="revenue-icon">🛒</div>
+                <div class="revenue-amount">$850</div>
+                <div class="revenue-label">درآمد بازار</div>
+                <div class="revenue-change positive">+22% نسبت به ماه قبل</div>
+            </div>
+            <div class="revenue-card">
+                <div class="revenue-icon">🤝</div>
+                <div class="revenue-amount">$320</div>
+                <div class="revenue-label">درآمد معرفی</div>
+                <div class="revenue-change positive">+12% نسبت به ماه قبل</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Subscription Plans -->
+            <div class="subscription-plans">
+                <h3>💳 پلن‌های اشتراک</h3>
+                <div class="plans-grid">
+                    <div class="plan-card">
+                        <div class="plan-name">رایگان</div>
+                        <div class="plan-price">$0</div>
+                        <div class="plan-period">برای همیشه</div>
+                        <ul class="plan-features">
+                            <li>سازنده وب‌سایت پایه</li>
+                            <li>5 تولید محتوای AI در ماه</li>
+                            <li>قالب‌های پایه</li>
+                            <li>پشتیبانی جامعه</li>
+                            <li>1 پروژه</li>
+                        </ul>
+                        <button class="plan-btn" onclick="selectPlan('free')">انتخاب پلن</button>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-name">پایه</div>
+                        <div class="plan-price">$9.99</div>
+                        <div class="plan-period">در ماه</div>
+                        <ul class="plan-features">
+                            <li>سازنده وب‌سایت پیشرفته</li>
+                            <li>50 تولید محتوای AI در ماه</li>
+                            <li>قالب‌های پریمیوم</li>
+                            <li>پشتیبانی ایمیل</li>
+                            <li>5 پروژه</li>
+                            <li>آنالیتیکس پایه</li>
+                        </ul>
+                        <button class="plan-btn" onclick="selectPlan('basic')">انتخاب پلن</button>
+                    </div>
+
+                    <div class="plan-card popular">
+                        <div class="plan-name">حرفه‌ای</div>
+                        <div class="plan-price">$29.99</div>
+                        <div class="plan-period">در ماه</div>
+                        <ul class="plan-features">
+                            <li>سازنده وب‌سایت حرفه‌ای</li>
+                            <li>محتوای AI نامحدود</li>
+                            <li>تمام قالب‌ها</li>
+                            <li>پشتیبانی اولویت</li>
+                            <li>پروژه‌های نامحدود</li>
+                            <li>آنالیتیکس پیشرفته</li>
+                            <li>دستورات صوتی</li>
+                            <li>همکاری بلادرنگ</li>
+                            <li>دامنه‌های سفارشی</li>
+                        </ul>
+                        <button class="plan-btn" onclick="selectPlan('pro')">انتخاب پلن</button>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-name">سازمانی</div>
+                        <div class="plan-price">$99.99</div>
+                        <div class="plan-period">در ماه</div>
+                        <ul class="plan-features">
+                            <li>سازنده وب‌سایت سازمانی</li>
+                            <li>همه چیز نامحدود</li>
+                            <li>گزینه‌های برند سفارشی</li>
+                            <li>پشتیبانی اختصاصی</li>
+                            <li>یکپارچه‌سازی‌های سفارشی</li>
+                            <li>امنیت پیشرفته</li>
+                            <li>دسترسی API</li>
+                            <li>آموزش سفارشی</li>
+                            <li>اشتراک درآمد</li>
+                        </ul>
+                        <button class="plan-btn" onclick="selectPlan('enterprise')">انتخاب پلن</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marketplace Section -->
+            <div class="marketplace-section">
+                <h3>🛒 بازار</h3>
+                <div class="marketplace-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">45</div>
+                        <div class="stat-label">قالب‌های شما</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1,250</div>
+                        <div class="stat-label">دانلود</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">$850</div>
+                        <div class="stat-label">درآمد</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.8</div>
+                        <div class="stat-label">امتیاز</div>
+                    </div>
+                </div>
+                <div class="marketplace-items">
+                    <div class="marketplace-item">
+                        <div class="item-info">
+                            <h4>قالب پورتفولیو AI</h4>
+                            <p>قالب مدرن با یکپارچه‌سازی AI</p>
+                        </div>
+                        <div class="item-price">$29.99</div>
+                    </div>
+                    <div class="marketplace-item">
+                        <div class="item-info">
+                            <h4>قالب فروشگاه صوتی</h4>
+                            <p>فروشگاه آنلاین با کنترل صوتی</p>
+                        </div>
+                        <div class="item-price">$39.99</div>
+                    </div>
+                    <div class="marketplace-item">
+                        <div class="item-info">
+                            <h4>قالب همکاری</h4>
+                            <p>قالب برای تیم‌های همکاری</p>
+                        </div>
+                        <div class="item-price">$24.99</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Affiliate Section -->
+        <div class="affiliate-section">
+            <h3>🤝 برنامه معرفی</h3>
+            <div class="affiliate-stats">
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">معرفی‌های موفق</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$320</div>
+                    <div class="stat-label">کمیسیون</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">30%</div>
+                    <div class="stat-label">نرخ کمیسیون</div>
+                </div>
+            </div>
+            <div class="affiliate-link">
+                <h4>لینک معرفی شما</h4>
+                <input type="text" value="https://sitebuilder.com/ref/ABC123" readonly>
+                <button class="copy-btn" onclick="copyAffiliateLink()">کپی</button>
+            </div>
+        </div>
+
+        <!-- Premium Features -->
+        <div class="premium-features">
+            <h3>⭐ ویژگی‌های پریمیوم</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <div class="feature-name">AI Content Pro</div>
+                    <div class="feature-price">$19.99</div>
+                    <div class="feature-desc">تولید محتوای AI پیشرفته با مدل‌های سفارشی</div>
+                    <button class="unlock-btn" onclick="unlockFeature('ai_content_pro')">باز کردن</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎤</div>
+                    <div class="feature-name">Voice Commands Pro</div>
+                    <div class="feature-price">$14.99</div>
+                    <div class="feature-desc">تشخیص صدا و دستورات پیشرفته</div>
+                    <button class="unlock-btn" onclick="unlockFeature('voice_commands_pro')">باز کردن</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <div class="feature-name">Collaboration Pro</div>
+                    <div class="feature-price">$24.99</div>
+                    <div class="feature-desc">ویژگی‌های همکاری بلادرنگ پیشرفته</div>
+                    <button class="unlock-btn" onclick="unlockFeature('collaboration_pro')">باز کردن</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <div class="feature-name">Security Pro</div>
+                    <div class="feature-price">$29.99</div>
+                    <div class="feature-desc">امنیت پیشرفته و ویژگی‌های انطباق</div>
+                    <button class="unlock-btn" onclick="unlockFeature('security_pro')">باز کردن</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-name">Analytics Pro</div>
+                    <div class="feature-price">$9.99</div>
+                    <div class="feature-desc">آنالیتیکس پیشرفته و گزارش‌گیری</div>
+                    <button class="unlock-btn" onclick="unlockFeature('analytics_pro')">باز کردن</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <div class="feature-name">API Access</div>
+                    <div class="feature-price">$49.99</div>
+                    <div class="feature-desc">دسترسی کامل به API و webhook ها</div>
+                    <button class="unlock-btn" onclick="unlockFeature('api_access')">باز کردن</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Revenue Chart -->
+        <div class="revenue-chart">
+            <h3>📈 نمودار درآمد</h3>
+            <div class="chart-container">
+                <div class="chart-placeholder">
+                    📊 نمودار درآمد ماهانه
+                    <br>
+                    <small>در حال بارگذاری...</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Plan selection
+        function selectPlan(planType) {
+            const plans = {
+                'free': 'رایگان',
+                'basic': 'پایه',
+                'pro': 'حرفه‌ای',
+                'enterprise': 'سازمانی'
+            };
+            
+            alert(`✅ پلن ${plans[planType]} انتخاب شد!`);
+        }
+
+        // Feature unlocking
+        function unlockFeature(featureName) {
+            const features = {
+                'ai_content_pro': 'AI Content Pro',
+                'voice_commands_pro': 'Voice Commands Pro',
+                'collaboration_pro': 'Collaboration Pro',
+                'security_pro': 'Security Pro',
+                'analytics_pro': 'Analytics Pro',
+                'api_access': 'API Access'
+            };
+            
+            const button = event.target;
+            button.textContent = 'باز شده ✓';
+            button.classList.add('unlocked');
+            button.disabled = true;
+            
+            alert(`🎉 ویژگی ${features[featureName]} باز شد!`);
+        }
+
+        // Copy affiliate link
+        function copyAffiliateLink() {
+            const input = document.querySelector('.affiliate-link input');
+            input.select();
+            document.execCommand('copy');
+            
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = 'کپی شد!';
+            button.style.background = '#48bb78';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '#48bb78';
+            }, 2000);
+        }
+
+        // Real-time updates
+        setInterval(() => {
+            // Update revenue numbers
+            const revenueAmounts = document.querySelectorAll('.revenue-amount');
+            revenueAmounts.forEach(amount => {
+                if (amount.textContent.includes('$')) {
+                    const currentValue = parseInt(amount.textContent.replace('$', '').replace(',', ''));
+                    const newValue = currentValue + Math.floor(Math.random() * 10);
+                    amount.textContent = '$' + newValue.toLocaleString();
+                }
+            });
+
+            // Update stats
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                if (!stat.textContent.includes('$') && !stat.textContent.includes('%')) {
+                    const currentValue = parseInt(stat.textContent.replace(',', ''));
+                    const newValue = currentValue + Math.floor(Math.random() * 3);
+                    stat.textContent = newValue.toLocaleString();
+                }
+            });
+        }, 15000); // Update every 15 seconds
+
+        // Add interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate cards on load
+            const cards = document.querySelectorAll('.revenue-card, .plan-card, .feature-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+
+            // Add hover effects
+            const planCards = document.querySelectorAll('.plan-card');
+            planCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+
+        // Simulate chart data
+        function generateChartData() {
+            const months = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور'];
+            const revenue = [1800, 2100, 1950, 2300, 2450, 2200];
+            
+            // Simple chart visualization
+            const chartContainer = document.querySelector('.chart-container');
+            chartContainer.innerHTML = `
+                <div style="display: flex; align-items: end; justify-content: space-around; height: 100%; width: 100%;">
+                    ${months.map((month, index) => `
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 30px; height: ${(revenue[index] / 2500) * 200}px; border-radius: 5px 5px 0 0; margin-bottom: 10px;"></div>
+                            <div style="font-size: 0.8rem; color: #718096;">${month}</div>
+                            <div style="font-size: 0.7rem; color: #a0aec0;">$${revenue[index]}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Generate chart after page load
+        setTimeout(generateChartData, 2000);
+    </script>
+</body>
+</html>
