@@ -72,6 +72,10 @@ pyotp==2.8.0
 # Multi-Language Support
 babel==2.12.1
 
+# Viral Features & Monetization
+qrcode==7.4.2
+uuid==1.30
+
 # Data Processing
 pandas==2.1.1
 numpy==1.24.3
