@@ -1,234 +1,346 @@
-# 🤝 راهنمای مشارکت در Site Builder
+# Contributing to Site Builder
 
-از مشارکت شما در پروژه Site Builder خوشحالیم! این راهنما به شما کمک می‌کند تا به بهترین شکل در توسعه این پروژه مشارکت کنید.
+Thank you for your interest in contributing to Site Builder! We welcome contributions from the community and are grateful for your help in making this project better.
 
-## 📋 فهرست مطالب
+## 🤝 How to Contribute
 
-- [نحوه مشارکت](#نحوه-مشارکت)
-- [راه‌اندازی محیط توسعه](#راه‌اندازی-محیط-توسعه)
-- [استانداردهای کدنویسی](#استانداردهای-کدنویسی)
-- [گزارش باگ](#گزارش-باگ)
-- [پیشنهاد ویژگی جدید](#پیشنهاد-ویژگی-جدید)
-- [ارسال Pull Request](#ارسال-pull-request)
+### Reporting Bugs
+- Use GitHub Issues to report bugs
+- Provide detailed reproduction steps
+- Include system information (OS, Python version, etc.)
+- Add screenshots or error logs if applicable
 
-## 🚀 نحوه مشارکت
+### Suggesting Features
+- Use GitHub Issues to suggest new features
+- Describe the feature and its benefits
+- Consider the impact on existing functionality
+- Provide use cases and examples
 
-### انواع مشارکت
+### Code Contributions
+- Fork the repository
+- Create a feature branch
+- Make your changes
+- Add tests for new functionality
+- Ensure all tests pass
+- Submit a pull request
 
-1. **🐛 گزارش باگ**: پیدا کردن و گزارش مشکلات
-2. **✨ ویژگی جدید**: اضافه کردن قابلیت‌های جدید
-3. **📚 مستندسازی**: بهبود مستندات
-4. **🎨 طراحی**: بهبود رابط کاربری
-5. **🧪 تست**: نوشتن تست‌های جدید
-6. **🔧 بهینه‌سازی**: بهبود عملکرد
+## 🛠️ Development Setup
 
-## 🛠️ راه‌اندازی محیط توسعه
+### Prerequisites
+- Python 3.8+
+- Node.js 16+
+- Git
+- Docker (optional)
 
-### 1. Fork کردن پروژه
-
+### Local Development
 ```bash
-# Fork کردن پروژه در GitHub
-# سپس کلون کردن fork شما
-git clone https://github.com/YOUR_USERNAME/sitebuilder.git
+# 1. Fork and clone the repository
+git clone https://github.com/your-username/sitebuilder.git
 cd sitebuilder
 
-# اضافه کردن remote اصلی
-git remote add upstream https://github.com/iman-noroozi/sitebuilder.git
-```
+# 2. Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-### 2. راه‌اندازی محیط
-
-```bash
-# ایجاد شاخه جدید
-git checkout -b feature/your-feature-name
-
-# نصب وابستگی‌ها
+# 3. Install dependencies
 pip install -r backend/requirements.txt
 npm install
 
-# راه‌اندازی دیتابیس
-python manage.py migrate
+# 4. Setup environment
+cp .env.example .env
+# Edit .env with your configuration
 
-# راه‌اندازی سرور
-python manage.py runserver
+# 5. Run migrations
+python backend/manage.py migrate
+
+# 6. Start development servers
+python backend/manage.py runserver &
+npm run dev &
 ```
 
-## 📝 استانداردهای کدنویسی
+### Docker Development
+```bash
+# Build and start with Docker Compose
+docker-compose up -d
+
+# Access the application
+open http://localhost:8000
+```
+
+## 📝 Code Style
 
 ### Python
-
-```python
-# استفاده از Black برای فرمت کردن
-black .
-
-# استفاده از flake8 برای بررسی کیفیت کد
-flake8 .
-
-# استفاده از isort برای مرتب کردن imports
-isort .
-```
+- Follow PEP 8 style guide
+- Use type hints where appropriate
+- Write docstrings for functions and classes
+- Keep functions small and focused
+- Use meaningful variable names
 
 ### JavaScript
+- Use ESLint configuration
+- Follow modern ES6+ syntax
+- Use meaningful variable names
+- Comment complex logic
+- Keep functions small and focused
 
-```javascript
-// استفاده از Prettier برای فرمت کردن
-prettier --write "**/*.js"
+### CSS/SCSS
+- Use BEM methodology
+- Keep selectors specific
+- Use CSS custom properties
+- Mobile-first approach
+- Comment complex styles
 
-// استفاده از ESLint برای بررسی کیفیت کد
-eslint .
+## 🧪 Testing
+
+### Running Tests
+```bash
+# Python tests
+python -m pytest backend/tests/
+
+# JavaScript tests
+npm test
+
+# Coverage report
+python -m pytest --cov=backend backend/tests/
 ```
 
-### Git Commit Messages
+### Writing Tests
+- Write tests for new features
+- Test edge cases and error conditions
+- Use descriptive test names
+- Keep tests independent and isolated
+- Mock external dependencies
 
+## 📚 Documentation
+
+### Code Documentation
+- Write docstrings for all functions and classes
+- Use type hints for better IDE support
+- Comment complex algorithms
+- Keep README files updated
+
+### API Documentation
+- Document all API endpoints
+- Include request/response examples
+- Specify authentication requirements
+- Document error responses
+
+## 🔄 Pull Request Process
+
+### Before Submitting
+1. Ensure all tests pass
+2. Update documentation if needed
+3. Add tests for new features
+4. Follow code style guidelines
+5. Rebase on latest main branch
+
+### Pull Request Template
+```markdown
+## Description
+Brief description of changes
+
+## Type of Change
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Breaking change
+- [ ] Documentation update
+
+## Testing
+- [ ] Tests pass locally
+- [ ] New tests added
+- [ ] Manual testing completed
+
+## Checklist
+- [ ] Code follows style guidelines
+- [ ] Self-review completed
+- [ ] Documentation updated
+- [ ] No breaking changes (or documented)
+```
+
+## 🏷️ Commit Message Format
+
+Use conventional commit format:
 ```
 type(scope): description
 
-feat(editor): اضافه کردن قابلیت drag & drop
-fix(extractor): رفع مشکل استخراج تصاویر
-docs(readme): بهبود مستندات نصب
-style(ui): بهبود طراحی رابط کاربری
-refactor(api): بازسازی API endpoints
-test(parser): اضافه کردن تست‌های جدید
+feat: add new feature
+fix: resolve bug
+docs: update documentation
+style: formatting changes
+refactor: code refactoring
+test: add or update tests
+chore: maintenance tasks
 ```
 
-## 🐛 گزارش باگ
+Examples:
+- `feat: add AI content generation`
+- `fix: resolve mobile layout issue`
+- `docs: update installation guide`
+- `refactor: improve error handling`
 
-### قبل از گزارش
+## 🐛 Bug Reports
 
-1. بررسی کنید که باگ قبلاً گزارش نشده باشد
-2. آخرین نسخه پروژه را تست کنید
-3. مراحل بازتولید باگ را یادداشت کنید
+When reporting bugs, please include:
 
-### نحوه گزارش
+1. **Environment Information**
+   - OS and version
+   - Python version
+   - Node.js version
+   - Browser (if applicable)
 
-```markdown
-**توضیح باگ**
-توضیح کوتاه و واضح از مشکل
+2. **Steps to Reproduce**
+   - Clear, numbered steps
+   - Expected vs actual behavior
+   - Screenshots or videos if helpful
 
-**مراحل بازتولید**
-1. برو به '...'
-2. کلیک روی '...'
-3. اسکرول به پایین
-4. مشاهده خطا
+3. **Error Information**
+   - Full error messages
+   - Stack traces
+   - Log files if relevant
 
-**رفتار مورد انتظار**
-توضیح آنچه باید اتفاق بیفتد
+## 💡 Feature Requests
 
-**رفتار فعلی**
-توضیح آنچه در حال حاضر اتفاق می‌افتد
+When suggesting features, please include:
 
-**اطلاعات سیستم**
-- OS: [مثل Windows 10]
-- Browser: [مثل Chrome 91]
-- Version: [مثل 1.0.0]
+1. **Problem Description**
+   - What problem does this solve?
+   - Who would benefit from this feature?
 
-**اسکرین‌شات**
-در صورت امکان، اسکرین‌شات اضافه کنید
-```
+2. **Proposed Solution**
+   - How should this feature work?
+   - Any design considerations?
 
-## ✨ پیشنهاد ویژگی جدید
+3. **Alternatives Considered**
+   - Other ways to solve this problem
+   - Why this approach is better
 
-### قبل از پیشنهاد
+## 🏆 Recognition
 
-1. بررسی کنید که ویژگی قبلاً پیشنهاد نشده باشد
-2. مطمئن شوید که با اهداف پروژه سازگار است
-3. در مورد پیاده‌سازی فکر کنید
+Contributors will be recognized in:
+- README.md contributors section
+- Release notes
+- Project documentation
+- GitHub contributors page
 
-### نحوه پیشنهاد
+## 📞 Getting Help
 
-```markdown
-**نام ویژگی**
-نام کوتاه و واضح
+- **GitHub Issues**: For bugs and feature requests
+- **Discussions**: For questions and general discussion
+- **Discord**: For real-time chat and support
+- **Email**: contact@sitebuilder.com
 
-**توضیح**
-توضیح کامل از ویژگی پیشنهادی
+## 📋 Code of Conduct
 
-**مشکل حل شده**
-چه مشکلی را حل می‌کند؟
+### Our Pledge
+We are committed to providing a welcoming and inclusive environment for all contributors.
 
-**راه‌حل پیشنهادی**
-توضیح نحوه پیاده‌سازی
+### Expected Behavior
+- Be respectful and inclusive
+- Accept constructive criticism
+- Focus on what's best for the community
+- Show empathy towards others
 
-**جایگزین‌ها**
-راه‌حل‌های دیگر در نظر گرفته شده
+### Unacceptable Behavior
+- Harassment or discrimination
+- Trolling or inflammatory comments
+- Personal attacks or political discussions
+- Spam or off-topic discussions
 
-**اطلاعات اضافی**
-هر اطلاعات مفید دیگر
-```
+## 🎯 Areas for Contribution
 
-## 🔄 ارسال Pull Request
+### High Priority
+- AI content generation improvements
+- Performance optimizations
+- Accessibility enhancements
+- Mobile responsiveness
+- Documentation improvements
 
-### قبل از ارسال
+### Medium Priority
+- New export formats
+- Additional language support
+- UI/UX improvements
+- Testing coverage
+- Code refactoring
 
-1. **تست کنید**: مطمئن شوید که کد شما کار می‌کند
-2. **مستندسازی**: کد خود را مستند کنید
-3. **تست‌ها**: تست‌های مناسب اضافه کنید
-4. **بروزرسانی**: README و مستندات را بروزرسانی کنید
+### Low Priority
+- New templates
+- Additional integrations
+- Advanced features
+- Experimental features
 
-### مراحل ارسال
+## 🔧 Development Tools
 
+### Recommended IDEs
+- **VS Code** with Python and JavaScript extensions
+- **PyCharm** for Python development
+- **WebStorm** for JavaScript development
+
+### Useful Extensions
+- Python
+- JavaScript (ES6) code snippets
+- GitLens
+- Prettier
+- ESLint
+- Django
+
+### Git Hooks
 ```bash
-# 1. بروزرسانی شاخه اصلی
-git checkout main
-git pull upstream main
-
-# 2. بروزرسانی شاخه شما
-git checkout feature/your-feature-name
-git rebase main
-
-# 3. Push کردن تغییرات
-git push origin feature/your-feature-name
-
-# 4. ایجاد Pull Request در GitHub
+# Install pre-commit hooks
+pip install pre-commit
+pre-commit install
 ```
 
-### قالب Pull Request
+## 📊 Project Structure
 
-```markdown
-## 📝 توضیحات
-توضیح کوتاه از تغییرات
-
-## 🔗 Issue مرتبط
-Closes #123
-
-## 🧪 تست‌ها
-- [ ] تست‌های موجود پاس می‌شوند
-- [ ] تست‌های جدید اضافه شده‌اند
-- [ ] تست دستی انجام شده
-
-## 📸 اسکرین‌شات
-در صورت تغییر UI
-
-## ✅ چک‌لیست
-- [ ] کد فرمت شده است
-- [ ] مستندات بروزرسانی شده
-- [ ] تست‌ها پاس می‌شوند
-- [ ] تغییرات backward compatible هستند
+```
+sitebuilder/
+├── backend/                 # Django backend
+│   ├── sitebuilder_app/    # Main Django app
+│   ├── requirements.txt    # Python dependencies
+│   └── manage.py          # Django management
+├── frontend/              # Frontend assets
+│   ├── css/              # Stylesheets
+│   ├── js/               # JavaScript files
+│   └── assets/           # Static assets
+├── docs/                 # Documentation
+├── tests/                # Test files
+├── .github/              # GitHub workflows
+└── README.md            # Project documentation
 ```
 
-## 🏷️ برچسب‌های Issue
+## 🚀 Release Process
 
-- `bug`: باگ
-- `enhancement`: بهبود
-- `feature`: ویژگی جدید
-- `documentation`: مستندات
-- `good first issue`: مناسب برای مبتدیان
-- `help wanted`: نیاز به کمک
-- `priority: high`: اولویت بالا
-- `priority: medium`: اولویت متوسط
-- `priority: low`: اولویت پایین
+1. **Version Bumping**
+   - Update version in setup.py
+   - Update CHANGELOG.md
+   - Create release notes
 
-## 📞 ارتباط
+2. **Testing**
+   - Run full test suite
+   - Manual testing
+   - Performance testing
 
-- **GitHub Issues**: برای گزارش باگ و پیشنهاد ویژگی
-- **Discussions**: برای سوالات و بحث‌ها
-- **Email**: support@peysunweb.ir
-- **Telegram**: [@peysunweb](https://t.me/peysunweb)
+3. **Release**
+   - Create GitHub release
+   - Tag version
+   - Deploy to production
 
-## 🙏 تشکر
+## 📈 Performance Guidelines
 
-از مشارکت شما در بهبود Site Builder متشکریم! هر مشارکت، هر چند کوچک، ارزشمند است.
+- Keep bundle sizes small
+- Optimize images and assets
+- Use lazy loading where appropriate
+- Minimize API calls
+- Cache frequently accessed data
+
+## 🔒 Security Guidelines
+
+- Never commit secrets or API keys
+- Use environment variables for configuration
+- Validate all user inputs
+- Keep dependencies updated
+- Follow security best practices
 
 ---
 
-**ساخته شده با ❤️ برای جامعه توسعه‌دهندگان ایرانی**
+Thank you for contributing to Site Builder! Your efforts help make this project better for everyone. 🎉

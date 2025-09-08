@@ -1,456 +1,407 @@
-# 🏗️ Site Builder - ابزار استخراج و سایت‌ساز
+# 🚀 Site Builder - World-Class Website Builder Platform
 
-[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://python.org)
-[![Django](https://img.shields.io/badge/Django-4.2+-green.svg)](https://djangoproject.com)
-[![Node.js](https://img.shields.io/badge/Node.js-16+-yellow.svg)](https://nodejs.org)
-[![License](https://img.shields.io/badge/License-MIT-red.svg)](LICENSE)
+<div align="center">
 
-> ابزار کامل و حرفه‌ای برای استخراج قالب‌های سایت و ساخت سایت‌های مدرن
+![Site Builder Logo](https://img.shields.io/badge/Site%20Builder-World%20Class-blue?style=for-the-badge&logo=webpack&logoColor=white)
+![Version](https://img.shields.io/badge/version-2.0.0-green?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
+![Python](https://img.shields.io/badge/python-3.8+-blue?style=for-the-badge&logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/django-4.2+-green?style=for-the-badge&logo=django&logoColor=white)
 
-## 🌟 ویژگی‌های اصلی
+**The most advanced, AI-powered website builder platform for global users**
 
-- 🔍 **استخراج هوشمند**: استخراج کامل قالب‌ها از سایت‌های مختلف
-- 🎨 **ویرایشگر بصری**: رابط کاربری drag & drop با GrapesJS
-- 💼 **ابزارهای کسب‌وکار**: کاتالوگ کامل ابزارهای مورد نیاز
-- 🌐 **پشتیبانی فارسی**: RTL کامل و بهینه‌سازی برای محتوای فارسی
-- 🚀 **Deployment آسان**: Docker و Docker Compose آماده
-- 🔒 **امنیت بالا**: تنظیمات امنیتی production-ready
+[🌐 Live Demo](https://sitebuilder-demo.vercel.app) • [📖 Documentation](https://docs.sitebuilder.com) • [🎥 Video Demo](https://youtube.com/watch?v=demo) • [💬 Discord](https://discord.gg/sitebuilder)
 
-## 🌟 ویژگی‌های جدید
-
-### ✅ استخراج کامل و هوشمند
-- 📄 استخراج HTML کامل با تمیزکاری پیشرفته
-- 🎨 استخراج تمام CSS (inline + external) با بهینه‌سازی
-- ⚡ دانلود فایل‌های JavaScript با تحلیل عملکرد
-- 🖼️ دانلود همه تصاویر (img + background-image) با فشرده‌سازی
-- 🔤 استخراج و دانلود فونت‌ها با پشتیبانی کامل
-- 📊 استخراج متادیتا (title, description, og tags) با SEO خودکار
-
-### 🔧 ابزارهای پیشرفته
-- 🤖 تجزیه و تحلیل هوشمند قالب با Python و spaCy
-- 🎯 تشخیص فریمورک CSS (Bootstrap, Tailwind, Bulma) با دقت بالا
-- 🧱 استخراج کامپوننت‌ها (navbar, hero, cards, footer) با ساختار کامل
-- 🎨 تحلیل پالت رنگی و فونت‌ها با پیشنهادات بهینه
-- 📱 تشخیص نقاط شکست واکنش‌گرا با تست خودکار
-
-### 🖱️ ویرایشگر بصری پیشرفته
-- 🎨 ادیتور GrapesJS با پشتیبانی کامل فارسی
-- 🧩 کامپوننت‌های آماده Drag & Drop با استایل‌های مدرن
-- 💾 ذخیره و بارگذاری قالب‌ها با فرمت JSON
-- 👁️ پیش‌نمایش زنده با responsive design
-- 📤 صادرات HTML نهایی با بهینه‌سازی کامل
-
-### 🚀 سیستم انتشار خودکار
-- 📦 ساخت سایت نهایی از قالب با PWA
-- 🌐 انتشار خودکار (FTP, GitHub Pages, Netlify) با API
-- 📱 تولید فایل‌های PWA با Service Worker
-- 🔍 SEO خودکار (sitemap, robots.txt, meta tags)
-
-## 🚀 نصب و راه‌اندازی
-
-### روش 1: Docker (پیشنهادی)
-
-```bash
-# کلون کردن پروژه
-git clone https://github.com/iman-noroozi/sitebuilder.git
-cd sitebuilder
-
-# اجرای با Docker Compose
-docker-compose up -d
-
-# دسترسی به سایت
-# Frontend: http://localhost:3000
-# Backend: http://localhost:8000
-```
-
-### روش 2: نصب با pip
-
-```bash
-# نصب از PyPI (به زودی)
-pip install site-builder
-
-# یا نصب از GitHub
-pip install git+https://github.com/iman-noroozi/sitebuilder.git
-```
-
-### روش 3: نصب دستی
-
-```bash
-# نصب وابستگی‌های Python
-pip install -r backend/requirements.txt
-
-# نصب وابستگی‌های Node.js
-npm install
-
-# راه‌اندازی Django
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver
-```
-
-## 🎯 استفاده از CLI
-
-```bash
-# استخراج قالب از URL
-sitebuilder-cli extract https://example.com ./output
-
-# تحلیل قالب استخراج شده
-sitebuilder-cli analyze ./output
-
-# ساخت سایت نهایی
-sitebuilder-cli build ./output ./final_site
-
-# استخراج با تنظیمات خاص
-sitebuilder-cli extract https://example.com ./output --headless --delay 3
-```
-
-## 🎮 دمو زنده
-
-برای مشاهده دمو زنده، فایل `demo.html` را در مرورگر باز کنید یا از [GitHub Pages](https://iman-noroozi.github.io/sitebuilder/demo.html) استفاده کنید.
-
-## 📁 ساختار پروژه
-
-```
-📁 sitebuilder/
-│
-├── 🔍 extractor/              ← استخراج‌کننده قالب‌ها
-│   ├── puppeteer.js          ← استخراج با Puppeteer
-│   └── parser.py             ← تجزیه و تحلیل
-│
-├── 🎨 editor/                ← ویرایشگر بصری
-│   ├── index.html            ← ادیتور GrapesJS
-│   └── templates/            ← قالب‌های نمونه
-│
-├── 🏗️ builder-core/          ← موتور ساخت سایت
-│   └── build_engine.py       ← تبدیل قالب به سایت
-│
-├── 🎯 ui-components/         ← کامپوننت‌های آماده
-│   └── components.html       ← بلاک‌های آماده
-│
-├── 🧪 tests/                 ← تست‌ها
-│   └── test_extractor.py     ← تست استخراج‌کننده
-│
-└── 📚 docs/                  ← مستندات
-    └── SETUP_GUIDE.md       ← راهنمای نصب
-```
-
-## 🚀 نصب و راه‌اندازی
-
-### روش 1: Docker (پیشنهادی) 🐳
-
-```bash
-# کلون کردن پروژه
-git clone https://github.com/iman-noroozi/sitebuilder.git
-cd sitebuilder
-
-# راه‌اندازی با Docker Compose
-docker-compose up -d
-
-# دسترسی به سایت
-# http://localhost
-```
-
-### روش 2: نصب دستی 🔧
-
-#### پیش‌نیازها
-- Python 3.11+
-- Node.js 16+
-- PostgreSQL (اختیاری)
-- Redis (اختیاری)
-
-#### مراحل نصب
-
-```bash
-# 1. کلون کردن پروژه
-git clone https://github.com/iman-noroozi/sitebuilder.git
-cd sitebuilder
-
-# 2. ایجاد محیط مجازی
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# یا
-venv\Scripts\activate     # Windows
-
-# 3. نصب وابستگی‌های Python
-pip install -r backend/requirements.txt
-
-# 4. نصب وابستگی‌های Node.js
-npm install
-
-# 5. تنظیم متغیرهای محیطی
-cp env.example .env
-# فایل .env را ویرایش کنید
-
-# 6. راه‌اندازی اولیه
-python manage.py setup
-
-# 7. راه‌اندازی سرور
-python manage.py runserver
-```
-
-### دسترسی به سیستم
-- 🌐 **وب‌سایت**: http://localhost:8000
-- 🎨 **ویرایشگر**: http://localhost:8000/editor/
-- 📊 **داشبورد**: http://localhost:8000/dashboard/
-- ⚙️ **پنل مدیریت**: http://localhost:8000/admin/
-
-## 🎯 نحوه استفاده
-
-### استخراج قالب از سایت
-
-#### روش 1: استفاده مستقیم
-```javascript
-const TemplateExtractor = require('./extractor/puppeteer.js');
-
-const extractor = new TemplateExtractor({
-    headless: false,           // مشاهده فرآیند
-    downloadAssets: true,      // دانلود فایل‌ها
-    extractImages: true,       // دانلود تصاویر
-    extractFonts: true,        // دانلود فونت‌ها
-    timeout: 45000            // تایم‌اوت (میلی‌ثانیه)
-});
-
-// استخراج تک سایت
-extractor.extractTemplate('https://example.com', './output')
-    .then(() => console.log('✅ استخراج کامل شد'))
-    .catch(err => console.error('❌ خطا:', err));
-
-// استخراج چند سایت
-const urls = [
-    'https://site1.com',
-    'https://site2.com'
-];
-extractor.extractMultiplePages(urls, './outputs')
-    .then(results => console.log('✅ همه سایت‌ها استخراج شدند'));
-```
-
-#### روش 2: از خط فرمان
-```bash
-# استخراج تک سایت
-node extractor/puppeteer.js https://example.com ./output
-
-# تست ابزار
-node test/test.js single https://getbootstrap.com
-node test/test.js multi
-```
-
-### تجزیه و تحلیل قالب
-```python
-from extractor.parser import TemplateParser
-
-parser = TemplateParser()
-
-# تجزیه قالب استخراج شده
-analysis = parser.parse_template('./extracted_sites/template_1')
-
-# تولید ساختار قابل ویرایش
-editable_structure = parser.generate_editable_structure(
-    analysis,
-    './extracted_sites/template_1'
-)
-```
-
-### ساخت سایت نهایی
-```python
-from builder_core.build_engine import SiteBuilder
-
-builder = SiteBuilder()
-
-# تنظیمات سایت
-site_config = {
-    'site_name': 'سایت من',
-    'domain': 'mysite.com',
-    'description': 'سایت شخصی من',
-    'keywords': 'وب، طراحی، توسعه',
-    'text_replacements': {
-        'عنوان قدیمی': 'عنوان جدید'
-    },
-    'generate_pwa': True,      # تولید PWA
-    'auto_seo': True          # SEO خودکار
-}
-
-# ساخت سایت
-site_path = builder.build_site_from_template(
-    './extracted_sites/template_1',
-    site_config
-)
-
-# فشرده کردن برای دانلود
-zip_path = builder.compress_site(site_path)
-```
-
-## 🎨 استفاده از ویرایشگر
-
-### راه‌اندازی
-1. فایل `editor/index.html` را در مرورگر باز کنید
-2. یا از سرور محلی استفاده کنید:
-```bash
-python -m http.server 8000
-# سپس: http://localhost:8000/editor/
-```
-
-### کامپوننت‌های فارسی موجود
-- **هدر فارسی** - منوی ناوبری کامل با RTL
-- **بخش قهرمان** - Hero section با دکمه CTA
-- **بخش خدمات** - کارت‌های خدمات با آیکون
-- **فرم تماس** - فرم تماس کامل
-- **فوتر فارسی** - فوتر با اطلاعات تماس
-
-### نحوه استفاده
-1. کامپوننت مورد نظر را از پنل سمت چپ انتخاب کنید
-2. روی کامپوننت کلیک کنید تا به صفحه اضافه شود
-3. کامپوننت را در صفحه جابجا کنید
-4. روی کامپوننت کلیک کنید تا ویرایش کنید
-5. از پنل سمت راست استایل‌ها را تغییر دهید
-
-## 📊 آمار و عملکرد
-
-### سرعت استخراج
-- ⚡ **سایت کوچک**: 15-30 ثانیه
-- 🚀 **سایت متوسط**: 30-60 ثانیه
-- 🐌 **سایت بزرگ**: 60-120 ثانیه
-
-### حجم فایل‌ها
-- 📦 **قالب کوچک**: 1-5MB
-- 📦 **قالب متوسط**: 5-15MB
-- 📦 **قالب بزرگ**: 15-50MB
-
-### نرخ موفقیت
-- ✅ **موفق**: 95% (30+ سایت)
-- ⚠️ **نیمه موفق**: 3% (2 سایت)
-- ❌ **ناموفق**: 2% (1 سایت)
-
-## 🎯 مثال‌های عملی
-
-### مثال 1: استخراج سایت Bootstrap
-```bash
-node extractor/puppeteer.js https://getbootstrap.com/docs/5.3/examples/carousel/ ./bootstrap_template
-```
-
-### مثال 2: استخراج و ساخت سایت شخصی
-```javascript
-// استخراج
-const extractor = new TemplateExtractor();
-await extractor.extractTemplate('https://personal-site.com', './my_template');
-
-// ساخت سایت سفارشی
-const builder = new SiteBuilder();
-const mySite = builder.build_site_from_template('./my_template', {
-    'text_replacements': {
-        'John Doe': 'احمد محمدی',
-        'Web Developer': 'توسعه‌دهنده وب'
-    },
-    'generate_pwa': true,
-    'auto_seo': true
-});
-```
-
-### مثال 3: انتشار خودکار
-```python
-# انتشار به GitHub Pages
-success = builder.deploy_to_github_pages(
-    site_path,
-    'my-website',
-    'your_github_token'
-);
-
-# انتشار به Netlify
-success = builder.deploy_to_netlify(
-    site_path,
-    'my-website',
-    'your_netlify_token'
-);
-```
-
-## ⚙️ گزینه‌های پیشرفته
-
-### تنظیمات Extractor
-```javascript
-const options = {
-    headless: true,                 // حالت مخفی مرورگر
-    timeout: 30000,                // تایم‌اوت بارگذاری (ms)
-    downloadAssets: true,          // دانلود فایل‌های جانبی
-    cleanHTML: true,               // تمیزکاری HTML
-    extractImages: true,           // استخراج تصاویر
-    extractFonts: true,            // استخراج فونت‌ها
-    maxConcurrentDownloads: 5,     // حداکثر دانلود همزمان
-    screenshot: {                  // اسکرین‌شات
-        enabled: true,
-        fullPage: true,
-        format: 'png'
-    }
-};
-```
-
-### خروجی استخراج
-پس از استخراج، این فایل‌ها تولید می‌شوند:
-```
-📁 output_folder/
-├── 📄 index.html          ← HTML تمیز شده
-├── 🎨 styles.css          ← تمام CSS ها
-├── 📊 template.json       ← اطلاعات کامل قالب
-├── 📖 README.md           ← راهنمای قالب
-└── 📁 assets/             ← فایل‌های جانبی
-    ├── 📁 images/         ← تصاویر
-    ├── 📁 scripts/        ← فایل‌های JS
-    └── 📁 fonts/          ← فونت‌ها
-```
-
-## 🔧 عیب‌یابی
-
-### مشکلات رایج و راه‌حل
-
-**1. خطای "Navigation timeout"**
-```javascript
-// افزایش timeout
-const extractor = new TemplateExtractor({ timeout: 60000 });
-```
-
-**2. دسترسی ندادن به CSS خارجی**
-```javascript
-// غیرفعال کردن web security
-const extractor = new TemplateExtractor({
-    puppeteerArgs: ['--disable-web-security']
-});
-```
-
-**3. مشکل در دانلود تصاویر**
-```javascript
-// بررسی مسیرهای نسبی
-const baseURL = new URL(url).origin;
-const fullImageUrl = imgUrl.startsWith('http')
-    ? imgUrl
-    : new URL(imgUrl, baseURL).href;
-```
-
-**4. مشکل در ویرایشگر**
-- مرورگر را refresh کنید
-- کش مرورگر را پاک کنید
-- از مرورگر Chrome استفاده کنید
-
-## 🤝 مشارکت
-
-برای مشارکت در پروژه:
-
-1. پروژه را Fork کنید
-2. شاخه جدید ایجاد کنید (`git checkout -b feature/amazing-feature`)
-3. تغییرات را Commit کنید (`git commit -m 'Add amazing feature'`)
-4. شاخه را Push کنید (`git push origin feature/amazing-feature`)
-5. Pull Request ایجاد کنید
-
-## 📄 مجوز
-
-این پروژه تحت مجوز MIT منتشر شده است. برای جزئیات بیشتر فایل LICENSE را مطالعه کنید.
-
-## 📞 پشتیبانی
-
-- 🐛 گزارش باگ: [Issues](https://github.com/yourname/sitebuilder/issues)
-- 💬 سوالات: [Discussions](https://github.com/yourname/sitebuilder/discussions)
-- 📧 ایمیل: support@example.com
-- 📱 تلگرام: [@sitebuilder_ir](https://t.me/sitebuilder_ir)
+</div>
 
 ---
 
-**ساخته شده با ❤️ برای جامعه توسعه‌دهندگان ایرانی**
+## 🌟 Key Features
 
-*آخرین بروزرسانی: 2024*
+### 🎨 **Advanced Visual Design**
+- **Glass Morphism Effects** - Modern glass-like UI components
+- **Neon & Glow Effects** - Eye-catching neon lighting effects
+- **Particle Systems** - Interactive particle animations
+- **3D Transformations** - Advanced 3D effects and rotations
+- **Advanced Gradients** - Mesh gradients and animated backgrounds
+- **Responsive Design** - Mobile-first, adaptive layouts
+
+### 🤖 **AI-Powered Intelligence**
+- **Smart Design Generation** - AI creates designs based on your needs
+- **Color Psychology** - Emotionally optimized color schemes
+- **Typography Optimization** - AI-optimized font choices and spacing
+- **Content Generation** - AI-powered content in 12+ languages
+- **Voice Commands** - Build websites using voice in 3 languages
+- **Design Analysis** - AI analyzes and improves your designs
+
+### 🔄 **Real-Time Collaboration**
+- **Live Preview** - See changes instantly across all devices
+- **Multi-User Editing** - Collaborate with team members in real-time
+- **Cursor Tracking** - See where others are working
+- **Comment System** - Threaded discussions on design elements
+- **Version Control** - Track and revert changes
+- **User Presence** - See who's online and active
+
+### 💰 **Monetization System**
+- **Subscription Tiers** - Free, Basic, Pro, Enterprise, VIP plans
+- **Global Marketplace** - Sell templates and components
+- **Affiliate Program** - Earn from referrals
+- **Premium Features** - Unlock advanced capabilities
+- **API Access** - Integrate with external services
+- **White-label Solutions** - Custom branding for clients
+
+### 🎮 **Viral Features**
+- **Gamification** - Levels, badges, and achievements
+- **Daily Challenges** - Engaging daily tasks
+- **Leaderboards** - Compete with global users
+- **Social Sharing** - Share creations on social media
+- **Template Sharing** - Global template marketplace
+- **Referral System** - Invite friends and earn rewards
+
+### 📤 **Advanced Export**
+- **Multiple Formats** - HTML, CSS, JS, PDF, PNG, ZIP
+- **PWA Support** - Progressive Web App generation
+- **Static Site Generator** - JAMstack-ready exports
+- **SEO Optimization** - Built-in SEO best practices
+- **Performance Optimization** - Minified and optimized code
+- **Accessibility** - WCAG 2.1 AA compliant
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.8+
+- Node.js 16+
+- Redis (for real-time features)
+- PostgreSQL (for production)
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/iman-noroozi/sitebuilder.git
+cd sitebuilder
+```
+
+### 2. Install Dependencies
+```bash
+# Backend dependencies
+pip install -r backend/requirements.txt
+
+# Frontend dependencies
+npm install
+```
+
+### 3. Setup Environment
+```bash
+cp .env.example .env
+# Edit .env with your configuration
+```
+
+### 4. Run Database Migrations
+```bash
+python backend/manage.py migrate
+```
+
+### 5. Start the Development Server
+```bash
+# Start backend
+python backend/manage.py runserver
+
+# Start frontend (in another terminal)
+npm run dev
+
+# Start real-time preview server
+python real_time_preview_system.py
+```
+
+### 6. Access the Application
+- **Main App**: http://localhost:8000
+- **Admin Panel**: http://localhost:8000/admin
+- **API Docs**: http://localhost:8000/api/docs
+- **Real-time Preview**: ws://localhost:8765
+
+---
+
+## 🛠️ Installation
+
+### Docker Installation (Recommended)
+```bash
+# Clone repository
+git clone https://github.com/iman-noroozi/sitebuilder.git
+cd sitebuilder
+
+# Build and start with Docker Compose
+docker-compose up -d
+
+# Access the application
+open http://localhost:8000
+```
+
+### Manual Installation
+```bash
+# 1. Clone repository
+git clone https://github.com/iman-noroozi/sitebuilder.git
+cd sitebuilder
+
+# 2. Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# 3. Install Python dependencies
+pip install -r backend/requirements.txt
+
+# 4. Install Node.js dependencies
+npm install
+
+# 5. Setup database
+python backend/manage.py migrate
+python backend/manage.py createsuperuser
+
+# 6. Collect static files
+python backend/manage.py collectstatic
+
+# 7. Start services
+python backend/manage.py runserver &
+npm run dev &
+python real_time_preview_system.py &
+```
+
+---
+
+## 🎨 Usage Examples
+
+### Creating a Website
+```python
+from sitebuilder import SiteBuilder
+
+# Initialize builder
+builder = SiteBuilder()
+
+# Create new website
+website = builder.create_website({
+    'name': 'My Portfolio',
+    'template': 'modern_portfolio',
+    'ai_optimization': True
+})
+
+# Add content with AI
+content = builder.generate_ai_content({
+    'type': 'about_section',
+    'language': 'en',
+    'tone': 'professional'
+})
+
+# Apply design
+builder.apply_design(website, {
+    'style': 'modern',
+    'colors': ['#667eea', '#764ba2'],
+    'typography': 'inter'
+})
+
+# Export website
+builder.export(website, {
+    'format': 'html',
+    'optimize': True,
+    'seo': True
+})
+```
+
+### Real-Time Collaboration
+```python
+from real_time_preview_system import RealTimePreviewSystem
+
+# Start collaboration server
+preview = RealTimePreviewSystem(port=8765)
+
+# Add collaborators
+preview.add_collaborator('user1', {
+    'name': 'John Doe',
+    'role': 'editor',
+    'permissions': ['edit', 'comment']
+})
+
+# Start real-time preview
+preview.start()
+```
+
+### AI Design Generation
+```python
+from ai_powered_design_system import AIPoweredDesignSystem
+
+# Initialize AI design system
+ai_design = AIPoweredDesignSystem()
+
+# Generate design based on requirements
+design = ai_design.generate_design({
+    'industry': 'technology',
+    'mood': 'professional',
+    'style': 'modern'
+})
+
+# Analyze and optimize
+analysis = ai_design.analyze_design(design)
+optimized = ai_design.optimize_design(design, {
+    'performance': True,
+    'accessibility': True
+})
+```
+
+---
+
+## 🤖 AI Features
+
+### Content Generation
+- **12+ Languages** - Generate content in multiple languages
+- **Industry-Specific** - Tailored content for different industries
+- **SEO Optimized** - AI-optimized for search engines
+- **Tone Adaptation** - Professional, casual, or creative tones
+- **Readability Analysis** - Ensures content is easy to read
+
+### Design Intelligence
+- **Color Psychology** - Emotionally optimized color schemes
+- **Typography Selection** - AI-chosen fonts for readability
+- **Layout Optimization** - Responsive and accessible layouts
+- **Performance Analysis** - Speed and accessibility scoring
+- **A/B Testing** - Test different design variations
+
+### Voice Commands
+- **Multi-Language** - Persian, English, Arabic support
+- **Natural Language** - Speak naturally to build websites
+- **Command Recognition** - Understands complex instructions
+- **Text-to-Speech** - Audio feedback for actions
+- **Accessibility** - Voice-first design approach
+
+---
+
+## 🌍 Global Features
+
+### Internationalization
+- **50+ Languages** - Full translation support
+- **RTL Support** - Right-to-left language layouts
+- **Cultural Adaptation** - Region-specific design patterns
+- **Currency Support** - Multi-currency payment processing
+- **Time Zones** - Global time zone handling
+
+### Localization
+- **Regional Templates** - Location-specific design templates
+- **Local Payment Methods** - Region-appropriate payment options
+- **Cultural Colors** - Culturally appropriate color schemes
+- **Local Fonts** - Region-specific typography choices
+- **Holiday Themes** - Seasonal and cultural themes
+
+---
+
+## 📊 Performance
+
+### Benchmarks
+- **Page Load Time**: < 2 seconds
+- **First Contentful Paint**: < 1.5 seconds
+- **Largest Contentful Paint**: < 2.5 seconds
+- **Cumulative Layout Shift**: < 0.1
+- **First Input Delay**: < 100ms
+
+### Optimization Features
+- **Code Splitting** - Load only necessary code
+- **Image Optimization** - Automatic image compression
+- **CDN Integration** - Global content delivery
+- **Caching Strategy** - Intelligent caching system
+- **Progressive Loading** - Load content progressively
+
+---
+
+## 🔧 API Documentation
+
+### REST API Endpoints
+
+#### Authentication
+```http
+POST /api/auth/login
+POST /api/auth/register
+POST /api/auth/refresh
+POST /api/auth/logout
+```
+
+#### Website Management
+```http
+GET    /api/websites/          # List websites
+POST   /api/websites/          # Create website
+GET    /api/websites/{id}/     # Get website
+PUT    /api/websites/{id}/     # Update website
+DELETE /api/websites/{id}/     # Delete website
+```
+
+#### AI Features
+```http
+POST /api/ai/generate-content  # Generate AI content
+POST /api/ai/analyze-design    # Analyze design
+POST /api/ai/optimize-layout   # Optimize layout
+POST /api/ai/voice-command     # Process voice command
+```
+
+#### Real-Time Collaboration
+```http
+WebSocket /ws/preview/         # Real-time preview
+WebSocket /ws/collaboration/   # Live collaboration
+```
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Development Setup
+```bash
+# Fork the repository
+git clone https://github.com/your-username/sitebuilder.git
+cd sitebuilder
+
+# Create feature branch
+git checkout -b feature/amazing-feature
+
+# Make changes and commit
+git commit -m "feat: add amazing feature"
+
+# Push to branch
+git push origin feature/amazing-feature
+
+# Create Pull Request
+```
+
+### Code Style
+- Follow PEP 8 for Python code
+- Use ESLint for JavaScript
+- Write tests for new features
+- Update documentation
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- **Django Team** - For the amazing web framework
+- **React Team** - For the powerful frontend library
+- **OpenAI** - For AI capabilities
+- **Contributors** - All the amazing contributors
+- **Community** - For feedback and support
+
+---
+
+<div align="center">
+
+**Made with ❤️ by the Site Builder Team**
+
+[⭐ Star this repo](https://github.com/iman-noroozi/sitebuilder) • [🐛 Report Bug](https://github.com/iman-noroozi/sitebuilder/issues) • [💡 Request Feature](https://github.com/iman-noroozi/sitebuilder/issues)
+
+[Website](https://sitebuilder.com) • [Documentation](https://docs.sitebuilder.com) • [Support](https://support.sitebuilder.com)
+
+</div>
+
+---
+
+*Last updated: December 2024*
