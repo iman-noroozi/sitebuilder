@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Website Builder - پیسان وب</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .ai-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            box-shadow: 20px 20px 60px #d1d1d1, -20px -20px 60px #ffffff;
+        }
+        .ai-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 25px 25px 80px #c1c1c1, -25px -25px 80px #ffffff;
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-6 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="floating">
+                        <i class="fas fa-robot text-4xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-bold">AI Website Builder</h1>
+                        <p class="text-blue-100">ساخت وب‌سایت بدون کدنویسی با هوش مصنوعی</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <button id="voiceMode" class="glass-effect hover:bg-opacity-30 px-4 py-2 rounded-lg transition-all">
+                        <i class="fas fa-microphone"></i>
+                        <span>حالت صوتی</span>
+                    </button>
+                    <button id="themeToggle" class="glass-effect hover:bg-opacity-30 px-4 py-2 rounded-lg transition-all">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- AI Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <!-- AI Visual Designer -->
+            <div class="ai-card rounded-2xl p-6 cursor-pointer" onclick="openAIVisualDesigner()">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-palette text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">🎨 AI Visual Designer</h3>
+                    <p class="text-gray-600 mb-4">تولید خودکار طراحی بر اساس توضیحات متنی</p>
+                    <div class="flex justify-center space-x-2 space-x-reverse">
+                        <span class="bg-pink-100 text-pink-800 px-2 py-1 rounded-full text-xs">طراحی هوشمند</span>
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">پیش‌بینی ترند</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice to Website -->
+            <div class="ai-card rounded-2xl p-6 cursor-pointer" onclick="openVoiceToWebsite()">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-microphone text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">🗣️ Voice to Website</h3>
+                    <p class="text-gray-600 mb-4">تبدیل گفتار به وب‌سایت کامل</p>
+                    <div class="flex justify-center space-x-2 space-x-reverse">
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">تشخیص گفتار</span>
+                        <span class="bg-cyan-100 text-cyan-800 px-2 py-1 rounded-full text-xs">تولید خودکار</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart Component Generator -->
+            <div class="ai-card rounded-2xl p-6 cursor-pointer" onclick="openSmartComponentGenerator()">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-puzzle-piece text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">🧩 Smart Component Generator</h3>
+                    <p class="text-gray-600 mb-4">تولید هوشمند کامپوننت‌های سفارشی</p>
+                    <div class="flex justify-center space-x-2 space-x-reverse">
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">یادگیری هوشمند</span>
+                        <span class="bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full text-xs">پیشنهاد مرتبط</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Predictive Analytics -->
+            <div class="ai-card rounded-2xl p-6 cursor-pointer" onclick="openPredictiveAnalytics()">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">📊 Predictive Analytics</h3>
+                    <p class="text-gray-600 mb-4">پیش‌بینی عملکرد و بهینه‌سازی SEO</p>
+                    <div class="flex justify-center space-x-2 space-x-reverse">
+                        <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">پیش‌بینی هوشمند</span>
+                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs">بهینه‌سازی SEO</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Content Generator -->
+            <div class="ai-card rounded-2xl p-6 cursor-pointer" onclick="openAIContentGenerator()">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-feather-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">🖋️ AI Content Generator</h3>
+                    <p class="text-gray-600 mb-4">تولید محتوای هوشمند با AI</p>
+                    <div class="flex justify-center space-x-2 space-x-reverse">
+                        <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full text-xs">تولید محتوا</span>
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">SEO بهینه</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Builder -->
+            <div class="ai-card rounded-2xl p-6 cursor-pointer" onclick="openAdvancedBuilder()">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-teal-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cogs text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">⚙️ Advanced Builder</h3>
+                    <p class="text-gray-600 mb-4">سازنده پیشرفته با قابلیت‌های کامل</p>
+                    <div class="flex justify-center space-x-2 space-x-reverse">
+                        <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded-full text-xs">پیشرفته</span>
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">کامل</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Start Section -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-6 text-center">
+                <i class="fas fa-rocket text-blue-500"></i>
+                شروع سریع
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center p-6 border-2 border-dashed border-gray-300 rounded-xl hover:border-blue-500 transition-all cursor-pointer" onclick="quickStart('restaurant')">
+                    <i class="fas fa-utensils text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="text-lg font-semibold mb-2">رستوران</h3>
+                    <p class="text-gray-600">ساخت سایت رستوران با منو و گالری</p>
+                </div>
+                <div class="text-center p-6 border-2 border-dashed border-gray-300 rounded-xl hover:border-blue-500 transition-all cursor-pointer" onclick="quickStart('ecommerce')">
+                    <i class="fas fa-shopping-cart text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-lg font-semibold mb-2">فروشگاه</h3>
+                    <p class="text-gray-600">ساخت فروشگاه آنلاین با سبد خرید</p>
+                </div>
+                <div class="text-center p-6 border-2 border-dashed border-gray-300 rounded-xl hover:border-blue-500 transition-all cursor-pointer" onclick="quickStart('portfolio')">
+                    <i class="fas fa-briefcase text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="text-lg font-semibold mb-2">نمونه کار</h3>
+                    <p class="text-gray-600">ساخت سایت نمونه کار حرفه‌ای</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Assistant -->
+        <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">
+                        <i class="fas fa-robot pulse-animation"></i>
+                        دستیار هوشمند AI
+                    </h2>
+                    <p class="text-blue-100 mb-4">از دستیار هوشمند ما برای راهنمایی و کمک استفاده کنید</p>
+                    <button id="chatWithAI" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all">
+                        <i class="fas fa-comments"></i>
+                        گفتگو با AI
+                    </button>
+                </div>
+                <div class="hidden md:block">
+                    <div class="w-32 h-32 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-brain text-6xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 AI Website Builder - پیسان وب. تمامی حقوق محفوظ است.</p>
+            <p class="text-gray-400 mt-2">ساخته شده با ❤️ و هوش مصنوعی</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- AI Visual Designer Modal -->
+    <div id="visualDesignerModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6 border-b">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-2xl font-bold">🎨 AI Visual Designer</h3>
+                        <button onclick="closeModal('visualDesignerModal')" class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-4">توضیحات طراحی</h4>
+                            <textarea id="designDescription" class="w-full p-4 border border-gray-300 rounded-lg h-32" placeholder="توضیحات طراحی مورد نظر خود را بنویسید..."></textarea>
+                            <div class="mt-4">
+                                <label class="block text-sm font-medium mb-2">نوع کسب‌وکار</label>
+                                <select id="businessType" class="w-full p-3 border border-gray-300 rounded-lg">
+                                    <option value="restaurant">رستوران</option>
+                                    <option value="ecommerce">فروشگاه</option>
+                                    <option value="portfolio">نمونه کار</option>
+                                    <option value="blog">وبلاگ</option>
+                                    <option value="corporate">شرکتی</option>
+                                </select>
+                            </div>
+                            <button onclick="generateDesign()" class="w-full mt-6 bg-gradient-to-r from-pink-500 to-purple-600 text-white py-3 rounded-lg font-semibold">
+                                <i class="fas fa-magic"></i>
+                                تولید طراحی
+                            </button>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-4">پیش‌نمایش طراحی</h4>
+                            <div id="designPreview" class="border-2 border-dashed border-gray-300 rounded-lg h-64 flex items-center justify-center">
+                                <p class="text-gray-500">پیش‌نمایش طراحی اینجا نمایش داده می‌شود</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Voice to Website Modal -->
+    <div id="voiceToWebsiteModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full">
+                <div class="p-6 border-b">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-2xl font-bold">🗣️ Voice to Website</h3>
+                        <button onclick="closeModal('voiceToWebsiteModal')" class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <div class="w-32 h-32 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-microphone text-4xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-4">گفتار خود را ضبط کنید</h4>
+                    <p class="text-gray-600 mb-6">توضیحات وب‌سایت مورد نظر خود را بگویید</p>
+                    <button id="startRecording" class="bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-blue-600 hover:to-cyan-700 transition-all">
+                        <i class="fas fa-microphone"></i>
+                        شروع ضبط
+                    </button>
+                    <div id="recordingStatus" class="mt-4 hidden">
+                        <p class="text-blue-600">در حال ضبط...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let isRecording = false;
+        let currentTheme = 'light';
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+        });
+
+        function initializeApp() {
+            // Theme toggle
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+            
+            // Voice mode toggle
+            document.getElementById('voiceMode').addEventListener('click', toggleVoiceMode);
+            
+            // Chat with AI
+            document.getElementById('chatWithAI').addEventListener('click', openAIChat);
+            
+            // Voice recording
+            document.getElementById('startRecording').addEventListener('click', toggleRecording);
+        }
+
+        // Modal functions
+        function openAIVisualDesigner() {
+            document.getElementById('visualDesignerModal').classList.remove('hidden');
+        }
+
+        function openVoiceToWebsite() {
+            document.getElementById('voiceToWebsiteModal').classList.remove('hidden');
+        }
+
+        function openSmartComponentGenerator() {
+            alert('🧩 Smart Component Generator - در حال توسعه');
+        }
+
+        function openPredictiveAnalytics() {
+            alert('📊 Predictive Analytics - در حال توسعه');
+        }
+
+        function openAIContentGenerator() {
+            window.open('ai-content-generator.html', '_blank');
+        }
+
+        function openAdvancedBuilder() {
+            alert('⚙️ Advanced Builder - در حال توسعه');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Quick start functions
+        function quickStart(type) {
+            const descriptions = {
+                'restaurant': 'یک وب‌سایت رستوران با منوی غذا، گالری تصاویر و اطلاعات تماس',
+                'ecommerce': 'یک فروشگاه آنلاین با صفحه محصولات، سبد خرید و سیستم پرداخت',
+                'portfolio': 'یک سایت نمونه کار حرفه‌ای با گالری پروژه‌ها و اطلاعات تماس'
+            };
+            
+            document.getElementById('designDescription').value = descriptions[type];
+            openAIVisualDesigner();
+        }
+
+        // AI Visual Designer functions
+        function generateDesign() {
+            const description = document.getElementById('designDescription').value;
+            const businessType = document.getElementById('businessType').value;
+            
+            if (!description.trim()) {
+                alert('لطفاً توضیحات طراحی را وارد کنید');
+                return;
+            }
+            
+            // Show loading
+            const preview = document.getElementById('designPreview');
+            preview.innerHTML = '<div class="text-center"><div class="animate-spin w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full mx-auto mb-2"></div><p>در حال تولید طراحی...</p></div>';
+            
+            // Simulate AI processing
+            setTimeout(() => {
+                preview.innerHTML = `
+                    <div class="p-4">
+                        <h5 class="font-semibold mb-2">طراحی تولید شده:</h5>
+                        <div class="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-4 rounded-lg">
+                            <h6 class="font-bold">رنگ‌های پیشنهادی:</h6>
+                            <div class="flex space-x-2 space-x-reverse mt-2">
+                                <div class="w-8 h-8 bg-pink-500 rounded"></div>
+                                <div class="w-8 h-8 bg-purple-600 rounded"></div>
+                                <div class="w-8 h-8 bg-blue-500 rounded"></div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h6 class="font-bold">فونت‌های پیشنهادی:</h6>
+                            <p class="text-sm text-gray-600">Vazir, Samim, IRANSans</p>
+                        </div>
+                        <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg text-sm">
+                            اعمال طراحی
+                        </button>
+                    </div>
+                `;
+            }, 2000);
+        }
+
+        // Voice functions
+        function toggleRecording() {
+            const button = document.getElementById('startRecording');
+            const status = document.getElementById('recordingStatus');
+            
+            if (!isRecording) {
+                isRecording = true;
+                button.innerHTML = '<i class="fas fa-stop"></i> توقف ضبط';
+                button.classList.remove('from-blue-500', 'to-cyan-600');
+                button.classList.add('from-red-500', 'to-red-600');
+                status.classList.remove('hidden');
+                
+                // Simulate recording
+                setTimeout(() => {
+                    stopRecording();
+                }, 5000);
+            } else {
+                stopRecording();
+            }
+        }
+
+        function stopRecording() {
+            isRecording = false;
+            const button = document.getElementById('startRecording');
+            const status = document.getElementById('recordingStatus');
+            
+            button.innerHTML = '<i class="fas fa-microphone"></i> شروع ضبط';
+            button.classList.remove('from-red-500', 'to-red-600');
+            button.classList.add('from-blue-500', 'to-cyan-600');
+            status.classList.add('hidden');
+            
+            // Show result
+            alert('🎤 گفتار شما دریافت شد! وب‌سایت در حال تولید است...');
+        }
+
+        // Theme functions
+        function toggleTheme() {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            const icon = document.querySelector('#themeToggle i');
+            icon.className = currentTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+            
+            // Apply theme
+            document.body.classList.toggle('dark', currentTheme === 'dark');
+        }
+
+        function toggleVoiceMode() {
+            const button = document.getElementById('voiceMode');
+            const isActive = button.classList.contains('bg-blue-500');
+            
+            if (isActive) {
+                button.classList.remove('bg-blue-500');
+                button.innerHTML = '<i class="fas fa-microphone"></i> حالت صوتی';
+            } else {
+                button.classList.add('bg-blue-500');
+                button.innerHTML = '<i class="fas fa-microphone-slash"></i> غیرفعال کردن';
+            }
+        }
+
+        function openAIChat() {
+            alert('🤖 گفتگو با AI - در حال توسعه');
+        }
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('fixed')) {
+                e.target.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
