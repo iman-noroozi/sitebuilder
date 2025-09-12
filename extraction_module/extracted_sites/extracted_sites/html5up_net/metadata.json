@@ -1,0 +1,27 @@
+{
+  "extractor": "DeepWebsiteCloner v1.0",
+  "extractedAt": "2025-07-28T13:09:47.879Z",
+  "baseUrl": "https://html5up.net/",
+  "domain": "html5up.net",
+  "config": {
+    "extractCSS": true,
+    "extractJS": true,
+    "extractImages": true,
+    "extractFonts": true,
+    "extractVideos": false,
+    "extractDocuments": true,
+    "extractForms": true,
+    "extractMetadata": true,
+    "followInternalLinks": false,
+    "preserveDirectory": true,
+    "generateSitemap": true,
+    "outputDir": "./extracted_sites",
+    "maxDepth": 1,
+    "delay": 1000
+  },
+  "statistics": {
+    "totalPages": 1,
+    "totalAssets": 19,
+    "maxDepth": 1
+  }
+}

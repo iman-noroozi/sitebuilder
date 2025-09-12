@@ -1,0 +1,107 @@
+
+  /* Loop hero logos */
+  .logo_grid-logos_wrapper,
+  .miw_group {
+    -webkit-animation: loopstuff 140s linear infinite;
+    -moz-animation: loopstuff 140s linear infinite;
+    -o-animation: loopstuff 140s linear infinite;
+  }
+  @media (prefers-reduced-motion) {
+    .logo_grid-logos_wrapper,
+    .miw_group {
+      -webkit-animation-play-state: paused;
+      -moz-animation-play-state: paused;
+      -o-animation-play-state: paused;
+      animation-play-state: paused;
+    }
+  }
+  @-webkit-keyframes loopstuff {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+  @-moz-keyframes loopstuff {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+  @-o-keyframes loopstuff {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+  @keyframes loopstuff {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* Feature tab bar on current tab */   
+  .feature-tabs_link.w--current .feature-tabs_bar {
+    transform: scale(2, 1);
+  }
+
+  /* Customers custom accordion */
+  .customers-slider_slide .customers-slide_logo,
+  .customers-slider_slide .customers-slide_frame {
+    opacity: 0;
+  }
+  .customers-slider_slide.cc-active .customers-slide_logo,
+  .customers-slider_slide.cc-active .customers-slide_frame {
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion) {
+    .customers-slider_slide,
+    .customers-slider {
+      transition-duration: 0ms;
+    }
+  }
+
+  /* White Hero Test Mods */
+  .section.cc-white-hero-test .brand-boilerplate-components--customer_logo {
+    mix-blend-mode: difference;
+  }
+  .section.cc-white-hero-test .brand-boilerplate-components--logo-popup {
+    color: white;
+  }
+  .section.cc-white-hero-test [data-logo-link]:hover [data-link-svg-wrap] {
+    opacity: 1;
+  }
+  @media screen and (max-width: 768px) {
+    .subnav_wrapper.cc-white-hero-test {
+      display: none !important;
+    }
+  }
+
+  /* autoplay tabs - inactive tabs */
+  .autoplay-tabs_menu-item .autoplay-tabs_stage {
+    opacity: 0;
+  }
+  .autoplay-tabs_menu-item .autoplay-tabs_link-wrapper .autoplay-tabs_progress-bar {
+    opacity: 0;
+  }  
+
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .autoplay-tabs_icon {
+    	display: none;
+    }
+  }
+
+
+  /* Autoplay tabs - active tabs */
+  .autoplay-tabs_menu-item.cc-active .autoplay-tabs_stage {
+    opacity: 1;
+  } 
+  .autoplay-tabs_menu-item.cc-active .autoplay-tabs_link-wrapper .autoplay-tabs_progress-bar {
+    opacity: 1;
+  }    
+  .autoplay-tabs_menu-item.cc-active .autoplay-tabs_link-wrapper .autoplay-tabs_icon{
+    color: var(--brand-boilerplate-components---color--webflow-blue);
+  }
+
+  .autoplay-tabs_menu-item.cc-active .autoplay-tabs_stage {
+    pointer-events: auto;
+  }
+  .autoplay-tabs_menu-item.cc-active .autoplay-tabs_float_animate {
+    opacity: 1;
+    transform: translate(0px, 0vw);  
+  }
+  .autoplay-tabs_menu-item.cc-active .autoplay-tabs_float_animate.cc-second {
+    transition-delay: 200ms, 200ms;
+  }

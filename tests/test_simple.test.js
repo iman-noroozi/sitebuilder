@@ -51,11 +51,11 @@ describe('Simple Functionality Tests', () => {
 
     test('async operations', async () => {
         const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-        
+
         const startTime = Date.now();
         await delay(10);
         const endTime = Date.now();
-        
+
         expect(endTime - startTime).toBeGreaterThanOrEqual(10);
     });
 });

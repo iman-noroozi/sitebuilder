@@ -1,0 +1,53 @@
+{
+  "basic_info": {
+    "url": "https://salesforce.com",
+    "name": "salesforce_crm",
+    "category": "crm_system",
+    "title": "The Number 1 CRM Software | Salesforce EMEA",
+    "extracted_at": "2025-07-31 20:42:33",
+    "size": 540499
+  },
+  "business_features": {
+    "business_type": "retail",
+    "key_features": [
+      "E-commerce",
+      "Payment Gateway",
+      "CRM Features",
+      "Accounting System"
+    ],
+    "business_services": [
+      "فروش آنلاین",
+      "درگاه پرداخت",
+      "مدیریت مشتری",
+      "سیستم حسابداری"
+    ],
+    "target_audience": "B2B",
+    "business_size": "large",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "Salesforce, the #1 AI CRM, enables companies to connect with customers through a unified Einstein 1 platform that combines CRM, AI, Data and Trust.",
+    "meta_keywords": "",
+    "og_title": "The Number 1 CRM Software",
+    "og_description": "Salesforce, the #1 AI CRM, enables companies to connect with customers through a unified Einstein 1 platform that combines CRM, AI, Data and Trust.",
+    "h1_count": 1,
+    "h2_count": 73,
+    "img_alt_missing": 135
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 441,
+    "js_files": 19,
+    "external_links": 476,
+    "forms": 0,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 67,
+    "buttons": 0,
+    "images": 166,
+    "videos": 0,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

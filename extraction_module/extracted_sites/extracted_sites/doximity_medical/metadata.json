@@ -1,0 +1,47 @@
+{
+  "basic_info": {
+    "url": "https://www.doximity.com",
+    "name": "doximity_medical",
+    "category": "medical_network",
+    "title": "Clinician's Network & Healthcare Directory for Doctors, NPs, PAs & RNs",
+    "extracted_at": "2025-07-31 20:44:06",
+    "size": 87533
+  },
+  "business_features": {
+    "business_type": "restaurant",
+    "key_features": [
+      "CRM Features"
+    ],
+    "business_services": [
+      "مدیریت مشتری"
+    ],
+    "target_audience": "B2G",
+    "business_size": "micro",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "Over two million U.S. healthcare professionals have chosen Doximity as their network. Join now to connect with colleagues, fax painlessly, and more!",
+    "meta_keywords": "",
+    "og_title": "Doximity",
+    "og_description": "Over two million U.S. healthcare professionals as verified members. Largest network of MDs and other healthcare professionals. New to Doximity? Find your profile and join for free.",
+    "h1_count": 1,
+    "h2_count": 11,
+    "img_alt_missing": 21
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 1,
+    "js_files": 2,
+    "external_links": 28,
+    "forms": 1,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 6,
+    "buttons": 1,
+    "images": 24,
+    "videos": 1,
+    "contact_forms": 1
+  },
+  "extraction_status": "success"
+}

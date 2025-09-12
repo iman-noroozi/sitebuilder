@@ -1,0 +1,31 @@
+{
+  "baseUrl": "https://html5up.net/",
+  "domain": "html5up.net",
+  "extractedAt": "2025-07-28T13:09:47.878Z",
+  "totalPages": 1,
+  "totalAssets": 19,
+  "pages": [
+    "https://html5up.net/"
+  ],
+  "assets": [
+    "https://html5up.net/assets/css/main.css",
+    "https://html5up.net/assets/css/images/placeholder.png",
+    "https://html5up.net/assets/js/bundle.js",
+    "https://connect.facebook.net/en_US/sdk.js",
+    "https://platform.twitter.com/widgets.js",
+    "https://html5up.net/assets/css/images/px-bg.svg",
+    "https://html5up.net/assets/css/images/px-banner.jpg",
+    "https://html5up.net/assets/css/images/px-logo.png",
+    "https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu.woff2",
+    "https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu.woff2",
+    "https://html5up.net/assets/css/fonts/h5u.woff",
+    "https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu.woff2",
+    "https://www.google-analytics.com/analytics.js",
+    "https://connect.facebook.net/en_US/sdk.js?hash=958371643c3d005e2674075dacb2c849",
+    "https://html5up.net/uploads/images/paradigm-shift.jpg",
+    "https://html5up.net/uploads/images/massively.jpg",
+    "https://html5up.net/uploads/images/ethereal.jpg",
+    "https://platform.twitter.com/js/button.856debeac157d9669cf51e73a08fbc93.js",
+    "https://html5up.net/assets/icons/favicon.ico"
+  ]
+}

@@ -1,0 +1,1 @@
+.css-sr1kpj{display:grid;grid-template-columns:repeat(1, minmax(0, 1fr));width:var(--chakra-sizes-full);gap:var(--chakra-spacing-10);padding-bottom:var(--chakra-spacing-20);}@media screen and (min-width: 30rem){.css-sr1kpj{grid-template-columns:repeat(3, minmax(0, 1fr));}}@media screen and (min-width: 48rem){.css-sr1kpj{max-width:var(--chakra-sizes-2xl);}}

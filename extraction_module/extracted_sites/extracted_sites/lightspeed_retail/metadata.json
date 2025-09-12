@@ -1,0 +1,55 @@
+{
+  "basic_info": {
+    "url": "https://www.lightspeedhq.com",
+    "name": "lightspeed_retail",
+    "category": "retail_management",
+    "title": "Leading Point of Sale (POS) & Commerce Platform | Lightspeed",
+    "extracted_at": "2025-07-31 20:43:50",
+    "size": 540376
+  },
+  "business_features": {
+    "business_type": "restaurant",
+    "key_features": [
+      "Booking System",
+      "Payment Gateway",
+      "CRM Features",
+      "Inventory Management",
+      "Accounting System"
+    ],
+    "business_services": [
+      "رزرو آنلاین",
+      "درگاه پرداخت",
+      "مدیریت مشتری",
+      "مدیریت موجودی",
+      "سیستم حسابداری"
+    ],
+    "target_audience": "B2B",
+    "business_size": "medium",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "Lightspeed is the fast, intuitive POS and payments platform helping the world’s best retail, hospitality and golf businesses get even better.",
+    "meta_keywords": "",
+    "og_title": "Leading Point of Sale (POS) & Commerce Platform | Lightspeed",
+    "og_description": "Lightspeed is the fast, intuitive POS and payments platform helping the world’s best retail, hospitality and golf businesses get even better.",
+    "h1_count": 1,
+    "h2_count": 10,
+    "img_alt_missing": 3
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 2,
+    "js_files": 9,
+    "external_links": 280,
+    "forms": 0,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 51,
+    "buttons": 0,
+    "images": 8,
+    "videos": 2,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

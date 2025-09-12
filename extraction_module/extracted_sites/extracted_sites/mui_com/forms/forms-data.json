@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-28T13:07:44.937Z",
+  "forms": [
+    {
+      "action": "https://mui.com/",
+      "method": "get",
+      "html": "<form class=\"css-1xdhyk6\"><label class=\"MuiFormLabel-root MuiFormLabel-colorPrimary css-1brtpfw\" for=\"email-subscribe\">Your email</label><div class=\"MuiBox-root css-9m0k6z\"><div class=\"MuiInputBase-root MuiInputBase-colorPrimary css-1yeasxn\"><input id=\"email-subscribe\" placeholder=\"example@email.com\" required=\"\" type=\"email\" class=\"MuiInputBase-input css-qu3ub4\" name=\"email\" value=\"\"></div><button class=\"MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall MuiButton-colorPrimary MuiButton-disableElevation css-1rfp3b\" tabindex=\"0\" type=\"submit\">Subscribe</button></div></form>",
+      "fields": [
+        {
+          "name": "email",
+          "type": "email",
+          "value": "",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

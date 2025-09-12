@@ -1,0 +1,53 @@
+{
+  "basic_info": {
+    "url": "https://www.shopkeep.com",
+    "name": "shopkeep",
+    "category": "small_business_pos",
+    "title": "ShopKeep POS is Now ShopKeep by Lightspeed",
+    "extracted_at": "2025-07-31 20:43:55",
+    "size": 195517
+  },
+  "business_features": {
+    "business_type": "restaurant",
+    "key_features": [
+      "Booking System",
+      "Payment Gateway",
+      "Inventory Management",
+      "Accounting System"
+    ],
+    "business_services": [
+      "رزرو آنلاین",
+      "درگاه پرداخت",
+      "مدیریت موجودی",
+      "سیستم حسابداری"
+    ],
+    "target_audience": "B2B",
+    "business_size": "medium",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "We’re now part of the Lightspeed family! Current customers: Our team is available 24/7 to help you run and grow your retail or restaurant business.",
+    "meta_keywords": "",
+    "og_title": "ShopKeep POS is Now ShopKeep by Lightspeed",
+    "og_description": "We’re now part of the Lightspeed family! Current customers: Our team is available 24/7 to help you run and grow your retail or restaurant business.",
+    "h1_count": 1,
+    "h2_count": 13,
+    "img_alt_missing": 6
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 2,
+    "js_files": 9,
+    "external_links": 288,
+    "forms": 0,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 49,
+    "buttons": 0,
+    "images": 6,
+    "videos": 1,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

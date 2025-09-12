@@ -1,0 +1,39 @@
+{
+  "baseUrl": "https://www.squarespace.com/",
+  "domain": "www.squarespace.com",
+  "extractedAt": "2025-07-28T13:02:20.047Z",
+  "totalPages": 1,
+  "totalAssets": 27,
+  "pages": [
+    "https://www.squarespace.com/"
+  ],
+  "assets": [
+    "https://media-www.sqspcdn.com/fonts/clarkson-500.woff2",
+    "https://media-www.sqspcdn.com/fonts/clarkson-400.woff2",
+    "https://assets.squarespace.com/@sqs/polyfiller/1.6/modern.js",
+    "https://assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-12671a7533bd9c5a-min.en-US.js",
+    "https://assets.squarespace.com/universal/scripts-compressed/extract-css-moment-js-vendor-088ec0120fdbcfed-min.en-US.js",
+    "https://assets.squarespace.com/universal/scripts-compressed/user-account-core-3ab353ec9925356a-min.en-US.js",
+    "https://assets.squarespace.com/universal/styles-compressed/user-account-core-bc2ff4ba4e8cd24f-min.en-US.css",
+    "https://static1.squarespace.com/static/ta/5134cbefe4b0c6fb04df8065/12755/scripts/globals/polyfills.js",
+    "https://static1.squarespace.com/static/ta/5134cbefe4b0c6fb04df8065/12755/scripts/components/promo-banner/init.js",
+    "https://static1.squarespace.com/static/ta/5134cbefe4b0c6fb04df8065/12752/assets/styles/defaults.css?12755",
+    "https://static1.squarespace.com/static/ta/5134cbefe4b0c6fb04df8065/12752/assets/styles/pages/homepage/index.css",
+    "https://media-www.sqspcdn.com/images/pages/homepage/sep-2024/hero/images/en_US/hero-2024-desktop-1-2500w.webp",
+    "https://static1.squarespace.com/static/ta/5134cbefe4b0c6fb04df8065/12752/assets/styles/external/trustarc.css?12755",
+    "https://static1.squarespace.com/static/ta/5134cbefe4b0c6fb04df8065/12755/scripts/globals/performance.js",
+    "https://www.googletagmanager.com/gtm.js?id=GTM-BCCP",
+    "https://static1.squarespace.com/static/ta/5134cbefe4b0c6fb04df8065/12755/scripts/pages/homepage/index.js",
+    "https://media-www.sqspcdn.com/fonts/clarkson-300.woff2",
+    "https://media-www.sqspcdn.com/fonts/clarkson-serif-300.woff2",
+    "https://media-www.sqspcdn.com/images/site-navigation/2025/drinkminna-500w.webp",
+    "https://media-www.sqspcdn.com/images/site-navigation/2025/onemag-500w.webp",
+    "https://media-www.sqspcdn.com/images/site-navigation/2025/beinginhistory-500w.webp",
+    "https://static1.squarespace.com/static/ta/5134cbefe4b0c6fb04df8065/12755/scripts/chunks/1483.js",
+    "https://media-www.sqspcdn.com/images/pages/homepage/aug-2023/intro/en/intro-1-1000w.webp",
+    "https://consent.trustarc.com/asset/notice.js/v/v1.7-3018",
+    "https://static1.squarespace.com/static/5134cbefe4b0c6fb04df8065/t/6553aa5af16e670f2674a81d/favicon.ico",
+    "https://consent.trustarc.com/get?name=ClarksonTT-Light.ttf",
+    "https://images.squarespace-cdn.com/content/5134cbefe4b0c6fb04df8065/3b4c2494-20ed-45c1-880a-745acbc9f330/sqsp-favicon-dark-mode.png?content-type=image%2Fpng"
+  ]
+}

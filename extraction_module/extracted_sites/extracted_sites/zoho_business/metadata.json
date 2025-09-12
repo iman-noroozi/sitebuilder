@@ -1,0 +1,53 @@
+{
+  "basic_info": {
+    "url": "https://www.zoho.com",
+    "name": "zoho_business",
+    "category": "business_management",
+    "title": "Zoho | Cloud Software Suite for Businesses",
+    "extracted_at": "2025-07-31 20:42:16",
+    "size": 25910
+  },
+  "business_features": {
+    "business_type": "retail",
+    "key_features": [
+      "Booking System",
+      "Payment Gateway",
+      "CRM Features",
+      "Accounting System"
+    ],
+    "business_services": [
+      "رزرو آنلاین",
+      "درگاه پرداخت",
+      "مدیریت مشتری",
+      "سیستم حسابداری"
+    ],
+    "target_audience": "B2B",
+    "business_size": "large",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "A unique and powerful software suite for businesses of all sizes. With 55+ applications, Zoho caters to 100 million+ users for their end-to-end business needs.",
+    "meta_keywords": "",
+    "og_title": "Zoho | Cloud Software Suite for Businesses",
+    "og_description": "A unique and powerful software suite for businesses of all sizes. With 55+ applications, Zoho caters to 100 million+ users for their end-to-end business needs.",
+    "h1_count": 1,
+    "h2_count": 10,
+    "img_alt_missing": 0
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 3,
+    "js_files": 7,
+    "external_links": 1,
+    "forms": 0,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 2,
+    "buttons": 0,
+    "images": 18,
+    "videos": 0,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

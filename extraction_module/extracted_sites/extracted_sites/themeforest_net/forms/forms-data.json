@@ -1,0 +1,367 @@
+{
+  "timestamp": "2025-07-28T13:14:56.291Z",
+  "forms": [
+    {
+      "action": "https://themeforest.net/",
+      "method": "get",
+      "html": "<form><fieldset><legend class=\"visuallyhidden\">Consent Selection</legend><div id=\"CybotCookiebotDialogBodyFieldsetInnerContainer\"><div class=\"CybotCookiebotDialogBodyLevelButtonWrapper\"><label class=\"CybotCookiebotDialogBodyLevelButtonLabel\" for=\"CybotCookiebotDialogBodyLevelButtonNecessary\"><strong class=\"CybotCookiebotDialogBodyLevelButtonDescription\">Necessary cookies</strong></label><div class=\"CybotCookiebotDialogBodyLevelButtonSliderWrapper CybotCookiebotDialogBodyLevelButtonSliderWrapperDisabled\"><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonNecessary\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelButtonDisabled\" disabled=\"disabled\" checked=\"checked\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></div></div><div class=\"CybotCookiebotDialogBodyLevelButtonWrapper\"><label class=\"CybotCookiebotDialogBodyLevelButtonLabel\" for=\"CybotCookiebotDialogBodyLevelButtonPreferences\"><strong class=\"CybotCookiebotDialogBodyLevelButtonDescription\">Preferences</strong></label><div class=\"CybotCookiebotDialogBodyLevelButtonSliderWrapper\"><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonPreferences\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelConsentCheckbox\" data-target=\"CybotCookiebotDialogBodyLevelButtonPreferencesInline\" checked=\"checked\" tabindex=\"0\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></div></div><div class=\"CybotCookiebotDialogBodyLevelButtonWrapper\"><label class=\"CybotCookiebotDialogBodyLevelButtonLabel\" for=\"CybotCookiebotDialogBodyLevelButtonStatistics\"><strong class=\"CybotCookiebotDialogBodyLevelButtonDescription\">Statistics and Performance</strong></label><div class=\"CybotCookiebotDialogBodyLevelButtonSliderWrapper\"><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonStatistics\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelConsentCheckbox\" data-target=\"CybotCookiebotDialogBodyLevelButtonStatisticsInline\" checked=\"checked\" tabindex=\"0\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></div></div><div class=\"CybotCookiebotDialogBodyLevelButtonWrapper\"><label class=\"CybotCookiebotDialogBodyLevelButtonLabel\" for=\"CybotCookiebotDialogBodyLevelButtonMarketing\"><strong class=\"CybotCookiebotDialogBodyLevelButtonDescription\">Marketing</strong></label><div class=\"CybotCookiebotDialogBodyLevelButtonSliderWrapper\"><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonMarketing\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelConsentCheckbox\" data-target=\"CybotCookiebotDialogBodyLevelButtonMarketingInline\" checked=\"checked\" tabindex=\"0\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></div></div></div></fieldset></form>",
+      "fields": [
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/",
+      "method": "get",
+      "html": "<form><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonNecessaryInline\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelButtonDisabled\" disabled=\"disabled\" checked=\"checked\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></form>",
+      "fields": [
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/",
+      "method": "get",
+      "html": "<form><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonPreferencesInline\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelConsentCheckbox\" data-target=\"CybotCookiebotDialogBodyLevelButtonPreferences\" checked=\"checked\" tabindex=\"0\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></form>",
+      "fields": [
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/",
+      "method": "get",
+      "html": "<form><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonStatisticsInline\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelConsentCheckbox\" data-target=\"CybotCookiebotDialogBodyLevelButtonStatistics\" checked=\"checked\" tabindex=\"0\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></form>",
+      "fields": [
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/",
+      "method": "get",
+      "html": "<form><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonMarketingInline\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelConsentCheckbox\" data-target=\"CybotCookiebotDialogBodyLevelButtonMarketing\" checked=\"checked\" tabindex=\"0\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></form>",
+      "fields": [
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/",
+      "method": "get",
+      "html": "<form class=\"CybotCookiebotDialogBodyLevelButtonSliderWrapper\"><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyContentCheckboxPersonalInformation\" class=\"CybotCookiebotDialogBodyLevelButton\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></form>",
+      "fields": [
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/search",
+      "method": "get",
+      "html": "<form role=\"search\" method=\"get\" action=\"/search\" class=\"shared-autosuggest_component__root shared-autosuggest_component__compactLayoutStyle\" data-controller=\"autosuggest\" data-action=\"submit->autosuggest#onSubmit\" data-autosuggest-target=\"form\" data-autosuggest-result-class=\"shared-autosuggest_component__searchItem\" data-autosuggest-result-category-class=\"shared-autosuggest_component__searchItemCategory\" data-autosuggest-result-separator-class=\"shared-autosuggest_component__searchItemSeparator\" data-autosuggest-category-value=\"\" data-autosuggest-suggestions-count-value=\"8\">\n  <input type=\"hidden\" name=\"category\" value=\"\" data-autosuggest-target=\"category\">\n  <div class=\"shared-autosuggest_component__searchInputWrapper\" data-controller=\"search-event\">\n    <input class=\"shared-autosuggest_component__searchInput\" placeholder=\"e.g. responsive WordPress\" name=\"term\" autocomplete=\"off\" type=\"search\" aria-label=\"search\" value=\"\" data-search-term=\"\" data-search-event-target=\"input\" data-action=\"keydown->autosuggest#onKeydown blur->autosuggest#onInputBlur focus->autosuggest#onInputFocus input->autosuggest#onInputChange\" data-autosuggest-target=\"input\" spellcheck=\"false\">\n\n    <nav class=\"shared-autosuggest_component__searchSuggestions\" data-autosuggest-target=\"results\" hidden=\"\"></nav>\n\n    <button class=\"shared-autosuggest_component__searchBtn\" aria-label=\"Search\" data-action=\"click->search-event#submit\" data-autosuggest-target=\"submit\">\n        <span class=\"shared-autosuggest_component__searchBtnIcon\"><svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#search\"></use>\n</svg>\n</span>\n        <span class=\"shared-autosuggest_component__searchBtnLabel\">Search</span>\n    </button>\n  </div>\n</form>",
+      "fields": [
+        {
+          "name": "category",
+          "type": "hidden",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "term",
+          "type": "search",
+          "value": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/58370771",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/58370771\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"58370771\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/58401507",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/58401507\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"58401507\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/58220740",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/58220740\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"58220740\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/57698178",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/57698178\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"57698178\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/59130724",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/59130724\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"59130724\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/58892022",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/58892022\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"58892022\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/59139306",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/59139306\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"59139306\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/59135170",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/59135170\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"59135170\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/59131888",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/59131888\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"59131888\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/59131564",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/59131564\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"59131564\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/59125620",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/59125620\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"59125620\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/59109976",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/59109976\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"59109976\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/26702860",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/26702860\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"26702860\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/29621951",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/29621951\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"29621951\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/28715006",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/28715006\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"28715006\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/2833226",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/2833226\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"2833226\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/20264492",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/20264492\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"20264492\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/7758048",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/7758048\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"7758048\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://themeforest.net/my/favorites/5484319",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"/my/favorites/5484319\" data-controller=\"favorite-button\" data-action=\"submit->favorite-button#submit favoritesStoreUpdated@window->favorite-button#updateFromStore\">\n  <input type=\"hidden\" name=\"_method\" value=\"post\" data-favorite-button-target=\"formMethod\">\n  <button type=\"submit\" aria-label=\"Add to Favorites\" class=\"shared-item_cards-favorite_button_component__favoriteButton\" data-favorite-button-target=\"favoriteButton\" data-favorited=\"false\" data-item-id=\"5484319\">\n    <svg width=\"100%\" height=\"100%\">\n  <use xlink:href=\"/storefront/assets/icon_spritesheet-2c8173174a30370958101e9b5e0dc4a0503c16573b4e2c0961245849681b052e.svg#heart\"></use>\n</svg>\n\n  </button>\n</form>",
+      "fields": [
+        {
+          "name": "_method",
+          "type": "hidden",
+          "value": "post",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

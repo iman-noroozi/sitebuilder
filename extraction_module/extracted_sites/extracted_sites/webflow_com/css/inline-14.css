@@ -1,0 +1,42 @@
+
+  /* Make g-nav_wrapper relative if sticky wrapper applied for top notification banner use */
+  .notification_bar + .g-nav-wrapper {
+    position: sticky;
+    top: 0;
+  }
+
+  .notification_bar + .g-nav-wrapper .g-nav-wrapper-position {
+    position: relative;
+  }
+
+  body:has( .notification_bar) {
+    position: relative; 
+  }
+
+  /* Make g-nav_wrapper relative if sticky wrapper applied for top notification banner use */
+  [class$="notification_bar"] + [class$="g-nav-wrapper"] {
+    position: sticky;
+    top: 0;
+  }
+
+  [class$="notification_bar"] + [class$="g-nav-wrapper"] [class$="g-nav-wrapper-position"] {
+    position: relative;
+  }
+
+  body:has( [class$="notification_bar"]) {
+    position: relative; 
+  }
+  
+  /* Make g-nav_wrapper relative if sticky wrapper applied for top notification banner use */
+  .brand-boilerplate-components--notification_bar + .brand-boilerplate-components--g-nav-wrapper {
+    position: sticky;
+    top: 0;
+  }
+
+  .brand-boilerplate-components--notification_bar + .brand-boilerplate-components--g-nav-wrapper .brand-boilerplate-components--g-nav-wrapper-position {
+    position: relative;
+  }
+
+  body:has( .brand-boilerplate-components--notification_bar) {
+    position: relative; 
+  }

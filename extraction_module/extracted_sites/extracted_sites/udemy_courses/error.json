@@ -1,0 +1,8 @@
+{
+  "url": "https://www.udemy.com",
+  "name": "udemy_courses",
+  "category": "online_learning",
+  "error": "403 Client Error: Forbidden for url: https://www.udemy.com/",
+  "extracted_at": "2025-07-31 20:44:14",
+  "extraction_status": "failed"
+}

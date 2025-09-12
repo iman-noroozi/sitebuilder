@@ -1,0 +1,53 @@
+{
+  "basic_info": {
+    "url": "https://freshbooks.com",
+    "name": "freshbooks_accounting",
+    "category": "accounting_software",
+    "title": "Invoice and Accounting Software for Small Businesses - FreshBooks",
+    "extracted_at": "2025-07-31 20:41:39",
+    "size": 1021721
+  },
+  "business_features": {
+    "business_type": "retail",
+    "key_features": [
+      "E-commerce",
+      "Booking System",
+      "Payment Gateway",
+      "Accounting System"
+    ],
+    "business_services": [
+      "فروش آنلاین",
+      "رزرو آنلاین",
+      "درگاه پرداخت",
+      "سیستم حسابداری"
+    ],
+    "target_audience": "B2B",
+    "business_size": "large",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "The best cloud based small business accounting software. Send invoices, track time, manage receipts, expenses, and accept credit cards. Free 30-day trial.",
+    "meta_keywords": "",
+    "og_title": "Invoice and Accounting Software for Small Businesses - FreshBooks",
+    "og_description": "The best cloud based small business accounting software. Send invoices, track time, manage receipts, expenses, and accept credit cards. Free 30-day trial.",
+    "h1_count": 1,
+    "h2_count": 9,
+    "img_alt_missing": 6
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 1,
+    "js_files": 19,
+    "external_links": 14,
+    "forms": 0,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 4,
+    "buttons": 0,
+    "images": 87,
+    "videos": 0,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

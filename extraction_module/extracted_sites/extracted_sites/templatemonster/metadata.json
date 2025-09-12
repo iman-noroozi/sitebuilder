@@ -1,0 +1,53 @@
+{
+  "basic_info": {
+    "url": "https://templatemonster.com",
+    "name": "templatemonster",
+    "category": "business_templates",
+    "title": "Web Templates | HTML5 Website Templates | Web Graphics",
+    "extracted_at": "2025-07-31 20:41:30",
+    "size": 333347
+  },
+  "business_features": {
+    "business_type": "restaurant",
+    "key_features": [
+      "E-commerce",
+      "Booking System",
+      "Inventory Management",
+      "Accounting System"
+    ],
+    "business_services": [
+      "فروش آنلاین",
+      "رزرو آنلاین",
+      "مدیریت موجودی",
+      "سیستم حسابداری"
+    ],
+    "target_audience": "B2B",
+    "business_size": "small",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "The biggest collection of HTML templates, WordPress and ecommerce themes, web graphics and elements online. TemplateMonster offers web design products developed by professionals from all over the world.",
+    "meta_keywords": "",
+    "og_title": "Web Templates | HTML5 Website Templates | Web Graphics",
+    "og_description": "The biggest collection of HTML templates, WordPress and ecommerce themes, web graphics and elements online. TemplateMonster offers web design products developed by professionals from all over the world.",
+    "h1_count": 1,
+    "h2_count": 7,
+    "img_alt_missing": 0
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 1,
+    "js_files": 4,
+    "external_links": 188,
+    "forms": 1,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 54,
+    "buttons": 0,
+    "images": 91,
+    "videos": 1,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

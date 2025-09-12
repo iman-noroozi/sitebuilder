@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Elementor</title>
+	<atom:link href="https://elementor.com/feed/" rel="self" type="application/rss+xml" />
+	<link>https://elementor.com/</link>
+	<description>Website Builder</description>
+	<lastBuildDate>Sun, 27 Jul 2025 11:04:02 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	
+
+<image>
+	<url>https://elementor.com/wp-content/uploads/2021/04/elementor-favicon-512.png</url>
+	<title>Elementor</title>
+	<link>https://elementor.com/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Image Cropper</title>
+		<link>https://elementor.com/tools/image-cropper/</link>
+		
+		<dc:creator><![CDATA[itamarha]]></dc:creator>
+		<pubDate>Sun, 27 Jul 2025 11:04:02 +0000</pubDate>
+				<category><![CDATA[tools]]></category>
+		<category><![CDATA[Html-Css-tools]]></category>
+		<guid isPermaLink="false">https://elementor.com/?p=8309244</guid>
+
+					<description><![CDATA[<p>The post <a href="https://elementor.com/tools/image-cropper/">Image Cropper</a> appeared first on <a href="https://elementor.com">Elementor</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Image Resizer</title>
+		<link>https://elementor.com/tools/image-resizer/</link>
+		
+		<dc:creator><![CDATA[itamarha]]></dc:creator>
+		<pubDate>Sun, 27 Jul 2025 10:43:38 +0000</pubDate>
+				<category><![CDATA[tools]]></category>
+		<category><![CDATA[Html-Css-tools]]></category>
+		<guid isPermaLink="false">https://elementor.com/?p=8309236</guid>
+
+					<description><![CDATA[<p>The post <a href="https://elementor.com/tools/image-resizer/">Image Resizer</a> appeared first on <a href="https://elementor.com">Elementor</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>ROI Calculator</title>
+		<link>https://elementor.com/tools/roi-calculator/</link>
+		
+		<dc:creator><![CDATA[itamarha]]></dc:creator>
+		<pubDate>Sun, 27 Jul 2025 08:27:23 +0000</pubDate>
+				<category><![CDATA[tools]]></category>
+		<category><![CDATA[Html-Css-tools]]></category>
+		<guid isPermaLink="false">https://elementor.com/?p=8309179</guid>
+
+					<description><![CDATA[<p>The post <a href="https://elementor.com/tools/roi-calculator/">ROI Calculator</a> appeared first on <a href="https://elementor.com">Elementor</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Markup Calculator</title>
+		<link>https://elementor.com/tools/markup-calculator/</link>
+		
+		<dc:creator><![CDATA[itamarha]]></dc:creator>
+		<pubDate>Sun, 27 Jul 2025 07:29:51 +0000</pubDate>
+				<category><![CDATA[tools]]></category>
+		<category><![CDATA[Html-Css-tools]]></category>
+		<guid isPermaLink="false">https://elementor.com/?p=8309169</guid>
+
+					<description><![CDATA[<p>The post <a href="https://elementor.com/tools/markup-calculator/">Markup Calculator</a> appeared first on <a href="https://elementor.com">Elementor</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Profit Margin Calculator</title>
+		<link>https://elementor.com/tools/profit-margin-calculator/</link>
+		
+		<dc:creator><![CDATA[itamarha]]></dc:creator>
+		<pubDate>Sun, 27 Jul 2025 07:11:17 +0000</pubDate>
+				<category><![CDATA[tools]]></category>
+		<category><![CDATA[Html-Css-tools]]></category>
+		<guid isPermaLink="false">https://elementor.com/?p=8309162</guid>
+
+					<description><![CDATA[<p>The post <a href="https://elementor.com/tools/profit-margin-calculator/">Profit Margin Calculator</a> appeared first on <a href="https://elementor.com">Elementor</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Robots.txt Generator</title>
+		<link>https://elementor.com/tools/robots-txt-generator/</link>
+		
+		<dc:creator><![CDATA[itamarha]]></dc:creator>
+		<pubDate>Thu, 24 Jul 2025 18:47:06 +0000</pubDate>
+				<category><![CDATA[tools]]></category>
+		<category><![CDATA[Html-Css-tools]]></category>
+		<guid isPermaLink="false">https://elementor.com/?p=8309131</guid>
+
+					<description><![CDATA[<p>The post <a href="https://elementor.com/tools/robots-txt-generator/">Robots.txt Generator</a> appeared first on <a href="https://elementor.com">Elementor</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>UTM Builder: Campaign URL Builder</title>
+		<link>https://elementor.com/tools/utm-builder-tool/</link>
+		
+		<dc:creator><![CDATA[itamarha]]></dc:creator>
+		<pubDate>Thu, 24 Jul 2025 12:23:03 +0000</pubDate>
+				<category><![CDATA[tools]]></category>
+		<category><![CDATA[Html-Css-tools]]></category>
+		<guid isPermaLink="false">https://elementor.com/?p=8309059</guid>
+
+					<description><![CDATA[<p>The post <a href="https://elementor.com/tools/utm-builder-tool/">UTM Builder: Campaign URL Builder</a> appeared first on <a href="https://elementor.com">Elementor</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Transitions</title>
+		<link>https://elementor.com/roadmap/transitions/</link>
+		
+		<dc:creator><![CDATA[davidge]]></dc:creator>
+		<pubDate>Wed, 23 Jul 2025 08:54:30 +0000</pubDate>
+				<category><![CDATA[In Progress]]></category>
+		<category><![CDATA[Roadmap]]></category>
+		<category><![CDATA[V4 Feature]]></category>
+		<guid isPermaLink="false">https://elementor.com/?p=8308754</guid>
+
+					<description><![CDATA[<p>Add smooth transitions between States and style changes.</p>
+<p>The post <a href="https://elementor.com/roadmap/transitions/">Transitions</a> appeared first on <a href="https://elementor.com">Elementor</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Size Variables</title>
+		<link>https://elementor.com/roadmap/size-variables/</link>
+		
+		<dc:creator><![CDATA[davidge]]></dc:creator>
+		<pubDate>Wed, 23 Jul 2025 08:54:01 +0000</pubDate>
+				<category><![CDATA[In Progress]]></category>
+		<category><![CDATA[Roadmap]]></category>
+		<category><![CDATA[V4 Feature]]></category>
+		<guid isPermaLink="false">https://elementor.com/?p=8308752</guid>
+
+					<description><![CDATA[<p>Define and manage global sizes with powerful CSS Variables.</p>
+<p>The post <a href="https://elementor.com/roadmap/size-variables/">Size Variables</a> appeared first on <a href="https://elementor.com">Elementor</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Variables Manager</title>
+		<link>https://elementor.com/roadmap/variables-manager/</link>
+		
+		<dc:creator><![CDATA[davidge]]></dc:creator>
+		<pubDate>Wed, 23 Jul 2025 08:52:44 +0000</pubDate>
+				<category><![CDATA[Next]]></category>
+		<category><![CDATA[Roadmap]]></category>
+		<category><![CDATA[V4 Feature]]></category>
+		<guid isPermaLink="false">https://elementor.com/?p=8308750</guid>
+
+					<description><![CDATA[<p>Create, edit, and organize global variables for colors, fonts, and other styles &#8211; all from one place.</p>
+<p>The post <a href="https://elementor.com/roadmap/variables-manager/">Variables Manager</a> appeared first on <a href="https://elementor.com">Elementor</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Inherited values</title>
+		<link>https://elementor.com/roadmap/inherited-values/</link>
+		
+		<dc:creator><![CDATA[davidge]]></dc:creator>
+		<pubDate>Wed, 23 Jul 2025 08:51:50 +0000</pubDate>
+				<category><![CDATA[Beta]]></category>
+		<category><![CDATA[Roadmap]]></category>
+		<category><![CDATA[V4 Feature]]></category>
+		<guid isPermaLink="false">https://elementor.com/?p=8308748</guid>
+
+					<description><![CDATA[<p>Quickly identify inherited styles from breakpoints or Classes.</p>
+<p>The post <a href="https://elementor.com/roadmap/inherited-values/">Inherited values</a> appeared first on <a href="https://elementor.com">Elementor</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Class Manager enhancements</title>
+		<link>https://elementor.com/roadmap/class-manager-enhancements/</link>
+		
+		<dc:creator><![CDATA[davidge]]></dc:creator>
+		<pubDate>Wed, 23 Jul 2025 08:50:52 +0000</pubDate>
+				<category><![CDATA[Beta]]></category>
+		<category><![CDATA[Roadmap]]></category>
+		<category><![CDATA[V4 Feature]]></category>
+		<guid isPermaLink="false">https://elementor.com/?p=8308746</guid>
+
+					<description><![CDATA[<p>See where your Classes are used, search and manage with confidence.</p>
+<p>The post <a href="https://elementor.com/roadmap/class-manager-enhancements/">Class Manager enhancements</a> appeared first on <a href="https://elementor.com">Elementor</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

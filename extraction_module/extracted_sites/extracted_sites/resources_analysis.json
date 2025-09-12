@@ -1,0 +1,148 @@
+{
+  "topCSSFiles": [
+    {
+      "file": "bootstrap.min.css",
+      "path": "extracted_sites\\getbootstrap_com\\docs\\5.3\\dist\\css\\bootstrap.min.css",
+      "site": "getbootstrap_com",
+      "size": "226.6 KB"
+    },
+    {
+      "file": "webflowconf-2025.webflow.shared.7851f1595.min.css",
+      "path": "extracted_sites\\webflow_com\\67cf2ed31d6e2def79f5c23d\\css\\webflowconf-2025.webflow.shared.7851f1595.min.css",
+      "site": "webflow_com",
+      "size": "198.2 KB"
+    },
+    {
+      "file": "webflow-com.webflow.66e88746834b80507cdf790d-cf3ee398d.min.css",
+      "path": "extracted_sites\\webflow_com\\66e88746834b80507cdf7933\\css\\webflow-com.webflow.66e88746834b80507cdf790d-cf3ee398d.min.css",
+      "site": "webflow_com",
+      "size": "80.3 KB"
+    },
+    {
+      "file": "_slug_.CJzlHdSW.css",
+      "path": "extracted_sites\\getbootstrap_com\\docs\\5.3\\assets\\_slug_.CJzlHdSW.css",
+      "site": "getbootstrap_com",
+      "size": "60.6 KB"
+    },
+    {
+      "file": "webflow-com.webflow.shared.05e82b967.min.css",
+      "path": "extracted_sites\\webflow_com\\66e88746834b80507cdf7933\\css\\webflow-com.webflow.shared.05e82b967.min.css",
+      "site": "webflow_com",
+      "size": "30.6 KB"
+    },
+    {
+      "file": "swiper-bundle.min.css",
+      "path": "extracted_sites\\webflow_com\\npm\\swiper@11\\swiper-bundle.min.css",
+      "site": "webflow_com",
+      "size": "18 KB"
+    },
+    {
+      "file": "inline-15.css",
+      "path": "extracted_sites\\webflow_com\\css\\inline-15.css",
+      "site": "webflow_com",
+      "size": "10.1 KB"
+    },
+    {
+      "file": "inline-11.css",
+      "path": "extracted_sites\\webflow_com\\css\\inline-11.css",
+      "site": "webflow_com",
+      "size": "8.2 KB"
+    },
+    {
+      "file": "inline-8.css",
+      "path": "extracted_sites\\webflow_com\\css\\inline-8.css",
+      "site": "webflow_com",
+      "size": "6.2 KB"
+    },
+    {
+      "file": "inline-12.css",
+      "path": "extracted_sites\\webflow_com\\css\\inline-12.css",
+      "site": "webflow_com",
+      "size": "5.2 KB"
+    }
+  ],
+  "topJSFiles": [
+    {
+      "file": "recaptcha__en.js",
+      "path": "extracted_sites\\webflow_com\\recaptcha\\releases\\ngcIAHyEnHQZZIKkyKneDTW3\\recaptcha__en.js",
+      "site": "webflow_com",
+      "size": "773.6 KB"
+    },
+    {
+      "file": "three.min.js",
+      "path": "extracted_sites\\webflow_com\\ajax\\libs\\three.js\\r128\\three.min.js",
+      "site": "webflow_com",
+      "size": "589.3 KB"
+    },
+    {
+      "file": "117237908.js",
+      "path": "extracted_sites\\webflow_com\\snippet\\117237908.js",
+      "site": "webflow_com",
+      "size": "415.2 KB"
+    },
+    {
+      "file": "webflow.schunk.57d5559d2f0cd9f8.js",
+      "path": "extracted_sites\\webflow_com\\66e88746834b80507cdf7933\\js\\webflow.schunk.57d5559d2f0cd9f8.js",
+      "site": "webflow_com",
+      "size": "358.7 KB"
+    },
+    {
+      "file": "fbevents.js",
+      "path": "extracted_sites\\webflow_com\\en_US\\fbevents.js",
+      "site": "webflow_com",
+      "size": "295.1 KB"
+    },
+    {
+      "file": "b7n85m9zerm8.js",
+      "path": "extracted_sites\\webflow_com\\include\\1753645800000\\b7n85m9zerm8.js",
+      "site": "webflow_com",
+      "size": "221.5 KB"
+    },
+    {
+      "file": "b7n85m9zerm8.js",
+      "path": "extracted_sites\\webflow_com\\include\\1753646100000\\b7n85m9zerm8.js",
+      "site": "webflow_com",
+      "size": "221.5 KB"
+    },
+    {
+      "file": "b7n85m9zerm8.js",
+      "path": "extracted_sites\\webflow_com\\include\\1753646400000\\b7n85m9zerm8.js",
+      "site": "webflow_com",
+      "size": "221.5 KB"
+    },
+    {
+      "file": "b7n85m9zerm8.js",
+      "path": "extracted_sites\\webflow_com\\include\\1753646700000\\b7n85m9zerm8.js",
+      "site": "webflow_com",
+      "size": "221.5 KB"
+    },
+    {
+      "file": "b7n85m9zerm8.js",
+      "path": "extracted_sites\\webflow_com\\include\\1753647000000\\b7n85m9zerm8.js",
+      "site": "webflow_com",
+      "size": "221.5 KB"
+    }
+  ],
+  "frameworks": [
+    "Bootstrap CSS Framework",
+    "Tailwind CSS Framework"
+  ],
+  "components": [],
+  "designSystems": [
+    "Webflow Visual Designer"
+  ],
+  "recommendations": [
+    "🎨 از فایل‌های CSS Webflow برای سیستم طراحی استفاده کنید",
+    "🚀 از Bootstrap برای responsive design",
+    "💎 از Material-UI برای کامپوننت‌های آماده",
+    "🔧 از فایل‌های JS برای تعاملات پیشرفته",
+    "📱 از طراحی‌های موجود الهام بگیرید"
+  ],
+  "nextSteps": [
+    "1. فایل‌های CSS اصلی را به پروژه اضافه کنید",
+    "2. کامپوننت‌های مفید را استخراج کنید",
+    "3. سیستم طراحی یکپارچه ایجاد کنید",
+    "4. فایل‌های JS را برای قابلیت‌های تعاملی استفاده کنید",
+    "5. از الگوهای طراحی موجود الهام بگیرید"
+  ]
+}

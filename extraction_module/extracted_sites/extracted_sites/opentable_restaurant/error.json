@@ -1,0 +1,8 @@
+{
+  "url": "https://www.opentable.com",
+  "name": "opentable_restaurant",
+  "category": "restaurant_booking",
+  "error": "HTTPSConnectionPool(host='www.opentable.com', port=443): Read timed out. (read timeout=30)",
+  "extracted_at": "2025-07-31 20:43:22",
+  "extraction_status": "failed"
+}

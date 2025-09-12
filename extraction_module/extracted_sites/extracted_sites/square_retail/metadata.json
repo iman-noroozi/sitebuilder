@@ -1,0 +1,55 @@
+{
+  "basic_info": {
+    "url": "https://square.com",
+    "name": "square_retail",
+    "category": "retail_pos",
+    "title": "Power your entire business | Square",
+    "extracted_at": "2025-07-31 20:43:46",
+    "size": 1163140
+  },
+  "business_features": {
+    "business_type": "restaurant",
+    "key_features": [
+      "E-commerce",
+      "Booking System",
+      "Payment Gateway",
+      "Inventory Management",
+      "Accounting System"
+    ],
+    "business_services": [
+      "فروش آنلاین",
+      "رزرو آنلاین",
+      "درگاه پرداخت",
+      "مدیریت موجودی",
+      "سیستم حسابداری"
+    ],
+    "target_audience": "B2B",
+    "business_size": "large",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "Sell anywhere. Diversify revenue streams. Streamline operations. Manage your staff. Get paid faster. Sign up for Square today.",
+    "meta_keywords": "",
+    "og_title": "Power your entire business | Square",
+    "og_description": "Sell anywhere. Diversify revenue streams. Streamline operations. Manage your staff. Get paid faster. Sign up for Square today.",
+    "h1_count": 1,
+    "h2_count": 8,
+    "img_alt_missing": 37
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 40,
+    "js_files": 2,
+    "external_links": 20,
+    "forms": 3,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 83,
+    "buttons": 2,
+    "images": 38,
+    "videos": 1,
+    "contact_forms": 2
+  },
+  "extraction_status": "success"
+}

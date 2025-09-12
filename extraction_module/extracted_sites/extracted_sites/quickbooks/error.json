@@ -1,0 +1,8 @@
+{
+  "url": "https://quickbooks.intuit.com",
+  "name": "quickbooks",
+  "category": "accounting_software",
+  "error": "HTTPSConnectionPool(host='quickbooks.intuit.com', port=443): Read timed out. (read timeout=30)",
+  "extracted_at": "2025-07-31 20:42:12",
+  "extraction_status": "failed"
+}

@@ -1,0 +1,8 @@
+{
+  "url": "https://www.yelp.com/biz",
+  "name": "yelp_business",
+  "category": "business_directory",
+  "error": "403 Client Error: Forbidden for url: https://www.yelp.com/biz",
+  "extracted_at": "2025-07-31 20:42:49",
+  "extraction_status": "failed"
+}

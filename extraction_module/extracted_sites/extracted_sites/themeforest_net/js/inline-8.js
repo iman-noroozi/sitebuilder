@@ -1,0 +1,5 @@
+
+//<![CDATA[
+    var gtmConfig = {}
+
+//]]>

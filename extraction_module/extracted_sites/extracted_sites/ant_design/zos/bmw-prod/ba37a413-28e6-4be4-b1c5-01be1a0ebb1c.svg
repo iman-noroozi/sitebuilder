@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160px" height="160px" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>椭圆形备份 14</title>
+    <defs>
+        <linearGradient x1="-1.15359111e-13%" y1="-1.56125113e-15%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#1677FF" offset="0%"></stop>
+            <stop stop-color="#1677FF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="正式版" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.0553617932">
+        <g id="Ant-Design-5.0-官网-PC" transform="translate(0.000000, -2705.000000)" fill="url(#linearGradient-1)">
+            <circle id="椭圆形备份-14" transform="translate(80.000000, 2785.000000) rotate(180.000000) translate(-80.000000, -2785.000000) " cx="80" cy="2785" r="80"></circle>
+        </g>
+    </g>
+</svg>

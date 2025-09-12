@@ -1,0 +1,214 @@
+
+  /* Body mods */
+
+  body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    text-decoration-thickness: 0.07em !important;
+    text-underline-offset: 0.1em !important;
+    text-underline-position: under;
+  }
+
+  /* Text Selection Color */
+
+  ::-moz-selection {
+    background: rgba(20, 110, 245, 0.95);
+    color: #FFFFFF;
+  }
+
+  ::selection {
+    background: rgba(20, 110, 245, 0.95);
+    color: #FFFFFF;
+  }
+
+  /* Margin top for headings in rich text elements */
+
+  .w-richtext>:first-child {
+    margin-top: 0;
+  }
+
+  .w-richtext>:last-child,
+  .w-richtext ol li:last-child,
+  .w-richtext ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  .w-input,
+  .w-select,
+  a {
+    color: inherit;
+    font-size: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  /* Global Focus Outline Color - will update to use native focus(keyboard) state */
+
+  *:focus:not(:focus-visible) {
+    outline: 0;
+  }
+
+  /*----- Button's arrow moving on hover -----*/
+
+  .card:hover .button-icon_right,
+  .button:hover .button-icon_right {
+    transform: translateX(8px);
+  }
+  .card:hover .button-icon_top-right,
+  .button:hover .button-icon_top-right {
+    transform: translate(8px, -8px);
+  }
+
+  /*----- Selectors that work with shared library components -----*/
+  [data-icon="arrow-right"],
+  [data-icon="arrow-top-right"] {
+    transition: transform 200ms ease;
+  }
+  
+  /* Arrow icon moves right on hover */
+  [data-hover-parent]:hover [data-icon="arrow-right"] {
+    transform: translateX(8px);
+  }
+
+  /* Arrow icon moves top-right on hover */
+  [data-hover-parent]:hover [data-icon="arrow-top-right"] {
+    transform: translate(8px, -8px);
+  }
+
+  /* Truncation utility */
+
+  .u-truncate-2lines {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .u-truncate-3lines {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  /* Feature content and images opacity on current */
+
+  .sticky-features_item-anchor + .sticky-features_item-content {
+    opacity: 0.2;
+  }
+
+  .sticky-features_item-anchor + .sticky-features_img-wrapper {
+    opacity: 0;
+  }
+
+  .sticky-features_item-anchor.w--current + div {
+    opacity: 1;
+    z-index:10;
+  }
+
+  /* Feature tabs transitions */
+
+  .feature_tab-link.w--current .tab-link_description {
+    opacity: 1;
+    height: auto;
+    transition: opacity .5s ease-out, max-height 1.2s cubic-bezier(.165, .84, .44, 1);
+    display: block;
+  }
+
+  .feature_tab-link.cc-dark.w--current .tab-link_description {
+    color: var(--gray-200);
+  }
+
+  .feature_tab-link.cc-dark.w--current .feature_item-content {
+    color: var(--white);
+  }
+
+  @media only screen and (max-width: 991px) {
+    .feature_tab-link .tab-link_description.cc-mobile-visibility {
+      opacity: 1;
+      height: auto;
+      display: block;
+      max-height: 200px;
+      transition: opacity .5s ease-out, max-height 1.2s cubic-bezier(.165, .84, .44, 1);
+    }
+
+    .feature_tab-link.cc-dark .tab-link_description {
+      color: var(--gray-200) !important;
+    }
+  }
+
+  /* Features dropdown — Used in hero section in our feature pages */
+
+  [theme="light"] .features-dropdown-toggle,
+  [theme="light"] .brand-boilerplate-components--features-dropdown-toggle {
+    color: #5a5a5a;
+    border-color: #d8d8d8;
+  }
+
+  [theme="light"] .features-dropdown-toggle:hover,
+  [theme="light"] .features-dropdown-toggle.w--open,
+  [theme="light"] .brand-boilerplate-components--features-dropdown-toggle:hover,
+  [theme="light"] .brand-boilerplate-components--features-dropdown-toggle.w--open {
+    color: #080808;
+    border-color: #5a5a5a;
+  }
+
+  .features-dropdown-link_block:hover *:not(.tag_new):not(.brand-boilerplate-components--tag_new),
+  .brand-boilerplate-components--features-dropdown-link_block:hover *:not(.tag_new):not(.brand-boilerplate-components--tag_new) {
+    text-decoration: underline;
+  }
+
+  @media (prefers-reduced-motion) {
+
+    /* Remove transition from all to make things instant */
+    * {
+      -webkit-transition: all 0s linear 0s !important;
+      transition: all 0s linear 0s !important;
+    }
+
+    /* Custom classes to hide/show content */
+    .a11y-reduce-motion-show {
+      display: block !important;
+    }
+
+    .a11y-reduce-motion-hide {
+      display: none;
+    }
+  }
+
+  /* Highlight empty links and bold headings in Webflow Designer mode */
+
+  html.wf-design-mode [href="#"] {
+    outline: 3px solid yellow !important;
+  }
+
+  html.wf-design-mode h1 strong,
+  html.wf-design-mode h2 strong,
+  html.wf-design-mode h3 strong,
+  html.wf-design-mode h4 strong,
+  html.wf-design-mode h5 strong,
+  html.wf-design-mode h6 strong {
+    outline: 3px solid yellow !important;
+  }
+
+  /* Add popup interaction on logo marquee */
+  [data-logo-link]:hover [data-link-svg-wrap] {
+    opacity: 0.6;
+  }
+
+  [data-logo-popup] {
+    opacity: 0;
+    transform: translateY(-1rem);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* Prevent hover issues when hidden */
+  }
+
+  [data-logo-link]:hover [data-logo-popup] {
+    opacity: 1;
+    transform: translateY(-3rem);
+    pointer-events: auto;
+  }

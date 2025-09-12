@@ -1,0 +1,57 @@
+{
+  "basic_info": {
+    "url": "https://www.practicefusion.com",
+    "name": "practice_fusion",
+    "category": "medical_practice",
+    "title": "Practice Fusion EHR | Leading EHR Solutions for Medical Practices",
+    "extracted_at": "2025-07-31 20:43:58",
+    "size": 40459
+  },
+  "business_features": {
+    "business_type": "restaurant",
+    "key_features": [
+      "E-commerce",
+      "Booking System",
+      "Payment Gateway",
+      "Map Integration",
+      "CRM Features",
+      "Accounting System"
+    ],
+    "business_services": [
+      "فروش آنلاین",
+      "رزرو آنلاین",
+      "درگاه پرداخت",
+      "نقشه و موقعیت",
+      "مدیریت مشتری",
+      "سیستم حسابداری"
+    ],
+    "target_audience": "B2B",
+    "business_size": "micro",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "Discover how Practice Fusion's intuitive EHR solutions enhance healthcare delivery. Join thousands of practices improving patient care with our expertise.",
+    "meta_keywords": "",
+    "og_title": "Practice Fusion EHR | Leading EHR Solutions for Medical Practices",
+    "og_description": "Discover how Practice Fusion's intuitive EHR solutions enhance healthcare delivery. Join thousands of practices improving patient care with our expertise.",
+    "h1_count": 1,
+    "h2_count": 3,
+    "img_alt_missing": 16
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 4,
+    "js_files": 4,
+    "external_links": 14,
+    "forms": 0,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 15,
+    "buttons": 0,
+    "images": 21,
+    "videos": 2,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

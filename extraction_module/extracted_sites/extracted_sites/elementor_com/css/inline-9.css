@@ -1,0 +1,31 @@
+
+.hellobar-visible:not(.home) .main-header,
+.hellobar-visible:not(.home) div[data-elementor-type="wp-page"] {
+	margin-block-start: 80px !important;
+}
+
+body.home .hellobar {
+    top: auto !important;
+    bottom: 0
+}
+
+.hellobar-visible.home .chat-button {
+    bottom: 94px;
+}
+
+.hellobar-visible.home #forethought-chat {
+    bottom: 75px !important;
+    z-index: 9999999999 !important;
+}
+
+@media (max-width: 767px) {
+	.hellobar-visible:not(.home) .main-header,
+	.hellobar-visible:not(.home) div[data-elementor-type="wp-page"] {
+		margin-block-start: 56px !important;
+	}
+
+.hellobar-visible.home .hellobar,
+.hellobar-visible.home .bottom-sticky-nav {
+    z-index: 9 !important
+}
+

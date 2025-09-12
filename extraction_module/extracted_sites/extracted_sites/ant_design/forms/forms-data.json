@@ -1,0 +1,120 @@
+{
+  "timestamp": "2025-07-28T13:08:07.915Z",
+  "forms": [
+    {
+      "action": "https://ant.design/",
+      "method": "get",
+      "html": "<form class=\"ant-form ant-form-horizontal css-var-«R1amnd5cma» ant-form-css-var acss-19hl48c\"><div class=\"ant-form-item css-var-«R1amnd5cma» ant-form-css-var ant-form-item-has-success\"><div class=\"ant-row ant-form-item-row css-var-«R1amnd5cma»\"><div class=\"ant-col ant-col-3 ant-form-item-label css-var-«R1amnd5cma»\"><label for=\"themeType\" class=\"\" title=\"Theme\">Theme</label></div><div class=\"ant-col ant-col-21 ant-form-item-control css-var-«R1amnd5cma»\"><div class=\"ant-form-item-control-input\"><div class=\"ant-form-item-control-input-content\"><div class=\"ant-flex css-var-«R1amnd5cma» ant-flex-wrap-wrap ant-flex-gap-large\"><div class=\"ant-flex css-var-«R1amnd5cma» ant-flex-align-center ant-flex-justify-center ant-flex-gap-small ant-flex-vertical\"><label class=\"acss-zvg1l3\"><input type=\"radio\" id=\"themeType\" name=\"theme\"><img src=\"https://gw.alipayobjects.com/zos/bmw-prod/ae669a89-0c65-46db-b14b-72d1c7dd46d6.svg\" alt=\"default\"></label><span>Default</span></div><div class=\"ant-flex css-var-«R1amnd5cma» ant-flex-align-center ant-flex-justify-center ant-flex-gap-small ant-flex-vertical\"><label class=\"acss-zvg1l3 acss-1txaq3z\"><input type=\"radio\" name=\"theme\"><img src=\"https://gw.alipayobjects.com/zos/bmw-prod/0f93c777-5320-446b-9bb7-4d4b499f346d.svg\" alt=\"dark\"></label><span>Dark</span></div><div class=\"ant-flex css-var-«R1amnd5cma» ant-flex-align-center ant-flex-justify-center ant-flex-gap-small ant-flex-vertical\"><label class=\"acss-zvg1l3\"><input type=\"radio\" name=\"theme\"><img src=\"https://gw.alipayobjects.com/zos/bmw-prod/3e899b2b-4eb4-4771-a7fc-14c7ff078aed.svg\" alt=\"lark\"></label><span>Document</span></div><div class=\"ant-flex css-var-«R1amnd5cma» ant-flex-align-center ant-flex-justify-center ant-flex-gap-small ant-flex-vertical\"><label class=\"acss-zvg1l3\"><input type=\"radio\" name=\"theme\"><img src=\"https://gw.alipayobjects.com/zos/bmw-prod/ed9b04e8-9b8d-4945-8f8a-c8fc025e846f.svg\" alt=\"comic\"></label><span>Blossom</span></div><div class=\"ant-flex css-var-«R1amnd5cma» ant-flex-align-center ant-flex-justify-center ant-flex-gap-small ant-flex-vertical\"><label class=\"acss-zvg1l3\"><input type=\"radio\" name=\"theme\"><img src=\"https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*bOiWT4-34jkAAAAAAAAAAAAADrJ8AQ/original\" alt=\"v4\"></label><span>V4 Theme</span></div></div></div></div></div></div></div><div class=\"ant-form-item css-var-«R1amnd5cma» ant-form-css-var ant-form-item-has-success\"><div class=\"ant-row ant-form-item-row css-var-«R1amnd5cma»\"><div class=\"ant-col ant-col-3 ant-form-item-label css-var-«R1amnd5cma»\"><label for=\"colorPrimary\" class=\"\" title=\"Primary Color\">Primary Color</label></div><div class=\"ant-col ant-col-21 ant-form-item-control css-var-«R1amnd5cma»\"><div class=\"ant-form-item-control-input\"><div class=\"ant-form-item-control-input-content\"><div class=\"ant-flex css-var-«R1amnd5cma» ant-flex-wrap-wrap ant-flex-align-center ant-flex-gap-large\"><input id=\"colorPrimary\" style=\"width:120px\" class=\"ant-input ant-input-outlined ant-input-status-success css-var-«R1amnd5cma» ant-input-css-var\" type=\"text\" value=\"#1677FF\"><div class=\"ant-flex css-var-«R1amnd5cma» ant-flex-gap-middle\"><label class=\"acss-nv6ot1 acss-1od8wpn\" style=\"background:#1677FF\"><input type=\"radio\" aria-label=\"#1677FF\" tabindex=\"0\" name=\"color\"></label><label class=\"acss-nv6ot1\" style=\"background:#5A54F9\"><input type=\"radio\" aria-label=\"#5A54F9\" tabindex=\"0\" name=\"color\"></label><label class=\"acss-nv6ot1\" style=\"background:#9E339F\"><input type=\"radio\" aria-label=\"#9E339F\" tabindex=\"0\" name=\"color\"></label><label class=\"acss-nv6ot1\" style=\"background:#ED4192\"><input type=\"radio\" aria-label=\"#ED4192\" tabindex=\"0\" name=\"color\"></label><label class=\"acss-nv6ot1\" style=\"background:#E0282E\"><input type=\"radio\" aria-label=\"#E0282E\" tabindex=\"0\" name=\"color\"></label><label class=\"acss-nv6ot1\" style=\"background:#F4801A\"><input type=\"radio\" aria-label=\"#F4801A\" tabindex=\"0\" name=\"color\"></label><label class=\"acss-nv6ot1\" style=\"background:#F2BD27\"><input type=\"radio\" aria-label=\"#F2BD27\" tabindex=\"0\" name=\"color\"></label><label class=\"acss-nv6ot1\" style=\"background:#00B96B\"><input type=\"radio\" aria-label=\"#00B96B\" tabindex=\"0\" name=\"color\"></label><label class=\"acss-nv6ot1\" style=\"background:conic-gradient(red, yellow, lime, aqua, blue, magenta, red)\" aria-describedby=\"«Rl6kpkp9qlalbamnd5cma»\"><input type=\"radio\" aria-label=\"conic-gradient(red, yellow, lime, aqua, blue, magenta, red)\" tabindex=\"-1\" name=\"picker\"></label></div></div></div></div></div></div></div><div class=\"ant-form-item css-var-«R1amnd5cma» ant-form-css-var ant-form-item-has-success\"><div class=\"ant-row ant-form-item-row css-var-«R1amnd5cma»\"><div class=\"ant-col ant-col-3 ant-form-item-label css-var-«R1amnd5cma»\"><label for=\"borderRadius\" class=\"\" title=\"Border Radius\">Border Radius</label></div><div class=\"ant-col ant-col-21 ant-form-item-control css-var-«R1amnd5cma»\"><div class=\"ant-form-item-control-input\"><div class=\"ant-form-item-control-input-content\"><div class=\"ant-flex css-var-«R1amnd5cma» ant-flex-gap-large\"><div class=\"ant-input-number ant-input-number-in-form-item ant-input-number-outlined ant-input-number-status-success css-var-«R1amnd5cma» ant-input-number-css-var\" style=\"width:120px\"><div class=\"ant-input-number-handler-wrap\"><span unselectable=\"on\" role=\"button\" aria-label=\"Increase Value\" aria-disabled=\"false\" class=\"ant-input-number-handler ant-input-number-handler-up\"><span role=\"img\" aria-label=\"up\" class=\"anticon anticon-up ant-input-number-handler-up-inner\"><svg viewBox=\"64 64 896 896\" focusable=\"false\" data-icon=\"up\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z\"></path></svg></span></span><span unselectable=\"on\" role=\"button\" aria-label=\"Decrease Value\" aria-disabled=\"false\" class=\"ant-input-number-handler ant-input-number-handler-down\"><span role=\"img\" aria-label=\"down\" class=\"anticon anticon-down ant-input-number-handler-down-inner\"><svg viewBox=\"64 64 896 896\" focusable=\"false\" data-icon=\"down\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z\"></path></svg></span></span></div><div class=\"ant-input-number-input-wrap\"><input autocomplete=\"off\" role=\"spinbutton\" aria-valuemin=\"0\" aria-valuenow=\"2\" step=\"1\" id=\"borderRadius\" class=\"ant-input-number-input\" value=\"2px\"></div></div><div class=\"ant-slider css-var-«R1amnd5cma» ant-slider-horizontal\" style=\"width:128px\"><div class=\"ant-slider-rail\"></div><div class=\"ant-slider-track\" style=\"left: 0%; width: 10%;\"></div><div class=\"ant-slider-step\"></div><div class=\"ant-slider-handle\" style=\"left: 10%; transform: translateX(-50%);\" tabindex=\"0\" role=\"slider\" aria-valuemin=\"0\" aria-valuemax=\"20\" aria-valuenow=\"2\" aria-disabled=\"false\" aria-orientation=\"horizontal\" aria-describedby=\"«Rlikpkppqlalbamnd5cma»\"></div></div></div></div></div></div></div></div><div class=\"ant-form-item css-var-«R1amnd5cma» ant-form-css-var\"><div class=\"ant-row ant-form-item-row css-var-«R1amnd5cma»\"><div class=\"ant-col ant-col-3 ant-form-item-label css-var-«R1amnd5cma»\"><label for=\"compact_default\" class=\"\" title=\"Compact\">Compact</label></div><div class=\"ant-col ant-col-21 ant-form-item-control css-var-«R1amnd5cma»\"><div class=\"ant-form-item-control-input\"><div class=\"ant-form-item-control-input-content\"><div class=\"ant-radio-group ant-radio-group-outline css-var-«R1amnd5cma» ant-radio-css-var\" id=\"compact\"><label class=\"ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item css-var-«R1amnd5cma» ant-radio-css-var\"><span class=\"ant-radio ant-wave-target ant-radio-checked\"><input id=\"compact_default\" class=\"ant-radio-input\" type=\"radio\" name=\"compact\" checked=\"\" value=\"default\"><span class=\"ant-radio-inner\"></span></span><span class=\"ant-radio-label\">Default</span></label><label class=\"ant-radio-wrapper ant-radio-wrapper-in-form-item css-var-«R1amnd5cma» ant-radio-css-var\"><span class=\"ant-radio ant-wave-target\"><input class=\"ant-radio-input\" type=\"radio\" name=\"compact\" value=\"compact\"><span class=\"ant-radio-inner\"></span></span><span class=\"ant-radio-label\">Compact</span></label></div></div></div></div></div></div></form>",
+      "fields": [
+        {
+          "name": "theme",
+          "type": "radio",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "theme",
+          "type": "radio",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "theme",
+          "type": "radio",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "theme",
+          "type": "radio",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "theme",
+          "type": "radio",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "",
+          "type": "text",
+          "value": "#1677FF",
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "radio",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "radio",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "radio",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "radio",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "radio",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "radio",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "radio",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "radio",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "picker",
+          "type": "radio",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "",
+          "type": "text",
+          "value": "2px",
+          "required": false
+        },
+        {
+          "name": "compact",
+          "type": "radio",
+          "value": "default",
+          "required": false
+        },
+        {
+          "name": "compact",
+          "type": "radio",
+          "value": "compact",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

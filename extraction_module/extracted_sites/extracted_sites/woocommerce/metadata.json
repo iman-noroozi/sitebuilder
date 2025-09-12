@@ -1,0 +1,53 @@
+{
+  "basic_info": {
+    "url": "https://woocommerce.com",
+    "name": "woocommerce",
+    "category": "ecommerce_platform",
+    "title": "WooCommerce",
+    "extracted_at": "2025-07-31 20:42:29",
+    "size": 310664
+  },
+  "business_features": {
+    "business_type": "retail",
+    "key_features": [
+      "E-commerce",
+      "Booking System",
+      "Payment Gateway",
+      "CRM Features"
+    ],
+    "business_services": [
+      "فروش آنلاین",
+      "رزرو آنلاین",
+      "درگاه پرداخت",
+      "مدیریت مشتری"
+    ],
+    "target_audience": "B2B",
+    "business_size": "large",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "WooCommerce is the open-source ecommerce platform that helps merchants and developers build successful businesses for the long term.",
+    "meta_keywords": "",
+    "og_title": "WooCommerce - Open Source ecommerce Platform",
+    "og_description": "WooCommerce is a customizable, open-source ecommerce platform built on WordPress.",
+    "h1_count": 1,
+    "h2_count": 5,
+    "img_alt_missing": 18
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 11,
+    "js_files": 25,
+    "external_links": 64,
+    "forms": 0,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 17,
+    "buttons": 0,
+    "images": 67,
+    "videos": 1,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

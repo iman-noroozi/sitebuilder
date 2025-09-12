@@ -1,0 +1,53 @@
+{
+  "basic_info": {
+    "url": "https://monday.com",
+    "name": "monday_project",
+    "category": "project_management",
+    "title": "monday.com Work Platform | Made For Work, Designed To Love",
+    "extracted_at": "2025-07-31 20:42:21",
+    "size": 1133057
+  },
+  "business_features": {
+    "business_type": "retail",
+    "key_features": [
+      "E-commerce",
+      "Booking System",
+      "Payment Gateway",
+      "CRM Features"
+    ],
+    "business_services": [
+      "فروش آنلاین",
+      "رزرو آنلاین",
+      "درگاه پرداخت",
+      "مدیریت مشتری"
+    ],
+    "target_audience": "B2B",
+    "business_size": "large",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "Streamline workflows across projects, CRM, IT, and development and gain clear visibility to make strategic decisions with confidence.",
+    "meta_keywords": "",
+    "og_title": "monday.com Work Platform | Made For Work, Designed To Love",
+    "og_description": "Streamline workflows across projects, CRM, IT, and development and gain clear visibility to make strategic decisions with confidence.",
+    "h1_count": 1,
+    "h2_count": 79,
+    "img_alt_missing": 33
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 3,
+    "js_files": 60,
+    "external_links": 46,
+    "forms": 38,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 4,
+    "buttons": 0,
+    "images": 218,
+    "videos": 10,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

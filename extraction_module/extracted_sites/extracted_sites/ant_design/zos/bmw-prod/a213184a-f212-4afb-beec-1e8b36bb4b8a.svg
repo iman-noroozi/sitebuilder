@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="279px" height="500px" viewBox="0 0 279 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>椭圆形</title>
+    <defs>
+        <linearGradient x1="-1.15359111e-13%" y1="-1.56125113e-15%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="98.5276442%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="正式版" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.127883185">
+        <g id="形状结合备份-14-+-矩形备份-20蒙版" fill="url(#linearGradient-1)">
+            <circle id="椭圆形" transform="translate(29.000000, 250.000000) scale(1, -1) translate(-29.000000, -250.000000) " cx="29" cy="250" r="250"></circle>
+        </g>
+    </g>
+</svg>

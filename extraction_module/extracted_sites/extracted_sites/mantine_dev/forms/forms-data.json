@@ -1,0 +1,24 @@
+{
+  "timestamp": "2025-07-28T13:09:06.155Z",
+  "forms": [
+    {
+      "action": "https://mantine.dev/",
+      "method": "get",
+      "html": "<form><div class=\"m_46b77525 mantine-InputWrapper-root mantine-TextInput-root\"><label class=\"m_8fdc1311 mantine-InputWrapper-label mantine-TextInput-label\" data-required=\"true\" for=\"mantine-0677hqm7h\" id=\"mantine-0677hqm7h-label\">Email<span class=\"m_78a94662 mantine-InputWrapper-required mantine-TextInput-required\" aria-hidden=\"true\"> *</span></label><div class=\"m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper\" data-variant=\"default\"><input class=\"m_8fb7ebe7 mantine-Input-input mantine-TextInput-input\" data-variant=\"default\" placeholder=\"your@email.com\" data-path=\"email\" aria-invalid=\"false\" id=\"mantine-0677hqm7h\" value=\"\"></div></div><div style=\"--checkbox-color:var(--mantine-color-blue-filled);margin-top:var(--mantine-spacing-md)\" class=\"m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root\" data-label-position=\"right\"><div class=\"m_5f6e695e mantine-Checkbox-body\"><div class=\"m_26062bec mantine-Checkbox-inner\" data-label-position=\"right\"><input class=\"mantine-focus-auto m_26063560 mantine-Checkbox-input\" id=\"mantine-yindy7inq\" data-path=\"termsOfService\" type=\"checkbox\"><svg viewBox=\"0 0 10 7\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" class=\"m_bf295423 mantine-Checkbox-icon\"><path d=\"M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z\" fill=\"currentColor\" fill-rule=\"evenodd\" clip-rule=\"evenodd\"></path></svg></div><div class=\"m_d3ea56bb mantine-Checkbox-labelWrapper\"><label class=\"m_8ee546b8 mantine-Checkbox-label\" for=\"mantine-yindy7inq\">I agree to sell my privacy</label></div></div></div><div style=\"--group-gap:var(--mantine-spacing-md);--group-align:center;--group-justify:flex-end;--group-wrap:wrap;margin-top:var(--mantine-spacing-md)\" class=\"m_4081bf90 mantine-Group-root\"><button style=\"--button-color:var(--mantine-color-white)\" class=\"mantine-focus-auto mantine-active m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root\" type=\"submit\"><span class=\"m_80f1301b mantine-Button-inner\"><span class=\"m_811560b9 mantine-Button-label\">Submit</span></span></button></div></form>",
+      "fields": [
+        {
+          "name": "",
+          "type": "text",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

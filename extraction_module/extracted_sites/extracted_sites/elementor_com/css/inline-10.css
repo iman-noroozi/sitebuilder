@@ -1,0 +1,43 @@
+
+
+.hosted-with-badge {
+	display: none;
+}
+	
+.home .hosted-with-badge {
+	display: flex;
+	width: 17rem;
+	height: 2.75rem;
+	padding: 0.75rem 1rem;
+	justify-content: center;
+	align-items: center;
+	gap: 0.75rem;		
+	border-radius: 0.25rem 0.25rem 0rem 0rem;
+	background: #FFF;
+	box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.10);
+	color:#212121;
+	font-family: "DM Sans";
+	font-size: 0.875rem;
+	font-weight: 400;
+	line-height: 1.225rem;
+	letter-spacing: -0.00875rem;
+	
+	position: fixed;
+	inset-block-start: 70vh;
+	inset-inline-start: -7.15rem;
+	transform: rotate(90deg);
+	z-index: 999;
+    transition: background .2s ease-in-out;
+	box-sizing: border-box;
+}
+
+.hosted-with-badge:is(:hover, :focus-visible) {
+	background: #EFFBC0;
+	color:#212121;
+}
+
+@media (max-width: 767px) {
+.hosted-with-badge {
+		display: none !important;
+}		
+}

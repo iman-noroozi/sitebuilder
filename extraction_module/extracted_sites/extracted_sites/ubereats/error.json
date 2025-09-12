@@ -1,0 +1,8 @@
+{
+  "url": "https://www.ubereats.com",
+  "name": "ubereats",
+  "category": "food_delivery",
+  "error": "403 Client Error: Forbidden for url: https://www.ubereats.com/",
+  "extracted_at": "2025-07-31 20:43:26",
+  "extraction_status": "failed"
+}

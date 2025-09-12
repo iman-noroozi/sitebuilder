@@ -1,0 +1,13 @@
+{
+  "baseUrl": "https://example.com/",
+  "domain": "example.com",
+  "extractedAt": "2025-07-27T19:44:27.255Z",
+  "totalPages": 1,
+  "totalAssets": 1,
+  "pages": [
+    "https://example.com/"
+  ],
+  "assets": [
+    "https://example.com/favicon.ico"
+  ]
+}

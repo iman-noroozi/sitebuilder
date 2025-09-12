@@ -1,0 +1,49 @@
+{
+  "basic_info": {
+    "url": "https://foursquare.com",
+    "name": "foursquare_business",
+    "category": "location_services",
+    "title": "The Future of Geospatial Technology | Foursquare",
+    "extracted_at": "2025-07-31 20:42:42",
+    "size": 163707
+  },
+  "business_features": {
+    "business_type": "retail",
+    "key_features": [
+      "Booking System",
+      "CRM Features"
+    ],
+    "business_services": [
+      "رزرو آنلاین",
+      "مدیریت مشتری"
+    ],
+    "target_audience": "B2B",
+    "business_size": "large",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "Foursquare is the leading location intelligence platform for understanding how people move in real time. Book a free demo to learn how to connect with our data.",
+    "meta_keywords": "",
+    "og_title": "The Leading Geographic Information System | Foursquare",
+    "og_description": "Foursquare is the leading location intelligence platform for understanding how people move in real time. Book a free demo to learn how to connect with our data.",
+    "h1_count": 2,
+    "h2_count": 5,
+    "img_alt_missing": 21
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 5,
+    "js_files": 8,
+    "external_links": 158,
+    "forms": 1,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 22,
+    "buttons": 0,
+    "images": 66,
+    "videos": 1,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

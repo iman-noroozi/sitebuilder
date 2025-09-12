@@ -1,0 +1,8 @@
+{
+  "url": "https://www.doordash.com",
+  "name": "doordash",
+  "category": "food_delivery",
+  "error": "403 Client Error: Forbidden for url: https://www.doordash.com/",
+  "extracted_at": "2025-07-31 20:43:29",
+  "extraction_status": "failed"
+}

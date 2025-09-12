@@ -1,0 +1,47 @@
+{
+  "basic_info": {
+    "url": "https://colorlib.com",
+    "name": "colorlib_templates",
+    "category": "business_templates",
+    "title": "WordPress Themes & Website Templates - Colorlib",
+    "extracted_at": "2025-07-31 20:41:35",
+    "size": 85564
+  },
+  "business_features": {
+    "business_type": "restaurant",
+    "key_features": [
+      "Booking System"
+    ],
+    "business_services": [
+      "رزرو آنلاین"
+    ],
+    "target_audience": "B2B",
+    "business_size": "small",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "Colorlib is the ONLY resource you'll need to start a blog using WordPress! We offer comprehensive yet easy to follow guides, themes and templates well suited for beginner bloggers.",
+    "meta_keywords": "",
+    "og_title": "",
+    "og_description": "",
+    "h1_count": 0,
+    "h2_count": 5,
+    "img_alt_missing": 0
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 1,
+    "js_files": 0,
+    "external_links": 76,
+    "forms": 1,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 9,
+    "buttons": 1,
+    "images": 9,
+    "videos": 0,
+    "contact_forms": 1
+  },
+  "extraction_status": "success"
+}

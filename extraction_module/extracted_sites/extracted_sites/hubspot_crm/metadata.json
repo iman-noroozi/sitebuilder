@@ -1,0 +1,57 @@
+{
+  "basic_info": {
+    "url": "https://hubspot.com",
+    "name": "hubspot_crm",
+    "category": "crm_system",
+    "title": "HubSpot | Software & Tools for your Business - Homepage",
+    "extracted_at": "2025-07-31 20:42:38",
+    "size": 737706
+  },
+  "business_features": {
+    "business_type": "restaurant",
+    "key_features": [
+      "E-commerce",
+      "Booking System",
+      "Payment Gateway",
+      "Map Integration",
+      "CRM Features",
+      "Accounting System"
+    ],
+    "business_services": [
+      "فروش آنلاین",
+      "رزرو آنلاین",
+      "درگاه پرداخت",
+      "نقشه و موقعیت",
+      "مدیریت مشتری",
+      "سیستم حسابداری"
+    ],
+    "target_audience": "B2B",
+    "business_size": "large",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "HubSpot's customer platform includes all the marketing, sales, customer service, and CRM software you need to grow your business.",
+    "meta_keywords": "",
+    "og_title": "HubSpot | Software & Tools for your Business - Homepage",
+    "og_description": "HubSpot's customer platform includes all the marketing, sales, customer service, and CRM software you need to grow your business.",
+    "h1_count": 1,
+    "h2_count": 43,
+    "img_alt_missing": 14
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 32,
+    "js_files": 30,
+    "external_links": 96,
+    "forms": 0,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 71,
+    "buttons": 0,
+    "images": 71,
+    "videos": 0,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

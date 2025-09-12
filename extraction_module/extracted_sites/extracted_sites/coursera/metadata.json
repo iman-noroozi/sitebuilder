@@ -1,0 +1,53 @@
+{
+  "basic_info": {
+    "url": "https://www.coursera.org",
+    "name": "coursera",
+    "category": "online_education",
+    "title": "Coursera | Degrees, Certificates, & Free Online Courses",
+    "extracted_at": "2025-07-31 20:44:18",
+    "size": 604915
+  },
+  "business_features": {
+    "business_type": "healthcare",
+    "key_features": [
+      "Booking System",
+      "Payment Gateway",
+      "CRM Features",
+      "Accounting System"
+    ],
+    "business_services": [
+      "رزرو آنلاین",
+      "درگاه پرداخت",
+      "مدیریت مشتری",
+      "سیستم حسابداری"
+    ],
+    "target_audience": "B2B",
+    "business_size": "large",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "Learn new job skills in online courses from industry leaders like Google, IBM, & Meta. Advance your career with top degrees from Michigan, Penn, Imperial & more.",
+    "meta_keywords": "",
+    "og_title": "Coursera | Degrees, Certificates, & Free Online Courses",
+    "og_description": "Learn new job skills in online courses from industry leaders like Google, IBM, & Meta. Advance your career with top degrees from Michigan, Penn, Imperial & more.",
+    "h1_count": 1,
+    "h2_count": 9,
+    "img_alt_missing": 5
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 1,
+    "js_files": 3,
+    "external_links": 72,
+    "forms": 1,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 14,
+    "buttons": 1,
+    "images": 35,
+    "videos": 0,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

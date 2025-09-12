@@ -1,0 +1,1 @@
+.chat-button{position:fixed;bottom:20px;right:27px;z-index:9999;width:60px;cursor:pointer;}.chat-button:hover{transform:scale(1.1)}.blink{animation:1s infinite blink}@keyframes blink{0%,100%{opacity:1}50%{opacity:.5}}

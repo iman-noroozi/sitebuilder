@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-07-28T13:09:33.775Z",
+  "forms": [
+    {
+      "action": "https://www.paypal.com/cgi-bin/webscr",
+      "method": "post",
+      "html": "<form class=\"paypal-form\" action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_top\">\n          <input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\">\n          <input type=\"hidden\" name=\"hosted_button_id\" value=\"8WMKYSRFN6A78\">\n          <input type=\"image\" src=\"https://bulma.io/assets/images/paypal-donate.png\" border=\"0\" name=\"submit\" alt=\"PayPal – The safer, easier way to pay online.\" height=\"30\">\n          <img alt=\"\" border=\"0\" src=\"https://www.paypalobjects.com/en_GB/i/scr/pixel.gif\" width=\"1\" height=\"1\">\n        </form>",
+      "fields": [
+        {
+          "name": "cmd",
+          "type": "hidden",
+          "value": "_s-xclick",
+          "required": false
+        },
+        {
+          "name": "hosted_button_id",
+          "type": "hidden",
+          "value": "8WMKYSRFN6A78",
+          "required": false
+        },
+        {
+          "name": "submit",
+          "type": "image",
+          "value": "",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

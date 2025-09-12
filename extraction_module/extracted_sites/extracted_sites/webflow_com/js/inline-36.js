@@ -1,0 +1,1 @@
+if (localStorage.getItem('intellimize_data_tracking_type') !== 'optOut') { localStorage.removeItem('intellimize_opt_out_117237908'); } if (localStorage.getItem('intellimize_data_tracking_type') !== 'optOut') { localStorage.setItem('intellimize_data_tracking_type', 'optOut'); }

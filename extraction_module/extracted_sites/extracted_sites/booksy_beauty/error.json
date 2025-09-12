@@ -1,0 +1,8 @@
+{
+  "url": "https://www.booksy.com",
+  "name": "booksy_beauty",
+  "category": "beauty_booking",
+  "error": "403 Client Error: Forbidden for url: https://booksy.com/",
+  "extracted_at": "2025-07-31 20:43:38",
+  "extraction_status": "failed"
+}

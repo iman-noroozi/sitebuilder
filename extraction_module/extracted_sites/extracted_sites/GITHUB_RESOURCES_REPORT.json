@@ -1,0 +1,317 @@
+{
+  "githubExtraction": {
+    "title": "استخراج منابع GitHub برای سایت‌سازی",
+    "completedAt": "2025-07-28T13:00:13.061Z",
+    "totalRepos": 54,
+    "errors": 0,
+    "categories": {}
+  },
+  "topRepositories": [
+    {
+      "name": "grapesjs/grapesjs"
+    },
+    {
+      "name": "unlayer/react-email-editor"
+    },
+    {
+      "name": "BuilderIO/builder"
+    },
+    {
+      "name": "webstudio-is/webstudio"
+    },
+    {
+      "name": "blocks/blocks"
+    },
+    {
+      "name": "tinacms/tinacms"
+    },
+    {
+      "name": "forestryio/forestry.io"
+    },
+    {
+      "name": "netlify/netlify-cms"
+    },
+    {
+      "name": "twbs/bootstrap"
+    },
+    {
+      "name": "tailwindlabs/tailwindcss"
+    },
+    {
+      "name": "mui/material-ui"
+    },
+    {
+      "name": "ant-design/ant-design"
+    },
+    {
+      "name": "chakra-ui/chakra-ui"
+    },
+    {
+      "name": "mantinedev/mantine"
+    },
+    {
+      "name": "foundation/foundation-sites"
+    },
+    {
+      "name": "jgthms/bulma"
+    },
+    {
+      "name": "elementor/elementor"
+    },
+    {
+      "name": "beaver-builder/bb-plugin"
+    },
+    {
+      "name": "siteorigin/siteorigin-panels"
+    },
+    {
+      "name": "Codeinwp/neve"
+    }
+  ],
+  "byLanguage": {
+    "Unknown": [
+      "grapesjs/grapesjs",
+      "unlayer/react-email-editor",
+      "BuilderIO/builder",
+      "webstudio-is/webstudio",
+      "blocks/blocks",
+      "tinacms/tinacms",
+      "forestryio/forestry.io",
+      "netlify/netlify-cms",
+      "twbs/bootstrap",
+      "tailwindlabs/tailwindcss",
+      "mui/material-ui",
+      "ant-design/ant-design",
+      "chakra-ui/chakra-ui",
+      "mantinedev/mantine",
+      "foundation/foundation-sites",
+      "jgthms/bulma",
+      "elementor/elementor",
+      "beaver-builder/bb-plugin",
+      "siteorigin/siteorigin-panels",
+      "Codeinwp/neve",
+      "wpbakery/js_composer",
+      "kingcomposer/kingcomposer",
+      "gatsbyjs/gatsby",
+      "vercel/next.js",
+      "nuxt/nuxt.js",
+      "vuejs/vuepress",
+      "facebook/docusaurus",
+      "gridsome/gridsome",
+      "gohugoio/hugo",
+      "jekyll/jekyll",
+      "react-bootstrap/react-bootstrap",
+      "semantic-org/semantic-ui",
+      "grommet/grommet",
+      "arco-design/arco-design",
+      "semi-design/semi-design",
+      "DouyinFE/semi-design",
+      "primer/css",
+      "carbon-design-system/carbon",
+      "microsoft/fluentui",
+      "salesforce/design-system",
+      "atlassian/design-system",
+      "shopify/polaris",
+      "ColorlibHQ/AdminLTE",
+      "coreui/coreui-free-bootstrap-admin-template",
+      "creativetimofficial/material-dashboard",
+      "wrappixel/materialpro-bootstrap-dashboard",
+      "puikinsh/gentelella",
+      "tabler/tabler",
+      "cruip/open-react-template",
+      "tailwindtoolbox/tailwindcss-templates",
+      "html5up/html5up.github.io",
+      "BlackrockDigital/startbootstrap",
+      "themefisher/navigation-menu",
+      "ColorlibHQ/awesome-landing-page"
+    ]
+  },
+  "byCategory": {
+    "websiteBuilders": [
+      {
+        "name": "grapesjs/grapesjs"
+      },
+      {
+        "name": "unlayer/react-email-editor"
+      },
+      {
+        "name": "BuilderIO/builder"
+      },
+      {
+        "name": "webstudio-is/webstudio"
+      },
+      {
+        "name": "blocks/blocks"
+      },
+      {
+        "name": "tinacms/tinacms"
+      },
+      {
+        "name": "forestryio/forestry.io"
+      },
+      {
+        "name": "netlify/netlify-cms"
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "twbs/bootstrap"
+      },
+      {
+        "name": "tailwindlabs/tailwindcss"
+      },
+      {
+        "name": "mui/material-ui"
+      },
+      {
+        "name": "ant-design/ant-design"
+      },
+      {
+        "name": "chakra-ui/chakra-ui"
+      },
+      {
+        "name": "mantinedev/mantine"
+      },
+      {
+        "name": "foundation/foundation-sites"
+      },
+      {
+        "name": "jgthms/bulma"
+      }
+    ],
+    "pageBuilders": [
+      {
+        "name": "elementor/elementor"
+      },
+      {
+        "name": "beaver-builder/bb-plugin"
+      },
+      {
+        "name": "siteorigin/siteorigin-panels"
+      },
+      {
+        "name": "Codeinwp/neve"
+      },
+      {
+        "name": "wpbakery/js_composer"
+      },
+      {
+        "name": "kingcomposer/kingcomposer"
+      }
+    ],
+    "staticSiteGenerators": [
+      {
+        "name": "gatsbyjs/gatsby"
+      },
+      {
+        "name": "vercel/next.js"
+      },
+      {
+        "name": "nuxt/nuxt.js"
+      },
+      {
+        "name": "vuejs/vuepress"
+      },
+      {
+        "name": "facebook/docusaurus"
+      },
+      {
+        "name": "gridsome/gridsome"
+      },
+      {
+        "name": "gohugoio/hugo"
+      },
+      {
+        "name": "jekyll/jekyll"
+      }
+    ],
+    "componentLibraries": [
+      {
+        "name": "react-bootstrap/react-bootstrap"
+      },
+      {
+        "name": "semantic-org/semantic-ui"
+      },
+      {
+        "name": "grommet/grommet"
+      },
+      {
+        "name": "arco-design/arco-design"
+      },
+      {
+        "name": "semi-design/semi-design"
+      },
+      {
+        "name": "DouyinFE/semi-design"
+      }
+    ],
+    "designSystems": [
+      {
+        "name": "primer/css"
+      },
+      {
+        "name": "carbon-design-system/carbon"
+      },
+      {
+        "name": "microsoft/fluentui"
+      },
+      {
+        "name": "salesforce/design-system"
+      },
+      {
+        "name": "atlassian/design-system"
+      },
+      {
+        "name": "shopify/polaris"
+      }
+    ],
+    "adminTemplates": [
+      {
+        "name": "ColorlibHQ/AdminLTE"
+      },
+      {
+        "name": "coreui/coreui-free-bootstrap-admin-template"
+      },
+      {
+        "name": "creativetimofficial/material-dashboard"
+      },
+      {
+        "name": "wrappixel/materialpro-bootstrap-dashboard"
+      },
+      {
+        "name": "puikinsh/gentelella"
+      },
+      {
+        "name": "tabler/tabler"
+      }
+    ],
+    "landingPageTemplates": [
+      {
+        "name": "cruip/open-react-template"
+      },
+      {
+        "name": "tailwindtoolbox/tailwindcss-templates"
+      },
+      {
+        "name": "html5up/html5up.github.io"
+      },
+      {
+        "name": "BlackrockDigital/startbootstrap"
+      },
+      {
+        "name": "themefisher/navigation-menu"
+      },
+      {
+        "name": "ColorlibHQ/awesome-landing-page"
+      }
+    ]
+  },
+  "recommendations": [
+    "🎯 GrapesJS برای Visual Builder",
+    "🚀 Next.js برای React SSG",
+    "🎨 Material-UI برای کامپوننت‌های زیبا",
+    "⚡ TailwindCSS برای طراحی سریع",
+    "🏗️ Builder.io برای CMS بصری",
+    "📱 AdminLTE برای Dashboard حرفه‌ای"
+  ]
+}

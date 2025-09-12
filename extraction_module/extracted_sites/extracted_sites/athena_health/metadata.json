@@ -1,0 +1,53 @@
+{
+  "basic_info": {
+    "url": "https://www.athenahealth.com",
+    "name": "athena_health",
+    "category": "healthcare_management",
+    "title": "Cloud-Based Healthcare Products & Services | athenahealth",
+    "extracted_at": "2025-07-31 20:44:02",
+    "size": 366188
+  },
+  "business_features": {
+    "business_type": "retail",
+    "key_features": [
+      "Booking System",
+      "Payment Gateway",
+      "CRM Features",
+      "Accounting System"
+    ],
+    "business_services": [
+      "رزرو آنلاین",
+      "درگاه پرداخت",
+      "مدیریت مشتری",
+      "سیستم حسابداری"
+    ],
+    "target_audience": "B2B",
+    "business_size": "large",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "Join 150K providers on the largest connected network in healthcare. See how we’re making connections that improve patient outcomes & clinician experiences.",
+    "meta_keywords": "",
+    "og_title": "",
+    "og_description": "",
+    "h1_count": 1,
+    "h2_count": 15,
+    "img_alt_missing": 66
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 15,
+    "js_files": 14,
+    "external_links": 189,
+    "forms": 0,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 13,
+    "buttons": 0,
+    "images": 99,
+    "videos": 16,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

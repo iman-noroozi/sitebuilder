@@ -1,0 +1,51 @@
+{
+  "basic_info": {
+    "url": "https://themeforest.net",
+    "name": "themeforest_templates",
+    "category": "business_templates",
+    "title": "WordPress Themes & Website Templates from ThemeForest",
+    "extracted_at": "2025-07-31 20:41:26",
+    "size": 466198
+  },
+  "business_features": {
+    "business_type": "restaurant",
+    "key_features": [
+      "E-commerce",
+      "Booking System",
+      "Inventory Management"
+    ],
+    "business_services": [
+      "فروش آنلاین",
+      "رزرو آنلاین",
+      "مدیریت موجودی"
+    ],
+    "target_audience": "B2B",
+    "business_size": "micro",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "Discover 1000s of premium WordPress themes & website templates, including multipurpose and responsive Bootstrap templates, email templates & HTML templates.",
+    "meta_keywords": "",
+    "og_title": "WordPress Themes & Website Templates from ThemeForest",
+    "og_description": "Discover 1000s of premium WordPress themes & website templates, including multipurpose and responsive Bootstrap templates, email templates & HTML templates.",
+    "h1_count": 1,
+    "h2_count": 19,
+    "img_alt_missing": 0
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 1,
+    "js_files": 6,
+    "external_links": 217,
+    "forms": 21,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 36,
+    "buttons": 20,
+    "images": 117,
+    "videos": 2,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

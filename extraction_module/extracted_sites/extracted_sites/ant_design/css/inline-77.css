@@ -1,0 +1,1 @@
+@keyframes antFloatButtonMoveRightOut{0%{transform:translate3d(0, 0, 0);transform-origin:0 0;opacity:1;}100%{transform:translate3d(calc(var(--ant-control-height-lg) * -1), 0, 0);transform-origin:0 0;opacity:0;}}

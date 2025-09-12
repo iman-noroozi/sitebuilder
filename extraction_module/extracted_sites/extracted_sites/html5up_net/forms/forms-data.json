@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-07-28T13:09:47.878Z",
+  "forms": [
+    {
+      "action": "https://html5up.net/#",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"#\" class=\"signup\" id=\"subscribe\"><input type=\"text\" name=\"email\" id=\"email\" placeholder=\"Subscribe for email updates!\" value=\"\"><a href=\"#\" class=\"button\">Subscribe</a></form>",
+      "fields": [
+        {
+          "name": "email",
+          "type": "text",
+          "value": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://html5up.net/#",
+      "method": "post",
+      "html": "<form method=\"post\" action=\"#\" class=\"signup\"><input type=\"text\" name=\"email\" id=\"email\" placeholder=\"Subscribe for email updates!\" value=\"\"><a href=\"#\" class=\"button\">Subscribe</a></form>",
+      "fields": [
+        {
+          "name": "email",
+          "type": "text",
+          "value": "",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

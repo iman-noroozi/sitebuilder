@@ -1,0 +1,27 @@
+{
+  "extractor": "DeepWebsiteCloner v1.0",
+  "extractedAt": "2025-07-28T13:07:44.937Z",
+  "baseUrl": "https://mui.com/",
+  "domain": "mui.com",
+  "config": {
+    "extractCSS": true,
+    "extractJS": true,
+    "extractImages": true,
+    "extractFonts": true,
+    "extractVideos": false,
+    "extractDocuments": true,
+    "extractForms": true,
+    "extractMetadata": true,
+    "followInternalLinks": false,
+    "preserveDirectory": true,
+    "generateSitemap": true,
+    "outputDir": "./extracted_sites",
+    "maxDepth": 1,
+    "delay": 1000
+  },
+  "statistics": {
+    "totalPages": 1,
+    "totalAssets": 108,
+    "maxDepth": 1
+  }
+}

@@ -1,0 +1,15 @@
+#consent-container { position: fixed; left: 200px; right: 200px; bottom: 20px; z-index: 10000; }
+      #consent-container > div { display: flex;  }
+      #consent-container > div > div {
+        margin: auto;
+        padding: 10px 50px 10px 20px;
+        background-color: #262626;
+        color: white; border-radius: 0px;
+      }
+      @media screen and (max-width:991px) {
+        #consent-container { left: 12px; right: 12px; bottom: 50px; }
+        [data-consent-manager-dialog] [role="dialog"] {
+          max-height: calc(100vh - 86px);
+          margin-top: 70px;
+        }
+      }

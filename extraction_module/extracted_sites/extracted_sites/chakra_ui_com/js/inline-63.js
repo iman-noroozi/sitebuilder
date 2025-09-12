@@ -1,0 +1,1 @@
+self.__next_f.push([1,"3a:\"$Sreact.suspense\"\n3b:I[72233,[],\"AsyncMetadata\"]\n"])

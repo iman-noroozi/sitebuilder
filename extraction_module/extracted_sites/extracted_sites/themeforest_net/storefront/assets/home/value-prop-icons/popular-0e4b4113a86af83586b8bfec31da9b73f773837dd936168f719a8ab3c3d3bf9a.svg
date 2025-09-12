@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<svg fill="none" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 48 48"  xmlns="http://www.w3.org/2000/svg">
+  <title>Popular</title>
+  <g xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M24 0C37.2514 0 48 10.7486 48 24C48 37.2514 37.2514 48 24 48C10.7486 48 0 37.2514 0 24C0 10.7486 10.7486 0 24 0Z"
+      fill="#FFD6B0"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M23.5 36.1562C27.6939 36.1562 31.0938 32.7564 31.0938 28.5625C31.0938 24.3686 27.6939 20.9688 23.5 20.9688C19.3061 20.9688 15.9062 24.3686 15.9062 28.5625C15.9062 32.7564 19.3061 36.1562 23.5 36.1562Z"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M16.5824 25.4282L10.8438 15.9062L14.2188 10.8438L20.4985 21.5864"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M21.8125 25.1875H22.6562C23.1222 25.1875 23.5 25.5653 23.5 26.0312V31.9375"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M21.8125 31.9375H25.1875"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M30.4175 25.4282L36.1561 15.9062L32.7811 10.8438L26.5014 21.5864"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M32.7812 10.8438H14.2188"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M23.5 41.5899V39.4299"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M32.68 37.8099L31.06 36.1899"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M14.32 37.8099L15.94 36.1899"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M10.54 29.71H12.7"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+</svg>

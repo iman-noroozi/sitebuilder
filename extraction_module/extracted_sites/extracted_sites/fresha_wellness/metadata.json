@@ -1,0 +1,51 @@
+{
+  "basic_info": {
+    "url": "https://www.fresha.com",
+    "name": "fresha_wellness",
+    "category": "wellness_booking",
+    "title": "Fresha - Instantly book salons and spas nearby",
+    "extracted_at": "2025-07-31 20:43:41",
+    "size": 708201
+  },
+  "business_features": {
+    "business_type": "restaurant",
+    "key_features": [
+      "E-commerce",
+      "Booking System",
+      "Payment Gateway"
+    ],
+    "business_services": [
+      "فروش آنلاین",
+      "رزرو آنلاین",
+      "درگاه پرداخت"
+    ],
+    "target_audience": "B2B",
+    "business_size": "small",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "Find the best salons and spa in your area with Fresha salon booking software. Book now!",
+    "meta_keywords": "book visit, book appointment, book haircut, book manicure, book in salon, salon system, spa software, beauty software, salon app, scheduling app, hair salon software, best salon software, Salon system, top salon software, Spa system, Appointment Scheduling, salon program, booking software, system, appointment system, scheduling software, online booking, salon program, salon management software, salon programs, scheduling applications, appointment schedule, appointment manager, booking app, nail software, spa, hair, nail salon, beauty, yoga, Shedul, Fresha, Fresha partners, mindbody, booksy, salon iris, best, free, pos, crm, point of sale, calendar system, calendar, reminders, salon supplies, salon management, bookings app, appointment app, salon software, best salons, free booking system, salon, appointment, uk, us, united states, united kingdom, australia, new zealand, south africa, ireland",
+    "og_title": "",
+    "og_description": "",
+    "h1_count": 1,
+    "h2_count": 5,
+    "img_alt_missing": 5
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 9,
+    "js_files": 27,
+    "external_links": 910,
+    "forms": 1,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 151,
+    "buttons": 2,
+    "images": 35,
+    "videos": 2,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

@@ -99,10 +99,10 @@ jobs:
         run: |
           python -m pytest tests/test_security.py -v
 
-      - name: 📊 آپلود گزارش امنیتی
-        uses: actions/upload-artifact@v4
-        with:
-          name: security-reports
+        - name: 📊 آپلود گزارش امنیتی
+          uses: actions/upload-artifact@v4
+          with:
+            name: security-reports
           path: |
             bandit-report.json
             safety-report.json

@@ -1,0 +1,144 @@
+{
+  "timestamp": "2025-07-28T13:04:25.526Z",
+  "forms": [
+    {
+      "action": "https://elementor.com/",
+      "method": "get",
+      "html": "<form><fieldset><legend class=\"visuallyhidden\">Consent Selection</legend><div id=\"CybotCookiebotDialogBodyFieldsetInnerContainer\"><div class=\"CybotCookiebotDialogBodyLevelButtonWrapper\"><label class=\"CybotCookiebotDialogBodyLevelButtonLabel\" for=\"CybotCookiebotDialogBodyLevelButtonNecessary\"><strong class=\"CybotCookiebotDialogBodyLevelButtonDescription\">Necessary </strong></label><div class=\"CybotCookiebotDialogBodyLevelButtonSliderWrapper CybotCookiebotDialogBodyLevelButtonSliderWrapperDisabled\"><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonNecessary\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelButtonDisabled\" disabled=\"disabled\" checked=\"checked\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></div></div><div class=\"CybotCookiebotDialogBodyLevelButtonWrapper\"><label class=\"CybotCookiebotDialogBodyLevelButtonLabel\" for=\"CybotCookiebotDialogBodyLevelButtonPreferences\"><strong class=\"CybotCookiebotDialogBodyLevelButtonDescription\">Preferences </strong></label><div class=\"CybotCookiebotDialogBodyLevelButtonSliderWrapper\"><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonPreferences\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelConsentCheckbox\" data-target=\"CybotCookiebotDialogBodyLevelButtonPreferencesInline\" checked=\"checked\" tabindex=\"0\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></div></div><div class=\"CybotCookiebotDialogBodyLevelButtonWrapper\"><label class=\"CybotCookiebotDialogBodyLevelButtonLabel\" for=\"CybotCookiebotDialogBodyLevelButtonStatistics\"><strong class=\"CybotCookiebotDialogBodyLevelButtonDescription\">Statistics </strong></label><div class=\"CybotCookiebotDialogBodyLevelButtonSliderWrapper\"><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonStatistics\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelConsentCheckbox\" data-target=\"CybotCookiebotDialogBodyLevelButtonStatisticsInline\" checked=\"checked\" tabindex=\"0\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></div></div><div class=\"CybotCookiebotDialogBodyLevelButtonWrapper\"><label class=\"CybotCookiebotDialogBodyLevelButtonLabel\" for=\"CybotCookiebotDialogBodyLevelButtonMarketing\"><strong class=\"CybotCookiebotDialogBodyLevelButtonDescription\">Marketing </strong></label><div class=\"CybotCookiebotDialogBodyLevelButtonSliderWrapper\"><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonMarketing\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelConsentCheckbox\" data-target=\"CybotCookiebotDialogBodyLevelButtonMarketingInline\" checked=\"checked\" tabindex=\"0\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></div></div></div></fieldset></form>",
+      "fields": [
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        },
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://elementor.com/",
+      "method": "get",
+      "html": "<form><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonNecessaryInline\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelButtonDisabled\" disabled=\"disabled\" checked=\"checked\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></form>",
+      "fields": [
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://elementor.com/",
+      "method": "get",
+      "html": "<form><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonPreferencesInline\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelConsentCheckbox\" data-target=\"CybotCookiebotDialogBodyLevelButtonPreferences\" checked=\"checked\" tabindex=\"0\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></form>",
+      "fields": [
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://elementor.com/",
+      "method": "get",
+      "html": "<form><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonStatisticsInline\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelConsentCheckbox\" data-target=\"CybotCookiebotDialogBodyLevelButtonStatistics\" checked=\"checked\" tabindex=\"0\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></form>",
+      "fields": [
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://elementor.com/",
+      "method": "get",
+      "html": "<form><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyLevelButtonMarketingInline\" class=\"CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelConsentCheckbox\" data-target=\"CybotCookiebotDialogBodyLevelButtonMarketing\" checked=\"checked\" tabindex=\"0\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></form>",
+      "fields": [
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://elementor.com/",
+      "method": "get",
+      "html": "<form class=\"CybotCookiebotDialogBodyLevelButtonSliderWrapper\"><input type=\"checkbox\" id=\"CybotCookiebotDialogBodyContentCheckboxPersonalInformation\" class=\"CybotCookiebotDialogBodyLevelButton\"> <span class=\"CybotCookiebotDialogBodyLevelButtonSlider\"></span></form>",
+      "fields": [
+        {
+          "name": "",
+          "type": "checkbox",
+          "value": "on",
+          "required": false
+        }
+      ]
+    },
+    {
+      "action": "https://elementor.com/",
+      "method": "post",
+      "html": "<form class=\"elementor-form\" method=\"post\" id=\"elementor_newsletter_subscribe_newsletter\" name=\"Newsletter roll\">\n\t\t\t<input type=\"hidden\" name=\"post_id\" value=\"16853\">\n\t\t\t<input type=\"hidden\" name=\"form_id\" value=\"c27277f\">\n\t\t\t<input type=\"hidden\" name=\"referer_title\" value=\"Website Builder - Create a Website Now | Elementor\">\n\n\t\t\t\t\t\t\t<input type=\"hidden\" name=\"queried_id\" value=\"38\">\n\t\t\t\n\t\t\t<div class=\"elementor-form-fields-wrapper elementor-labels-\">\n\t\t\t\t\t\t\t\t<div class=\"elementor-field-type-recaptcha_v3 elementor-field-group elementor-column elementor-field-group-field_9acfe5c elementor-col-100 recaptcha_v3-bottomright\">\n\t\t\t\t\t<div class=\"elementor-field\" id=\"form-field-field_9acfe5c\"><div class=\"elementor-g-recaptcha\" data-sitekey=\"6LftcMUqAAAAAIAZcOOazHo9UUWQbmsGyg5ZFA4Z\" data-type=\"v3\" data-action=\"Form\" data-badge=\"bottomright\" data-size=\"invisible\"><div class=\"grecaptcha-badge\" data-style=\"bottomright\" style=\"width: 256px; height: 60px; position: fixed; visibility: hidden; display: block; transition: right 0.3s; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;\"><div class=\"grecaptcha-logo\"><iframe title=\"reCAPTCHA\" width=\"256\" height=\"60\" role=\"presentation\" name=\"a-3nl5nzv239d3\" frameborder=\"0\" scrolling=\"no\" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation\" src=\"https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LftcMUqAAAAAIAZcOOazHo9UUWQbmsGyg5ZFA4Z&amp;co=aHR0cHM6Ly9lbGVtZW50b3IuY29tOjQ0Mw..&amp;hl=en&amp;type=v3&amp;v=ngcIAHyEnHQZZIKkyKneDTW3&amp;size=invisible&amp;badge=bottomright&amp;sa=Form&amp;anchor-ms=20000&amp;execute-ms=15000&amp;cb=h350rgamnxdv\"></iframe></div><div class=\"grecaptcha-error\"></div><textarea id=\"g-recaptcha-response\" name=\"g-recaptcha-response\" class=\"g-recaptcha-response\" style=\"width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;\"></textarea></div><iframe style=\"display: none;\"></iframe></div></div>\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-60 elementor-sm-70 elementor-field-required\">\n\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"form-field-email\" class=\"elementor-field-label elementor-screen-only\">\n\t\t\t\t\t\t\t\tEmail\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input size=\"1\" type=\"email\" name=\"form_fields[email]\" id=\"form-field-email\" class=\"elementor-field elementor-size-sm  elementor-field-textual\" placeholder=\"Whats your email\" required=\"required\">\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"elementor-field-group elementor-column elementor-field-type-submit elementor-col-40 e-form__buttons elementor-sm-30\">\n\t\t\t\t\t<button class=\"elementor-button elementor-size-sm\" type=\"submit\">\n\t\t\t\t\t\t<span class=\"elementor-button-content-wrapper\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"elementor-button-icon\">\n\t\t\t\t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\"><g id=\"one-finger-tap\"><g id=\"one-finger-tap_2\"><path id=\"Vector 107\" d=\"M20.7454 23.1429V18.2859C20.7454 15.8498 18.7706 13.875 16.3346 13.875H12.5035V6.71697C12.5035 5.5788 11.5808 4.65616 10.4427 4.65616C9.30449 4.65616 8.38184 5.5788 8.38184 6.71697L8.38183 16.1001L7.6946 16.2294C5.60504 16.6227 4.61065 19.0353 5.81624 20.7866L6.09343 21.1893L7.43652 23.1429\" stroke=\"black\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path id=\"Ellipse 302\" d=\"M4.45284 8.45548C4.34762 8.00315 4.29199 7.53179 4.29199 7.04742C4.29199 3.62863 7.06348 0.857147 10.4823 0.857147C13.9011 0.857147 16.6725 3.62863 16.6725 7.04742C16.6725 7.53179 16.6169 8.00315 16.5117 8.45548\" stroke=\"black\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></g></g></svg>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"elementor-button-text\">Subscribe</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>",
+      "fields": [
+        {
+          "name": "post_id",
+          "type": "hidden",
+          "value": "16853",
+          "required": false
+        },
+        {
+          "name": "form_id",
+          "type": "hidden",
+          "value": "c27277f",
+          "required": false
+        },
+        {
+          "name": "referer_title",
+          "type": "hidden",
+          "value": "Website Builder - Create a Website Now | Elementor",
+          "required": false
+        },
+        {
+          "name": "queried_id",
+          "type": "hidden",
+          "value": "38",
+          "required": false
+        },
+        {
+          "name": "g-recaptcha-response",
+          "type": "textarea",
+          "value": "",
+          "required": false
+        },
+        {
+          "name": "form_fields[email]",
+          "type": "email",
+          "value": "",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

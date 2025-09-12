@@ -1,0 +1,53 @@
+{
+  "basic_info": {
+    "url": "https://shopify.com",
+    "name": "shopify_ecommerce",
+    "category": "ecommerce_platform",
+    "title": "Shopify",
+    "extracted_at": "2025-07-31 20:42:25",
+    "size": 466469
+  },
+  "business_features": {
+    "business_type": "retail",
+    "key_features": [
+      "E-commerce",
+      "Payment Gateway",
+      "Map Integration",
+      "Inventory Management"
+    ],
+    "business_services": [
+      "فروش آنلاین",
+      "درگاه پرداخت",
+      "نقشه و موقعیت",
+      "مدیریت موجودی"
+    ],
+    "target_audience": "B2B",
+    "business_size": "large",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "Try Shopify free and start a business or grow an existing one. Get more than ecommerce software with tools to manage every part of your business.",
+    "meta_keywords": "",
+    "og_title": "Shopify",
+    "og_description": "Try Shopify free and start a business or grow an existing one. Get more than ecommerce software with tools to manage every part of your business.",
+    "h1_count": 1,
+    "h2_count": 10,
+    "img_alt_missing": 33
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 2,
+    "js_files": 0,
+    "external_links": 54,
+    "forms": 0,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 26,
+    "buttons": 0,
+    "images": 66,
+    "videos": 1,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

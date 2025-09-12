@@ -1,0 +1,23 @@
+
+      .native-js {
+        background: linear-gradient(-30deg, #ffffffE5, #ffffffE5 45%, #ffffff 45%) #fff;
+      }
+
+      .native-details {
+        color: #000000 !important;
+      }
+
+      .native-details:hover {
+        color: undefined !important;
+      }
+
+      .native-cta {
+        color: #ffffff;
+        background-color: #FC3165;
+      }
+
+      .native-cta:hover {
+        color: undefined;
+        background-color: undefined;
+      }
+    

@@ -1,0 +1,1 @@
+{"@context":"https://schema.org","@type":"Organization","name":"MUI","url":"https://mui.com/","logo":"https://mui.com/static/logo.png","sameAs":["https://x.com/MUI_hq","https://github.com/mui/","https://opencollective.com/mui-org"]}

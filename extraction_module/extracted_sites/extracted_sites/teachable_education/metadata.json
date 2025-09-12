@@ -1,0 +1,49 @@
+{
+  "basic_info": {
+    "url": "https://www.teachable.com",
+    "name": "teachable_education",
+    "category": "online_education",
+    "title": "Create and Sell Anything with Teachable",
+    "extracted_at": "2025-07-31 20:44:11",
+    "size": 97354
+  },
+  "business_features": {
+    "business_type": "retail",
+    "key_features": [
+      "Booking System",
+      "Payment Gateway"
+    ],
+    "business_services": [
+      "رزرو آنلاین",
+      "درگاه پرداخت"
+    ],
+    "target_audience": "B2B",
+    "business_size": "large",
+    "industry_vertical": "technology"
+  },
+  "seo_analysis": {
+    "meta_description": "Create and sell the most learning products with the best student experience in the business. Increase your income selling courses, digital products, and more!",
+    "meta_keywords": "",
+    "og_title": "Create and Sell Anything with Teachable",
+    "og_description": "Create and sell the most learning products with the best student experience in the business. Increase your income selling courses, digital products, and more!",
+    "h1_count": 1,
+    "h2_count": 4,
+    "img_alt_missing": 26
+  },
+  "technical_analysis": {
+    "has_responsive": true,
+    "css_files": 1,
+    "js_files": 10,
+    "external_links": 17,
+    "forms": 0,
+    "has_ssl": true
+  },
+  "ui_ux_analysis": {
+    "navigation_menus": 19,
+    "buttons": 0,
+    "images": 79,
+    "videos": 2,
+    "contact_forms": 0
+  },
+  "extraction_status": "success"
+}

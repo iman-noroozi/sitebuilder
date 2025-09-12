@@ -1,0 +1,1 @@
+self.__next_f.push([1,"ference-manager\",\"prompt\":\"Cookie settings\",\"title\":\"Cookie Preferences\",\"copy\":\"$4c\",\"saveText\":\"Save preferences\",\"categories\":\"$57\"}\n"])

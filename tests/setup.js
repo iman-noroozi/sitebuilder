@@ -92,7 +92,7 @@ jest.mock('cheerio', () => ({
 beforeEach(() => {
     // پاک کردن تمام mock ها
     jest.clearAllMocks();
-    
+
     // تنظیم console
     console.log('🧪 شروع تست جدید...');
 });
@@ -123,7 +123,7 @@ global.createMockData = {
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString()
     }),
-    
+
     template: () => ({
         id: 'test-template-1',
         name: 'قالب تست',
@@ -132,7 +132,7 @@ global.createMockData = {
         css: 'body { margin: 0; }',
         js: 'console.log("test");'
     }),
-    
+
     user: () => ({
         id: 'test-user-1',
         username: 'testuser',
@@ -151,7 +151,7 @@ global.createTempFile = (content = 'test content') => {
     const path = require('path');
     const tempDir = require('os').tmpdir();
     const tempFile = path.join(tempDir, `test-${Date.now()}.txt`);
-    
+
     fs.writeFileSync(tempFile, content);
     return tempFile;
 };
