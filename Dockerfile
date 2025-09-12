@@ -70,25 +70,25 @@ RUN python manage.py collectstatic --noinput || echo "Static files collection sk
 
 # ایجاد فایل‌های پیکربندی
 RUN echo '#!/bin/bash\n\
-set -e\n\
-\n\
-# Wait for database\n\
-echo "Waiting for database..."\n\
-while ! pg_isready -h $DB_HOST -p $DB_PORT -U $DB_USER; do\n\
-  sleep 1\n\
-done\n\
-\n\
-# Run migrations\n\
-echo "Running migrations..."\n\
-python manage.py migrate --noinput\n\
-\n\
-# Create superuser if not exists\n\
-echo "Creating superuser..."\n\
-python manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.filter(username=os.environ.get(\"DJANGO_SUPERUSER_USERNAME\", \"admin\")).exists() or User.objects.create_superuser(os.environ.get(\"DJANGO_SUPERUSER_USERNAME\", \"admin\"), os.environ.get(\"DJANGO_SUPERUSER_EMAIL\", \"admin@example.com\"), os.environ.get(\"DJANGO_SUPERUSER_PASSWORD\", \"admin123\"))"\n\
-\n\
-# Start services\n\
-echo "Starting services..."\n\
-exec "$@"' > /app/entrypoint.sh \
+    set -e\n\
+    \n\
+    # Wait for database\n\
+    echo "Waiting for database..."\n\
+    while ! pg_isready -h $DB_HOST -p $DB_PORT -U $DB_USER; do\n\
+    sleep 1\n\
+    done\n\
+    \n\
+    # Run migrations\n\
+    echo "Running migrations..."\n\
+    python manage.py migrate --noinput\n\
+    \n\
+    # Create superuser if not exists\n\
+    echo "Creating superuser..."\n\
+    python manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.filter(username=os.environ.get(\"DJANGO_SUPERUSER_USERNAME\", \"admin\")).exists() or User.objects.create_superuser(os.environ.get(\"DJANGO_SUPERUSER_USERNAME\", \"admin\"), os.environ.get(\"DJANGO_SUPERUSER_EMAIL\", \"admin@example.com\"), os.environ.get(\"DJANGO_SUPERUSER_PASSWORD\", \"admin123\"))"\n\
+    \n\
+    # Start services\n\
+    echo "Starting services..."\n\
+    exec "$@"' > /app/entrypoint.sh \
     && chmod +x /app/entrypoint.sh
 
 # پورت‌ها

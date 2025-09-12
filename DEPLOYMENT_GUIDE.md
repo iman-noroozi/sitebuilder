@@ -262,7 +262,7 @@ RUN apt-get autoremove -y && apt-get clean
    ```bash
    # Check database status
    docker-compose logs db
-   
+
    # Restart database
    docker-compose restart db
    ```
@@ -271,7 +271,7 @@ RUN apt-get autoremove -y && apt-get clean
    ```bash
    # Check Redis status
    docker-compose logs redis
-   
+
    # Test Redis connection
    docker-compose exec redis redis-cli ping
    ```
@@ -286,7 +286,7 @@ RUN apt-get autoremove -y && apt-get clean
    ```bash
    # Check memory usage
    docker stats
-   
+
    # Optimize worker processes
    export GUNICORN_WORKERS=2
    ```
