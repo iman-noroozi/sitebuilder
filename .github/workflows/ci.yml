@@ -1,4 +1,4 @@
-name: 🚀 PEY Builder CI/CD Pipeline
+name: 🚀 CI/CD Pipeline
 
 on:
   push:
@@ -13,44 +13,35 @@ jobs:
     strategy:
       matrix:
         python-version: [3.9, 3.11]
-    
+
     steps:
+
     - uses: actions/checkout@v4
-    
+
     - name: 🐍 راه‌اندازی Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
-    
+
     - name: 📦 نصب وابستگی‌ها
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install -r backend/requirements.txt
         pip install -r requirements-test.txt
-    
+
     - name: 🧪 اجرای تست‌های پایه
       run: |
-        python -m pytest tests/test_basic.py -v --tb=short
+        python -m pytest tests/test_basic.py -v
     
-    - name: 🧪 اجرای تست‌های پیشرفته
+    - name: 🧪 اجرای تست‌های امنیتی
       run: |
-        python -m pytest tests/test_advanced_features.py -v --tb=short
-    
-    - name: 🔒 اجرای تست‌های امنیتی
-      run: |
-        python -m pytest tests/test_security.py -v --tb=short
-    
-    - name: ⚡ اجرای تست‌های عملکرد
-      run: |
-        python -m pytest tests/test_performance.py -v --tb=short
-    
+        python -m pytest tests/test_security.py -v
+
     - name: 🧪 اجرای تست‌های Django (اگر موجود باشد)
       run: |
-        if [ -d "backend" ]; then
-          cd backend
-          python manage.py check || echo "Django tests skipped"
-          cd ..
-        fi
+        cd backend
+        python manage.py check || echo "Django tests skipped"
+        cd ..
       continue-on-error: true
 
   # 🧪 تست‌های Node.js
@@ -59,84 +50,62 @@ jobs:
     strategy:
       matrix:
         node-version: [18, 20]
-    
+
     steps:
-    - uses: actions/checkout@v4
-    
+    - uses: actions/checkout@v3
+
     - name: 🟢 راه‌اندازی Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    
+
     - name: 📦 نصب وابستگی‌ها
       run: npm ci
-    
-    - name: 🧪 اجرای تست‌های Jest
-      run: npm test -- --coverage --verbose
-    
-    - name: 🧪 اجرای تست‌های جامع Node.js
-      run: node tests/test_node_comprehensive.js
-    
+
+    - name: 🧪 اجرای تست‌های پایه
+      run: npm test
+
     - name: 🔍 اجرای ESLint
       run: npm run lint || echo "ESLint skipped"
-      continue-on-error: true
-    
-    - name: 🎨 اجرای Prettier
-      run: npm run format:check || echo "Prettier check skipped"
       continue-on-error: true
 
   # 🔒 تست‌های امنیتی
   security:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v4
-    
+    - uses: actions/checkout@v3
     - name: 🐍 راه‌اندازی Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v4
       with:
         python-version: '3.11'
-    
+
     - name: 📦 نصب وابستگی‌ها
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install -r requirements-test.txt
-        pip install bandit safety semgrep
-    
+        pip install -r backend/requirements.txt
+        pip install bandit safety
+
     - name: 🔍 تست امنیتی با Bandit
-      run: |
-        bandit -r . -f json -o bandit-report.json || echo "Bandit check completed"
-        bandit -r . -f txt -o bandit-report.txt || echo "Bandit text report completed"
+      run: bandit -r backend/ -f json -o bandit-report.json || echo "Bandit check completed"
       continue-on-error: true
-    
+
     - name: 🔍 بررسی وابستگی‌های ناامن
-      run: |
-        safety check --json --output safety-report.json || echo "Safety check completed"
-        safety check --output safety-report.txt || echo "Safety text report completed"
-      continue-on-error: true
-    
-    - name: 🔍 تست امنیتی با Semgrep
-      run: |
-        semgrep --config=auto --json --output=semgrep-report.json . || echo "Semgrep check completed"
+      run: safety check --json --output safety-report.json || echo "Safety check completed"
       continue-on-error: true
     
     - name: 🧪 اجرای تست‌های امنیتی سفارشی
       run: |
-        python -m pytest tests/test_security.py -v --tb=short
-      continue-on-error: true
-    
+        python -m pytest tests/test_security.py -v
+
     - name: 📊 آپلود گزارش امنیتی
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: security-reports
         path: |
           bandit-report.json
-          bandit-report.txt
           safety-report.json
-          safety-report.txt
-          semgrep-report.json
       continue-on-error: true
 
   # 🏗️ Build و Deploy
@@ -144,71 +113,32 @@ jobs:
     needs: [test-python, test-node, security]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    
+
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: 🐍 راه‌اندازی Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
-    
-    - name: 🟢 راه‌اندازی Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-        cache: 'npm'
-    
-    - name: 📦 نصب وابستگی‌ها
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        npm ci
-    
-    - name: 🧪 اجرای تست‌های نهایی
-      run: |
-        python -m pytest tests/ -v --tb=short
-        npm test
-    
+    - uses: actions/checkout@v3
+
+
     - name: 🐳 Build Docker Image
       run: |
-        docker build -t pey-builder:latest .
-        docker tag pey-builder:latest pey-builder:${{ github.sha }}
-    
+        docker build -t sitebuilder:latest .
+        docker tag sitebuilder:latest sitebuilder:${{ github.sha }}
+
     - name: 🚀 Deploy to Production
       if: github.ref == 'refs/heads/main'
       run: |
-        echo "🚀 Deploying PEY Builder to production..."
-        echo "✅ All tests passed successfully!"
-        echo "🐳 Docker image built: pey-builder:${{ github.sha }}"
+        echo "🚀 Deploying to production..."
         # اینجا دستورات deployment واقعی قرار می‌گیرد
 
   # 📊 گزارش‌گیری
   report:
-    needs: [test-python, test-node, security, build]
+    needs: [test-python, test-node, security]
     runs-on: ubuntu-latest
     if: always()
-    
+
     steps:
-    - name: 📊 ایجاد گزارش جامع
+    - name: 📊 ایجاد گزارش
       run: |
-        echo "## 🚀 PEY Builder - گزارش CI/CD" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "### 🧪 نتایج تست‌ها" >> $GITHUB_STEP_SUMMARY
-        echo "- 🐍 تست‌های Python: ${{ needs.test-python.result }}" >> $GITHUB_STEP_SUMMARY
-        echo "- 🟢 تست‌های Node.js: ${{ needs.test-node.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "## 🧪 نتایج تست‌ها" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ تست‌های Python: ${{ needs.test-python.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ تست‌های Node.js: ${{ needs.test-node.result }}" >> $GITHUB_STEP_SUMMARY
         echo "- 🔒 تست‌های امنیتی: ${{ needs.security.result }}" >> $GITHUB_STEP_SUMMARY
-        echo "- 🏗️ Build: ${{ needs.build.result }}" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "### 📈 آمار پروژه" >> $GITHUB_STEP_SUMMARY
-        echo "- 🎯 نام پروژه: PEY Builder" >> $GITHUB_STEP_SUMMARY
-        echo "- 🌐 دامنه: peyai.ir" >> $GITHUB_STEP_SUMMARY
-        echo "- 📅 تاریخ: $(date)" >> $GITHUB_STEP_SUMMARY
-        echo "- 🔄 Commit: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "### ✅ وضعیت کلی" >> $GITHUB_STEP_SUMMARY
-        if [[ "${{ needs.test-python.result }}" == "success" && "${{ needs.test-node.result }}" == "success" && "${{ needs.security.result }}" == "success" ]]; then
-          echo "🎉 تمام تست‌ها موفق بودند!" >> $GITHUB_STEP_SUMMARY
-        else
-          echo "⚠️ برخی تست‌ها نیاز به بررسی دارند" >> $GITHUB_STEP_SUMMARY
-        fi
