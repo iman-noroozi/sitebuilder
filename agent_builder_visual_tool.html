@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧬 Agent Builder Visual Tool - پیسان وب</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/konva@9.2.0/konva.min.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .node-card {
+            transition: all 0.3s ease;
+            cursor: grab;
+            user-select: none;
+        }
+        .node-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .node-card:active {
+            cursor: grabbing;
+        }
+        .workflow-canvas {
+            background: 
+                radial-gradient(circle at 20px 20px, #e5e7eb 1px, transparent 1px),
+                radial-gradient(circle at 40px 40px, #e5e7eb 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .connection-line {
+            stroke: #3b82f6;
+            stroke-width: 3;
+            fill: none;
+            marker-end: url(#arrowhead);
+        }
+        .node-input {
+            background: #10b981;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+        }
+        .node-output {
+            background: #ef4444;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="floating">
+                        <i class="fas fa-robot text-3xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold">🧬 Agent Builder Visual Tool</h1>
+                        <p class="text-blue-100">ساخت AI Agent های هوشمند بدون کدنویسی</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <button id="saveAgent" class="glass-effect hover:bg-opacity-30 px-4 py-2 rounded-lg transition-all">
+                        <i class="fas fa-save"></i>
+                        ذخیره Agent
+                    </button>
+                    <button id="runAgent" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg transition-all">
+                        <i class="fas fa-play"></i>
+                        اجرا
+                    </button>
+                    <button id="testAgent" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg transition-all">
+                        <i class="fas fa-vial"></i>
+                        تست
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex h-screen pt-16">
+        <!-- Sidebar - Node Library -->
+        <div class="w-80 bg-white shadow-lg overflow-y-auto">
+            <div class="p-4 border-b">
+                <h2 class="text-lg font-bold text-gray-800">
+                    <i class="fas fa-puzzle-piece text-blue-500"></i>
+                    کتابخانه Node ها
+                </h2>
+            </div>
+            
+            <!-- Node Categories -->
+            <div class="p-4">
+                <!-- Input Nodes -->
+                <div class="mb-6">
+                    <h3 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                        <i class="fas fa-sign-in-alt text-green-500 ml-2"></i>
+                        ورودی (Input)
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="node-card bg-green-50 border border-green-200 rounded-lg p-3" draggable="true" data-node-type="text-input">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center ml-3">
+                                    <i class="fas fa-keyboard text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm">ورودی متن</h4>
+                                    <p class="text-xs text-gray-600">دریافت متن از کاربر</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="node-card bg-green-50 border border-green-200 rounded-lg p-3" draggable="true" data-node-type="voice-input">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center ml-3">
+                                    <i class="fas fa-microphone text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm">ورودی صدا</h4>
+                                    <p class="text-xs text-gray-600">تشخیص گفتار</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="node-card bg-green-50 border border-green-200 rounded-lg p-3" draggable="true" data-node-type="file-input">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center ml-3">
+                                    <i class="fas fa-file text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm">ورودی فایل</h4>
+                                    <p class="text-xs text-gray-600">آپلود فایل</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Processing Nodes -->
+                <div class="mb-6">
+                    <h3 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                        <i class="fas fa-brain text-purple-500 ml-2"></i>
+                        پردازش AI
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="node-card bg-purple-50 border border-purple-200 rounded-lg p-3" draggable="true" data-node-type="gpt-processor">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center ml-3">
+                                    <i class="fas fa-robot text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm">GPT Processor</h4>
+                                    <p class="text-xs text-gray-600">پردازش با GPT-4</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="node-card bg-purple-50 border border-purple-200 rounded-lg p-3" draggable="true" data-node-type="claude-processor">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center ml-3">
+                                    <i class="fas fa-brain text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm">Claude Processor</h4>
+                                    <p class="text-xs text-gray-600">پردازش با Claude</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="node-card bg-purple-50 border border-purple-200 rounded-lg p-3" draggable="true" data-node-type="image-processor">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center ml-3">
+                                    <i class="fas fa-image text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm">پردازش تصویر</h4>
+                                    <p class="text-xs text-gray-600">تحلیل تصویر با AI</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Nodes -->
+                <div class="mb-6">
+                    <h3 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                        <i class="fas fa-bolt text-orange-500 ml-2"></i>
+                        عملیات (Actions)
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="node-card bg-orange-50 border border-orange-200 rounded-lg p-3" draggable="true" data-node-type="api-call">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center ml-3">
+                                    <i class="fas fa-globe text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm">فراخوانی API</h4>
+                                    <p class="text-xs text-gray-600">ارسال درخواست HTTP</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="node-card bg-orange-50 border border-orange-200 rounded-lg p-3" draggable="true" data-node-type="database-save">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center ml-3">
+                                    <i class="fas fa-database text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm">ذخیره در دیتابیس</h4>
+                                    <p class="text-xs text-gray-600">ذخیره اطلاعات</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="node-card bg-orange-50 border border-orange-200 rounded-lg p-3" draggable="true" data-node-type="email-send">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center ml-3">
+                                    <i class="fas fa-envelope text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm">ارسال ایمیل</h4>
+                                    <p class="text-xs text-gray-600">ارسال ایمیل خودکار</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decision Nodes -->
+                <div class="mb-6">
+                    <h3 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                        <i class="fas fa-code-branch text-blue-500 ml-2"></i>
+                        تصمیم‌گیری
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="node-card bg-blue-50 border border-blue-200 rounded-lg p-3" draggable="true" data-node-type="condition">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center ml-3">
+                                    <i class="fas fa-question text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm">شرط</h4>
+                                    <p class="text-xs text-gray-600">بررسی شرط</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="node-card bg-blue-50 border border-blue-200 rounded-lg p-3" draggable="true" data-node-type="switch">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center ml-3">
+                                    <i class="fas fa-random text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm">سوئیچ</h4>
+                                    <p class="text-xs text-gray-600">انتخاب مسیر</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Output Nodes -->
+                <div class="mb-6">
+                    <h3 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                        <i class="fas fa-sign-out-alt text-red-500 ml-2"></i>
+                        خروجی (Output)
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="node-card bg-red-50 border border-red-200 rounded-lg p-3" draggable="true" data-node-type="text-output">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center ml-3">
+                                    <i class="fas fa-comment text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm">خروجی متن</h4>
+                                    <p class="text-xs text-gray-600">نمایش متن</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="node-card bg-red-50 border border-red-200 rounded-lg p-3" draggable="true" data-node-type="notification">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center ml-3">
+                                    <i class="fas fa-bell text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm">اعلان</h4>
+                                    <p class="text-xs text-gray-600">ارسال اعلان</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Canvas Area -->
+        <div class="flex-1 flex flex-col">
+            <!-- Toolbar -->
+            <div class="bg-white border-b p-4 flex items-center justify-between">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <button id="zoomIn" class="p-2 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    <button id="zoomOut" class="p-2 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    <button id="centerView" class="p-2 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-crosshairs"></i>
+                    </button>
+                    <div class="w-px h-6 bg-gray-300"></div>
+                    <button id="undo" class="p-2 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-undo"></i>
+                    </button>
+                    <button id="redo" class="p-2 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <span class="text-sm text-gray-600">Agent: <span id="agentName">Untitled Agent</span></span>
+                    <button id="renameAgent" class="text-blue-500 hover:text-blue-700">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Canvas -->
+            <div class="flex-1 relative">
+                <div id="workflowCanvas" class="workflow-canvas w-full h-full relative overflow-hidden">
+                    <!-- Konva.js canvas will be rendered here -->
+                </div>
+                
+                <!-- Connection Lines SVG -->
+                <svg id="connectionLines" class="absolute inset-0 pointer-events-none" style="z-index: 1;">
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                                refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6" />
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Properties Panel -->
+        <div class="w-80 bg-white shadow-lg border-r overflow-y-auto">
+            <div class="p-4 border-b">
+                <h2 class="text-lg font-bold text-gray-800">
+                    <i class="fas fa-cog text-gray-500"></i>
+                    تنظیمات Node
+                </h2>
+            </div>
+            <div id="nodeProperties" class="p-4">
+                <div class="text-center text-gray-500 py-8">
+                    <i class="fas fa-mouse-pointer text-4xl mb-4"></i>
+                    <p>برای ویرایش تنظیمات، روی یک Node کلیک کنید</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Node Properties Templates -->
+    <template id="textInputProperties">
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">عنوان</label>
+                <input type="text" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="عنوان ورودی">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">مقدار پیش‌فرض</label>
+                <input type="text" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="مقدار پیش‌فرض">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">اعتبارسنجی</label>
+                <select class="w-full p-2 border border-gray-300 rounded-lg">
+                    <option value="none">بدون اعتبارسنجی</option>
+                    <option value="required">اجباری</option>
+                    <option value="email">ایمیل</option>
+                    <option value="phone">تلفن</option>
+                </select>
+            </div>
+        </div>
+    </template>
+
+    <template id="gptProcessorProperties">
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">مدل</label>
+                <select class="w-full p-2 border border-gray-300 rounded-lg">
+                    <option value="gpt-4">GPT-4</option>
+                    <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Prompt</label>
+                <textarea class="w-full p-2 border border-gray-300 rounded-lg h-24" placeholder="دستورالعمل برای AI"></textarea>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Temperature</label>
+                <input type="range" min="0" max="1" step="0.1" class="w-full">
+                <span class="text-sm text-gray-600">0.7</span>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Max Tokens</label>
+                <input type="number" class="w-full p-2 border border-gray-300 rounded-lg" value="1000">
+            </div>
+        </div>
+    </template>
+
+    <template id="apiCallProperties">
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">URL</label>
+                <input type="url" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="https://api.example.com">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Method</label>
+                <select class="w-full p-2 border border-gray-300 rounded-lg">
+                    <option value="GET">GET</option>
+                    <option value="POST">POST</option>
+                    <option value="PUT">PUT</option>
+                    <option value="DELETE">DELETE</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Headers</label>
+                <textarea class="w-full p-2 border border-gray-300 rounded-lg h-20" placeholder='{"Authorization": "Bearer token"}'></textarea>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Body</label>
+                <textarea class="w-full p-2 border border-gray-300 rounded-lg h-20" placeholder='{"key": "value"}'></textarea>
+            </div>
+        </div>
+    </template>
+
+    <!-- Test Panel Modal -->
+    <div id="testPanel" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+                <div class="p-6 border-b">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold">🧪 تست Agent</h3>
+                        <button onclick="closeTestPanel()" class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">ورودی تست</label>
+                            <textarea id="testInput" class="w-full p-3 border border-gray-300 rounded-lg h-24" placeholder="متن تست را وارد کنید..."></textarea>
+                        </div>
+                        <button onclick="runTest()" class="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition-all">
+                            <i class="fas fa-play"></i>
+                            اجرای تست
+                        </button>
+                        <div id="testResults" class="hidden">
+                            <h4 class="font-semibold mb-2">نتایج تست:</h4>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <pre id="testOutput" class="text-sm"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let stage, layer;
+        let nodes = [];
+        let connections = [];
+        let selectedNode = null;
+        let isConnecting = false;
+        let connectionStart = null;
+        let nodeIdCounter = 0;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCanvas();
+            initializeEventListeners();
+            loadSampleAgent();
+        });
+
+        function initializeCanvas() {
+            const container = document.getElementById('workflowCanvas');
+            const width = container.offsetWidth;
+            const height = container.offsetHeight;
+
+            stage = new Konva.Stage({
+                container: 'workflowCanvas',
+                width: width,
+                height: height,
+                draggable: true
+            });
+
+            layer = new Konva.Layer();
+            stage.add(layer);
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                const newWidth = container.offsetWidth;
+                const newHeight = container.offsetHeight;
+                stage.width(newWidth);
+                stage.height(newHeight);
+            });
+        }
+
+        function initializeEventListeners() {
+            // Drag and drop from sidebar
+            const nodeCards = document.querySelectorAll('.node-card');
+            nodeCards.forEach(card => {
+                card.addEventListener('dragstart', handleDragStart);
+            });
+
+            // Canvas drop
+            stage.on('drop', handleDrop);
+            stage.on('dragover', handleDragOver);
+
+            // Node interactions
+            stage.on('click tap', handleCanvasClick);
+            stage.on('dragend', handleNodeDragEnd);
+
+            // Toolbar buttons
+            document.getElementById('saveAgent').addEventListener('click', saveAgent);
+            document.getElementById('runAgent').addEventListener('click', runAgent);
+            document.getElementById('testAgent').addEventListener('click', openTestPanel);
+            document.getElementById('zoomIn').addEventListener('click', () => zoom(1.2));
+            document.getElementById('zoomOut').addEventListener('click', () => zoom(0.8));
+            document.getElementById('centerView').addEventListener('click', centerView);
+        }
+
+        function handleDragStart(e) {
+            const nodeType = e.target.getAttribute('data-node-type');
+            e.dataTransfer.setData('text/plain', nodeType);
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            const nodeType = e.dataTransfer.getData('text/plain');
+            const pos = stage.getPointerPosition();
+            createNode(nodeType, pos.x, pos.y);
+        }
+
+        function createNode(type, x, y) {
+            const nodeId = `node_${++nodeIdCounter}`;
+            const nodeConfig = getNodeConfig(type);
+            
+            // Create node group
+            const group = new Konva.Group({
+                x: x,
+                y: y,
+                draggable: true,
+                id: nodeId
+            });
+
+            // Background
+            const rect = new Konva.Rect({
+                width: nodeConfig.width,
+                height: nodeConfig.height,
+                fill: nodeConfig.color,
+                stroke: '#374151',
+                strokeWidth: 2,
+                cornerRadius: 8
+            });
+
+            // Icon
+            const icon = new Konva.Text({
+                text: nodeConfig.icon,
+                fontSize: 20,
+                fill: 'white',
+                x: 15,
+                y: 15,
+                width: 30,
+                height: 30,
+                align: 'center',
+                verticalAlign: 'middle'
+            });
+
+            // Title
+            const title = new Konva.Text({
+                text: nodeConfig.title,
+                fontSize: 14,
+                fontStyle: 'bold',
+                fill: 'white',
+                x: 50,
+                y: 15,
+                width: nodeConfig.width - 60,
+                height: 20
+            });
+
+            // Description
+            const description = new Konva.Text({
+                text: nodeConfig.description,
+                fontSize: 10,
+                fill: 'white',
+                x: 50,
+                y: 35,
+                width: nodeConfig.width - 60,
+                height: 30
+            });
+
+            // Input connector
+            const inputConnector = new Konva.Circle({
+                x: 0,
+                y: nodeConfig.height / 2,
+                radius: 6,
+                fill: '#10b981',
+                stroke: 'white',
+                strokeWidth: 2
+            });
+
+            // Output connector
+            const outputConnector = new Konva.Circle({
+                x: nodeConfig.width,
+                y: nodeConfig.height / 2,
+                radius: 6,
+                fill: '#ef4444',
+                stroke: 'white',
+                strokeWidth: 2
+            });
+
+            group.add(rect);
+            group.add(icon);
+            group.add(title);
+            group.add(description);
+            group.add(inputConnector);
+            group.add(outputConnector);
+
+            // Add click handler
+            group.on('click tap', () => selectNode(nodeId, type));
+
+            layer.add(group);
+            layer.draw();
+
+            // Store node data
+            nodes.push({
+                id: nodeId,
+                type: type,
+                group: group,
+                config: nodeConfig
+            });
+        }
+
+        function getNodeConfig(type) {
+            const configs = {
+                'text-input': {
+                    title: 'ورودی متن',
+                    description: 'دریافت متن از کاربر',
+                    icon: '⌨️',
+                    color: '#10b981',
+                    width: 200,
+                    height: 80
+                },
+                'voice-input': {
+                    title: 'ورودی صدا',
+                    description: 'تشخیص گفتار',
+                    icon: '🎤',
+                    color: '#10b981',
+                    width: 200,
+                    height: 80
+                },
+                'gpt-processor': {
+                    title: 'GPT Processor',
+                    description: 'پردازش با GPT-4',
+                    icon: '🤖',
+                    color: '#8b5cf6',
+                    width: 200,
+                    height: 80
+                },
+                'api-call': {
+                    title: 'فراخوانی API',
+                    description: 'ارسال درخواست HTTP',
+                    icon: '🌐',
+                    color: '#f59e0b',
+                    width: 200,
+                    height: 80
+                },
+                'database-save': {
+                    title: 'ذخیره در دیتابیس',
+                    description: 'ذخیره اطلاعات',
+                    icon: '💾',
+                    color: '#f59e0b',
+                    width: 200,
+                    height: 80
+                },
+                'condition': {
+                    title: 'شرط',
+                    description: 'بررسی شرط',
+                    icon: '❓',
+                    color: '#3b82f6',
+                    width: 200,
+                    height: 80
+                },
+                'text-output': {
+                    title: 'خروجی متن',
+                    description: 'نمایش متن',
+                    icon: '💬',
+                    color: '#ef4444',
+                    width: 200,
+                    height: 80
+                }
+            };
+            return configs[type] || configs['text-input'];
+        }
+
+        function selectNode(nodeId, type) {
+            // Deselect previous node
+            if (selectedNode) {
+                const prevNode = nodes.find(n => n.id === selectedNode);
+                if (prevNode) {
+                    prevNode.group.stroke('#374151');
+                    prevNode.group.strokeWidth(2);
+                }
+            }
+
+            // Select new node
+            const node = nodes.find(n => n.id === nodeId);
+            if (node) {
+                node.group.stroke('#3b82f6');
+                node.group.strokeWidth(3);
+                selectedNode = nodeId;
+                showNodeProperties(type);
+            }
+
+            layer.draw();
+        }
+
+        function showNodeProperties(type) {
+            const propertiesPanel = document.getElementById('nodeProperties');
+            const template = document.getElementById(`${type.replace('-', '')}Properties`);
+            
+            if (template) {
+                propertiesPanel.innerHTML = template.innerHTML;
+            } else {
+                propertiesPanel.innerHTML = `
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">نام Node</label>
+                            <input type="text" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="نام Node">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">توضیحات</label>
+                            <textarea class="w-full p-2 border border-gray-300 rounded-lg h-20" placeholder="توضیحات Node"></textarea>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function handleCanvasClick(e) {
+            if (e.target === stage) {
+                // Deselect all nodes
+                nodes.forEach(node => {
+                    node.group.stroke('#374151');
+                    node.group.strokeWidth(2);
+                });
+                selectedNode = null;
+                document.getElementById('nodeProperties').innerHTML = `
+                    <div class="text-center text-gray-500 py-8">
+                        <i class="fas fa-mouse-pointer text-4xl mb-4"></i>
+                        <p>برای ویرایش تنظیمات، روی یک Node کلیک کنید</p>
+                    </div>
+                `;
+                layer.draw();
+            }
+        }
+
+        function handleNodeDragEnd(e) {
+            // Update connections when node moves
+            updateConnections();
+        }
+
+        function updateConnections() {
+            // Clear existing connections
+            const svg = document.getElementById('connectionLines');
+            svg.innerHTML = '<defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6" /></marker></defs>';
+            
+            // Redraw connections
+            connections.forEach(conn => {
+                const fromNode = nodes.find(n => n.id === conn.from);
+                const toNode = nodes.find(n => n.id === conn.to);
+                
+                if (fromNode && toNode) {
+                    const fromPos = fromNode.group.position();
+                    const toPos = toNode.group.position();
+                    
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', fromPos.x + 200);
+                    line.setAttribute('y1', fromPos.y + 40);
+                    line.setAttribute('x2', toPos.x);
+                    line.setAttribute('y2', toPos.y + 40);
+                    line.setAttribute('class', 'connection-line');
+                    
+                    svg.appendChild(line);
+                }
+            });
+        }
+
+        function zoom(factor) {
+            const oldScale = stage.scaleX();
+            const newScale = oldScale * factor;
+            stage.scale({ x: newScale, y: newScale });
+            layer.draw();
+        }
+
+        function centerView() {
+            stage.position({ x: 0, y: 0 });
+            stage.scale({ x: 1, y: 1 });
+            layer.draw();
+        }
+
+        function saveAgent() {
+            const agentData = {
+                name: document.getElementById('agentName').textContent,
+                nodes: nodes.map(node => ({
+                    id: node.id,
+                    type: node.type,
+                    x: node.group.x(),
+                    y: node.group.y()
+                })),
+                connections: connections,
+                created_at: new Date().toISOString()
+            };
+            
+            // Save to localStorage for demo
+            localStorage.setItem('currentAgent', JSON.stringify(agentData));
+            
+            alert('✅ Agent با موفقیت ذخیره شد!');
+        }
+
+        function runAgent() {
+            if (nodes.length === 0) {
+                alert('⚠️ ابتدا Node هایی به Canvas اضافه کنید');
+                return;
+            }
+            
+            // Simulate agent execution
+            alert('🚀 Agent در حال اجرا است...');
+            
+            // Show execution flow
+            setTimeout(() => {
+                alert('✅ Agent با موفقیت اجرا شد!');
+            }, 2000);
+        }
+
+        function openTestPanel() {
+            document.getElementById('testPanel').classList.remove('hidden');
+        }
+
+        function closeTestPanel() {
+            document.getElementById('testPanel').classList.add('hidden');
+        }
+
+        function runTest() {
+            const testInput = document.getElementById('testInput').value;
+            const testResults = document.getElementById('testResults');
+            const testOutput = document.getElementById('testOutput');
+            
+            if (!testInput.trim()) {
+                alert('⚠️ لطفاً ورودی تست را وارد کنید');
+                return;
+            }
+            
+            // Simulate test execution
+            testOutput.textContent = `ورودی: ${testInput}\n\nنتیجه: Agent با موفقیت پردازش شد!\n\nخروجی: پاسخ تولید شده توسط AI`;
+            testResults.classList.remove('hidden');
+        }
+
+        function loadSampleAgent() {
+            // Load sample agent from localStorage if exists
+            const savedAgent = localStorage.getItem('currentAgent');
+            if (savedAgent) {
+                const agentData = JSON.parse(savedAgent);
+                document.getElementById('agentName').textContent = agentData.name;
+                
+                // Recreate nodes
+                agentData.nodes.forEach(nodeData => {
+                    createNode(nodeData.type, nodeData.x, nodeData.y);
+                });
+                
+                // Recreate connections
+                connections = agentData.connections || [];
+                updateConnections();
+            }
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case 's':
+                        e.preventDefault();
+                        saveAgent();
+                        break;
+                    case 'r':
+                        e.preventDefault();
+                        runAgent();
+                        break;
+                    case 't':
+                        e.preventDefault();
+                        openTestPanel();
+                        break;
+                }
+            }
+            
+            if (e.key === 'Delete' && selectedNode) {
+                // Delete selected node
+                const nodeIndex = nodes.findIndex(n => n.id === selectedNode);
+                if (nodeIndex !== -1) {
+                    nodes[nodeIndex].group.destroy();
+                    nodes.splice(nodeIndex, 1);
+                    selectedNode = null;
+                    layer.draw();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
