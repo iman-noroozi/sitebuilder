@@ -5,15 +5,15 @@ services:
   db:
     image: postgres:15
     environment:
-      POSTGRES_DB: sitebuilder
-      POSTGRES_USER: sitebuilder
-      POSTGRES_PASSWORD: sitebuilder123
+      POSTGRES_DB: pey_builder
+      POSTGRES_USER: pey_builder
+      POSTGRES_PASSWORD: pey_builder123
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U sitebuilder"]
+      test: ["CMD-SHELL", "pg_isready -U pey_builder"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -40,7 +40,7 @@ services:
       - "8000:8000"
     environment:
       - DEBUG=1
-      - DATABASE_URL=postgresql://sitebuilder:sitebuilder123@db:5432/sitebuilder
+      - DATABASE_URL=postgresql://pey_builder:pey_builder123@db:5432/pey_builder
       - REDIS_URL=redis://redis:6379/0
       - SECRET_KEY=your-secret-key-here
       - ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
@@ -114,7 +114,7 @@ services:
       dockerfile: Dockerfile.backend
     environment:
       - DEBUG=1
-      - DATABASE_URL=postgresql://sitebuilder:sitebuilder123@db:5432/sitebuilder
+      - DATABASE_URL=postgresql://pey_builder:pey_builder123@db:5432/pey_builder
       - REDIS_URL=redis://redis:6379/0
       - SECRET_KEY=your-secret-key-here
     volumes:
@@ -133,7 +133,7 @@ services:
       dockerfile: Dockerfile.backend
     environment:
       - DEBUG=1
-      - DATABASE_URL=postgresql://sitebuilder:sitebuilder123@db:5432/sitebuilder
+      - DATABASE_URL=postgresql://pey_builder:pey_builder123@db:5432/pey_builder
       - REDIS_URL=redis://redis:6379/0
       - SECRET_KEY=your-secret-key-here
     volumes:
@@ -154,7 +154,7 @@ services:
       - "5555:5555"
     environment:
       - DEBUG=1
-      - DATABASE_URL=postgresql://sitebuilder:sitebuilder123@db:5432/sitebuilder
+      - DATABASE_URL=postgresql://pey_builder:pey_builder123@db:5432/pey_builder
       - REDIS_URL=redis://redis:6379/0
       - SECRET_KEY=your-secret-key-here
     volumes:

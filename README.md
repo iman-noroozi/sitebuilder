@@ -1,8 +1,8 @@
-# 🚀 Site Builder - World-Class Website Builder Platform
+# 🚀 PEY Builder - World-Class Website Builder Platform
 
 <div align="center">
 
-![Site Builder Logo](https://img.shields.io/badge/Site%20Builder-World%20Class-blue?style=for-the-badge&logo=webpack&logoColor=white)
+![PEY Builder Logo](https://img.shields.io/badge/PEY%20Builder-World%20Class-blue?style=for-the-badge&logo=webpack&logoColor=white)
 ![Version](https://img.shields.io/badge/version-2.0.0-green?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
 ![Python](https://img.shields.io/badge/python-3.8+-blue?style=for-the-badge&logo=python&logoColor=white)
@@ -10,7 +10,7 @@
 
 **The most advanced, AI-powered website builder platform for global users**
 
-[🌐 Live Demo](https://sitebuilder-demo.vercel.app) • [📖 Documentation](https://docs.sitebuilder.com) • [🎥 Video Demo](https://youtube.com/watch?v=demo) • [💬 Discord](https://discord.gg/sitebuilder)
+[🌐 Live Demo](https://pey-builder-demo.vercel.app) • [📖 Documentation](https://docs.peyai.ir) • [🎥 Video Demo](https://youtube.com/watch?v=demo) • [💬 Discord](https://discord.gg/pey-builder)
 
 </div>
 

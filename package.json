@@ -1,7 +1,7 @@
 {
-  "name": "site-builder",
+  "name": "pey-builder",
   "version": "1.0.0",
-  "description": "سیستم کامل سایت‌سازی و استخراج قالب‌ها - Site Builder",
+  "description": "سیستم کامل سایت‌سازی و استخراج قالب‌ها - PEY Builder",
   "main": "extractor/puppeteer.js",
   "homepage": "https://github.com/iman-noroozi/sitebuilder",
   "repository": {
@@ -25,8 +25,8 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "setup": "npm install && pip install -r backend/requirements.txt",
-    "docker:build": "docker build -t sitebuilder .",
-    "docker:run": "docker run -p 8000:8000 sitebuilder",
+    "docker:build": "docker build -t pey-builder .",
+    "docker:run": "docker run -p 8000:8000 pey-builder",
     "docker:compose": "docker-compose up -d",
     "docker:down": "docker-compose down"
   },

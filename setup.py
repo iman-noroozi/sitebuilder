@@ -23,11 +23,11 @@ def read_requirements():
     return []
 
 setup(
-    name="site-builder",
+    name="pey-builder",
     version="1.0.0",
     author="Peysan Web",
     author_email="info@peysunweb.ir",
-    description="ابزار کامل استخراج و ساخت سایت",
+    description="ابزار کامل استخراج و ساخت سایت - PEY Builder",
     long_description=read_readme(),
     long_description_content_type="text/markdown",
     url="https://github.com/iman-noroozi/sitebuilder",

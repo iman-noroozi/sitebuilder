@@ -1,4 +1,4 @@
-# 🌍 Site Builder - Global Edition Docker Configuration
+# 🌍 PEY Builder - Global Edition Docker Configuration
 FROM python:3.11-slim
 
 # تنظیم متغیرهای محیطی

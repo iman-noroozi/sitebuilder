@@ -1,4 +1,4 @@
-# 🚀 Site Builder - Global Edition Deployment Guide
+# 🚀 PEY Builder - Global Edition Deployment Guide
 
 ## 🌍 Production Deployment
 
