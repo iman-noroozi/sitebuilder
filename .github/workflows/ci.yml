@@ -60,7 +60,7 @@ jobs:
           cache: 'npm'
 
       - name: 📦 نصب وابستگی‌ها
-        run: npm ci
+        run: npm install
 
       - name: 🧪 اجرای تست‌های پایه
         run: npm test
@@ -100,7 +100,7 @@ jobs:
           python -m pytest tests/test_security.py -v
 
       - name: 📊 آپلود گزارش امنیتی
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: security-reports
           path: |
