@@ -10,7 +10,8 @@ describe('Basic Functionality Tests', () => {
 
     beforeAll(() => {
         // ایجاد دایرکتوری موقت
-        tempDir = fs.mkdtempSync('/tmp/test-');
+        const os = require('os');
+        tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'test-'));
     });
 
     afterAll(() => {
